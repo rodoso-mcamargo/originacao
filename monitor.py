@@ -187,7 +187,8 @@ def data_br(v: str | None) -> dt.date | None:
     if not v or v.strip() in VAZIOS:
         return None
     v = v.strip()
-    for fmt in ("%d/%m/%Y", "%d/%m/%y"):
+    # O arquivo de debentures usa dd/mm/aaaa; o de titulos publicos usa aaaammdd.
+    for fmt in ("%d/%m/%Y", "%d/%m/%y", "%Y%m%d"):
         try:
             return dt.datetime.strptime(v, fmt).date()
         except ValueError:
@@ -403,14 +404,26 @@ def _interpolar_ntnb(curva: dict[str, float], venc_alvo: dt.date) -> float | Non
     return t0 + w * (t1 - t0)
 
 
-def calcular_spread(deb, curva_ntnb: dict[str, float], cdi: float | None) -> tuple[float | None, str]:
-    """Devolve (spread_bps, benchmark_usado)."""
+# Aliquota de IR usada para trazer papel isento a base comparavel com titulo
+# tributado. A quase totalidade do IPCA+ do secundario e incentivada (Lei
+# 12.431): sem o gross-up, o spread contra a NTN-B sai negativo e nao se compara
+# com o DI+. Guardamos as duas medidas e o painel mostra a bruta ao lado.
+ALIQUOTA_IR = 0.15
+
+
+def calcular_spread(deb, curva_ntnb: dict[str, float], cdi: float | None):
+    """Devolve (spread_bps, spread_bruto_bps, benchmark_usado).
+
+    spread_bps        -> medida principal, comparavel entre familias
+    spread_bruto_bps  -> como o papel e cotado, sem ajuste de imposto
+    """
     tx = deb.taxa_indicativa
     if tx is None:
-        return None, "sem_taxa"
+        return None, None, "sem_taxa"
 
     if deb.familia == "DI_SPREAD":
-        return round(tx * 100, 1), "DI"
+        s = round(tx * 100, 1)
+        return s, s, "DI"
 
     if deb.familia == "IPCA":
         ref = None
@@ -421,15 +434,18 @@ def calcular_spread(deb, curva_ntnb: dict[str, float], cdi: float | None) -> tup
         if ref is None and deb.vencimento:
             ref = _interpolar_ntnb(curva_ntnb, deb.vencimento)
         if ref is None:
-            return None, "sem_ntnb"
-        return round((tx - ref) * 100, 1), f"NTN-B {ref:.2f}%"
+            return None, None, "sem_ntnb"
+        bruto = round((tx - ref) * 100, 1)
+        cheio = round((tx / (1 - ALIQUOTA_IR) - ref) * 100, 1)
+        return cheio, bruto, f"NTN-B {ref:.2f}% (gross-up {ALIQUOTA_IR:.0%})"
 
     if deb.familia == "DI_PCT":
         if cdi is None:
-            return None, "sem_cdi"
-        return round(cdi * (tx / 100 - 1) * 100, 1), f"%CDI (CDI={cdi:.2f}%)"
+            return None, None, "sem_cdi"
+        s = round(cdi * (tx / 100 - 1) * 100, 1)
+        return s, s, f"%CDI (CDI={cdi:.2f}%)"
 
-    return None, "sem_benchmark"
+    return None, None, "sem_benchmark"
 
 
 def escore_liquidez(deb) -> float | None:
@@ -461,9 +477,10 @@ def enriquecer(debentures, curva_ntnb: dict[str, float], cdi: float | None) -> l
     """Snapshot do dia com spread, bucket e liquidez por papel."""
     linhas = []
     for d in debentures:
-        spread, bench = calcular_spread(d, curva_ntnb, cdi)
+        spread, bruto, bench = calcular_spread(d, curva_ntnb, cdi)
         r = d.dict()
         r["spread_bps"] = spread
+        r["spread_bruto_bps"] = bruto
         r["benchmark"] = bench
         r["bucket"] = bucket_duration(d.duration_anos)
         r["liquidez"] = escore_liquidez(d)
@@ -477,6 +494,23 @@ def enriquecer(debentures, curva_ntnb: dict[str, float], cdi: float | None) -> l
         grupos.setdefault((r["familia"], r["bucket"]), []).append(r["spread_bps"])
     for g in grupos.values():
         g.sort()
+
+    # percentil do % PU par no mesmo grupo. Um corte absoluto nao serve: papel
+    # DI+ tem mediana ~100% do par, mas IPCA+ incentivado amortiza e fica em
+    # ~93%, entao 63% deles cairiam num gatilho de "PU abaixo de 95".
+    grupos_pu: dict[tuple, list[float]] = {}
+    for r in linhas:
+        if r["pct_pu_par"] is None or r["bucket"] is None:
+            continue
+        grupos_pu.setdefault((r["familia"], r["bucket"]), []).append(r["pct_pu_par"])
+    for g in grupos_pu.values():
+        g.sort()
+    for r in linhas:
+        g = grupos_pu.get((r["familia"], r["bucket"]))
+        if not g or r["pct_pu_par"] is None or len(g) < 8:
+            r["percentil_pu"] = None
+        else:
+            r["percentil_pu"] = round(100 * bisect_left(g, r["pct_pu_par"]) / len(g), 1)
 
     for r in linhas:
         chave = (r["familia"], r["bucket"])
@@ -495,13 +529,21 @@ def enriquecer(debentures, curva_ntnb: dict[str, float], cdi: float | None) -> l
     return linhas
 
 
-def comparar_historico(hoje: list[dict], historico: dict[str, list[dict]]) -> list[dict]:
+def comparar_historico(hoje: list[dict], historico: dict[str, list[dict]],
+                       data: dt.date | None = None) -> list[dict]:
     """
     Acrescenta variações e z-score.
     `historico` = {codigo: [{'data':..., 'spread_bps':..., 'pu':...}, ...]} em ordem cronológica.
+
+    `data` e a data de referencia do snapshot: so entram no calculo pontos
+    ESTRITAMENTE ANTERIORES a ela. Sem esse corte, um backfill rodado sobre
+    historico ja existente compararia cada dia com pregoes do futuro.
     """
+    corte = data.isoformat() if data else None
     for r in hoje:
         serie = historico.get(r["codigo"], [])
+        if corte:
+            serie = [p for p in serie if p["data"] < corte]
         spreads = [p["spread_bps"] for p in serie if p.get("spread_bps") is not None]
         pus = [p["pu"] for p in serie if p.get("pu") is not None]
 
@@ -553,9 +595,9 @@ def gerar_sinais(linhas: list[dict], min_liquidez: float = 45.0) -> list[dict]:
         vp = r.get("vs_pares_bps")
         pc = r.get("percentil_pares")
         if liquido and vp is not None and pc is not None:
-            if pc >= 85:
+            if pc >= 90:
                 sinais.append(("caro_vs_pares", f"{vp:+.0f} bps vs mediana do bucket (p{pc:.0f})"))
-            elif pc <= 15:
+            elif pc <= 10:
                 sinais.append(("apertado_vs_pares", f"{vp:+.0f} bps vs mediana do bucket (p{pc:.0f})"))
 
         d1 = r.get("d_spread_1d")
@@ -571,8 +613,11 @@ def gerar_sinais(linhas: list[dict], min_liquidez: float = 45.0) -> list[dict]:
             )
 
         par = r.get("pct_pu_par")
-        if par is not None and par <= 95:
-            sinais.append(("desconto_pu", f"PU a {par:.1f}% do par"))
+        ppu = r.get("percentil_pu")
+        if par is not None and ppu is not None and ppu <= 10:
+            sinais.append(
+                ("desconto_pu", f"PU a {par:.1f}% do par — decil mais baixo do bucket (p{ppu:.0f})")
+            )
 
         if liq is not None and liq < 25:
             sinais.append(("baixa_liquidez", "bid-ask largo / dispersão alta — trate a marcação com ressalva"))
@@ -627,22 +672,72 @@ def agregados(linhas: list[dict]) -> dict:
 # ========================================================================
 # pipeline
 # ========================================================================
+# O historico vive em UM CSV POR PREGAO, nao num JSON unico reescrito todo dia.
+# Um arquivo unico de ~5 MB regravado diariamente empilharia mais de 1 GB de
+# objetos no git em um ano; assim cada dia acrescenta ~45 KB e o repositorio
+# cresce ~11 MB por ano.
+SERIE = "serie"
+COLS_SERIE = ("codigo", "spread_bps", "spread_bruto_bps", "pu", "taxa")
+
+
 def carregar_serie() -> dict[str, list[dict]]:
-    f = DADOS / "serie.json"
-    if not f.exists():
-        return {}
-    return json.loads(f.read_text(encoding="utf-8"))
+    """Reconstroi {codigo: [pontos em ordem cronologica]} a partir de dados/serie/*.csv."""
+    import csv
+
+    dir_serie = DADOS / SERIE
+    serie: dict[str, list[dict]] = {}
+    if not dir_serie.exists():
+        # migracao do formato antigo, se ainda existir
+        antigo = DADOS / "serie.json"
+        if antigo.exists():
+            log.info("migrando serie.json para CSV por pregao")
+            return json.loads(antigo.read_text(encoding="utf-8"))
+        return serie
+
+    for arq in sorted(dir_serie.glob("*.csv"))[-MAX_HISTORICO:]:
+        data = arq.stem
+        with arq.open(encoding="utf-8", newline="") as fh:
+            for linha in csv.DictReader(fh):
+                p = {"data": data}
+                for c in COLS_SERIE[1:]:
+                    v = linha.get(c, "")
+                    p[c] = float(v) if v not in ("", None) else None
+                serie.setdefault(linha["codigo"], []).append(p)
+    log.info("historico: %d papeis em %d pregoes",
+             len(serie), len(list(dir_serie.glob("*.csv"))))
+    return serie
+
+
+def gravar_dia(data: dt.date, linhas: list[dict]) -> None:
+    """Grava o CSV daquele pregao e poda o que passou da janela."""
+    import csv
+
+    dir_serie = DADOS / SERIE
+    dir_serie.mkdir(parents=True, exist_ok=True)
+    with (dir_serie / f"{data.isoformat()}.csv").open("w", encoding="utf-8", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(COLS_SERIE)
+        for r in linhas:
+            w.writerow([
+                r["codigo"],
+                "" if r.get("spread_bps") is None else r["spread_bps"],
+                "" if r.get("spread_bruto_bps") is None else r["spread_bruto_bps"],
+                "" if r.get("pu") is None else r["pu"],
+                "" if r.get("taxa_indicativa") is None else r["taxa_indicativa"],
+            ])
+
+    antigos = sorted(dir_serie.glob("*.csv"))[:-MAX_HISTORICO]
+    for a in antigos:
+        a.unlink()
+        log.info("podado do historico: %s", a.name)
 
 
 def gravar_serie(serie: dict[str, list[dict]]) -> None:
-    for codigo, pontos in serie.items():
-        pontos.sort(key=lambda p: p["data"])
-        # deduplica por data, mantendo o último
-        vistos: dict[str, dict] = {p["data"]: p for p in pontos}
-        serie[codigo] = sorted(vistos.values(), key=lambda p: p["data"])[-MAX_HISTORICO:]
-    (DADOS / "serie.json").write_text(
-        json.dumps(serie, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
-    )
+    """Mantido so para remover o serie.json legado depois da migracao."""
+    antigo = DADOS / "serie.json"
+    if antigo.exists() and (DADOS / SERIE).exists():
+        antigo.unlink()
+        log.info("serie.json antigo removido — historico agora em dados/serie/")
 
 
 def processar(data: dt.date, serie: dict[str, list[dict]]) -> dict:
@@ -662,20 +757,25 @@ def processar(data: dt.date, serie: dict[str, list[dict]]) -> dict:
     cdi = baixar_cdi()
 
     linhas = enriquecer(debs, curva, cdi)
-    # histórico ANTES de incluir o dia corrente
-    linhas = comparar_historico(linhas, serie)
+    # histórico: só pregões anteriores a `data`
+    linhas = comparar_historico(linhas, serie, data)
     linhas = gerar_sinais(linhas)
 
-    # alimenta a série
+    # alimenta a série: em memoria (para os proximos dias do backfill) e em disco
     for r in linhas:
-        serie.setdefault(r["codigo"], []).append(
+        pontos = serie.setdefault(r["codigo"], [])
+        pontos[:] = [p for p in pontos if p["data"] != data.isoformat()]
+        pontos.append(
             {
                 "data": data.isoformat(),
                 "spread_bps": r["spread_bps"],
+                "spread_bruto_bps": r.get("spread_bruto_bps"),
                 "pu": r["pu"],
                 "taxa": r["taxa_indicativa"],
             }
         )
+        pontos.sort(key=lambda p: p["data"])
+    gravar_dia(data, linhas)
 
     com_spread = [r for r in linhas if r["spread_bps"] is not None]
     snapshot = {
