@@ -1,0 +1,87 @@
+name: Carteiras dos fundos CDA/CVM
+ 
+on:
+  schedule:
+    # Segundas as 10h de Brasilia (13h UTC). A CDA e mensal, mas a data em que a
+    # CVM publica varia; o script checa e sai em segundos se nao houver mes novo.
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+    inputs:
+      inspecionar:
+        description: "Escreva sim para so descrever a estrutura do arquivo, sem processar"
+        required: false
+      mes:
+        description: "Mes especifico AAAA-MM (vazio = mais recente disponivel)"
+        required: false
+      backfill:
+        description: "Quantos meses processar de uma vez (ex.: 6)"
+        required: false
+ 
+permissions:
+  contents: write
+ 
+concurrency:
+  group: cda
+  cancel-in-progress: false
+ 
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+ 
+    steps:
+      - uses: actions/checkout@v4
+ 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+ 
+      - run: pip install requests
+ 
+      - name: Rodar coleta CDA
+        run: |
+          if [ "${{ inputs.inspecionar }}" = "sim" ]; then
+            python cda.py --inspecionar >> "$GITHUB_STEP_SUMMARY"
+          elif [ -n "${{ inputs.backfill }}" ]; then
+            python cda.py --backfill "${{ inputs.backfill }}"
+          elif [ -n "${{ inputs.mes }}" ]; then
+            python cda.py --mes "${{ inputs.mes }}"
+          else
+            python cda.py
+          fi
+ 
+      - name: Resumo
+        if: always()
+        run: |
+          if [ -f dados/cda/ultimo.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib
+          s = json.loads(pathlib.Path("dados/cda/ultimo.json").read_text(encoding="utf-8"))
+          d = s["diagnostico"]
+          print(f"## CDA {s['mes_referencia']}\n")
+          print(f"- Arquivos lidos: `{d['arquivos_lidos']}`")
+          print(f"- Linhas varridas: {d['linhas_varridas']:,} | com codigo de ativo: {d['linhas_com_codigo']:,}")
+          print(f"- **Casadas com o radar: {d['casadas']:,}**")
+          print(f"- Papeis do radar com dado de carteira: **{s['papeis_com_dado']} de {s['papeis_no_radar']}**\n")
+          top = sorted(s["por_papel"].items(), key=lambda kv: -kv[1]["vl_vendido"])[:5]
+          if top and top[0][1]["vl_vendido"] > 0:
+              print("### Maiores vendas no mes\n")
+              print("| Papel | Vendido (R$) | Fundos | Top 5 |")
+              print("|---|---:|---:|---:|")
+              for cod, v in top:
+                  print(f"| {cod} | {v['vl_vendido']:,.0f} | {v['n_fundos']} | {v['top5_pct']}% |")
+          PY
+          fi
+ 
+      - name: Salvar os dados no repositorio
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/cda/ 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Nada mudou."
+          else
+            git commit -m "cda: carteiras $(date -u +%Y-%m)"
+            git push
+          fi
+ 
