@@ -1,0 +1,74 @@
+name: Coleta diaria ANBIMA
+
+on:
+  schedule:
+    # 08:40 em Brasilia (11:40 UTC), de segunda a sexta.
+    # Coleta o ultimo dia util, que a ANBIMA ja publicou na vespera a noite.
+    - cron: "40 11 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Quantos pregoes reconstruir de uma vez (use 60 na primeira vez)"
+        required: false
+      data:
+        description: "Data especifica AAAA-MM-DD (deixe vazio para o ultimo dia util)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coleta
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests
+
+      - name: Rodar coleta
+        run: |
+          if [ -n "${{ inputs.backfill }}" ]; then
+            python monitor.py --backfill "${{ inputs.backfill }}"
+          elif [ -n "${{ inputs.data }}" ]; then
+            python monitor.py --data "${{ inputs.data }}"
+          else
+            python monitor.py
+          fi
+
+      - name: Resumo
+        if: always()
+        run: |
+          if [ -f dados/ultimo.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib
+          s = json.loads(pathlib.Path("dados/ultimo.json").read_text(encoding="utf-8"))
+          c = s["cobertura"]
+          print(f"## Coleta {s['data_referencia']}\n")
+          print(f"- **{c['papeis']}** papeis, **{c['com_spread']}** com spread calculado")
+          print(f"- Curva NTN-B: {c['curva_ntnb_vertices']} vertices | CDI: {s.get('cdi_aa')}% a.a.")
+          print(f"- Por indexador: `{c['por_familia']}`")
+          print(f"- Papeis com sinal: **{sum(1 for r in s['papeis'] if r.get('sinais'))}**")
+          PY
+          fi
+
+      - name: Salvar os dados no repositorio
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/
+          if git diff --staged --quiet; then
+            echo "Nada mudou."
+          else
+            git commit -m "dados: coleta $(date -u +%Y-%m-%d)"
+            git push
+          fi
