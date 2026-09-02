@@ -48,12 +48,15 @@ DIR_DIARIO = f"{DIR_DADOS}/diario"
 ARQ_VISTOS = f"{DIR_DADOS}/vistos.json"
 ARQ_ULTIMO = f"{DIR_DADOS}/ultimo.json"
 
-JANELA_DASHBOARD_DIAS = 30  # quanto tempo um achado fica visível no painel
+JANELA_DASHBOARD_DIAS = 30   # quanto tempo um achado fica visível no painel
 JANELA_VISTOS_DIAS = 120     # por quanto tempo guardamos o registro de dedupe
 JANELA_DATAJUD_DIAS = 5      # margem de segurança para atraso de indexação
+JANELA_NOTICIAS_DIAS = 10    # descarta notícia mais velha que isso — busca por frase
+                             # exata casa com matéria antiga (visto na 1ª execução:
+                             # itens de 2018-2020 vindo junto com os de hoje)
 
 DATAJUD_URL = "https://api-publica.datajud.cnj.jus.br/{alias}/_search"
-DATAJUD_KEY = "APIKey cDZHYzlZa0JadVREZDJcendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw=="
+DATAJUD_KEY = "APIKey cDZHYzlZa0JadVREZDJCendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw=="
 # Chave pública documentada pelo CNJ em https://datajud-wiki.cnj.jus.br/api-publica/acesso/
 # É a mesma para todo mundo (não é segredo). Se parar de funcionar (CNJ já
 # avisou que pode trocar), pegar a atual naquela página e atualizar aqui.
@@ -67,7 +70,7 @@ TRIBUNAIS = [
 CLASSE_RJ = 129           # "Recuperação Judicial"
 CLASSE_FALENCIA = 108     # "Falência de Empresários, Sociedades Empresariais..."
 CLASSE_CAUTELAR = 12134   # "Tutela Cautelar Antecedente"
-ASSUNTO_RJ_FALENCIA = 4993 # "Recuperação judicial e Falência"
+ASSUNTO_RJ_FALENCIA = 4993  # "Recuperação judicial e Falência"
 
 USER_AGENT = "monitor-rj-originacao/1.0 (uso interno, contato via GitHub)"
 
@@ -173,9 +176,9 @@ def buscar_datajud(desde_iso: str) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 CONSULTAS_NOTICIAS = [
-    '""pede recuperação judicial"',
+    '"pede recuperação judicial"',
     '"entra com pedido de recuperação judicial"',
-    '""protocola pedido de recuperação judicial"',
+    '"protocola pedido de recuperação judicial"',
     '"ajuíza recuperação judicial"',
     '"pedido de recuperação judicial" empresa',
     '"tutela cautelar" "recuperação judicial"',
@@ -199,8 +202,27 @@ def _extrair_manchete(titulo: str, veiculo: str) -> str:
     return titulo
 
 
-def buscar_noticias() -> list[dict]:
+def _publicado_recentemente(pub_date_raw: str, hoje: datetime, janela_dias: int) -> bool:
+    """Só deixa passar notícia dos últimos `janela_dias`. Busca por frase exata do
+    Google/Bing News casa com matéria antiga também — sem isso o painel enche de
+    lixo histórico (visto na 1ª execução real: itens de 2018 a 2020 junto com os
+    de hoje). Sem data válida no item, deixa passar — melhor um item sem data do
+    que perder sinal por falha de parsing."""
+    if not pub_date_raw:
+        return True
+    try:
+        from email.utils import parsedate_to_datetime
+        publicado = parsedate_to_datetime(pub_date_raw)
+        if publicado.tzinfo is None:
+            publicado = publicado.replace(tzinfo=timezone.utc)
+    except Exception:  # noqa: BLE001
+        return True
+    return publicado.astimezone(timezone.utc) >= hoje - timedelta(days=janela_dias)
+
+
+def buscar_noticias(hoje: datetime) -> list[dict]:
     achados = []
+    descartadas_por_idade = 0
     headers = {"User-Agent": USER_AGENT}
 
     for nome_fonte, montar_url in FONTES_RSS:
@@ -230,6 +252,9 @@ def buscar_noticias() -> list[dict]:
                 veiculo = fonte_el.text.strip() if fonte_el is not None and fonte_el.text else ""
                 if not titulo or not link:
                     continue
+                if not _publicado_recentemente(pub_date, hoje, JANELA_NOTICIAS_DIAS):
+                    descartadas_por_idade += 1
+                    continue
 
                 achados.append({
                     "fonte": "noticia",
@@ -244,6 +269,9 @@ def buscar_noticias() -> list[dict]:
                     "url": link,
                 })
             time.sleep(0.5)
+
+    if descartadas_por_idade:
+        log(f"  {descartadas_por_idade} notícia(s) descartada(s) por serem mais velhas que {JANELA_NOTICIAS_DIAS} dias.")
 
     return achados
 
@@ -346,7 +374,7 @@ def main(hoje: datetime | None = None) -> None:
     achados_datajud = buscar_datajud(desde_iso)
     log(f"DataJud: {len(achados_datajud)} processo(s) encontrados na janela de {JANELA_DATAJUD_DIAS} dias.")
 
-    achados_noticias = buscar_noticias()
+    achados_noticias = buscar_noticias(hoje)
     log(f"Notícias: {len(achados_noticias)} manchete(s) encontradas (antes de deduplicar).")
 
     achados_hoje = achados_datajud + achados_noticias
