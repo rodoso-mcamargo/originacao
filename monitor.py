@@ -404,11 +404,6 @@ def _interpolar_ntnb(curva: dict[str, float], venc_alvo: dt.date) -> float | Non
     return t0 + w * (t1 - t0)
 
 
-# Aliquota de IR usada para trazer papel isento a base comparavel com titulo
-# tributado. A quase totalidade do IPCA+ do secundario e incentivada (Lei
-# 12.431): sem o gross-up, o spread contra a NTN-B sai negativo e nao se compara
-# com o DI+. Guardamos as duas medidas e o painel mostra a bruta ao lado.
-ALIQUOTA_IR = 0.15
 
 
 def calcular_spread(deb, curva_ntnb: dict[str, float], cdi: float | None):
@@ -435,9 +430,13 @@ def calcular_spread(deb, curva_ntnb: dict[str, float], cdi: float | None):
             ref = _interpolar_ntnb(curva_ntnb, deb.vencimento)
         if ref is None:
             return None, None, "sem_ntnb"
-        bruto = round((tx - ref) * 100, 1)
-        cheio = round((tx / (1 - ALIQUOTA_IR) - ref) * 100, 1)
-        return cheio, bruto, f"NTN-B {ref:.2f}% (gross-up {ALIQUOTA_IR:.0%})"
+        # Sem ajuste de IR: o spread e a taxa indicativa menos a NTN-B, como a
+        # mesa cota. Um gross-up exigiria saber quais papeis sao de fato
+        # incentivados (a marcacao da ANBIMA nao diz), qual aliquota vale para o
+        # comprador marginal, e ainda teria de incidir sobre o retorno nominal e
+        # nao so sobre a taxa real. Premissas demais para um numero de tela.
+        s = round((tx - ref) * 100, 1)
+        return s, s, f"NTN-B {ref:.2f}%"
 
     if deb.familia == "DI_PCT":
         if cdi is None:
@@ -702,6 +701,11 @@ def carregar_serie() -> dict[str, list[dict]]:
                 for c in COLS_SERIE[1:]:
                     v = linha.get(c, "")
                     p[c] = float(v) if v not in ("", None) else None
+                # Os CSVs antigos trazem spread_bps com gross-up de IR, que foi
+                # abandonado. A coluna bruta sempre existiu e e a boa: ler por
+                # ela realinha o historico inteiro sem rebaixar nada.
+                if p.get("spread_bruto_bps") is not None:
+                    p["spread_bps"] = p["spread_bruto_bps"]
                 serie.setdefault(linha["codigo"], []).append(p)
     log.info("historico: %d papeis em %d pregoes",
              len(serie), len(list(dir_serie.glob("*.csv"))))
