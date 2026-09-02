@@ -50,7 +50,13 @@ ARQ_ULTIMO = f"{DIR_DADOS}/ultimo.json"
 
 JANELA_DASHBOARD_DIAS = 30   # quanto tempo um achado fica visível no painel
 JANELA_VISTOS_DIAS = 120     # por quanto tempo guardamos o registro de dedupe
-JANELA_DATAJUD_DIAS = 5      # margem de segurança para atraso de indexação
+JANELA_DATAJUD_DIAS = 45     # margem de segurança para atraso de indexação — na 2ª
+                             # execução real (já com o filtro de data corrigido), os
+                             # processos "mais recentes" que existiam no índice tinham
+                             # dataAjuizamento de até ~19 dias atrás (nenhum dos últimos
+                             # 5 dias). 5 dias de janela garantia 0 resultado sempre;
+                             # 45 dias dá margem para esse atraso de indexação sem virar
+                             # ruído — o vistos.json evita repetir "novo" em reexecuções.
 JANELA_NOTICIAS_DIAS = 10    # descarta notícia mais velha que isso — busca por frase
                              # exata casa com matéria antiga (visto na 1ª execução:
                              # itens de 2018-2020 vindo junto com os de hoje)
