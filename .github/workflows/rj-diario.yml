@@ -1,0 +1,34 @@
+name: Monitor de RJ / Cautelar pré-RJ
+
+on:
+  schedule:
+    # 07:00 horário de Brasília = 10:00 UTC. Roda todo dia (inclusive fim de
+    # semana), porque notícia sobre pedido de RJ pode sair num sábado mesmo
+    # que o processo só apareça no DataJud na segunda.
+    - cron: "0 10 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  coleta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rodar coletor
+        run: python monitor_rj.py
+
+      - name: Commitar resultados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/rj
+          git diff --cached --quiet && echo "Nada novo para commitar." && exit 0
+          git commit -m "Coleta diária: monitor RJ/cautelar pré-RJ"
+          git push
