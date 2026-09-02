@@ -367,7 +367,15 @@ def main(hoje: datetime | None = None) -> None:
     hoje = hoje or datetime.now(timezone.utc)
     hoje_iso = hoje.date().isoformat()
     desde = hoje - timedelta(days=JANELA_DATAJUD_DIAS)
-    desde_iso = desde.strftime("%Y-%m-%dT00:00:00.000Z")
+    # O campo dataAjuizamento no DataJud vem no _source como dígitos puros
+    # (ex.: "20260814173355", sem hífen/T/Z) — confirmado numa execução real em
+    # que o filtro "gte" em formato ISO (2026-08-28T00:00:00.000Z) não filtrou
+    # nada e trouxe processos de 1972 a 2026 (8428 "achados" numa janela que
+    # devia ser de 5 dias). Comparar string ISO com string compacta não bate
+    # nem numérica nem cronologicamente. Corrigido para o mesmo formato
+    # compacto do campo, que como é largura fixa (14 dígitos) ordena
+    # corretamente tanto como string quanto como data.
+    desde_iso = desde.strftime("%Y%m%d%H%M%S")
 
     log("=== Monitor RJ/Cautelar pré-RJ — início ===")
 
