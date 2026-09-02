@@ -159,7 +159,10 @@ def buscar_datajud(desde_iso: str) -> list[dict]:
                 numero = h.get("numeroProcesso", "").strip()
                 if not numero:
                     continue
-                orgao = (h.get("orgaoJulgador") or {}).get("nome", "")
+                # Visto na prática (TJMA): a própria API pública às vezes devolve
+                # "�" no lugar de "ª"/acentos em orgaoJulgador.nome — sujeira
+                # de origem, não erro nosso. Tirado aqui pra não vazar pro painel.
+                orgao = (h.get("orgaoJulgador") or {}).get("nome", "").replace("�", "")
                 achados.append({
                     "fonte": "datajud",
                     "tipo": tipo,
@@ -167,7 +170,7 @@ def buscar_datajud(desde_iso: str) -> list[dict]:
                     "numero_processo": numero,
                     "tribunal": h.get("tribunal", tribunal_nome),
                     "vara": orgao,
-                    "classe": (h.get("classe") or {}).get("nome", ""),
+                    "classe": (h.get("classe") or {}).get("nome", "").replace("�", ""),
                     "data_ajuizamento": h.get("dataAjuizamento", ""),
                     "empresa": None,  # API pública não devolve partes — ver docstring
                     "url": None,
