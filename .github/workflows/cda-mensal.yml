@@ -38,6 +38,10 @@ jobs:
  
       - run: pip install requests
  
+      - name: Diagnostico de rede
+        continue-on-error: true
+        run: python cda.py --rede | tee -a "$GITHUB_STEP_SUMMARY"
+ 
       - name: Rodar coleta CDA
         run: |
           if [ "${{ inputs.inspecionar }}" = "sim" ]; then
@@ -59,10 +63,24 @@ jobs:
           s = json.loads(pathlib.Path("dados/cda/ultimo.json").read_text(encoding="utf-8"))
           d = s["diagnostico"]
           print(f"## CDA {s['mes_referencia']}\n")
-          print(f"- Arquivos lidos: `{d['arquivos_lidos']}`")
           print(f"- Linhas varridas: {d['linhas_varridas']:,} | com codigo de ativo: {d['linhas_com_codigo']:,}")
           print(f"- **Casadas com o radar: {d['casadas']:,}**")
           print(f"- Papeis do radar com dado de carteira: **{s['papeis_com_dado']} de {s['papeis_no_radar']}**\n")
+          print("### Arquivos lidos\n")
+          for a in d["arquivos_lidos"]:
+              print(f"- `{a['arquivo']}` -> `{a['mapa']}`")
+          if d.get("arquivos_com_erro"):
+              print("\n### Arquivos com erro\n")
+              for a in d["arquivos_com_erro"]:
+                  print(f"- `{a['arquivo']}`: {a['erro']}")
+          if d.get("amostra_codigos"):
+              print("\n### Codigos vistos em linhas de debenture (amostra)\n")
+              print("`" + "`, `".join(d["amostra_codigos"][:40]) + "`\n")
+              print("_Se nao parecem com AEGP19 / RDORD7, o campo traz ISIN e o join precisa de de-para._\n")
+          if not d["casadas"] and d.get("arquivos_ignorados"):
+              print("\n### Arquivos ignorados (sem codigo de ativo + nome de fundo)\n")
+              for a in d["arquivos_ignorados"][:10]:
+                  print(f"- `{a['arquivo']}`: {a['colunas']}")
           top = sorted(s["por_papel"].items(), key=lambda kv: -kv[1]["vl_vendido"])[:5]
           if top and top[0][1]["vl_vendido"] > 0:
               print("### Maiores vendas no mes\n")
