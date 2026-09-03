@@ -1,0 +1,99 @@
+name: Negocios REUNE ANBIMA
+
+on:
+  schedule:
+    # 08:50 em Brasilia (11:50 UTC), dias uteis. Coleta o ACUMULADO do ultimo
+    # dia util, que ja esta fechado desde a previa das 18h da vespera.
+    - cron: "50 11 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      inspecionar:
+        description: "Escreva sim para so descrever a resposta da API, sem gravar"
+        required: false
+      data:
+        description: "Data especifica AAAA-MM-DD (vazio = ultimo dia util)"
+        required: false
+      periodo:
+        description: "ACUMULADO (padrao), 11H00, 13H00, 16H00 ou 18H00"
+        required: false
+      backfill:
+        description: "Quantos pregoes coletar de uma vez (a fonte tem desde 2018)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reune
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests
+
+      - name: Rodar coleta REUNE
+        env:
+          IN_INSPECIONAR: ${{ inputs.inspecionar }}
+          IN_DATA: ${{ inputs.data }}
+          IN_PERIODO: ${{ inputs.periodo }}
+          IN_BACKFILL: ${{ inputs.backfill }}
+        run: |
+          P="${IN_PERIODO:-ACUMULADO}"
+          if [ "$IN_INSPECIONAR" = "sim" ]; then
+            if [ -n "$IN_DATA" ]; then
+              python reune.py --inspecionar --periodo "$P" --data "$IN_DATA" >> "$GITHUB_STEP_SUMMARY"
+            else
+              python reune.py --inspecionar --periodo "$P" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          elif [ -n "$IN_BACKFILL" ]; then
+            python reune.py --backfill "$IN_BACKFILL" --periodo "$P"
+          elif [ -n "$IN_DATA" ]; then
+            python reune.py --data "$IN_DATA" --periodo "$P"
+          else
+            python reune.py --periodo "$P"
+          fi
+
+      - name: Resumo
+        if: always()
+        run: |
+          if [ -f dados/reune/ultimo.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib, collections
+          s = json.loads(pathlib.Path("dados/reune/ultimo.json").read_text(encoding="utf-8"))
+          d = s["diagnostico"]
+          print(f"## REUNE {s['data_referencia']} - {s['periodo']}\n")
+          print(f"- Registros na resposta: {d['registros_brutos']}")
+          print(f"- **Negocios gravados: {d['linhas_gravadas']}**")
+          print(f"- Campos originais: `{d['campos_originais']}`")
+          print(f"- Mapa resolvido: `{d['mapa_campos']}`\n")
+          faixas = collections.Counter(n.get("faixa_vol","") for n in s["negocios"])
+          if any(faixas):
+              print("### Faixa de volume negociado\n")
+              print("| Faixa | Papeis |")
+              print("|---|---:|")
+              for f, n in faixas.most_common():
+                  print(f"| {f or '(vazio)'} | {n} |")
+          PY
+          fi
+
+      - name: Salvar os dados no repositorio
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/reune/ 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Nada mudou."
+          else
+            git commit -m "reune: negocios $(date -u +%Y-%m-%d)"
+            git push
+          fi
