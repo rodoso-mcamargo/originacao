@@ -1,23 +1,24 @@
 name: Negocios REUNE ANBIMA
 
+# Coleta os negocios registrados do REUNE abrindo a pagina publica num Chromium
+# headless (Playwright) e capturando a resposta JSON que a propria pagina busca.
+# A pagina se autentica sozinha; nao reproduzimos token.
+
 on:
   schedule:
-    # 08:50 em Brasilia (11:50 UTC), dias uteis. Coleta o ACUMULADO do ultimo
-    # dia util, que ja esta fechado desde a previa das 18h da vespera.
+    # 08:50 em Brasilia (11:50 UTC), dias uteis. Pega o ACUMULADO do ultimo dia
+    # util, ja fechado desde a previa das 18h da vespera.
     - cron: "50 11 * * 1-5"
   workflow_dispatch:
     inputs:
       inspecionar:
-        description: "Escreva sim para so descrever a resposta da API, sem gravar"
+        description: "Escreva sim para so descrever a captura, sem gravar"
         required: false
       data:
         description: "Data especifica AAAA-MM-DD (vazio = ultimo dia util)"
         required: false
       periodo:
         description: "ACUMULADO (padrao), 11H00, 13H00, 16H00 ou 18H00"
-        required: false
-      backfill:
-        description: "Quantos pregoes coletar de uma vez (a fonte tem desde 2018)"
         required: false
 
 permissions:
@@ -30,7 +31,7 @@ concurrency:
 jobs:
   coletar:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
@@ -39,14 +40,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install requests
+      - run: pip install playwright
+
+      - name: Instalar Chromium
+        run: python -m playwright install --with-deps chromium
 
       - name: Rodar coleta REUNE
         env:
           IN_INSPECIONAR: ${{ inputs.inspecionar }}
           IN_DATA: ${{ inputs.data }}
           IN_PERIODO: ${{ inputs.periodo }}
-          IN_BACKFILL: ${{ inputs.backfill }}
         run: |
           P="${IN_PERIODO:-ACUMULADO}"
           if [ "$IN_INSPECIONAR" = "sim" ]; then
@@ -55,8 +58,6 @@ jobs:
             else
               python reune.py --inspecionar --periodo "$P" >> "$GITHUB_STEP_SUMMARY"
             fi
-          elif [ -n "$IN_BACKFILL" ]; then
-            python reune.py --backfill "$IN_BACKFILL" --periodo "$P"
           elif [ -n "$IN_DATA" ]; then
             python reune.py --data "$IN_DATA" --periodo "$P"
           else
@@ -72,7 +73,8 @@ jobs:
           s = json.loads(pathlib.Path("dados/reune/ultimo.json").read_text(encoding="utf-8"))
           d = s["diagnostico"]
           print(f"## REUNE {s['data_referencia']} - {s['periodo']}\n")
-          print(f"- Registros na resposta: {d['registros_brutos']}")
+          print(f"- Respostas /reune/previas vistas: {d['respostas_reune_vistas']}")
+          print(f"- Registros capturados: {d['registros_capturados']}")
           print(f"- **Negocios gravados: {d['linhas_gravadas']}**")
           print(f"- Campos originais: `{d['campos_originais']}`")
           print(f"- Mapa resolvido: `{d['mapa_campos']}`\n")
