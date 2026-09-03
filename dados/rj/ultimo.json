@@ -124,7 +124,7 @@
       "tipo": "falencia",
       "tribunal": "TJMA",
       "url": null,
-      "vara": "1� VARA DA COMARCA DE SANTA IN�S"
+      "vara": "1 VARA DA COMARCA DE SANTA INS"
     },
     {
       "chave": "datajud:80310555820268050080",
@@ -855,6 +855,20 @@
       "veiculo": "MegaWhat"
     },
     {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ecbad914f759821f5d1a862c189&url=https%3a%2f%2fbr.advfn.com%2fnoticias%2fPAPERBR%2f2025%2fartigo%2f96971621&c=8044892874203368220&mkt=pt-br",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Tue, 01 Sep 2026 17:00:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-03",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Ambipar se prepara para pedido de recuperação judicial e acende alerta na bolsa de valores",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ecbad914f759821f5d1a862c189&url=https%3a%2f%2fbr.advfn.com%2fnoticias%2fPAPERBR%2f2025%2fartigo%2f96971621&c=8044892874203368220&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMivwFBVV95cUxONFdpUmZ5NGdwTkFkY3cyTDB5YjN6ZkVvc0dHRWNQOWF2dHV6TTFDNEF4a1BjYnVfXzkzTDkwNTJVd1ZqcE5oNHFDNXdUUHM3aExxWmlvWU9pU3Q3RGItVi1hd1M1VGNhQ0g3QjczQm1XcDNlNFRfekJINDFvZ1BBb1RPU2xkSW0xVzNJenY0YkZkcUFjV1Jzd3E3b0tlV3I0VmNKaHdnaU1lcEczMkNZSDBXREw2QlZWQk55Q3YwZw?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
@@ -881,6 +895,20 @@
       "titulo": "Onda de recuperações judiciais acende alerta",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPR25QQUR6U1VPWXRPb2NRbnNzYmxvMm02RTRxbkpzVFZGdmpBOTBicHhWM1dFQmM1X1JLNmFwR1RxZjdsNzFMYzc4WTQ4eTVzeUhUNVhPZW90Y3F0Q0liS0NMU3Q2Q1RRT0F5S3h1Tk5ZVm0tWVppRy1yeVZ0NXpMSlktTjE0ZERDY2Uxem1EZERNS2pRMGJKOVB3?oc=5",
       "veiculo": "Fator Brasil"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ec97ef34e44b86da4594f163e59&url=https%3a%2f%2fwww.sounoticia.com.br%2fnoticia%2f140184%2fgeral%2fhabibs-entra-com-pedido-de-recuperacao-judicial-grupo-gennius-declara-divida-de-r-265-milhoes-01092026&c=11188927027194648190&mkt=pt-br",
+      "consulta": "\"entra com pedido de recuperação judicial\"",
+      "data_publicacao": "Tue, 01 Sep 2026 05:17:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-03",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Habib’s entra com pedido de recuperação judicial; Grupo Gennius declara dívida de R$ 265 milhões",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ec97ef34e44b86da4594f163e59&url=https%3a%2f%2fwww.sounoticia.com.br%2fnoticia%2f140184%2fgeral%2fhabibs-entra-com-pedido-de-recuperacao-judicial-grupo-gennius-declara-divida-de-r-265-milhoes-01092026&c=11188927027194648190&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -1177,6 +1205,20 @@
       "veiculo": "Jornal Grande Bahia"
     },
     {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ecbad914f759821f5d1a862c189&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f08%2f31%2fgrupo-casas-bahia-confirma-antecipao-de-efeitos-do-seu-pedido-de-recuperao-judicial.ghtml&c=5135078821416459202&mkt=pt-br",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 31 Aug 2026 04:00:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-03",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Grupo Casas Bahia confirma antecipação de efeitos do seu pedido de recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ecbad914f759821f5d1a862c189&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f08%2f31%2fgrupo-casas-bahia-confirma-antecipao-de-efeitos-do-seu-pedido-de-recuperao-judicial.ghtml&c=5135078821416459202&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiywFBVV95cUxNLVpFNnpQNFU3eUhPRlJKWFpCY290dHZrajNqNkRJLUVYUXdGMlhfdzhYRXRaZHlPZ1dyWXlsT3p0UXlkdFZoVzJxWDFNbXJESzEtVll4Q1o1U0dmZ0d3ZUh3SDhaMG1SS1lKT1c4VFBXeXpYNFREa0ZROWNkd2hEVFJxcHJmMlZpWnBvdjRFVXFCN2d3N3FqYjNOOE9ubTdvcXlUSnRHVTNsTktiVUtuRV9VRFFIZjVyYVNoN250cGFuUXpsdTFyY1gyMNIB0AFBVV95cUxON3R3QjVvelRKNTdCaGZGQ0xWRHR5b1ZsVGVyT3J1aGUtZjktQ3htTGMyb250a3oxYUFzRkdJWGhseGFjU0NFREtSR0JpTEd0RUdmWHdsTnJHaXQtQzhMeW5JN3NsZF9PTFVSaHlWZG9sY3JFUkZsTEU5Qzlqb0I3aEtqTllMbWxxWVA2MjJyVlBOb3lBdXQzalJXTEtteG4tVVVoWldtaTI2MjhvNWg0SHJZNERvV0IwNlpHdG5rVUNpME9YYUxlUEd1dkVFZ2cw?oc=5",
       "consulta": "\"protocola pedido de recuperação judicial\"",
@@ -1403,7 +1445,7 @@
     {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMijAFBVV95cUxPZm5WbHZFUWlOWlp3M1V2OFg4WUN5bWwtOWRueUtQbXpBMUhoUDliYVhmQUt3LVh4YmxYdmh2X0I4NnVHVHdtZWNHb2ZMRmZrdmRsM2t3RmtfdHZ0X0x0WFIxSzZVcWpwa1o5N19RVEctajNLX0t6YnM4MVdSc2RTYjJfWlZsd1VPa3IwdA?oc=5",
-      "consulta": "\"protocola pedido de recuperação judicial\"",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
       "data_publicacao": "Fri, 28 Aug 2026 18:22:05 GMT",
       "empresa": null,
       "fonte": "noticia",
@@ -1753,7 +1795,7 @@
     {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiiwJBVV95cUxPOFZ6TjhIcUZGTlMxa1VFRU04akhSakFlZkV0TFk1YkItdzVTQWNGc1R2TGlFNy0xWlBlT09rYnl3RGdIbU51dlpmR0JENEhWZEVOazc2LVdIS0FLeEYyRFJRRmZ3RzliTDZfMExRQW5BSGV2QzlBMV9WaFRWN2lEa3ctdHVCTExvWnFqV3dRQy12LUdUZDJjVUxNT1NvT2ZZVWlicDVyU011dk1mZHJDbUM4QjVaWUlQdGpUeW54OWhqdGNWUWk0Q3FMOVB4cThfNGo3ZUhqOWJVc1JOX1VGV1pTNFhkSWJKZmlrYWtLT2Y5ZVFQT1FrZ0R6dzJ3MEZONHJJQzgtRElvVkk?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
       "data_publicacao": "Thu, 27 Aug 2026 12:53:00 GMT",
       "empresa": null,
       "fonte": "noticia",
@@ -1776,7 +1818,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Nem a esfiha resiste à Selic: Habib’s em recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9felpNaUJITGdMVl9TNGdTS1pBWmNpS3dmc2l4RHhfQURMNDBoYlVXNVh2d1FYN1N6cDY1SHgwTmE1RzJaYU5OZXViNXFpb2VlVm1MNVRBMzJNWXVIR2lFTGlscjhMdw?oc=5",
-      "veiculo": "aciara.com.br"
+      "veiculo": "Acia Araçatuba"
     },
     {
       "buscador": "google_news",
@@ -1795,7 +1837,7 @@
     {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMi2wFBVV95cUxNQlRiaTRiMkNJQXQzS2V2QXZwdXFOX0JJSEc5amRLUWlsMms4OThkYk02eXNUSW5SZEpwbDEtSDBhWVkzYjExOW9PSWh4amhQZU8yN3hFYzJLWjdTcWgwdEkyUmNaWklkYlRFcTNCcXpzRF9BajlreXk5ZnRLQjd4LVhUWXZ4eHFaQUN1eWRPOFFlUXFRYzF4ZTlpeW1JLUNibkw1U2lvMEZxT3o0UXdtM3lHRll3cDRKR2U2YU5fTktJME1WNnBwamhuUVFNN01nOWNpWU9iSlhpa1E?oc=5",
-      "consulta": "\"entra com pedido de recuperação judicial\"",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
       "data_publicacao": "Thu, 27 Aug 2026 09:58:00 GMT",
       "empresa": null,
       "fonte": "noticia",
@@ -2001,6 +2043,20 @@
       "titulo": "Grupo que controla o Habib’s pede recuperação judicial com dívida de R$ 265 milhões",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUENUSDU3VjdfZU9yNHc0d01uVTg4ZDlNWkZGVTBCZ2tsdWUzelkzNThvb1B6dDV5ZlJVbDVlTk1rN0hFUjd5TnFIQ0stRHNZNDN5MkdnYlpZdl94bXNXLW41ZDBwaklLdWJjcjI0SmJabWcwa1hZa3VXZmxtcktuS00wT0xjenNDNkFOOEU1dkczcjRjaGwzWWd5MUNDMGt6RGNJb3ZlV2dsZHJC?oc=5",
       "veiculo": "Nill Junior"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMif0FVX3lxTFB3cVhyUjdzYzFVYmhmS04zWmFFV0h1cllDd21aU2V0V0lPRWJ0d3k3ZU5JZUhTdk9IMWZNRW9iM1RCSmU0dWhVMGxQUEEycm1jOG5lVlVZbTVOeWVNSkNMc2hnR05UQ0wwRnFtVmJWeURoRE9hV19BZ0h1QWppZDQ?oc=5",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Wed, 26 Aug 2026 21:53:20 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-03",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Habib’s pede recuperação judicial para reestruturar dívida de R$ 265,2 milhões",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB3cVhyUjdzYzFVYmhmS04zWmFFV0h1cllDd21aU2V0V0lPRWJ0d3k3ZU5JZUhTdk9IMWZNRW9iM1RCSmU0dWhVMGxQUEEycm1jOG5lVlVZbTVOeWVNSkNMc2hnR05UQ0wwRnFtVmJWeURoRE9hV19BZ0h1QWppZDQ?oc=5",
+      "veiculo": "Gazeta Mercantil"
     },
     {
       "buscador": "google_news",
@@ -2228,6 +2284,20 @@
     },
     {
       "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ecc740e4734b1923fed55c431f4&url=https%3a%2f%2fpleno.news%2feconomia%2fhabibs-entra-em-recuperacao-judicial-com-divida-de-r-265-mi.html&c=12806863335062996698&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Wed, 26 Aug 2026 13:13:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-03",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Habib’s entra em recuperação judicial com dívida de R$ 265 mi",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ecc740e4734b1923fed55c431f4&url=https%3a%2f%2fpleno.news%2feconomia%2fhabibs-entra-em-recuperacao-judicial-com-divida-de-r-265-mi.html&c=12806863335062996698&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a988b712a0a462ea86b71e848de1578&url=https%3a%2f%2fextra.globo.com%2feconomia%2fnoticia%2f2026%2f08%2fhabibs-entra-com-pedido-de-recuperacao-judicial-por-divida-de-r-265-milhoes.ghtml&c=3469558548401614543&mkt=pt-br",
       "consulta": "\"entra com pedido de recuperação judicial\"",
       "data_publicacao": "Wed, 26 Aug 2026 13:13:00 GMT",
@@ -2256,6 +2326,34 @@
     },
     {
       "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ec874c54f32911955e676dd19df&url=https%3a%2f%2foglobo.globo.com%2feconomia%2fnegocios%2fnoticia%2f2026%2f08%2f26%2fhabibs-entra-com-pedido-de-recuperacao-judicial-com-dividas-de-r-265-milhoes.ghtml&c=8369071302516008360&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Wed, 26 Aug 2026 12:59:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-03",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Habib's pede recuperação judicial, com passsivo de R$ 265 milhões, e amplia lista de empresas endividadas",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ec874c54f32911955e676dd19df&url=https%3a%2f%2foglobo.globo.com%2feconomia%2fnegocios%2fnoticia%2f2026%2f08%2f26%2fhabibs-entra-com-pedido-de-recuperacao-judicial-com-dividas-de-r-265-milhoes.ghtml&c=8369071302516008360&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ecc740e4734b1923fed55c431f4&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f08%2f26%2fcom-divida-de-r-265-milhoes-habibs-entra-em-recuperacao-judicial.ghtml&c=6166687611568553216&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Wed, 26 Aug 2026 12:33:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-03",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Com dívida de R$ 265 milhões, Habib’s entra em recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ecc740e4734b1923fed55c431f4&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f08%2f26%2fcom-divida-de-r-265-milhoes-habibs-entra-em-recuperacao-judicial.ghtml&c=6166687611568553216&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a988b745d0f4054a882a5107b053be8&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f08%2f26%2fcom-divida-de-r-265-milhoes-habibs-entra-em-recuperacao-judicial.ghtml&c=6166687611568553216&mkt=pt-br",
       "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
       "data_publicacao": "Wed, 26 Aug 2026 12:33:00 GMT",
@@ -2266,6 +2364,20 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Com dívida de R$ 265 milhões, Habib’s entra em recuperação judicial",
       "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a988b745d0f4054a882a5107b053be8&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f08%2f26%2fcom-divida-de-r-265-milhoes-habibs-entra-em-recuperacao-judicial.ghtml&c=6166687611568553216&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ec874c54f32911955e676dd19df&url=https%3a%2f%2frevistaoeste.com%2feconomia%2fgrupo-habibs-pede-recuperacao-judicial-com-divida-de-r-265-milhoes%2f&c=8795508868386534809&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Wed, 26 Aug 2026 12:25:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-03",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Grupo Habib's pede recuperação judicial com dívida de R$ 265 milhões",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a997ec874c54f32911955e676dd19df&url=https%3a%2f%2frevistaoeste.com%2feconomia%2fgrupo-habibs-pede-recuperacao-judicial-com-divida-de-r-265-milhoes%2f&c=8795508868386534809&mkt=pt-br",
       "veiculo": ""
     },
     {
@@ -2577,12 +2689,12 @@
       "veiculo": "CNN Brasil"
     }
   ],
-  "gerado_em": "2026-09-02T20:45:01.962790+00:00",
+  "gerado_em": "2026-09-03T14:03:03.298635+00:00",
   "janela_dias": 30,
-  "novos_hoje": 184,
+  "novos_hoje": 8,
   "por_tipo": {
     "falencia": 27,
-    "noticia_rj_ou_cautelar": 128,
+    "noticia_rj_ou_cautelar": 136,
     "recuperacao_judicial": 29
   },
   "por_tribunal": {
@@ -2605,5 +2717,5 @@
     "TJSE": 1,
     "TJTO": 6
   },
-  "total": 184
+  "total": 192
 }
