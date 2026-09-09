@@ -45,9 +45,31 @@ jobs:
             python monitor.py
           fi
 
+      # Eixo de alerta do radar, nao dado de mercado primario: se a cotacao
+      # falhar, a coleta da ANBIMA do dia ainda tem que ser commitada. Por isso
+      # continue-on-error - o passo aparece marcado no Actions, o painel some
+      # com a coluna de acao e nada mais quebra.
+      - name: Coletar variacao das acoes
+        continue-on-error: true
+        run: python acoes.py
+
       - name: Resumo
         if: always()
         run: |
+          if [ -f dados/acoes/ultimo.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib
+          a = json.loads(pathlib.Path("dados/acoes/ultimo.json").read_text(encoding="utf-8"))
+          print(f"## Acoes {a['data_referencia']}\n")
+          print(f"- **{a['tickers_obtidos']}/{a['tickers_pedidos']}** tickers, "
+                f"**{len(a['emissores'])}** emissores mapeados")
+          q = [e for e in a["emissores"]
+               if (e.get("var_12m") is not None and e["var_12m"] <= -20)
+               or (e.get("queda_max_52s") is not None and e["queda_max_52s"] <= -35)]
+          print(f"- Em queda relevante: **{len(q)}**"
+                + (" - " + ", ".join(sorted({e['ticker'] for e in q}))[:400] if q else ""))
+          PY
+          fi
           if [ -f dados/ultimo.json ]; then
             python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
           import json, pathlib
