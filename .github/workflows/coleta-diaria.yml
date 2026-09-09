@@ -51,6 +51,8 @@ jobs:
       # com a coluna de acao e nada mais quebra.
       - name: Coletar variacao das acoes
         continue-on-error: true
+        env:
+          BRAPI_TOKEN: ${{ secrets.BRAPI_TOKEN }}
         run: python acoes.py
 
       - name: Resumo
