@@ -1,31 +1,33 @@
 #!/usr/bin/env python3
 """
-Coleta a variacao da acao dos emissores de debenture - eixo de alerta do radar.
+Coleta preco e variacao de TODAS as empresas listadas na B3.
 
-Mesmo proposito dos outros coletores deste repositorio: rodar no GitHub Actions
-sem instalar nada alem de `requests`. Le dados/acoes/mapa.json (emissor da
-ANBIMA -> ticker da B3, curado a mao) e grava a variacao de 3, 6 e 12 meses
-mais a queda desde a maxima de 52 semanas.
+Roda no GitHub Actions so com `requests`. Le dados/acoes/universo.json (todas as
+listadas: ticker + empresa) e cota cada uma. Alem disso cruza com
+dados/acoes/mapa.json (emissor de debenture -> ticker) para marcar quais empresas
+sao emissoras de debentura no radar de credito - mas a coleta cobre o mercado
+inteiro, nao so quem tem debenture.
 
     python acoes.py
     python acoes.py --so CSNA3,HAPV3     # depurar um punhado de tickers
     python acoes.py --saida /tmp/x.json  # sem escrever em dados/
 
-Saida:
-    dados/acoes/ultimo.json   <- o dashboard le este
+Saida: dados/acoes/ultimo.json
+    - "acoes": todas as listadas com preco e variacao de 3/6/12m e queda 52s
+    - "emissores": o subconjunto que e emissor de debenture (para o eixo de credito)
 
-Como o dashboard usa: exatamente como usa acao de agencia de rating - eixo de
-10% na triagem, chip de alerta, selo na tabela. Nunca como causa do movimento
-de spread. Emissor ausente deste arquivo entra com ZERO no eixo, nao com
-penalidade: boa parte do universo e SPE de saneamento e concessao, que nao tem
-equity negociado, e penalizar por isso seria medir quem e listado, nao quem
-esta em stress.
+FONTE DUPLA: o Yahoo passou a devolver 0 do IP do runner (exige cookie/crumb ou
+bloqueia datacenter). Primaria = STOOQ (CSV diario, sem login, amigavel a CI),
+Yahoo = fallback ja com handshake de cookie. Serie ajustada nas duas: provento e
+desdobramento nao viram 'queda'. Ponto de troca: serie_stooq / serie_yahoo.
 """
 
 from __future__ import annotations
 
 import argparse
+import csv as csvmod
 import datetime as dt
+import io
 import json
 import logging
 import pathlib
@@ -40,26 +42,19 @@ log = logging.getLogger("acoes")
 RAIZ = pathlib.Path(__file__).resolve().parent
 DADOS = RAIZ / "dados" / "acoes"
 
-CHART = "https://query2.finance.yahoo.com/v8/finance/chart/{simbolo}"
+STOOQ = "https://stooq.com/q/d/l/"
+CHART = "https://query1.finance.yahoo.com/v8/finance/chart/{simbolo}"
+CRUMB = "https://query1.finance.yahoo.com/v1/test/getcrumb"
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
-# Pregoes por janela - aproximacao usual da B3 (21 por mes). A janela e contada
-# em pregoes da PROPRIA serie, nao em data de calendario: papel que nao negociou
-# em alguns dias encurta a janela em vez de desloca-la.
 JANELAS = {"var_3m": 63, "var_6m": 126, "var_12m": 252}
 JANELA_MAX = 252
-
-# Serie mais curta que isto nao sustenta nem a janela de 3 meses.
 MIN_PREGOES = 40
-
-# Abaixo disto a coleta degradou e o painel publicaria meio eixo de alerta sem
-# ninguem perceber. Melhor o Actions acusar.
-FRACAO_MINIMA = 0.80
+FRACAO_MINIMA = 0.70   # universo grande tem small caps ilíquidas; 70% ja e saudavel
 
 
 def variacao(fech: list[float], n: int) -> float | None:
-    """Variacao percentual contra o fechamento de n pregoes atras."""
     if len(fech) <= n:
         return None
     base = fech[-1 - n]
@@ -77,14 +72,53 @@ def metricas(fech: list[float]) -> dict:
     return saida
 
 
+# ---- Fonte 1 (primaria): STOOQ. CSV diario ajustado, sem login. ----
+def serie_stooq(sessao: requests.Session, ticker: str) -> tuple[list[float], str] | None:
+    r = sessao.get(STOOQ, params={"s": f"{ticker.lower()}.sa", "i": "d"}, timeout=25)
+    r.raise_for_status()
+    texto = r.text.strip()
+    if not texto or texto.upper().startswith("N/D") or "<html" in texto[:200].lower():
+        return None
+    linhas = list(csvmod.reader(io.StringIO(texto)))
+    if len(linhas) < 2 or "Close" not in linhas[0]:
+        return None
+    icol = linhas[0].index("Close")
+    idata = linhas[0].index("Date")
+    fech: list[float] = []
+    ultima_data = None
+    for ln in linhas[1:]:
+        if len(ln) <= icol:
+            continue
+        v = ln[icol].strip()
+        if not v or v in ("N/D", "null"):
+            continue
+        try:
+            fech.append(float(v))
+            ultima_data = ln[idata].strip()
+        except ValueError:
+            continue
+    if not fech or not ultima_data:
+        return None
+    return fech, ultima_data
+
+
+# ---- Fonte 2 (fallback): YAHOO. Fechamento ajustado, com handshake de cookie. ----
+def aquecer_yahoo(sessao: requests.Session) -> None:
+    for url in ("https://fc.yahoo.com", "https://finance.yahoo.com"):
+        try:
+            sessao.get(url, timeout=15)
+        except Exception:
+            pass
+    try:
+        c = sessao.get(CRUMB, timeout=15)
+        sessao.headers["x-yahoo-crumb"] = c.text.strip()
+    except Exception:
+        pass
+
+
 def serie_yahoo(sessao: requests.Session, ticker: str) -> tuple[list[float], str] | None:
-    """13 meses de fechamento ajustado. Ajustado, e nao o fechamento cru, para
-    que provento e desdobramento nao virem 'queda' no eixo de alerta."""
-    r = sessao.get(
-        CHART.format(simbolo=f"{ticker}.SA"),
-        params={"range": "13mo", "interval": "1d"},
-        timeout=20,
-    )
+    r = sessao.get(CHART.format(simbolo=f"{ticker}.SA"),
+                   params={"range": "13mo", "interval": "1d"}, timeout=20)
     r.raise_for_status()
     res = (r.json().get("chart") or {}).get("result") or []
     if not res:
@@ -97,7 +131,6 @@ def serie_yahoo(sessao: requests.Session, ticker: str) -> tuple[list[float], str
     carimbos = bloco.get("timestamp") or []
     if not valores or not carimbos:
         return None
-
     pares = [(t, v) for t, v in zip(carimbos, valores) if v is not None]
     if not pares:
         return None
@@ -106,67 +139,112 @@ def serie_yahoo(sessao: requests.Session, ticker: str) -> tuple[list[float], str
     return fech, ultimo
 
 
-def coletar(tickers: list[str], pausa: float = 0.4) -> dict[str, dict]:
-    sessao = requests.Session()
-    sessao.headers.update({"User-Agent": UA, "Accept": "application/json"})
-
-    saida: dict[str, dict] = {}
-    for i, t in enumerate(tickers):
+def buscar(sessao: requests.Session, ticker: str) -> tuple[list[float], str, str] | None:
+    for nome, fn in (("stooq", serie_stooq), ("yahoo", serie_yahoo)):
         for tentativa in (1, 2, 3):
             try:
-                s = serie_yahoo(sessao, t)
+                s = fn(sessao, ticker)
                 break
-            except Exception as e:                       # rede, 429, JSON torto
+            except Exception as e:
                 if tentativa == 3:
-                    log.warning("%s: %s", t, e)
+                    log.warning("%s/%s: %s", ticker, nome, e)
                     s = None
                 else:
-                    time.sleep(2 * tentativa)
-        if not s:
+                    time.sleep(1.5 * tentativa)
+        if s and len(s[0]) >= MIN_PREGOES:
+            return s[0], s[1], nome
+    return None
+
+
+def coletar(tickers: list[str], pausa: float = 0.25) -> tuple[dict[str, dict], dict[str, int]]:
+    sessao = requests.Session()
+    sessao.headers.update({"User-Agent": UA, "Accept": "text/csv, application/json, */*"})
+    aquecer_yahoo(sessao)
+    saida: dict[str, dict] = {}
+    fontes = {"stooq": 0, "yahoo": 0}
+    for i, t in enumerate(tickers):
+        r = buscar(sessao, t)
+        if not r:
             continue
-        fech, ultimo = s
-        if len(fech) < MIN_PREGOES:
-            log.warning("%s: so %d pregoes, ignorando", t, len(fech))
-            continue
-        saida[t] = {**metricas(fech), "atualizado_em": ultimo}
-        if i % 20 == 19:
+        fech, ultimo, fonte = r
+        saida[t] = {**metricas(fech), "atualizado_em": ultimo, "origem": fonte}
+        fontes[fonte] += 1
+        if i % 25 == 24:
             log.info("%d/%d tickers", i + 1, len(tickers))
         time.sleep(pausa)
-    return saida
+    return saida, fontes
+
+
+def carregar_universo(caminho: pathlib.Path, mapa: list) -> list[dict]:
+    """Universo = todas as listadas (universo.json). Fallback: tickers do mapa."""
+    if caminho.exists():
+        emp = json.loads(caminho.read_text(encoding="utf-8"))["empresas"]
+        return [{"ticker": e["ticker"], "empresa": e["empresa"]} for e in emp]
+    log.warning("universo.json ausente; usando so os tickers do mapa")
+    vistos, out = set(), []
+    for x in mapa:
+        if x["ticker"] not in vistos:
+            vistos.add(x["ticker"])
+            out.append({"ticker": x["ticker"], "empresa": x["emissor"]})
+    return out
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--mapa", default=str(DADOS / "mapa.json"))
+    ap.add_argument("--universo", default=str(DADOS / "universo.json"))
     ap.add_argument("--saida", default=str(DADOS / "ultimo.json"))
     ap.add_argument("--so", help="lista de tickers separada por virgula, para depurar")
     a = ap.parse_args(argv)
 
     mapa = json.loads(pathlib.Path(a.mapa).read_text(encoding="utf-8"))["mapa"]
-    tickers = sorted({x["ticker"] for x in mapa})
+    universo = carregar_universo(pathlib.Path(a.universo), mapa)
+
+    # emissor de debenture por ticker (para marcar no resultado)
+    emissor_por_ticker: dict[str, list[dict]] = {}
+    for x in mapa:
+        emissor_por_ticker.setdefault(x["ticker"], []).append(
+            {"emissor": x["emissor"], "vinculo": x["vinculo"]})
+
+    tickers = sorted({u["ticker"] for u in universo})
     if a.so:
         alvo = {t.strip().upper() for t in a.so.split(",")}
         tickers = [t for t in tickers if t in alvo]
 
-    log.info("coletando %d tickers", len(tickers))
-    cot = coletar(tickers)
+    log.info("coletando %d tickers (universo inteiro da B3)", len(tickers))
+    cot, fontes = coletar(tickers)
 
-    # Emissor que falhou na coleta e OMITIDO, nunca gravado com zero: no painel
-    # a ausencia vale zero no eixo, mas um zero gravado seria indistinguivel de
-    # "acao estavel", que e afirmacao diferente.
+    nome_por_ticker = {u["ticker"]: u["empresa"] for u in universo}
+    acoes = []
+    for t in sorted(cot):
+        emissoras = emissor_por_ticker.get(t, [])
+        acoes.append({
+            "ticker": t,
+            "empresa": nome_por_ticker.get(t, t),
+            "emite_debenture": bool(emissoras),
+            **cot[t],
+        })
+
+    # subconjunto emissor-por-emissor, para o eixo de credito (contrato antigo)
     emissores = [
         {"emissor": x["emissor"], "ticker": x["ticker"], "vinculo": x["vinculo"],
-         **cot[x["ticker"]]}
+         **{k: cot[x["ticker"]][k] for k in
+            ("preco", "var_3m", "var_6m", "var_12m", "queda_max_52s", "atualizado_em")}}
         for x in mapa if x["ticker"] in cot
     ]
-    ref = max((e["atualizado_em"] for e in emissores), default=None)
+    ref = max((v["atualizado_em"] for v in cot.values()), default=None)
 
     doc = {
         "gerado_em": dt.datetime.now(dt.timezone.utc).isoformat(),
         "data_referencia": ref,
-        "fonte": "Yahoo Finance - fechamento ajustado, tickers .SA",
+        "fonte": "Stooq (primaria) + Yahoo (fallback) - fechamento ajustado, tickers .SA",
+        "universo_pedido": len(tickers),
+        "obtidos": len(cot),
+        # aliases p/ compatibilidade com o passo Resumo do workflow
         "tickers_pedidos": len(tickers),
         "tickers_obtidos": len(cot),
+        "por_fonte": fontes,
+        "acoes": acoes,
         "emissores": emissores,
     }
     saida = pathlib.Path(a.saida)
@@ -175,12 +253,12 @@ def main(argv=None) -> int:
                      encoding="utf-8")
 
     faltando = sorted(set(tickers) - set(cot))
-    log.info("%d emissores, %d/%d tickers, referencia %s",
-             len(emissores), len(cot), len(tickers), ref)
+    log.info("%d/%d cotados (stooq %d, yahoo %d) | %d emissoras de debenture | ref %s",
+             len(cot), len(tickers), fontes["stooq"], fontes["yahoo"], len(emissores), ref)
     if faltando:
-        log.warning("sem cotacao: %s", " ".join(faltando))
+        log.warning("sem cotacao (%d): %s", len(faltando), " ".join(faltando))
     if len(cot) < FRACAO_MINIMA * len(tickers):
-        log.error("menos de %.0f%% dos tickers retornaram", FRACAO_MINIMA * 100)
+        log.error("menos de %.0f%% cotaram", FRACAO_MINIMA * 100)
         return 1
     return 0
 
