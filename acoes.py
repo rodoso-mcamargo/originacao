@@ -3,33 +3,33 @@
 Coleta preco e variacao de TODAS as empresas listadas na B3.
 
 Roda no GitHub Actions so com `requests`. Le dados/acoes/universo.json (todas as
-listadas: ticker + empresa) e cota cada uma. Alem disso cruza com
-dados/acoes/mapa.json (emissor de debenture -> ticker) para marcar quais empresas
-sao emissoras de debentura no radar de credito - mas a coleta cobre o mercado
-inteiro, nao so quem tem debenture.
+listadas: ticker + empresa) e cota cada uma. Cruza com dados/acoes/mapa.json
+(emissor de debenture -> ticker) para marcar quem emite debenture - mas a coleta
+cobre o mercado inteiro, nao so quem tem debenture.
 
     python acoes.py
-    python acoes.py --so CSNA3,HAPV3     # depurar um punhado de tickers
-    python acoes.py --saida /tmp/x.json  # sem escrever em dados/
+    python acoes.py --so PETR4,VALE3,MGLU3,ITUB4   # ativos de teste (sem token)
+    python acoes.py --saida /tmp/x.json            # sem escrever em dados/
 
 Saida: dados/acoes/ultimo.json
     - "acoes": todas as listadas com preco e variacao de 3/6/12m e queda 52s
-    - "emissores": o subconjunto que e emissor de debenture (para o eixo de credito)
+    - "emissores": o subconjunto emissor de debenture (para o eixo de credito)
 
-FONTE DUPLA: o Yahoo passou a devolver 0 do IP do runner (exige cookie/crumb ou
-bloqueia datacenter). Primaria = STOOQ (CSV diario, sem login, amigavel a CI),
-Yahoo = fallback ja com handshake de cookie. Serie ajustada nas duas: provento e
-desdobramento nao viram 'queda'. Ponto de troca: serie_stooq / serie_yahoo.
+FONTE: brapi.dev (primaria) + Yahoo (fallback). Yahoo e Stooq bloqueiam o IP de
+datacenter do GitHub (429 / vazio), entao a fonte confiavel e a brapi, uma API
+brasileira feita pra rodar de servidor. O token vem da variavel de ambiente
+BRAPI_TOKEN (secret do repo); PETR4/VALE3/MGLU3/ITUB4 respondem sem token, o que
+permite testar o codigo. Serie ajustada (adjustedClose): provento e desdobramento
+nao viram 'queda'. Ponto de troca: serie_brapi / serie_yahoo.
 """
 
 from __future__ import annotations
 
 import argparse
-import csv as csvmod
 import datetime as dt
-import io
 import json
 import logging
+import os
 import pathlib
 import sys
 import time
@@ -42,16 +42,16 @@ log = logging.getLogger("acoes")
 RAIZ = pathlib.Path(__file__).resolve().parent
 DADOS = RAIZ / "dados" / "acoes"
 
-STOOQ = "https://stooq.com/q/d/l/"
+BRAPI = "https://brapi.dev/api/quote/{simbolo}"
 CHART = "https://query1.finance.yahoo.com/v8/finance/chart/{simbolo}"
-CRUMB = "https://query1.finance.yahoo.com/v1/test/getcrumb"
+TOKEN = os.environ.get("BRAPI_TOKEN", "").strip()
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
 JANELAS = {"var_3m": 63, "var_6m": 126, "var_12m": 252}
 JANELA_MAX = 252
 MIN_PREGOES = 40
-FRACAO_MINIMA = 0.70   # universo grande tem small caps ilíquidas; 70% ja e saudavel
+FRACAO_MINIMA = 0.70
 
 
 def variacao(fech: list[float], n: int) -> float | None:
@@ -72,50 +72,39 @@ def metricas(fech: list[float]) -> dict:
     return saida
 
 
-# ---- Fonte 1 (primaria): STOOQ. CSV diario ajustado, sem login. ----
-def serie_stooq(sessao: requests.Session, ticker: str) -> tuple[list[float], str] | None:
-    r = sessao.get(STOOQ, params={"s": f"{ticker.lower()}.sa", "i": "d"}, timeout=25)
+# ---- Fonte 1 (primaria): brapi.dev. Serie ajustada. Token via env. ----
+def serie_brapi(sessao: requests.Session, ticker: str) -> tuple[list[float], str] | None:
+    params = {"range": "1y", "interval": "1d"}
+    if TOKEN:
+        params["token"] = TOKEN
+    r = sessao.get(BRAPI.format(simbolo=ticker), params=params, timeout=25)
+    if r.status_code in (401, 402, 403):
+        # sem permissao (token ausente/expirado ou ativo fora do plano)
+        raise PermissionError(f"brapi {r.status_code}: {r.text[:120]}")
     r.raise_for_status()
-    texto = r.text.strip()
-    if not texto or texto.upper().startswith("N/D") or "<html" in texto[:200].lower():
+    res = (r.json() or {}).get("results") or []
+    if not res:
         return None
-    linhas = list(csvmod.reader(io.StringIO(texto)))
-    if len(linhas) < 2 or "Close" not in linhas[0]:
+    hist = res[0].get("historicalDataPrice") or []
+    if not hist:
         return None
-    icol = linhas[0].index("Close")
-    idata = linhas[0].index("Date")
-    fech: list[float] = []
-    ultima_data = None
-    for ln in linhas[1:]:
-        if len(ln) <= icol:
+    pts = []
+    for h in hist:
+        v = h.get("adjustedClose")
+        if v is None:
+            v = h.get("close")
+        if v is None or not h.get("date"):
             continue
-        v = ln[icol].strip()
-        if not v or v in ("N/D", "null"):
-            continue
-        try:
-            fech.append(float(v))
-            ultima_data = ln[idata].strip()
-        except ValueError:
-            continue
-    if not fech or not ultima_data:
+        pts.append((h["date"], float(v)))
+    if not pts:
         return None
-    return fech, ultima_data
+    pts.sort(key=lambda x: x[0])
+    fech = [v for _, v in pts]
+    ultima = dt.datetime.fromtimestamp(pts[-1][0], dt.timezone.utc).date().isoformat()
+    return fech, ultima
 
 
-# ---- Fonte 2 (fallback): YAHOO. Fechamento ajustado, com handshake de cookie. ----
-def aquecer_yahoo(sessao: requests.Session) -> None:
-    for url in ("https://fc.yahoo.com", "https://finance.yahoo.com"):
-        try:
-            sessao.get(url, timeout=15)
-        except Exception:
-            pass
-    try:
-        c = sessao.get(CRUMB, timeout=15)
-        sessao.headers["x-yahoo-crumb"] = c.text.strip()
-    except Exception:
-        pass
-
-
+# ---- Fonte 2 (fallback): Yahoo. So funciona fora do IP do runner. ----
 def serie_yahoo(sessao: requests.Session, ticker: str) -> tuple[list[float], str] | None:
     r = sessao.get(CHART.format(simbolo=f"{ticker}.SA"),
                    params={"range": "13mo", "interval": "1d"}, timeout=20)
@@ -140,10 +129,14 @@ def serie_yahoo(sessao: requests.Session, ticker: str) -> tuple[list[float], str
 
 
 def buscar(sessao: requests.Session, ticker: str) -> tuple[list[float], str, str] | None:
-    for nome, fn in (("stooq", serie_stooq), ("yahoo", serie_yahoo)):
+    for nome, fn in (("brapi", serie_brapi), ("yahoo", serie_yahoo)):
         for tentativa in (1, 2, 3):
             try:
                 s = fn(sessao, ticker)
+                break
+            except PermissionError as e:
+                log.warning("%s/%s: %s", ticker, nome, e)
+                s = None
                 break
             except Exception as e:
                 if tentativa == 3:
@@ -156,12 +149,11 @@ def buscar(sessao: requests.Session, ticker: str) -> tuple[list[float], str, str
     return None
 
 
-def coletar(tickers: list[str], pausa: float = 0.25) -> tuple[dict[str, dict], dict[str, int]]:
+def coletar(tickers: list[str], pausa: float = 0.2) -> tuple[dict[str, dict], dict[str, int]]:
     sessao = requests.Session()
-    sessao.headers.update({"User-Agent": UA, "Accept": "text/csv, application/json, */*"})
-    aquecer_yahoo(sessao)
+    sessao.headers.update({"User-Agent": UA, "Accept": "application/json"})
     saida: dict[str, dict] = {}
-    fontes = {"stooq": 0, "yahoo": 0}
+    fontes = {"brapi": 0, "yahoo": 0}
     for i, t in enumerate(tickers):
         r = buscar(sessao, t)
         if not r:
@@ -170,13 +162,13 @@ def coletar(tickers: list[str], pausa: float = 0.25) -> tuple[dict[str, dict], d
         saida[t] = {**metricas(fech), "atualizado_em": ultimo, "origem": fonte}
         fontes[fonte] += 1
         if i % 25 == 24:
-            log.info("%d/%d tickers", i + 1, len(tickers))
+            log.info("%d/%d tickers (brapi %d, yahoo %d)", i + 1, len(tickers),
+                     fontes["brapi"], fontes["yahoo"])
         time.sleep(pausa)
     return saida, fontes
 
 
 def carregar_universo(caminho: pathlib.Path, mapa: list) -> list[dict]:
-    """Universo = todas as listadas (universo.json). Fallback: tickers do mapa."""
     if caminho.exists():
         emp = json.loads(caminho.read_text(encoding="utf-8"))["empresas"]
         return [{"ticker": e["ticker"], "empresa": e["empresa"]} for e in emp]
@@ -197,10 +189,12 @@ def main(argv=None) -> int:
     ap.add_argument("--so", help="lista de tickers separada por virgula, para depurar")
     a = ap.parse_args(argv)
 
+    if not TOKEN:
+        log.warning("BRAPI_TOKEN ausente: so os ativos de teste vao cotar.")
+
     mapa = json.loads(pathlib.Path(a.mapa).read_text(encoding="utf-8"))["mapa"]
     universo = carregar_universo(pathlib.Path(a.universo), mapa)
 
-    # emissor de debenture por ticker (para marcar no resultado)
     emissor_por_ticker: dict[str, list[dict]] = {}
     for x in mapa:
         emissor_por_ticker.setdefault(x["ticker"], []).append(
@@ -209,7 +203,7 @@ def main(argv=None) -> int:
     tickers = sorted({u["ticker"] for u in universo})
     if a.so:
         alvo = {t.strip().upper() for t in a.so.split(",")}
-        tickers = [t for t in tickers if t in alvo]
+        tickers = [t for t in tickers if t in alvo] or sorted(alvo)
 
     log.info("coletando %d tickers (universo inteiro da B3)", len(tickers))
     cot, fontes = coletar(tickers)
@@ -217,15 +211,13 @@ def main(argv=None) -> int:
     nome_por_ticker = {u["ticker"]: u["empresa"] for u in universo}
     acoes = []
     for t in sorted(cot):
-        emissoras = emissor_por_ticker.get(t, [])
         acoes.append({
             "ticker": t,
             "empresa": nome_por_ticker.get(t, t),
-            "emite_debenture": bool(emissoras),
+            "emite_debenture": bool(emissor_por_ticker.get(t)),
             **cot[t],
         })
 
-    # subconjunto emissor-por-emissor, para o eixo de credito (contrato antigo)
     emissores = [
         {"emissor": x["emissor"], "ticker": x["ticker"], "vinculo": x["vinculo"],
          **{k: cot[x["ticker"]][k] for k in
@@ -237,10 +229,9 @@ def main(argv=None) -> int:
     doc = {
         "gerado_em": dt.datetime.now(dt.timezone.utc).isoformat(),
         "data_referencia": ref,
-        "fonte": "Stooq (primaria) + Yahoo (fallback) - fechamento ajustado, tickers .SA",
+        "fonte": "brapi.dev (primaria) + Yahoo (fallback) - fechamento ajustado",
         "universo_pedido": len(tickers),
         "obtidos": len(cot),
-        # aliases p/ compatibilidade com o passo Resumo do workflow
         "tickers_pedidos": len(tickers),
         "tickers_obtidos": len(cot),
         "por_fonte": fontes,
@@ -253,10 +244,10 @@ def main(argv=None) -> int:
                      encoding="utf-8")
 
     faltando = sorted(set(tickers) - set(cot))
-    log.info("%d/%d cotados (stooq %d, yahoo %d) | %d emissoras de debenture | ref %s",
-             len(cot), len(tickers), fontes["stooq"], fontes["yahoo"], len(emissores), ref)
+    log.info("%d/%d cotados (brapi %d, yahoo %d) | %d emissoras | ref %s",
+             len(cot), len(tickers), fontes["brapi"], fontes["yahoo"], len(emissores), ref)
     if faltando:
-        log.warning("sem cotacao (%d): %s", len(faltando), " ".join(faltando))
+        log.warning("sem cotacao (%d): %s", len(faltando), " ".join(faltando[:60]))
     if len(cot) < FRACAO_MINIMA * len(tickers):
         log.error("menos de %.0f%% cotaram", FRACAO_MINIMA * 100)
         return 1
