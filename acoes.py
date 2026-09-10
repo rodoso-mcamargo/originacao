@@ -200,7 +200,13 @@ def main(argv=None) -> int:
         emissor_por_ticker.setdefault(x["ticker"], []).append(
             {"emissor": x["emissor"], "vinculo": x["vinculo"]})
 
-    tickers = sorted({u["ticker"] for u in universo})
+    uni_tickers = sorted({u["ticker"] for u in universo})
+    map_tickers = sorted({x["ticker"] for x in mapa})
+    map_roots = {t[:4] for t in map_tickers}
+    # cota a UNIAO: linha representativa do universo + linhas especificas do mapa
+    # (o mapa usa PN/unit, ex. CMIG4; o universo usa a ON, CMIG3). Sem isso o
+    # subconjunto de credito perde emissores cujo ticker do mapa nao foi cotado.
+    tickers = sorted(set(uni_tickers) | set(map_tickers))
     if a.so:
         alvo = {t.strip().upper() for t in a.so.split(",")}
         tickers = [t for t in tickers if t in alvo] or sorted(alvo)
@@ -209,12 +215,16 @@ def main(argv=None) -> int:
     cot, fontes = coletar(tickers)
 
     nome_por_ticker = {u["ticker"]: u["empresa"] for u in universo}
+    # lista de mercado: uma linha por empresa (linha representativa do universo);
+    # emite_debenture casa por RAIZ (CMIG3 do universo == CMIG4 do mapa).
     acoes = []
-    for t in sorted(cot):
+    for t in uni_tickers:
+        if t not in cot:
+            continue
         acoes.append({
             "ticker": t,
             "empresa": nome_por_ticker.get(t, t),
-            "emite_debenture": bool(emissor_por_ticker.get(t)),
+            "emite_debenture": t[:4] in map_roots,
             **cot[t],
         })
 
