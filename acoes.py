@@ -48,9 +48,11 @@ TOKEN = os.environ.get("BRAPI_TOKEN", "").strip()
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
-JANELAS = {"var_3m": 63, "var_6m": 126, "var_12m": 252}
-JANELA_MAX = 252
-MIN_PREGOES = 40
+# Plano GRATUITO do brapi limita o historico a 3 meses (range 3mo; permitidos
+# 1d/5d/1mo/3mo). 6m/12m e 1 ano exigem plano pago (Startup). Entao aqui saem
+# var_1m e var_3m (janela inteira); var_6m/var_12m/queda_52s ficam None.
+JANELA_1M = 21
+MIN_PREGOES = 20
 FRACAO_MINIMA = 0.70
 
 
@@ -64,17 +66,23 @@ def variacao(fech: list[float], n: int) -> float | None:
 
 
 def metricas(fech: list[float]) -> dict:
-    saida = {k: variacao(fech, n) for k, n in JANELAS.items()}
-    janela = fech[-JANELA_MAX:]
-    topo = max(janela) if janela else None
+    saida = {}
+    saida["var_1m"] = variacao(fech, JANELA_1M)
+    # var_3m = primeiro vs ultimo da janela (o range 3mo E ~3 meses)
+    saida["var_3m"] = round((fech[-1] / fech[0] - 1) * 100, 1) if fech and fech[0] else None
+    saida["var_6m"] = None   # requer plano pago
+    saida["var_12m"] = None  # requer plano pago
     saida["preco"] = round(fech[-1], 2)
-    saida["queda_max_52s"] = round((fech[-1] / topo - 1) * 100, 1) if topo else None
+    topo = max(fech) if fech else None
+    # queda desde a maxima do periodo disponivel (~3 meses), nao 52 semanas
+    saida["queda_max_3m"] = round((fech[-1] / topo - 1) * 100, 1) if topo else None
+    saida["queda_max_52s"] = None  # requer plano pago (1 ano)
     return saida
 
 
 # ---- Fonte 1 (primaria): brapi.dev. Serie ajustada. Token via env. ----
 def serie_brapi(sessao: requests.Session, ticker: str) -> tuple[list[float], str] | None:
-    params = {"range": "1y", "interval": "1d"}
+    params = {"range": "3mo", "interval": "1d"}
     if TOKEN:
         params["token"] = TOKEN
     r = sessao.get(BRAPI.format(simbolo=ticker), params=params, timeout=25)
@@ -231,7 +239,8 @@ def main(argv=None) -> int:
     emissores = [
         {"emissor": x["emissor"], "ticker": x["ticker"], "vinculo": x["vinculo"],
          **{k: cot[x["ticker"]][k] for k in
-            ("preco", "var_3m", "var_6m", "var_12m", "queda_max_52s", "atualizado_em")}}
+            ("preco", "var_1m", "var_3m", "var_6m", "var_12m",
+             "queda_max_3m", "queda_max_52s", "atualizado_em")}}
         for x in mapa if x["ticker"] in cot
     ]
     ref = max((v["atualizado_em"] for v in cot.values()), default=None)
@@ -239,7 +248,8 @@ def main(argv=None) -> int:
     doc = {
         "gerado_em": dt.datetime.now(dt.timezone.utc).isoformat(),
         "data_referencia": ref,
-        "fonte": "brapi.dev (primaria) + Yahoo (fallback) - fechamento ajustado",
+        "fonte": "brapi.dev plano gratuito (historico 3 meses) - fechamento ajustado",
+        "limite_plano": "brapi free: range max 3mo; 6m/12m/52s exigem plano pago",
         "universo_pedido": len(tickers),
         "obtidos": len(cot),
         "tickers_pedidos": len(tickers),
