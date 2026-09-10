@@ -89,6 +89,9 @@ def serie_brapi(sessao: requests.Session, ticker: str) -> tuple[list[float], str
     if r.status_code in (401, 402, 403):
         # sem permissao (token ausente/expirado ou ativo fora do plano)
         raise PermissionError(f"brapi {r.status_code}: {r.text[:120]}")
+    if r.status_code == 404:
+        # ticker inexistente no brapi (unit/papel iliquido): pula sem retry
+        return None
     r.raise_for_status()
     res = (r.json() or {}).get("results") or []
     if not res:
@@ -137,7 +140,7 @@ def serie_yahoo(sessao: requests.Session, ticker: str) -> tuple[list[float], str
 
 
 def buscar(sessao: requests.Session, ticker: str) -> tuple[list[float], str, str] | None:
-    for nome, fn in (("brapi", serie_brapi), ("yahoo", serie_yahoo)):
+    for nome, fn in (("brapi", serie_brapi),):  # Yahoo bloqueia o IP do runner (429); brapi-only
         for tentativa in (1, 2, 3):
             try:
                 s = fn(sessao, ticker)
