@@ -1,0 +1,32 @@
+name: Carteira das gestoras
+on:
+  workflow_dispatch:
+    inputs:
+      mes:
+        description: "Mes AAAA-MM (vazio = mais recente disponivel)"
+        required: false
+        default: ""
+      top:
+        description: "Posicoes por gestora na saida"
+        required: false
+        default: "60"
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar deps
+        run: pip install requests
+      - name: Coletar carteira das gestoras
+        run: |
+          python carteira_gestoras.py ${{ github.event.inputs.mes && format('--mes {0}', github.event.inputs.mes) || '' }} --top ${{ github.event.inputs.top }}
+      - name: Salvar no repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/gestoras/ultimo.json
+          git commit -m "carteira gestoras: atualiza dados/gestoras/ultimo.json" || echo "sem mudancas"
+          git push
