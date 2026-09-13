@@ -1024,6 +1024,20 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMigwJBVV95cUxPRy16OEN5LUdsanJ4V3kwcEdSWlQya29fdGtwa3NKSmlxVzVmVmpMWDNxOVd0MTd5d1M3SEVQRXFTTXVjLXc2ZHhkb2tDWGhZbkNlZDVWYWotNFBhTGVmMUNBWm1FTXU4R1g0VlZQTk5nRVVFcjFVZklIX2FGWGJCejg1a3ZIZ3VPVGlLMWpnZnFITGpUYWxFQmVtbG5paG1JNDAtT2JkNk9CT2JBc2pyOFo1bGFkSnlJSkZXam9QbTNiNXYxVDBXTF8zUW9sNGJaSFhkR1J2bVphakdoX1ZLamhQM09hUUF5X2lldVhWT3NhZnRFN0FGRzZSbXdrdXVleTBR?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Sat, 12 Sep 2026 14:07:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-13",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Tradicional fabricante de sorvetes Sorvelândia entra em recuperação judicial em Caxias do Sul",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPRy16OEN5LUdsanJ4V3kwcEdSWlQya29fdGtwa3NKSmlxVzVmVmpMWDNxOVd0MTd5d1M3SEVQRXFTTXVjLXc2ZHhkb2tDWGhZbkNlZDVWYWotNFBhTGVmMUNBWm1FTXU4R1g0VlZQTk5nRVVFcjFVZklIX2FGWGJCejg1a3ZIZ3VPVGlLMWpnZnFITGpUYWxFQmVtbG5paG1JNDAtT2JkNk9CT2JBc2pyOFo1bGFkSnlJSkZXam9QbTNiNXYxVDBXTF8zUW9sNGJaSFhkR1J2bVphakdoX1ZLamhQM09hUUF5X2lldVhWT3NhZnRFN0FGRzZSbXdrdXVleTBR?oc=5",
+      "veiculo": "Terra"
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMzhjMXhzTWp1UEVLNW9fRDlpQ1FjdUVsZ2hCZUxiaVZxbmdENUxfeE5SSm01b1Izd3J4ZDd3b2R2Qjl6Uzdfb3ZCQ1IxVklOUVBKbHFadWFnbEw1WV83RzFFODk3eEE4LVZRQWczc0M2Rklzelk1QXBoVlU2Q0RCUDlMVVlDMDBzNGNOcDBXckVZMDlWa2ZtMENHbDlIRjRVTTgzZV8tZml6OHFOeDVWbWRRX1JqTDRXSlY00gHAAUFVX3lxTFBkbzR5R0xaNFY2bmsydTRrR1FTcnkyVWdsQmxDNGFLdlhieGRydW9YSjFfV1dFbmJ0WXV5aG5ySXdsUklBNVFWa1prZldCWlByNU04TW04STlDWlJPWWVWQlJBWTNRYjkxeG5IU2czOUQtOVBWbzE4MGVMMEdKZ1k2LTZNbXhCT3hYMHd3UVZSWTRId1BLVjRGcXN1MmtqMU5mMjBnVWUzSHBtZFFuV3d2WUxPX1RoWnlCZEtFY3dQcg?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Sat, 12 Sep 2026 08:00:00 GMT",
@@ -1043,7 +1057,7 @@
       "data_publicacao": "Fri, 11 Sep 2026 19:30:15 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Casas Bahia (BHIA3): Rafael Ferri e Associação de Minoritários entram com pedido contra debenturistas; entenda",
@@ -1057,7 +1071,7 @@
       "data_publicacao": "Fri, 11 Sep 2026 18:52:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Justiça analisa pedido de recuperação judicial da Sorvelândia",
@@ -1071,12 +1085,12 @@
       "data_publicacao": "Fri, 11 Sep 2026 18:40:56 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Com passivo superior a R$ 80 milhões, Sorvelândia, de Caxias do Sul, pede recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWllSSUpTRUhyTkZHWDdFSk1NQU1sdHdwYkpwZThWaUlWX1Jzc1hpMTEwX1pPdnBfeDNRcVRBSEIxRG5vMEJnSXVPTml0Y0FGY1lXbTljM25HLUtTc2dPNkd5eE1UZVp5akloWXMxci1xeFF0WUx6MmozWWhicndVNnhTQ0FvRndmYW1YZ2duNzYtUVpXbUZBcXVKUjR0Y3I5cjk2a3BZdkdNdFBHb1J3VW1Tel9YRHFxMm9URU53?oc=5",
-      "veiculo": "Leouve"
+      "veiculo": "leouve.com.br"
     },
     {
       "buscador": "google_news",
@@ -1085,7 +1099,7 @@
       "data_publicacao": "Fri, 11 Sep 2026 18:38:49 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Casas Bahia: negociações para empréstimo de até R$ 500 milhões avançam enquanto varejista espera aprovação de recuperação judicial",
@@ -1099,12 +1113,12 @@
       "data_publicacao": "Fri, 11 Sep 2026 18:11:48 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Sorvelândia tem recuperação judicial deferida pela Justiça",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQUUxsQTVoR1Y1aUdHMjNBNGVXZFp4TlVhSHFsWFV5ZVBXUi1ucnRwd0FPdElHalVqUG5aZGRDWG5lOUs0MVZEakV1QTlMc1lfc1BSbUhvTGZRdHk2TExXcHNiVlA4ZWFWejYtSWFTU0NxS1p4cWlGX2lISW43d2k4MWNlQ2h6NkF6N05kQ3dzWk5nYjRy?oc=5",
-      "veiculo": "Radio Caxias FM"
+      "veiculo": "radiocaxias.com.br"
     },
     {
       "buscador": "google_news",
@@ -1113,12 +1127,12 @@
       "data_publicacao": "Fri, 11 Sep 2026 17:01:34 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Rafael Ferri e Abimec entram com pedido de liminar contra debenturistas de Casas Bahia",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOX2pVOGlKU2t6YVZZRHVrUXJpN0FfWnlYZnBZbklvdXB0VkV1V2VTc1ROUkhQYkk1ajZxcnhtVXJ5WUttQ0lDQWVsS3RIdHhCMl9YbGRBMl9jUTRYNDBWUnpRTHJybzR1VWo3MFV4SEl4VWFIVXYtMXlycV9hcWhUeHZKeHBxNE93d1JLYjFfeUdBTTY2dl9WMG9hTEsyUFRyRmh5MWd4ZUhsVTM4LU9BWEF6RjZoY3VLdkdmS3M4T1J0QWpyNVlvOWdJYjJ3ZVpCc0JpbEV1UUpBNGE20gHrAUFVX3lxTE96VTJNS1pqZkxEVG9CVlVWYjRDOXJyc2xxcEpYYkRaU1BnYmYzTE05TERYQ2h0OHM0aFp5Z192ckp6V2JmY1pHTlB4X1dpQkN3cU4xUDFMdXdiRlJfcTUyeWtXR1B1OE1ZMGF2TFFvRHpNLTlkNzNfajdTcGJxWl9KdUhHdVRVaThNTGVKT2p4WGlMdnd3em1uUUlMR01DS2QyVkpjWWNsa1ZnZ1UwejVRZ0tuRV91TWVqUTRRNTFjSHRSR2xWVnBoVFNuVmUxamc2NGZLS0lJNVh3ZzMtRWJCdjRjNklrQnNsb00?oc=5",
-      "veiculo": "valor.globo.com"
+      "veiculo": "Valor Econômico"
     },
     {
       "buscador": "google_news",
@@ -1127,7 +1141,7 @@
       "data_publicacao": "Fri, 11 Sep 2026 16:38:41 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Tradicional fabricante de sorvetes de Caxias do Sul entra em recuperação judicial",
@@ -1141,7 +1155,7 @@
       "data_publicacao": "Fri, 11 Sep 2026 14:52:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Casas Bahia: minoritários querem barrar troca de debêntures por ações",
@@ -1155,7 +1169,7 @@
       "data_publicacao": "Fri, 11 Sep 2026 14:41:21 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Sorvelândia, de Caxias, pede recuperação judicial",
@@ -1169,12 +1183,12 @@
       "data_publicacao": "Fri, 11 Sep 2026 14:28:15 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Sorvelândia protocola pedido de recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPb0t5a25pMjJEclVSY1o0YXF0My1IMTNiZlRtalpSYTJSWmR6Y1czUEhhZTRQejhfd2pkSU9LZnpHZlRYWWFZR0g2a2Jhclh0bEV1aWRkQ3Vtb1d5RjRJeGdfUmdQYWtqLTl2NkZWXzJINC1Ib1lEbF9TcUtKaG1Hak9EZ2VNMXhTV0ZlUlZoMnVWMUVNR0M5QjIzbzFnWGlDMVpOYUpCMDUxZW9kQlVZRGdRQUNfZw?oc=5",
-      "veiculo": "jornaldocomercio.com"
+      "veiculo": "Jornal do Comércio"
     },
     {
       "buscador": "google_news",
@@ -1183,7 +1197,7 @@
       "data_publicacao": "Fri, 11 Sep 2026 14:11:53 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Supermercado Fluminense entra com pedido de recuperação judicial",
@@ -1258,7 +1272,21 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Só 17,5% das empresas concluíram recuperação judicial, diz estudo",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQX3MybWtoRVZiTXE1LTlDOGV0M1VuOGJNTGZjLUJGU2JzU3RTVHU0ejFxZEs1OVpwX0JUVTY1VUZ5V0tYMXlSZm9TeGNUaEtYOUxaRndmbFdwMjJpcXRqclcybGx1WlZhTjd3dkNjN1ROSXhXdzVSUmItMXk0bEhfVndxUk5FUzBpd0JudW8wQWdNLWo3b0tMX1piTjFXTlc3cGZzTWw1d2UtVnJJWFhLbUFwNHVYNS1zTHJVdG1SUdIBzgFBVV95cUxNSVBrdVgzWC1xRmI5TE9nWTdzRkVOQmpnLVhaLTVfLUktWTZZSnBMdVQtc3l6c0pQb0YyeFVlUTJCUEdodGFqQnFtY21ocVFnZ3AzU0JTbk9jN0pHVWVkUGxNQlJNVlJHc1c0N3N0a2JwYmJlQ3BPSFV3RWlsbzQzMnNmcWItQ3ROU1dBU1B0STlyU1dBbVMxOWI0cGg1NzBPbndEeVpEUlZLWFhhdjE0alA2amdqSTFYUTd6T044Tlh2TEEySFBQX0gtUXpmdw?oc=5",
-      "veiculo": "valor.globo.com"
+      "veiculo": "Valor Econômico"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa6ad746d1b4a48b46c05702ea684f1&url=https%3a%2f%2fwww.jornaldocomercio.com%2feconomia%2f2026%2f09%2f1263016-sorvelandia-protocola-pedido-de-recuperacao-judicial.html&c=17351181803423264365&mkt=pt-br",
+      "consulta": "\"protocola pedido de recuperação judicial\"",
+      "data_publicacao": "Fri, 11 Sep 2026 04:07:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-13",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Sorvelândia protocola pedido de recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa6ad746d1b4a48b46c05702ea684f1&url=https%3a%2f%2fwww.jornaldocomercio.com%2feconomia%2f2026%2f09%2f1263016-sorvelandia-protocola-pedido-de-recuperacao-judicial.html&c=17351181803423264365&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -1370,7 +1398,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Supermercado Fluminense, de Itaperuna, pede recuperação judicial com dívida de R$ 173,8 milhões",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQLWxSdjA1TS1vbHZDSlpmd09IeVFiYl9la1AtMzNoeWNzcDNHb3BYaWFiekVUd2RyNnZleHJfSElkS2l5Sy1YZnFka0IyeXRiZjVfNGZaUkMxS3NzeXFEaXAzdVBPcHRJUzEzMWNPRG1zOHJ5U3dCNnZZSWJfTHUtb2ViYndLWklMMDhLVnYtVE5yZ2xoNTFPMmhZMnlwZ3lNTE9GTTVneXE4UlFEcm4tYlV3?oc=5",
-      "veiculo": "Rede Hits Fm"
+      "veiculo": "redehits.fm"
     },
     {
       "buscador": "google_news",
@@ -1435,7 +1463,7 @@
       "data_publicacao": "Wed, 09 Sep 2026 20:40:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-11",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Demitidos da Casas Bahia não conseguem receber rescisão, FGTS e seguro-desemprego, diz entidade",
@@ -1668,6 +1696,20 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMUlMSjlxNmFOZjMzNklVNGpnX0hDeEZCSExSY3QyRFBMMzhORms5Sk4tSVptN3BMUlgxd0lIUXpCSXJldzdWd2JyeU1nOE5oQnpEMkpvTTExUGpvejZnZFk2RnlNNFJKbHFxTEVSMlUzWHM0YXNTQWdPMXFjZDR6WEs5WDFDSVNaT2R3UzQyLTBRTnpHWlV2emd6d2ZyYk56Q2RjSy1RNE80RmlhLWt5cDc5WEtQc0ZTS09ieHp5Q1FXOUc1b2hTbm4yY2ptWE9H?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Tue, 08 Sep 2026 16:48:04 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": false,
+      "primeiro_visto": "2026-09-09",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Rogério Gentile: Em recuperação judicial, Habib's não paga luz, mas Justiça proíbe corte",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMUlMSjlxNmFOZjMzNklVNGpnX0hDeEZCSExSY3QyRFBMMzhORms5Sk4tSVptN3BMUlgxd0lIUXpCSXJldzdWd2JyeU1nOE5oQnpEMkpvTTExUGpvejZnZFk2RnlNNFJKbHFxTEVSMlUzWHM0YXNTQWdPMXFjZDR6WEs5WDFDSVNaT2R3UzQyLTBRTnpHWlV2emd6d2ZyYk56Q2RjSy1RNE80RmlhLWt5cDc5WEtQc0ZTS09ieHp5Q1FXOUc1b2hTbm4yY2ptWE9H?oc=5",
+      "veiculo": "UOL Notícias"
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMijgJBVV95cUxQU0dnMUpNUEV4ejNFMDVVaVJIQVpKZnpmRU1mUjdjYm5CN2pKT2RXcjRnU0dXVHY2akR0UVZQQVpOR3JBUmlSa2k0bnJQdXBSWEZSVWFUckRwTzAtLTFPN19RRFVRbVdPcGRSc0pZRm93dU9HdW45WUtoVXRweUV6UGVMZVo0bF9faER3YTdGbER6dlhaY2pLRlhWQVhtTi1TWXJET0swYkhtVUtaZU0xX1lmVHZ5dkMwdVJuWV9iVHlESjVPcjhsS0hIYm9IaVR0Skx6RTdqd09IaGk2UHhRRFpLMnVFOVZXZVhoR3YtcXBXeEFZd3JJd0UtSkFrR3ZuWWw4bGxtb3RJOVJxN3c?oc=5",
       "consulta": "\"ajuíza recuperação judicial\"",
       "data_publicacao": "Tue, 08 Sep 2026 13:06:00 GMT",
@@ -1696,20 +1738,6 @@
     },
     {
       "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMUlMSjlxNmFOZjMzNklVNGpnX0hDeEZCSExSY3QyRFBMMzhORms5Sk4tSVptN3BMUlgxd0lIUXpCSXJldzdWd2JyeU1nOE5oQnpEMkpvTTExUGpvejZnZFk2RnlNNFJKbHFxTEVSMlUzWHM0YXNTQWdPMXFjZDR6WEs5WDFDSVNaT2R3UzQyLTBRTnpHWlV2emd6d2ZyYk56Q2RjSy1RNE80RmlhLWt5cDc5WEtQc0ZTS09ieHp5Q1FXOUc1b2hTbm4yY2ptWE9H?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Tue, 08 Sep 2026 12:48:04 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-09-09",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Rogério Gentile: Em recuperação judicial, Habib's não paga luz, mas Justiça proíbe corte",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMUlMSjlxNmFOZjMzNklVNGpnX0hDeEZCSExSY3QyRFBMMzhORms5Sk4tSVptN3BMUlgxd0lIUXpCSXJldzdWd2JyeU1nOE5oQnpEMkpvTTExUGpvejZnZFk2RnlNNFJKbHFxTEVSMlUzWHM0YXNTQWdPMXFjZDR6WEs5WDFDSVNaT2R3UzQyLTBRTnpHWlV2emd6d2ZyYk56Q2RjSy1RNE80RmlhLWt5cDc5WEtQc0ZTS09ieHp5Q1FXOUc1b2hTbm4yY2ptWE9H?oc=5",
-      "veiculo": "noticias.uol.com.br"
-    },
-    {
-      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc0tuNUFqWXlwRi1rQTZlcGdOVXU0N054RU9OZnQ5cFNKM1dwSEdYeEFIYThOZXpXbzZtZ2hTTkI5SEVsTFZaYkdDY0tINE90Tkx4ZENEanE1dE1May1wcXgzNlozN3pQZTNLRlJnQ2dfX2s3UFNFYzJoTGpJZ01aQmgzam5JdFNj?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Tue, 08 Sep 2026 12:00:51 GMT",
@@ -1720,7 +1748,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "6 mil empresas em recuperação judicial no País: como identificar sinais em farmácias",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc0tuNUFqWXlwRi1rQTZlcGdOVXU0N054RU9OZnQ5cFNKM1dwSEdYeEFIYThOZXpXbzZtZ2hTTkI5SEVsTFZaYkdDY0tINE90Tkx4ZENEanE1dE1May1wcXgzNlozN3pQZTNLRlJnQ2dfX2s3UFNFYzJoTGpJZ01aQmgzam5JdFNj?oc=5",
-      "veiculo": "Guia da Farmácia"
+      "veiculo": "guiadafarmacia.com.br"
     },
     {
       "buscador": "google_news",
@@ -1743,7 +1771,7 @@
       "data_publicacao": "Tue, 08 Sep 2026 10:00:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-09",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "“Não tem dinheiro para todo mundo”: onde estão as oportunidades na crise de crédito",
@@ -1790,7 +1818,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Recorde de recuperações judiciais atinge economia",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1XQ2p2M1BQVWZwSTFZcFV6RkZ2S2RUazJKOXM2V2NfSXczVEtCWWh2SGxpVGpxYnlSQlNHVnFfZXJMSTFSWlBWSlpsX3RRZUhya3RUSVpPUW5GLXY2YW4zcWY0QVdCSERxOUw3LVoySUlIdk9VaVdQR1otbHc?oc=5",
-      "veiculo": "Associação Comercial e Industrial de Araçatuba"
+      "veiculo": "Acia Araçatuba"
     },
     {
       "buscador": "google_news",
@@ -1832,7 +1860,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "\"A Crise de Grandes Marcas\": Onda de recuperações judiciais atinge economia",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNZ2dTbkZtc1dvX25vRE9GWHRaRXkzdFozR0FOcVdYT3BUZDZpanM0azdSQVR4dnVaVElRVVNUZ0JoVW8yZnpEUFJobEFNNlNwNklaUDM0VjJDejdneDdMVkNwbFB4MWxsdFNwcTZQbkk3d0xOdGwxVk0yZV9NaS0xVFFCME52M2laV25qeHNtRkM5RlZtT0ZPdUhHSHJsWlJtaUd6aXVHRkVTQXBFNVNnZ1A3bGlGVHNzdHZjTzg3VGFkcG9tUFhuS1EySQ?oc=5",
-      "veiculo": "cnnbrasil.com.br"
+      "veiculo": "CNN Brasil"
     },
     {
       "buscador": "google_news",
@@ -1878,31 +1906,17 @@
     },
     {
       "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMieEFVX3lxTFBxVVlYa0dzNGZRZ09tVmxhTUdXMG1RSlpVSWhFMmZfbkxaTGtHOWp6TzZOcDlSVUZoRERlaE9aUVE0ZkpwYXJxbkhHcF9fQlFPb25mVXZocDNRb1I3X1g5bVJEdnJtNjRvcFUwaGVuSXdxMmowQTV5b9IBfkFVX3lxTE4wbUdsOGdqQkVraXo0dFRZSkU4bjd6aHN2WU12d2NrZDFBVEhLeXc3NGt5RHRRN25fSE0zZHFuOWRRTmZIWmF2X0RTUFpRWVgxaG83Qm9maFI3ZEE0NVZVdzc0VmMtV2syM05jWnFqdnFFSHNabG1ndFdOeFFjUQ?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Fri, 04 Sep 2026 18:03:50 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-09-05",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Recuperação judicial bate recorde no Brasil — veja as 5 maiores RJs da história",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBxVVlYa0dzNGZRZ09tVmxhTUdXMG1RSlpVSWhFMmZfbkxaTGtHOWp6TzZOcDlSVUZoRERlaE9aUVE0ZkpwYXJxbkhHcF9fQlFPb25mVXZocDNRb1I3X1g5bVJEdnJtNjRvcFUwaGVuSXdxMmowQTV5b9IBfkFVX3lxTE4wbUdsOGdqQkVraXo0dFRZSkU4bjd6aHN2WU12d2NrZDFBVEhLeXc3NGt5RHRRN25fSE0zZHFuOWRRTmZIWmF2X0RTUFpRWVgxaG83Qm9maFI3ZEE0NVZVdzc0VmMtV2syM05jWnFqdnFFSHNabG1ndFdOeFFjUQ?oc=5",
-      "veiculo": "InvestNews"
-    },
-    {
-      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiugFBVV95cUxONUVPZFcyZTAzbHZVYUszcTZDRndickUxWmNuay02VzMwYVB0QktYbWpCZV9KTkVwQnltbHpZaXNzZHFvUnZfcW8tWjNHZjFwN0dQSHFMODI2WnVCRDFyMlhJRzVVX1hmS3lUblBwOGRkaU5pOE5UX0ZVZC0yNExSOVpzZTM2alB1aWVHWHE3eUNRQVE2Q2tZRjUzWEw0S2hNM1hEazZ5Zk1RUXRxb2FaZW1NdnM5WHNBZ0HSAcgBQVVfeXFMTTJ1ZXBFZWlaaU90M25nMlhUdkl6bnBqWHFBZENPWV9jRkFYT3ZEZnN0dUFxUl9wQ1FrbFV3ejdUX2lxYzhuUV9GVkFfWktjcC1xNFJtYzFsdzhfc3ZmbkRGODBBMTNETnFqeFdEWjJXY1NhdXZOZnFxb2VrcDJhVnJPMXMzZ2VKSVZ4ZC05YjgtZERINFdCYzVHMW1KUHkzaEZSX3hrS1lQbGY1S3diNThjdktDQVcxS1BUOFRLWXhtTlFCS3RFTTI?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Fri, 04 Sep 2026 17:00:11 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Justiça suspende decisão que anulou contratos de SCP da Fictor",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxONUVPZFcyZTAzbHZVYUszcTZDRndickUxWmNuay02VzMwYVB0QktYbWpCZV9KTkVwQnltbHpZaXNzZHFvUnZfcW8tWjNHZjFwN0dQSHFMODI2WnVCRDFyMlhJRzVVX1hmS3lUblBwOGRkaU5pOE5UX0ZVZC0yNExSOVpzZTM2alB1aWVHWHE3eUNRQVE2Q2tZRjUzWEw0S2hNM1hEazZ5Zk1RUXRxb2FaZW1NdnM5WHNBZ0HSAcgBQVVfeXFMTTJ1ZXBFZWlaaU90M25nMlhUdkl6bnBqWHFBZENPWV9jRkFYT3ZEZnN0dUFxUl9wQ1FrbFV3ejdUX2lxYzhuUV9GVkFfWktjcC1xNFJtYzFsdzhfc3ZmbkRGODBBMTNETnFqeFdEWjJXY1NhdXZOZnFxb2VrcDJhVnJPMXMzZ2VKSVZ4ZC05YjgtZERINFdCYzVHMW1KUHkzaEZSX3hrS1lQbGY1S3diNThjdktDQVcxS1BUOFRLWXhtTlFCS3RFTTI?oc=5",
-      "veiculo": "valor.globo.com"
+      "veiculo": "Valor Econômico"
     },
     {
       "buscador": "google_news",
@@ -1945,6 +1959,20 @@
       "titulo": "Empresas em recuperação judicial somam R$ 20 bilhões em dívidas no varejo",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPTF83Yl9JX0UwRThfd05GTVVUbXRLbU94Y0gzWWoxWnR3MUtnMV9FRGhHcWVwVEk3ZHVjYmtkajFfRXgwMjcxTDRjYnBjbWZPMG5DS08zV1djUFY0WDc0bmh1TVRmV3dYSVJnZUhsX2NOQlZYeHlGX002LVQyMm9vd2ZNX083VmM3RWdOTXExMXphLVR4SjNZbVMzUjNaUEZqcHJhXw?oc=5",
       "veiculo": "jcam.com.br"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMieEFVX3lxTFBxVVlYa0dzNGZRZ09tVmxhTUdXMG1RSlpVSWhFMmZfbkxaTGtHOWp6TzZOcDlSVUZoRERlaE9aUVE0ZkpwYXJxbkhHcF9fQlFPb25mVXZocDNRb1I3X1g5bVJEdnJtNjRvcFUwaGVuSXdxMmowQTV5b9IBfkFVX3lxTE4wbUdsOGdqQkVraXo0dFRZSkU4bjd6aHN2WU12d2NrZDFBVEhLeXc3NGt5RHRRN25fSE0zZHFuOWRRTmZIWmF2X0RTUFpRWVgxaG83Qm9maFI3ZEE0NVZVdzc0VmMtV2syM05jWnFqdnFFSHNabG1ndFdOeFFjUQ?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Fri, 04 Sep 2026 07:00:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": false,
+      "primeiro_visto": "2026-09-05",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Recuperação judicial bate recorde no Brasil — veja as 5 maiores RJs da história",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBxVVlYa0dzNGZRZ09tVmxhTUdXMG1RSlpVSWhFMmZfbkxaTGtHOWp6TzZOcDlSVUZoRERlaE9aUVE0ZkpwYXJxbkhHcF9fQlFPb25mVXZocDNRb1I3X1g5bVJEdnJtNjRvcFUwaGVuSXdxMmowQTV5b9IBfkFVX3lxTE4wbUdsOGdqQkVraXo0dFRZSkU4bjd6aHN2WU12d2NrZDFBVEhLeXc3NGt5RHRRN25fSE0zZHFuOWRRTmZIWmF2X0RTUFpRWVgxaG83Qm9maFI3ZEE0NVZVdzc0VmMtV2syM05jWnFqdnFFSHNabG1ndFdOeFFjUQ?oc=5",
+      "veiculo": "InvestNews"
     },
     {
       "buscador": "google_news",
@@ -4775,13 +4803,13 @@
       "veiculo": "CNN Brasil"
     }
   ],
-  "gerado_em": "2026-09-12T13:18:03.786136+00:00",
+  "gerado_em": "2026-09-13T14:00:54.198732+00:00",
   "janela_dias": 30,
-  "novos_hoje": 14,
+  "novos_hoje": 2,
   "por_tipo": {
     "cautelar_pre_rj": 1,
     "falencia": 33,
-    "noticia_rj_ou_cautelar": 268,
+    "noticia_rj_ou_cautelar": 270,
     "recuperacao_judicial": 39
   },
   "por_tribunal": {
@@ -4806,5 +4834,5 @@
     "TJSP": 1,
     "TJTO": 6
   },
-  "total": 341
+  "total": 343
 }
