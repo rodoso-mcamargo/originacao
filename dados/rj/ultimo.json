@@ -1024,12 +1024,236 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMinwFBVV95cUxOV3oxYVpmUWIzblFTV3JiaVBMUHJxWW9HRERwU3NFQkpZakpoWUFJVzN0WmFpV1lza1p2VG1iLUFVd19DTVhzNlhQOTQtaVFYbnVpUjVrV0tYal9vZE9OdDNRWVZ0a3R6NXlHWGM3OEs5WmtOeVhQMURyMTNYZGxzNmVCWkVqVjZRbndILVJ3T1NXdXNPeW4yTzNFdHpKdEXSAa4BQVVfeXFMT2VjcUJqdEdJdHUwa0NpQWJaNlFHRWt5YWxrcXZQRXhpM3JYLWEtaFlMTHl1NWtXcm1FcWN3Sk93NVJLczFaTklJM2ItbEhWZS1kaFl3NjRHbWk3WHo0WEtxOEVvZnRtOWNJaV8ta0VoUFBXR3BoSUdQOE43dWs0T1pFNHQwcE9KZlVBUE1CS0lIUnQzVUF2UllCLWFMQTJsOERMNVN5OTBJaHIyUjZ3?oc=5",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Mon, 14 Sep 2026 14:46:38 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "AirBaltic pede recuperação judicial nos EUA em meio à guerra com o Irã, diz agência",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOV3oxYVpmUWIzblFTV3JiaVBMUHJxWW9HRERwU3NFQkpZakpoWUFJVzN0WmFpV1lza1p2VG1iLUFVd19DTVhzNlhQOTQtaVFYbnVpUjVrV0tYal9vZE9OdDNRWVZ0a3R6NXlHWGM3OEs5WmtOeVhQMURyMTNYZGxzNmVCWkVqVjZRbndILVJ3T1NXdXNPeW4yTzNFdHpKdEXSAa4BQVVfeXFMT2VjcUJqdEdJdHUwa0NpQWJaNlFHRWt5YWxrcXZQRXhpM3JYLWEtaFlMTHl1NWtXcm1FcWN3Sk93NVJLczFaTklJM2ItbEhWZS1kaFl3NjRHbWk3WHo0WEtxOEVvZnRtOWNJaV8ta0VoUFBXR3BoSUdQOE43dWs0T1pFNHQwcE9KZlVBUE1CS0lIUnQzVUF2UllCLWFMQTJsOERMNVN5OTBJaHIyUjZ3?oc=5",
+      "veiculo": "G1"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMiswFBVV95cUxPODF4blpLa2RjVDJjT0hLNmlCQjhjb3dmd1FrN25YMWVpUWxoSzdVUVpfZExEYjBlWVBKZFRPWkZ4MmZKdU1YMVhBenE4S1FJbXVkSFZaSE8yVTNNZ1Y5R0VicjdQN1lzNTd0UklfbHU5NlluOTNQTWM5MW5LdFpmVXhROEhFUDZva2pwdmVmMG1zLVFNaTNhZjl1a0N6Uk5wOVlScWVEZ3pGd3hUTzk2cnpBNA?oc=5",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Mon, 14 Sep 2026 14:06:46 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Supermercado Fluminense pede recuperação judicial com dívida de R$ 173,8 milhões",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPODF4blpLa2RjVDJjT0hLNmlCQjhjb3dmd1FrN25YMWVpUWxoSzdVUVpfZExEYjBlWVBKZFRPWkZ4MmZKdU1YMVhBenE4S1FJbXVkSFZaSE8yVTNNZ1Y5R0VicjdQN1lzNTd0UklfbHU5NlluOTNQTWM5MW5LdFpmVXhROEhFUDZva2pwdmVmMG1zLVFNaTNhZjl1a0N6Uk5wOVlScWVEZ3pGd3hUTzk2cnpBNA?oc=5",
+      "veiculo": "Giro News"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMiqAFBVV95cUxNMlJyMWpjWGhqRW8yQ1B2TV9GaXhZMWU2alZWYWRCNUVkMHRib19sZzgybU5VRmY0bmltcHBROEJ2Q1czTzJtWkpod0lGMVdiWUY5eDJQVmxnMjZyQ196aWk5WEgzLVVtQVpqVDhrMTdKQkY2Q04wV3JYWU5FM2d4TER2cDFQNlpaNFN3QVlzVmczd2hsVHhkOU5UVV9OYjJQd2sxTDllcEI?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 14 Sep 2026 13:56:44 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Justiça defere recuperação judicial da Sorvelândia em Caxias do Sul (RS)",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNMlJyMWpjWGhqRW8yQ1B2TV9GaXhZMWU2alZWYWRCNUVkMHRib19sZzgybU5VRmY0bmltcHBROEJ2Q1czTzJtWkpod0lGMVdiWUY5eDJQVmxnMjZyQ196aWk5WEgzLVVtQVpqVDhrMTdKQkY2Q04wV3JYWU5FM2d4TER2cDFQNlpaNFN3QVlzVmczd2hsVHhkOU5UVV9OYjJQd2sxTDllcEI?oc=5",
+      "veiculo": "Giro News"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMixgFBVV95cUxOUVlpeEZuQ09JOEtNX1ZaZ0dBWm9QbmIzRG51WU04dW9kWHhzZUpuZWFkZENSd015Q0s1bmJLWnJmVnczTmt6XzlVTUlaZko2NmlMM2NBMzBueXItd2NGMlltSUJIdFhWNERnTHM0Q0J1bWhFdnVJMnFaaDNOb3MyUDNtMUpWZ3g3d0o0VHFSVGNON25OTWxqOU5rZmNobTlHLUxZODM5QVhtVTBadDMtckpJbXVmejY5V3JVSUoxV1dTcmFKQ0E?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 14 Sep 2026 13:32:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "AirBaltic entra com pedido de falência devido aos custos da guerra no Irã",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOUVlpeEZuQ09JOEtNX1ZaZ0dBWm9QbmIzRG51WU04dW9kWHhzZUpuZWFkZENSd015Q0s1bmJLWnJmVnczTmt6XzlVTUlaZko2NmlMM2NBMzBueXItd2NGMlltSUJIdFhWNERnTHM0Q0J1bWhFdnVJMnFaaDNOb3MyUDNtMUpWZ3g3d0o0VHFSVGNON25OTWxqOU5rZmNobTlHLUxZODM5QVhtVTBadDMtckpJbXVmejY5V3JVSUoxV1dTcmFKQ0E?oc=5",
+      "veiculo": "CNN Brasil"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMiiAFBVV95cUxQLVRsbHFma0pCVXVTckZLUHJxaXF3a1M5ZlByRUFDNlRORjhDT3V4NnVCakE5SXA0aVU3U2d5YmlibGJGMlpuRExFMEhGTG9RNE8wVHpLUHBDb0dmc0dnMjJSWUZPb0FidHBxdzZnbFhkeXFoeUNCOWhWV0RlQ3FUZ3ZOSjhERnAy?oc=5",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Mon, 14 Sep 2026 12:07:17 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Com dívida de R$ 80 milhões, empresa de sorvetes com mais de 50 anos pede recuperação judicial",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQLVRsbHFma0pCVXVTckZLUHJxaXF3a1M5ZlByRUFDNlRORjhDT3V4NnVCakE5SXA0aVU3U2d5YmlibGJGMlpuRExFMEhGTG9RNE8wVHpLUHBDb0dmc0dnMjJSWUZPb0FidHBxdzZnbFhkeXFoeUNCOWhWV0RlQ3FUZ3ZOSjhERnAy?oc=5",
+      "veiculo": "ND Mais"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMimwFBVV95cUxPVDdaUzhoeGxtSjNRZWdfQmNKcmYxZmE4a3VCU3lUWkluVDhvMWV0b0VnejFMU0t6ellNTFd0ZnpoRVBsOUJSejlJRXNPbnE4TGR3R2NQclBoQ2dBeDY2X1NEUmpzWlh2cVBUcUk4SThLWmVhTnpaN1UycDRmSS0ySlI5Y1p3cmVlRGU4TEdmVHdXbXM5Y1dPSlR5OA?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 14 Sep 2026 12:05:50 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Empresa aérea da Letônia com frota única de A220 entra em concordata",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPVDdaUzhoeGxtSjNRZWdfQmNKcmYxZmE4a3VCU3lUWkluVDhvMWV0b0VnejFMU0t6ellNTFd0ZnpoRVBsOUJSejlJRXNPbnE4TGR3R2NQclBoQ2dBeDY2X1NEUmpzWlh2cVBUcUk4SThLWmVhTnpaN1UycDRmSS0ySlI5Y1p3cmVlRGU4TEdmVHdXbXM5Y1dPSlR5OA?oc=5",
+      "veiculo": "AIRWAY"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi6gFBVV95cUxPTTM3eDVLRkRTSko4WWF5eWYxakN5bEhRbUhuckxtZkRVcjlhT0tRT05aUm9hNm9oY0Z3ZFI4QS1ZRTRBeUdvZjNhZzFtbmpnR2lYOUNzY1pfd1ZCSzI0OTFDQ1ozQnhxaDFaRDNpOXlwYWlTa2tyeU1VNmtJT3YtN1VDaVg4WjBGdjVQRlRlaUl6Skt6X1FBb3ZKWHBqQzZFdTNfN29Sc0xWa0NXYmlWVzUyNml2T1ZBbFd0Mk1PanZ6NVVZZFh3bUJMMVJydlRnbE1FZFlwRVdsdlo0WTRneVNOSHhrcHdKUkHSAeoBQVVfeXFMT00zN3g1S0ZEU0pKOFlheXlmMWpDeWxIUW1IbnJMbWZEVXI5YU9LUU9OWlJvYTZvaGNGd2RSOEEtWUU0QXlHb2YzYWcxbW5qZ0dpWDlDc2NaX3dWQksyNDkxQ0NaM0J4cWgxWkQzaTl5cGFpU2trcnlNVTZrSU92LTdVQ2lYOFowRnY1UEZUZWlJekpLel9RQW92SlhwakM2RXUzXzdvUnNMVmtDV2JpVlc1MjZpdk9WQWxXdDJNT2p2ejVVWWRYd21CTDFScnZUZ2xNRWRZcEVXbHZaNFk0Z3lTTkh4a3B3SlJB?oc=5",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Mon, 14 Sep 2026 11:48:41 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "AirBaltic pede recuperação judicial nos EUA após disparada nos preços de combustíveis",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPTTM3eDVLRkRTSko4WWF5eWYxakN5bEhRbUhuckxtZkRVcjlhT0tRT05aUm9hNm9oY0Z3ZFI4QS1ZRTRBeUdvZjNhZzFtbmpnR2lYOUNzY1pfd1ZCSzI0OTFDQ1ozQnhxaDFaRDNpOXlwYWlTa2tyeU1VNmtJT3YtN1VDaVg4WjBGdjVQRlRlaUl6Skt6X1FBb3ZKWHBqQzZFdTNfN29Sc0xWa0NXYmlWVzUyNml2T1ZBbFd0Mk1PanZ6NVVZZFh3bUJMMVJydlRnbE1FZFlwRVdsdlo0WTRneVNOSHhrcHdKUkHSAeoBQVVfeXFMT00zN3g1S0ZEU0pKOFlheXlmMWpDeWxIUW1IbnJMbWZEVXI5YU9LUU9OWlJvYTZvaGNGd2RSOEEtWUU0QXlHb2YzYWcxbW5qZ0dpWDlDc2NaX3dWQksyNDkxQ0NaM0J4cWgxWkQzaTl5cGFpU2trcnlNVTZrSU92LTdVQ2lYOFowRnY1UEZUZWlJekpLel9RQW92SlhwakM2RXUzXzdvUnNMVmtDV2JpVlc1MjZpdk9WQWxXdDJNT2p2ejVVWWRYd21CTDFScnZUZ2xNRWRZcEVXbHZaNFk0Z3lTTkh4a3B3SlJB?oc=5",
+      "veiculo": "valor.globo.com"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi2wFBVV95cUxPUVB3cktiMERHYnZFTmFDNXZiWEFNR0RxbnBkRFRqMlpmRTJ3eDNwUDBkakZheG9pclZYY1c5MVEzZl9FUWZyY2tpNVFaQzE5WXJjSWJSZHhqX1VkN3VTLVJrWF9zTkZwV2k1NWtwTGIzb2FhdU5VNFFXSUY4TXN2QkE1aU1yd2tDUkVraUZEdkl2eXpsX3RTZ2t5MW5YaTNDWmVsTWNmdkVPY0dxbnJmeFVaWXk3RXY5TmVtbzFGaHRmTF93elN2d0o0WmxaaVI3ZldwU3pLVEJVN1XSAeoBQVVfeXFMT00zN3g1S0ZEU0pKOFlheXlmMWpDeWxIUW1IbnJMbWZEVXI5YU9LUU9OWlJvYTZvaGNGd2RSOEEtWUU0QXlHb2YzYWcxbW5qZ0dpWDlDc2NaX3dWQksyNDkxQ0NaM0J4cWgxWkQzaTl5cGFpU2trcnlNVTZrSU92LTdVQ2lYOFowRnY1UEZUZWlJekpLel9RQW92SlhwakM2RXUzXzdvUnNMVmtDV2JpVlc1MjZpdk9WQWxXdDJNT2p2ejVVWWRYd21CTDFScnZUZ2xNRWRZcEVXbHZaNFk0Z3lTTkh4a3B3SlJB?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 14 Sep 2026 11:48:41 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "AirBaltic pede recuperação judicial nos EUA após disparada nos preços de combustíveis",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPUVB3cktiMERHYnZFTmFDNXZiWEFNR0RxbnBkRFRqMlpmRTJ3eDNwUDBkakZheG9pclZYY1c5MVEzZl9FUWZyY2tpNVFaQzE5WXJjSWJSZHhqX1VkN3VTLVJrWF9zTkZwV2k1NWtwTGIzb2FhdU5VNFFXSUY4TXN2QkE1aU1yd2tDUkVraUZEdkl2eXpsX3RTZ2t5MW5YaTNDWmVsTWNmdkVPY0dxbnJmeFVaWXk3RXY5TmVtbzFGaHRmTF93elN2d0o0WmxaaVI3ZldwU3pLVEJVN1XSAeoBQVVfeXFMT00zN3g1S0ZEU0pKOFlheXlmMWpDeWxIUW1IbnJMbWZEVXI5YU9LUU9OWlJvYTZvaGNGd2RSOEEtWUU0QXlHb2YzYWcxbW5qZ0dpWDlDc2NaX3dWQksyNDkxQ0NaM0J4cWgxWkQzaTl5cGFpU2trcnlNVTZrSU92LTdVQ2lYOFowRnY1UEZUZWlJekpLel9RQW92SlhwakM2RXUzXzdvUnNMVmtDV2JpVlc1MjZpdk9WQWxXdDJNT2p2ejVVWWRYd21CTDFScnZUZ2xNRWRZcEVXbHZaNFk0Z3lTTkh4a3B3SlJB?oc=5",
+      "veiculo": "valor.globo.com"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMid0FVX3lxTE82VEhzSmhkT1M2YWNkbzhvRVBsV1F0RzhhbC1KbE1NRlNtWmZXWndpeVNtZlh4YU9Vbm1VbmhpektfNkVYOWN1aU8wYWpnN3B3TVkteUd1S2hXOUJicFc5Wi1EWWh6VXU0MFNheWxpWXRsbkMyMEhV?oc=5",
+      "consulta": "\"entra com pedido de recuperação judicial\"",
+      "data_publicacao": "Mon, 14 Sep 2026 11:44:51 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "A AirBaltic entra com pedido de recuperação judicial nos termos do Capítulo 11, à medida que os custos da guerra no Irã se tornam mais pesados",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE82VEhzSmhkT1M2YWNkbzhvRVBsV1F0RzhhbC1KbE1NRlNtWmZXWndpeVNtZlh4YU9Vbm1VbmhpektfNkVYOWN1aU8wYWpnN3B3TVkteUd1S2hXOUJicFc5Wi1EWWh6VXU0MFNheWxpWXRsbkMyMEhV?oc=5",
+      "veiculo": "br.tradingview.com"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi-AFBVV95cUxQOURqdnhoNHFLelJwQk9WSTlmdW1UdDdTVE9WLTRHSFF4UUNsM1psdnc4S2lhNENQUWpuU3hNLS1lY1JsU1loZkFBWVltU3lzdGg0WmgwTjJNRXBLcldmRE5Ya25NSHA2OXJtRzlTSHA0bURYV2VPNE9LSXJYMHBDejFtRkpkVllIMEtFaFh3R29vVFh3bXpFM2hkY21qS1ctYXhDcDJGLWpFMlNra0lCbDJDLUs4V2ZqbjkxODRFUWp3M2lyQU1PUzU2WENtRFNhN3VDNDY5RDdqNkF6c1JnQUFXaFNlNlhBSTk4U2lWeGhVVkNtSWFFeNIB-AFBVV95cUxQWnp4VFpaNUcwZVdTNzI4UjlSMDJiQnZQbXI2YUdYZjdueERINVJWMkRPSGVfdFJxNzVyWndhVjVJZ3pGTENuWHVwNHdzV2VuLVhScWIzN2tRSzk0cDkwaHNoSVpiYWhrY2JSTzdhUV9ZYjlpWDFVNVlkN1lwOXZhUjFNc1lyZmMxS28yVWk4MW1QeHhKM3pjUUFpS25MeWM5VE5aR1doZElZcm82SE1QWnljeHo4MkE0NnhlbnJYbzhwQ2VWb1liT05NYWtEX1FGdXN3QldnaDlpWHcyTmxmb3V3LWgxVjBuSTQ5MEhCdFZEMVVvdUhRUA?oc=5",
+      "consulta": "\"ajuíza recuperação judicial\"",
+      "data_publicacao": "Mon, 14 Sep 2026 11:30:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Crise no Agronegócio: Qual a ferramenta certa para o produtor: recuperação judicial ou alongamento da dívida?",
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQOURqdnhoNHFLelJwQk9WSTlmdW1UdDdTVE9WLTRHSFF4UUNsM1psdnc4S2lhNENQUWpuU3hNLS1lY1JsU1loZkFBWVltU3lzdGg0WmgwTjJNRXBLcldmRE5Ya25NSHA2OXJtRzlTSHA0bURYV2VPNE9LSXJYMHBDejFtRkpkVllIMEtFaFh3R29vVFh3bXpFM2hkY21qS1ctYXhDcDJGLWpFMlNra0lCbDJDLUs4V2ZqbjkxODRFUWp3M2lyQU1PUzU2WENtRFNhN3VDNDY5RDdqNkF6c1JnQUFXaFNlNlhBSTk4U2lWeGhVVkNtSWFFeNIB-AFBVV95cUxQWnp4VFpaNUcwZVdTNzI4UjlSMDJiQnZQbXI2YUdYZjdueERINVJWMkRPSGVfdFJxNzVyWndhVjVJZ3pGTENuWHVwNHdzV2VuLVhScWIzN2tRSzk0cDkwaHNoSVpiYWhrY2JSTzdhUV9ZYjlpWDFVNVlkN1lwOXZhUjFNc1lyZmMxS28yVWk4MW1QeHhKM3pjUUFpS25MeWM5VE5aR1doZElZcm82SE1QWnljeHo4MkE0NnhlbnJYbzhwQ2VWb1liT05NYWtEX1FGdXN3QldnaDlpWHcyTmxmb3V3LWgxVjBuSTQ5MEhCdFZEMVVvdUhRUA?oc=5",
+      "veiculo": "diariodigital.com.br"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMieEFVX3lxTE1Sb1NpRTJ3UnhxLVJyUi1VTnBrSjdpU0R2bUtYZ1NSa3U4SDdIVmk0U2h2Sm8xV3dMOGllTmZXSFNsMTQ4MXJTdGFLZnRPTkFJeTNSTVZrcURvcl80MmNBWHN1MGRfRXd5M2Y0a1FWUU5vR3NJMVNfNg?oc=5",
+      "consulta": "\"entra com pedido de recuperação judicial\"",
+      "data_publicacao": "Mon, 14 Sep 2026 09:59:25 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "AirBaltic entra com pedido de recuperação judicial nos termos do Capítulo 11, à medida que os custos da guerra no Irã se fazem sentir",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1Sb1NpRTJ3UnhxLVJyUi1VTnBrSjdpU0R2bUtYZ1NSa3U4SDdIVmk0U2h2Sm8xV3dMOGllTmZXSFNsMTQ4MXJTdGFLZnRPTkFJeTNSTVZrcURvcl80MmNBWHN1MGRfRXd5M2Y0a1FWUU5vR3NJMVNfNg?oc=5",
+      "veiculo": "TradingView"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMijwJBVV95cUxQREc5dXdjeGhaZjczZ2pCMko3dDRYOWx0eDUyZkdLTWVDMlNPY0Fqc1FtMUlfM1dINkJvY1JXZngzeE5wR2FkZ0d6VHItMnpYMU9Db3dhaHptaVRfbFFreGt6SlpDV1k2ZmdCUGNGQi1hLUdaTTRHNk5NUTV2Z2FLT1doRk9DdjkxTzlmMkNPaF9zZi11Tmx1dVhGa3V1dUt1bWhOY3NmVTVhMDJIdXBzRGVYVF9JeEQyYVBmRVBMM2tBbUdSOW1mOEEtYjVUWTBQWjYwWjdwTV9TZmRpaWM0b0NUMWhBUVpSMVFpNkpYdnZ6MkszdGJlQ0sta0htODNoZzBjNHhhSHFhbXdsblRV?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 14 Sep 2026 09:17:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Fábrica de sorvetes com 56 anos de história acumula R$ 80 milhões em dívidas e recorre à Justiça para continuar funcionando",
+      "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQREc5dXdjeGhaZjczZ2pCMko3dDRYOWx0eDUyZkdLTWVDMlNPY0Fqc1FtMUlfM1dINkJvY1JXZngzeE5wR2FkZ0d6VHItMnpYMU9Db3dhaHptaVRfbFFreGt6SlpDV1k2ZmdCUGNGQi1hLUdaTTRHNk5NUTV2Z2FLT1doRk9DdjkxTzlmMkNPaF9zZi11Tmx1dVhGa3V1dUt1bWhOY3NmVTVhMDJIdXBzRGVYVF9JeEQyYVBmRVBMM2tBbUdSOW1mOEEtYjVUWTBQWjYwWjdwTV9TZmRpaWM0b0NUMWhBUVpSMVFpNkpYdnZ6MkszdGJlQ0sta0htODNoZzBjNHhhSHFhbXdsblRV?oc=5",
+      "veiculo": "Diário do Comércio"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi8AFBVV95cUxPVEVkcE5ibFhvaDREemVWZE5UU2FGVTliTnpMOXNGTGRzdWpfRndNb0ZyWjdzajM1LThlOU5Oc0VBb3BPcHdpME5PZl9TenVNSFpxM0tObm5faS16eFFsd2haNExpVHd1U1FJemJRNXJISHJfeURYV29obms3ZDI4Wll3VXZKVm9LNEJVU0lTT1Y4bXU5VGZ4dHRpY21BWUE4cjN1a1BfX1JyZmZFbVp0Ui0zQ25TaFY4ZHdOY2k4N0g4YkRYeUo4LVNOT1huN2pFeUdzNk1RRmEzWFo0T1M3c2phSlFwT3dzY1pSVzVjZ1E?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 14 Sep 2026 03:18:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Fundada em 1970, tradicional fábrica de sorvetes do RS entra em recuperação judicial com passivo de R$ 80 milhões",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPVEVkcE5ibFhvaDREemVWZE5UU2FGVTliTnpMOXNGTGRzdWpfRndNb0ZyWjdzajM1LThlOU5Oc0VBb3BPcHdpME5PZl9TenVNSFpxM0tObm5faS16eFFsd2haNExpVHd1U1FJemJRNXJISHJfeURYV29obms3ZDI4Wll3VXZKVm9LNEJVU0lTT1Y4bXU5VGZ4dHRpY21BWUE4cjN1a1BfX1JyZmZFbVp0Ui0zQ25TaFY4ZHdOY2k4N0g4YkRYeUo4LVNOT1huN2pFeUdzNk1RRmEzWFo0T1M3c2phSlFwT3dzY1pSVzVjZ1E?oc=5",
+      "veiculo": "Diario de Pernambuco"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa81f270ffe42548dd18c9e1fad351a&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f09%2f14%2fairbaltic-pede-recuperacao-judicial-nos-eua-apos-disparada-nos-precos-de-combustiveis.ghtml&c=376271119325658544&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Sun, 13 Sep 2026 21:56:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "AirBaltic pede recuperação judicial nos EUA após disparada nos preços de combustíveis",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa81f270ffe42548dd18c9e1fad351a&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f09%2f14%2fairbaltic-pede-recuperacao-judicial-nos-eua-apos-disparada-nos-precos-de-combustiveis.ghtml&c=376271119325658544&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMikgJBVV95cUxQeWV3UkpqV25kMTZjTUhiZUlYWHhsUklqeTQwMXdsUmtBYmg3VzhUX0Vod0g2cm5aaFM2dFI0ZTVNMVZMbXA4T1ZPemtyTlNvblpDOUtuM1dUQkRsZE44NUNfenJ2Tk51NEwyTWs1MDlHdzUtU3dvNzRBQ0FqNjJReFRBZEtET3BGRjNIdXZIc3VDZTIzd3JfQVdtRHBCenQ3Uk9NRXRoSTlOVmRLdWlHZGFVVlNnT2R5RmlZZmJ3TTEtVGk4V2NXZXdvQzlxREVWdnNGcGhna1BlRXRvMU5yNDVGV3hMTE1LV05pbTgzckpHV2xISjE5cU1UdVp1Q2w1azhQTC1OdUZCMmtpOE44RmlR?oc=5",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Sun, 13 Sep 2026 19:46:58 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Com dívida de R$ 50 milhões, metalúrgica de Caxias do Sul pede recuperação judicial",
+      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQeWV3UkpqV25kMTZjTUhiZUlYWHhsUklqeTQwMXdsUmtBYmg3VzhUX0Vod0g2cm5aaFM2dFI0ZTVNMVZMbXA4T1ZPemtyTlNvblpDOUtuM1dUQkRsZE44NUNfenJ2Tk51NEwyTWs1MDlHdzUtU3dvNzRBQ0FqNjJReFRBZEtET3BGRjNIdXZIc3VDZTIzd3JfQVdtRHBCenQ3Uk9NRXRoSTlOVmRLdWlHZGFVVlNnT2R5RmlZZmJ3TTEtVGk4V2NXZXdvQzlxREVWdnNGcGhna1BlRXRvMU5yNDVGV3hMTE1LV05pbTgzckpHV2xISjE5cU1UdVp1Q2w1azhQTC1OdUZCMmtpOE44RmlR?oc=5",
+      "veiculo": "GZH"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa81f2834724485a8d3229a7e009291&url=https%3a%2f%2fwww.jornaldocomercio.com%2feconomia%2f2026%2f09%2f1263016-sorvelandia-protocola-pedido-de-recuperacao-judicial.html&c=17351181803423264365&mkt=pt-br",
+      "consulta": "\"protocola pedido de recuperação judicial\"",
+      "data_publicacao": "Sun, 13 Sep 2026 15:57:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Sorvelândia protocola pedido de recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa81f2834724485a8d3229a7e009291&url=https%3a%2f%2fwww.jornaldocomercio.com%2feconomia%2f2026%2f09%2f1263016-sorvelandia-protocola-pedido-de-recuperacao-judicial.html&c=17351181803423264365&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMigwJBVV95cUxPRy16OEN5LUdsanJ4V3kwcEdSWlQya29fdGtwa3NKSmlxVzVmVmpMWDNxOVd0MTd5d1M3SEVQRXFTTXVjLXc2ZHhkb2tDWGhZbkNlZDVWYWotNFBhTGVmMUNBWm1FTXU4R1g0VlZQTk5nRVVFcjFVZklIX2FGWGJCejg1a3ZIZ3VPVGlLMWpnZnFITGpUYWxFQmVtbG5paG1JNDAtT2JkNk9CT2JBc2pyOFo1bGFkSnlJSkZXam9QbTNiNXYxVDBXTF8zUW9sNGJaSFhkR1J2bVphakdoX1ZLamhQM09hUUF5X2lldVhWT3NhZnRFN0FGRzZSbXdrdXVleTBR?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Sat, 12 Sep 2026 14:07:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-13",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Tradicional fabricante de sorvetes Sorvelândia entra em recuperação judicial em Caxias do Sul",
@@ -1043,7 +1267,7 @@
       "data_publicacao": "Sat, 12 Sep 2026 08:00:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-12",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Quando é a hora certa de largar mão de uma ação com perda?",
@@ -1090,7 +1314,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Com passivo superior a R$ 80 milhões, Sorvelândia, de Caxias do Sul, pede recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWllSSUpTRUhyTkZHWDdFSk1NQU1sdHdwYkpwZThWaUlWX1Jzc1hpMTEwX1pPdnBfeDNRcVRBSEIxRG5vMEJnSXVPTml0Y0FGY1lXbTljM25HLUtTc2dPNkd5eE1UZVp5akloWXMxci1xeFF0WUx6MmozWWhicndVNnhTQ0FvRndmYW1YZ2duNzYtUVpXbUZBcXVKUjR0Y3I5cjk2a3BZdkdNdFBHb1J3VW1Tel9YRHFxMm9URU53?oc=5",
-      "veiculo": "leouve.com.br"
+      "veiculo": "Leouve"
     },
     {
       "buscador": "google_news",
@@ -1118,7 +1342,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Sorvelândia tem recuperação judicial deferida pela Justiça",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQUUxsQTVoR1Y1aUdHMjNBNGVXZFp4TlVhSHFsWFV5ZVBXUi1ucnRwd0FPdElHalVqUG5aZGRDWG5lOUs0MVZEakV1QTlMc1lfc1BSbUhvTGZRdHk2TExXcHNiVlA4ZWFWejYtSWFTU0NxS1p4cWlGX2lISW43d2k4MWNlQ2h6NkF6N05kQ3dzWk5nYjRy?oc=5",
-      "veiculo": "radiocaxias.com.br"
+      "veiculo": "Radio Caxias FM"
     },
     {
       "buscador": "google_news",
@@ -1132,7 +1356,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Rafael Ferri e Abimec entram com pedido de liminar contra debenturistas de Casas Bahia",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOX2pVOGlKU2t6YVZZRHVrUXJpN0FfWnlYZnBZbklvdXB0VkV1V2VTc1ROUkhQYkk1ajZxcnhtVXJ5WUttQ0lDQWVsS3RIdHhCMl9YbGRBMl9jUTRYNDBWUnpRTHJybzR1VWo3MFV4SEl4VWFIVXYtMXlycV9hcWhUeHZKeHBxNE93d1JLYjFfeUdBTTY2dl9WMG9hTEsyUFRyRmh5MWd4ZUhsVTM4LU9BWEF6RjZoY3VLdkdmS3M4T1J0QWpyNVlvOWdJYjJ3ZVpCc0JpbEV1UUpBNGE20gHrAUFVX3lxTE96VTJNS1pqZkxEVG9CVlVWYjRDOXJyc2xxcEpYYkRaU1BnYmYzTE05TERYQ2h0OHM0aFp5Z192ckp6V2JmY1pHTlB4X1dpQkN3cU4xUDFMdXdiRlJfcTUyeWtXR1B1OE1ZMGF2TFFvRHpNLTlkNzNfajdTcGJxWl9KdUhHdVRVaThNTGVKT2p4WGlMdnd3em1uUUlMR01DS2QyVkpjWWNsa1ZnZ1UwejVRZ0tuRV91TWVqUTRRNTFjSHRSR2xWVnBoVFNuVmUxamc2NGZLS0lJNVh3ZzMtRWJCdjRjNklrQnNsb00?oc=5",
-      "veiculo": "Valor Econômico"
+      "veiculo": "valor.globo.com"
     },
     {
       "buscador": "google_news",
@@ -1147,6 +1371,20 @@
       "titulo": "Tradicional fabricante de sorvetes de Caxias do Sul entra em recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOa1k5N0swa3dyVGIwZjVHQ3EyTmpKcGlxUW01VGx3TVZoUnUtQngwMFZiWDZ2ZGx4ZGM5LVo1blpjM19QNmpXenphUHpPMzBXRG1razFtdXVzLURHMzI4ck1EVS1NcUZtUlBwRnNfc2tEVUY2Rks0Y2pFQUR2azZHMXJvcno4cmF3NnQ0OG1jaGpSVzJpTnd4TUl6TGFGd3hHbDlXOGJJcVZ4UnJRZExJ?oc=5",
       "veiculo": "Rádio Solaris"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMiTkFVX3lxTE9HcW1HRnpLRTl4RVRmSWZxb2sybldTeURHNUxKUUxzcXNyTzc5a09MVDVJNnpoQ01MODhaTDF0X0JMZHc5dnZhZ25oSk9TQQ?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Fri, 11 Sep 2026 15:28:14 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Arquivos Sorvelândia",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9HcW1HRnpLRTl4RVRmSWZxb2sybldTeURHNUxKUUxzcXNyTzc5a09MVDVJNnpoQ01MODhaTDF0X0JMZHc5dnZhZ25oSk9TQQ?oc=5",
+      "veiculo": "expansao.co"
     },
     {
       "buscador": "google_news",
@@ -1272,7 +1510,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Só 17,5% das empresas concluíram recuperação judicial, diz estudo",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQX3MybWtoRVZiTXE1LTlDOGV0M1VuOGJNTGZjLUJGU2JzU3RTVHU0ejFxZEs1OVpwX0JUVTY1VUZ5V0tYMXlSZm9TeGNUaEtYOUxaRndmbFdwMjJpcXRqclcybGx1WlZhTjd3dkNjN1ROSXhXdzVSUmItMXk0bEhfVndxUk5FUzBpd0JudW8wQWdNLWo3b0tMX1piTjFXTlc3cGZzTWw1d2UtVnJJWFhLbUFwNHVYNS1zTHJVdG1SUdIBzgFBVV95cUxNSVBrdVgzWC1xRmI5TE9nWTdzRkVOQmpnLVhaLTVfLUktWTZZSnBMdVQtc3l6c0pQb0YyeFVlUTJCUEdodGFqQnFtY21ocVFnZ3AzU0JTbk9jN0pHVWVkUGxNQlJNVlJHc1c0N3N0a2JwYmJlQ3BPSFV3RWlsbzQzMnNmcWItQ3ROU1dBU1B0STlyU1dBbVMxOWI0cGg1NzBPbndEeVpEUlZLWFhhdjE0alA2amdqSTFYUTd6T044Tlh2TEEySFBQX0gtUXpmdw?oc=5",
-      "veiculo": "Valor Econômico"
+      "veiculo": "valor.globo.com"
     },
     {
       "buscador": "bing_news",
@@ -1440,7 +1678,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Light anuncia encerramento da recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQlRNLTVPbjQtVnVhWktZNnB2aksxQWNIWEZWT1l2MkJOVmNPVmx4VmJDcHFobkpNWUstSm9YN25MeW5IMkdjWHZxUWo4dVIyYVhEREg3YjhGMzZXN2JEbWtIYnRCblhRaDRRTzg4WmdoT3dqR1dXdFlGOGhSd1RjYl8tX3hYZlZwb1RVRWotVQ?oc=5",
-      "veiculo": "cnnbrasil.com.br"
+      "veiculo": "CNN Brasil"
     },
     {
       "buscador": "google_news",
@@ -1477,12 +1715,26 @@
       "data_publicacao": "Wed, 09 Sep 2026 18:47:18 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-11",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Demitidos da Casas Bahia dizem não ter recebido rescisão, segundo sindicato",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZW1hVUIxblBnS0xLY29xRmdpWjZJemM0QWxKNm9fNGFBTnFRVmtlRTZNMFljeTk0azBrT0ItMk5BZUUxdnJHLXluOFJoS1RTQVZxTXo3LWFVRnhHLXI0U2YzQXVIRVpxTEtBcFg4U0h4ZTVUM0hqSDVBM3BNekxVcnlWbllrazJHZ01VN0NBWnVOSklObmc?oc=5",
       "veiculo": "UOL Economia"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMipgFBVV95cUxNY3JkZ1NaaGNvR1lhUTJoazRJUzR6Vk01Mi0yRzg1bmk4ZVVnVzdhMnFnT2NtZTlDQXpIOHVILUwxdDdYSU9NWE1sei1ZV181R3d4TklpeXhHOGRuYzE2ZlhNM1RBTm9RQzB3V2l1ckpnTndYZWNBMC0tMHM0MTVwMXE5MUdKT0d2NXAybW5iMFNYY05vQjRISmg1MFEwQ2x0NUU3Ulln0gGrAUFVX3lxTE5YN1VFSUpVcm56Tjg0d2l3dld6aGFJZ2ZKd09NbWU3OVcxWE9EaFlybEJnVURlUk9JdFZxS3M3THpVX0Y1RUdTQURlc0EtekJyTjZRQ2F3X3pzTl9VWEZVQWpyejExZy1kSDY4RDdvYW1TdWFzUXlWYjdaWUxlYmtvWDE3bHVZbERjZHl1eTFDMHBmMFRfcTRJZDYyYUZFa20xOWFvekl4NVlRaw?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Wed, 09 Sep 2026 18:10:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-14",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Marabraz pede suspensão de cobranças de dívidas por 180 dias",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNY3JkZ1NaaGNvR1lhUTJoazRJUzR6Vk01Mi0yRzg1bmk4ZVVnVzdhMnFnT2NtZTlDQXpIOHVILUwxdDdYSU9NWE1sei1ZV181R3d4TklpeXhHOGRuYzE2ZlhNM1RBTm9RQzB3V2l1ckpnTndYZWNBMC0tMHM0MTVwMXE5MUdKT0d2NXAybW5iMFNYY05vQjRISmg1MFEwQ2x0NUU3Ulln0gGrAUFVX3lxTE5YN1VFSUpVcm56Tjg0d2l3dld6aGFJZ2ZKd09NbWU3OVcxWE9EaFlybEJnVURlUk9JdFZxS3M3THpVX0Y1RUdTQURlc0EtekJyTjZRQ2F3X3pzTl9VWEZVQWpyejExZy1kSDY4RDdvYW1TdWFzUXlWYjdaWUxlYmtvWDE3bHVZbERjZHl1eTFDMHBmMFRfcTRJZDYyYUZFa20xOWFvekl4NVlRaw?oc=5",
+      "veiculo": "iG Economia"
     },
     {
       "buscador": "google_news",
@@ -1622,7 +1874,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Grupo cearense Turatti entra em recuperação judicial e cita impacto de canetas emagrecedoras",
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPM3YwdE5NblVJRDd6ajh6VFM4QnYxVjRoUEFCWUVmWTBRTDd0QVA0SF9sSVMyRThHaFFUVUJEWG85MEU5bjV6MlJlSkJELWE3eng3ZXZKZTFrb0NibExKcV9GTFZxYmV2SlktNVRlODE4Yzdzb2xaUWFKMy1MTUNPc0hJRlF0SDJ5X3RvZFRHYWZDZDlLUXk1X3dBRmpNcFhqcUFxbFNoZk9TQ2VBSmRvTzg0dko3c2phdi14NVdKRWVBcHM1VEpfOTRlZlVGT3Vmb2NvTHFock85Q3QzVEVuNmV1cEpoTms1UXNN?oc=5",
-      "veiculo": "Diário do Nordeste"
+      "veiculo": "diariodonordeste.verdesmares.com.br"
     },
     {
       "buscador": "google_news",
@@ -1748,7 +2000,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "6 mil empresas em recuperação judicial no País: como identificar sinais em farmácias",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc0tuNUFqWXlwRi1rQTZlcGdOVXU0N054RU9OZnQ5cFNKM1dwSEdYeEFIYThOZXpXbzZtZ2hTTkI5SEVsTFZaYkdDY0tINE90Tkx4ZENEanE1dE1May1wcXgzNlozN3pQZTNLRlJnQ2dfX2s3UFNFYzJoTGpJZ01aQmgzam5JdFNj?oc=5",
-      "veiculo": "guiadafarmacia.com.br"
+      "veiculo": "Guia da Farmácia"
     },
     {
       "buscador": "google_news",
@@ -4803,13 +5055,13 @@
       "veiculo": "CNN Brasil"
     }
   ],
-  "gerado_em": "2026-09-13T14:00:54.198732+00:00",
+  "gerado_em": "2026-09-14T16:06:21.018680+00:00",
   "janela_dias": 30,
-  "novos_hoje": 2,
+  "novos_hoje": 18,
   "por_tipo": {
     "cautelar_pre_rj": 1,
     "falencia": 33,
-    "noticia_rj_ou_cautelar": 270,
+    "noticia_rj_ou_cautelar": 288,
     "recuperacao_judicial": 39
   },
   "por_tribunal": {
@@ -4834,5 +5086,5 @@
     "TJSP": 1,
     "TJTO": 6
   },
-  "total": 343
+  "total": 361
 }
