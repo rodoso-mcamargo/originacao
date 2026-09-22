@@ -43,6 +43,20 @@
       "vara": "Juízo da 1ª Vara da Comarca de Cristalândia"
     },
     {
+      "chave": "datajud:08249276520268205106",
+      "classe": "Falência de Empresários, Sociedades Empresáriais, Microempresas e Empresas de Pequeno Porte",
+      "data_ajuizamento": "20260904165722",
+      "empresa": null,
+      "fonte": "datajud",
+      "novo": true,
+      "numero_processo": "08249276520268205106",
+      "primeiro_visto": "2026-09-22",
+      "tipo": "falencia",
+      "tribunal": "TJRN",
+      "url": null,
+      "vara": "6ª VARA CÍVEL"
+    },
+    {
       "chave": "datajud:00117161320268173090",
       "classe": "Recuperação Judicial",
       "data_ajuizamento": "20260904000000",
@@ -600,7 +614,7 @@
       "tipo": "falencia",
       "tribunal": "TJRN",
       "url": null,
-      "vara": "VARA ÚNICA"
+      "vara": "22ª VARA CÍVEL"
     },
     {
       "chave": "datajud:00011887820268173490",
@@ -2354,12 +2368,54 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWkIwNW5tb1RQaW5nTkx2QlNWNlBHSHJpOHJWUk5lQTlmbUdlQVltaVFYVXdKZk1zNURfc21rQ3hfdGFIQnJ3Q2hoNTJqTTZoYUM4TEdtNjdKWVFOZlZuRHd4Rll3QTVPc0hhYmZWNlBWR2tneDU5RHJ6UC1aLUp3c1NQWFNfVFc1TTQ5RENXVnFZUk9NS3M0N1BSMmlHUTBUYUNJVFVObDVYbWxoWl9YY1RYbUVkYWZRUlJR0gHAAUFVX3lxTE93Yk1PdFNrdzJpUDE5cVVSNnF2YWl2d2NGX0dTTUZ1Zl9TdTRKaklxbkFKVUtSa1JOZkdRMjVaOEpDaW8wNHo4b2I0ejlwWFdSUlczY1p4UEROS3FrUnhyRS1ybXNld3QxVENtS0g4cEFvTV9ldU1pc3l0VFFuWEkzZll6RUFSWUcweXk3eVc1bEZPcnVHc0d2UWZWcVRGZnlRdWNMWWtRem1hTU0xTVpDbDAzaTNSZDZRcHRxRDJNag?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Tue, 22 Sep 2026 01:00:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Credores pedem US$ 3 bi em aporte da Petrobras na Braskem em 2 anos",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWkIwNW5tb1RQaW5nTkx2QlNWNlBHSHJpOHJWUk5lQTlmbUdlQVltaVFYVXdKZk1zNURfc21rQ3hfdGFIQnJ3Q2hoNTJqTTZoYUM4TEdtNjdKWVFOZlZuRHd4Rll3QTVPc0hhYmZWNlBWR2tneDU5RHJ6UC1aLUp3c1NQWFNfVFc1TTQ5RENXVnFZUk9NS3M0N1BSMmlHUTBUYUNJVFVObDVYbWxoWl9YY1RYbUVkYWZRUlJR0gHAAUFVX3lxTE93Yk1PdFNrdzJpUDE5cVVSNnF2YWl2d2NGX0dTTUZ1Zl9TdTRKaklxbkFKVUtSa1JOZkdRMjVaOEpDaW8wNHo4b2I0ejlwWFdSUlczY1p4UEROS3FrUnhyRS1ybXNld3QxVENtS0g4cEFvTV9ldU1pc3l0VFFuWEkzZll6RUFSWUcweXk3eVc1bEZPcnVHc0d2UWZWcVRGZnlRdWNMWWtRem1hTU0xTVpDbDAzaTNSZDZRcHRxRDJNag?oc=5",
+      "veiculo": "Estadão"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi_AFBVV95cUxPYXdDVjhMQ0tKOW5fTlA5OEpuSjAxaUhXYzR6cEtlbGVTUEx1NmJ2LU5UdVROYWM3RjU3cGYwTWZVZFNTYi05TG9oemZ2WDdxRWh4UHhnRW9sWDlGLUo3ckFPcTZvdFBrRmk3NXBMQzlCbXhtZDZEeVlIRjBGOHlNOTRoczQzbzh0UlpZdXFCUU9qVVFZRnl0b2I5WDFwbVhmX3lFa2Fvd3ZwQVNodFR5R3pkcjNVSTlaNUY2dnp2OXREenhKb3FraFRMcjNCZkh4ZGZsYVFkbW1RQjJmakRLa3FRenZzYnFDdHcwUEZlUG83Zmxzelc2MDllWWg?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 21 Sep 2026 22:02:05 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Caso Apex: Investidora acusa grupo de retirar R$ 150 mil de projeto imobiliário",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPYXdDVjhMQ0tKOW5fTlA5OEpuSjAxaUhXYzR6cEtlbGVTUEx1NmJ2LU5UdVROYWM3RjU3cGYwTWZVZFNTYi05TG9oemZ2WDdxRWh4UHhnRW9sWDlGLUo3ckFPcTZvdFBrRmk3NXBMQzlCbXhtZDZEeVlIRjBGOHlNOTRoczQzbzh0UlpZdXFCUU9qVVFZRnl0b2I5WDFwbVhmX3lFa2Fvd3ZwQVNodFR5R3pkcjNVSTlaNUY2dnp2OXREenhKb3FraFRMcjNCZkh4ZGZsYVFkbW1RQjJmakRLa3FRenZzYnFDdHcwUEZlUG83Zmxzelc2MDllWWg?oc=5",
+      "veiculo": "ES Hoje"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMirAFBVV95cUxQblRoeFM5OXI4TGlrWl9jTkNfNmpia001c012RmtiQThRc3IwZjNCX09EeEExaXdDOV9maGZ5V3BZYnpCTkdnZlE2TUxNbHdUNXVqb1dKUDJxbm1vUWtXUlRnMlNrVHVqLXN0WF9iUGxTZkZfVzZWOEZIZUlXMFJNWFp6Z3Y1Z05NTThMbVpRUlc3ZEVpNW1RSnoxOFhqQzRqaDNEXzZCenhyZXB4?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 21 Sep 2026 15:29:13 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Juiz defere recuperação judicial apesar de pendências documentais",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQblRoeFM5OXI4TGlrWl9jTkNfNmpia001c012RmtiQThRc3IwZjNCX09EeEExaXdDOV9maGZ5V3BZYnpCTkdnZlE2TUxNbHdUNXVqb1dKUDJxbm1vUWtXUlRnMlNrVHVqLXN0WF9iUGxTZkZfVzZWOEZIZUlXMFJNWFp6Z3Y1Z05NTThMbVpRUlc3ZEVpNW1RSnoxOFhqQzRqaDNEXzZCenhyZXB4?oc=5",
+      "veiculo": "Migalhas"
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiygFBVV95cUxOMTAzYmstb3JyWTk0SDVHeGx5azN0dV9nNTBXUm1ySUlQcXN6aURUOHlBN2ZWZTB3X20zUEVSMGxyT19jTTIyWHF2NGZ3c19iX3A1SU1SYUFJM0NlUTZWTmF1eDc3VDJONDFpeVdZcm1ZaVUzWlJJUDFBNFh5WHVxYkZpNko5NTFvZ1NyMTRjSDNDeFVEQW44OGNrZGZRckpLdDhsQkVoQ0w4dldfQzh5aV9iSi1BMTVza2VYYl9DcXR5OU1uT2pIVDZn?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Mon, 21 Sep 2026 07:14:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-21",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Justiça aceita recuperação de grupo de família de agricultores com R$ 207 milhões em dívidas",
@@ -2373,7 +2429,7 @@
       "data_publicacao": "Sun, 20 Sep 2026 20:19:41 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-21",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Casas Bahia teria pago R$ 11,6 milhões em esquema de propina ligado a créditos de ICMS",
@@ -2387,7 +2443,7 @@
       "data_publicacao": "Sat, 19 Sep 2026 21:06:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-20",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "BRASKEM E DETENTORES DE TÍTULOS PRECISAM ASSINAR ACORDO ATÉ 9 DE OUTUBRO. CREDORES QUEREM APORTE DA PETROBRAS",
@@ -2490,7 +2546,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Casas Bahia (BHIA3) dá passo decisivo: acionistas vão votar recuperação judicial e novo conselho em outubro",
       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPUnNUYmJjekZiZnNwRUQ5VjUyMUhkZl9yQzQySkNxRmh5MVpmSVN2ZWNQVE5laVZRdTBiRjlsN0Z4RUVQQ1RjZUxMcmhldmhocjRUWnBNUTF2U1pqOElkM0tPZ2gxRnRDSEZYV0F3dGxibWEtOS0zdWxNc2dQRWZMMFRnYnZ4UnFrQ25uTzlpbVZkcVpNRGJUak9rdW0xWGpmUmd4Vmc1SUUxdWN1VUxfb0dpMUlJQmJkZzVQX2RzaGgwTGliTVV5ckdWQkRhTGprRlpvcDV6eTVweXJ3b0E?oc=5",
-      "veiculo": "guiadoinvestidor.com.br"
+      "veiculo": "Guia do Investidor"
     },
     {
       "buscador": "google_news",
@@ -2532,7 +2588,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Casas Bahia convoca assembleia para ratificar pedido de recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUHZ2RWFkdGgyRUF3YkUzV3BMOXNFM3VnOVNkU051MHBzMHJxLVh0TGNwaXl1Q2VPYm1aZGYtWDFkbUJoaUlia0Q4QTNhUklGZmUxU3pvX2F4T3h4bFkwTW4wOXlHTHctRF9jUFRaVHpLQXI5T1RGUHlfS2FONXJua0xWdGFZV0hnN29xLTJjYmxWY2w1WDVCMGtJdmpUV3lxZ0ZoeVpxQXE0LTJzLUEyY2xTRzZyaGJ4V1V6QUFnWjluTE9xS0NEUzlWTVjSAdsBQVVfeXFMTTl6VC1ac1NhN2ZoaDR2dTNLRlA3T2hLSTJBaFBPX21nVDV6T1psbDJfYnNNSWRNWjZ1QWxXckozeXc2NDE0cGRoeGw1M0xTRkdCZ2Nmd3ZHR1o4SFZaUDNaOENSRDB0dWkwdlM2X2k5Zm9qalZBbG5kRGJsa2txeHZGVlV6X0ZuWHk3RGU5WEcteEoyLWNTQnN0SVpMLXNnXy04ZGppdkF0Z3ljdWZGcW83bDVDeHVDODh1Y0xRM08xMUNXbXpoTHNDZjVyencxNTFrdUZQSlpMN2dz?oc=5",
-      "veiculo": "Valor Econômico"
+      "veiculo": "valor.globo.com"
     },
     {
       "buscador": "google_news",
@@ -2547,6 +2603,20 @@
       "titulo": "Casas Bahia (BHIA3) emite notas comerciais de cerca de R$ 368 milhões; veja",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdmxKMkg5dEFoMEtNRElRRi1oTXo1REVuekxnUnlGN3A1YTZhc0RiRC0tMHUwdDk5NFl5Y2VGS2F1UGRSa1I2YjN0M2VsLWxQOVktZ0tfc2NwNHVFUGd6alh0TUM5U3dWNDVFYXZqeTNwcGQyYW5FTU9xb1dxVmlJM2JsN21HbUV3OUxxUVhxVDJ0cUNwT2ZramtQTWxtWGJuSkhUWkt6MnlWeW8?oc=5",
       "veiculo": "Money Times"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb153004040997caa2bf74b0126&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f09%2f18%2fcasas-bahia-convoca-assembleia-para-ratificar-pedido-de-recuperao-judicial.ghtml&c=1606762190237095309&mkt=pt-br",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Fri, 18 Sep 2026 04:50:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Casas Bahia convoca assembleia para ratificar pedido de recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb153004040997caa2bf74b0126&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f09%2f18%2fcasas-bahia-convoca-assembleia-para-ratificar-pedido-de-recuperao-judicial.ghtml&c=1606762190237095309&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -2709,7 +2779,7 @@
       "data_publicacao": "Wed, 16 Sep 2026 20:34:33 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-09-21",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Apex Partners: 2ª maior acionista da CVC (CVCB3) pede recuperação judicial",
@@ -2756,7 +2826,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Exclusivo: Braskem propõe deságio em dívida e conversa com credores volta a endurecer, dizem fontes",
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQR3MxSzAxdnQtYkhIZU5EVHl0OWZ6R3hEZDBRTWplZ1NpbjQ5MTVETW1UTXVxTXJFQjltSk96X0hEVVRibTlHZUwtTDRnMFptNW4tUDQwS3FoN0hsTVBKRlVXNlM5amM4eS05dVM1ZEtyQlBMc2l4X3diM3BQQVRaRkRNR2d3VVo5dElvY01RVUU4T0tnVVFZQ1VweW1aV1d1RGNTc3ZSZ2NwWWhCc1hpRDd0WHRPSTB4eFFJNVFvaHRZU0hjTzVVVlI1bUo0NS1La2YyNDlCbjJFU0xkbFN0U09DSklzc0hVMzdB0gH6AUFVX3lxTE5ERklPZ0hhNlVJeC1iUkVFVzNzTUJZbUxHZEdROHE1ZG94Z1d1d0dQRjRudS1BYUNWWTg5TVZjRlctNF96TmIteTIxTU9IUTAyZG9lRmZmTUdkbEp2Y3BQVk5vVTZLZFJFaldBZmFwZFZVWDJBbDl6blZwRGpGTWFVWHVzTkctMDVISG1VaVFuRlhnNDRCV1ZUX0JybHNJdk1YejR3blFTQXNEX2szRDZjeThKLXFJTFlQWm5WZ3ZSajF4aDg5Q2llNm42WW9EZGJvdzZnMF9GY1FqS1RjcDk3WXRpTUNYWUdzOXAyZ2ZsX0d2eGlhVFEyNEE?oc=5",
-      "veiculo": "Valor Econômico"
+      "veiculo": "valor.globo.com"
     },
     {
       "buscador": "google_news",
@@ -2784,7 +2854,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Cinelli questiona pedido de recuperação judicial da Apex",
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTWlsUUUybTlsZDJnek9qaml0UmFwU1ZjYjh0SDcwMVJCeHU5aDNtODE0aFRjQk50UHRjQUM1WXd0TlR3dGJUYjJVWXNTUno2RFpyMElXTmwwWDNQSk95aHZDNVcxbGEyTDF3aHl2SlpNZ05ERDVsYlBtZ0VVU1h5TVoydEFKRG5pNFBhYXdMU296SnowWHZfbg?oc=5",
-      "veiculo": "simnoticias.com.br"
+      "veiculo": "Sim Notícias"
     },
     {
       "buscador": "google_news",
@@ -2840,7 +2910,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Master Capixaba: Fundador da Apex Partners entra na Justiça para contestar pedido de recuperação judicial do grupo",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPX1dFQ0dVdHlpSFJUc0MtTXYtd3lMQjBiWmJ2YmxvSFE5SHFRU1h2ZVFuUzhOM2ozd1Z6YWRyYnZpTmpKWWFSNEJ4WUVFcWdsY1NiNmpvci1KR0Jvc25LZnNTeU5PNjFnYXVRemc1Wmx2Uk9NYnA1WUNJXy1vMEJZTDhnSDBCV1RhOW16Zw?oc=5",
-      "veiculo": "Times Brasil | CNBC"
+      "veiculo": "timesbrasil.com.br"
     },
     {
       "buscador": "google_news",
@@ -2882,7 +2952,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Em mais um capítulo da disputa, presidente afastado da Apex Partners contesta pedido de recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNWlVRVTJxVHNQRV9LTlU0YV9sbmFqSTM0cFo4andQbzdqWkpLdnphTUpteWdXOVlwUjh2REEyLU5yUlZLLTFPbElSeGZlTTJBMGtJbXJsOE90bWdfTU5Ic3lQWS1aa3p1Q3djdUpwelZYcV9ieFdMbS1UQnB6RWJvZkd3cW83ZmVHQzZsYzV0aG1MaUR4Ql9TU3NjSXVuYnk2Q0s3bzF4QmpFSGZ5Y18yYUQ1aFk0SWJWUFUtYWhFTTBBbEstckEwSi1vRXF0bXRPYnlPeTQ0WVBNN3RJZXlHRkxLZ2ttWjdr0gH3AUFVX3lxTE9xcHNib1U2WFNJaVo1R0xfY0RZaVd3Zk1BeEhENDRFdEhHNkhGaHozamYzNmpZY21HT2Z1djc1dnExaS0tZktxXzVkQTZRZ3g0VWZDYUVibjdENzUwS0xoNmQwMnpqQlV2bGNsaGM1Q1pkbEhUaV9yRDhqODJIMDlUaHdWaDY4QUZWSWY1eExYMFE5akRFeWxadHhJT01LNUE3aDNoNzlXME1BTU93YlB2d1RvVmd4WGZuSHl4dFFvOWRLUmNzYVlWekoxd1NMTXhyclRPLWtUS2pQUGo3bG5pQjd1Wmd2Rm52bWpDYXhTbE1ySzhZUzA?oc=5",
-      "veiculo": "Valor Econômico"
+      "veiculo": "valor.globo.com"
     },
     {
       "buscador": "google_news",
@@ -2939,6 +3009,34 @@
       "titulo": "Justiça aceita recuperação judicial da Cerpa, tradicional cervejaria do Pará",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQWGRjS1JDdURHMGlmT1FmdU14WVYyQ1BIYzJNUHUxRXFxYjlrRDc0UkJLWkJaNVB1cnVDelFaUkxhMHlsUk1PTWVEZFJtWXFuOEkzSHJGeUZhSVJjbkVoRkhrRERmU1lyVFlBSGN3dXloNC1mNU9nRDIwSldKWkUyc1dOSnp1Z1YyRmNUa3VZNnZjLVdyWlY1cU1YOENRMWdYYVZaTURJWHl2TGFsT1gzV2JEamw?oc=5",
       "veiculo": "notícia marajó"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb153004040997caa2bf74b0126&url=https%3a%2f%2fwww.agazeta.com.br%2fes%2feconomia%2fex-presidente-contesta-pedido-de-recuperacao-judicial-feito-pela-apex-0926&c=9495069775259933325&mkt=pt-br",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Wed, 16 Sep 2026 11:45:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Ex-presidente contesta pedido de recuperação judicial feito pela Apex",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb153004040997caa2bf74b0126&url=https%3a%2f%2fwww.agazeta.com.br%2fes%2feconomia%2fex-presidente-contesta-pedido-de-recuperacao-judicial-feito-pela-apex-0926&c=9495069775259933325&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb1f1504d06a028a46beed13af5&url=https%3a%2f%2fwww.agazeta.com.br%2fes%2feconomia%2fex-presidente-contesta-pedido-de-recuperacao-judicial-feito-pela-apex-0926&c=9495069775259933325&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Wed, 16 Sep 2026 11:45:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Ex-presidente contesta pedido de recuperação judicial feito pela Apex",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb1f1504d06a028a46beed13af5&url=https%3a%2f%2fwww.agazeta.com.br%2fes%2feconomia%2fex-presidente-contesta-pedido-de-recuperacao-judicial-feito-pela-apex-0926&c=9495069775259933325&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -3134,7 +3232,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Gestora Apex pede recuperação judicial e aponta dívida de quase R$ 1 bilhão",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNYXJkLWdMT0kzcG43dzVpVldTak5oSVZXSTExTU5YSkJCOWFaU0RpZU9BVHgyVGZuaHBEdFVBWmRfbGZJN2RIb2djcG5vVkdLbUxwVm5Jcm0yN244ZHBKZWNFencwblplaG1rODBMbF9Va2c2MFdaWTBzMUN3OTRSeU55UXdLMVFxZ004NW1Wa2F6Vmw0S3VMOWVHVjNGeF9wSDJQWDZUX3RONkU5T1BPVjMxb2xUZEd2bVBGZy1IaEI5d01UTHV2U2h0UjhOeVJmUW5IeXhR0gHkAUFVX3lxTE16MEhBVDR4Mjh1eThvZlFzLW4wczRYTzU3ZEVoSV92TWV3UGNTM2tLb2R3TzdwN2NmT2pxclBoOU41ZllGbVNpNkxEUkNTSE4xdDVwZUFrbHMwaF9Nbk9QWEFtc0k3RmxsMVA3aWp4c3ZUVldNWmFqUTdDOXo5a29tZnFCaFNvTnpIMDV1bFJGT1prZ2tfeHdTa1RmV21ZenBhNjFRTTgwOE1SX25lMnV3djN4NkpFWHd1amVaek9vQi13WUFOOFJhc0x4UzFOQ0M2Z1NwclREdU5KSkl4WTV4ekI1ZA?oc=5",
-      "veiculo": "Valor Investe"
+      "veiculo": "valorinveste.globo.com"
     },
     {
       "buscador": "google_news",
@@ -3166,6 +3264,20 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMimwFBVV95cUxNbm9JUmsxVHA2dUREX3FhYkN5eTVoS1B1NkhfcEVKWTY5d0JKTUtYWFpIQUw4bzNwaGlCbUk2c1JuNEt6MWFUc3NFbktvOHVCQmlFdFFrR2FBRHA0dklvaGhibE5jTW9JQjNCX0VPNXdhcXJBMUFHb0pkV2t3MzJ5Rk9obl9iaHNGWndGM2ZtZkVRa1g2aXU2UlhqQQ?oc=5",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Tue, 15 Sep 2026 21:12:46 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": false,
+      "primeiro_visto": "2026-09-16",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Apex Partners pede recuperação judicial por dívida de R$ 985 milhões",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbm9JUmsxVHA2dUREX3FhYkN5eTVoS1B1NkhfcEVKWTY5d0JKTUtYWFpIQUw4bzNwaGlCbUk2c1JuNEt6MWFUc3NFbktvOHVCQmlFdFFrR2FBRHA0dklvaGhibE5jTW9JQjNCX0VPNXdhcXJBMUFHb0pkV2t3MzJ5Rk9obl9iaHNGWndGM2ZtZkVRa1g2aXU2UlhqQQ?oc=5",
+      "veiculo": "UOL Economia"
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMi0AFBVV95cUxNZTlQU0dCTUtzZ1JmcmE1X1BnZVVxNHhzTXNROThWLWtsVmVDZnVpdFVZdXpNTjJ2dGoxUk82ZC1XaVE3XzRPUDhmN3NieXpqR1pBeWs4V0Z1Wm9vR250aFY1TnpvYWJXc3JmSXlQTmVRdnBlYU5LNFNydWFGa1EzLWlSN2N2ZW9nRjlaY2hhT2syb2dRdGZPZFFBRXJWTGdsNjFfYUk5OGhzZlphZ0x2WldqRmRaQnVLU2kydWJia2xLQjZHbVZXM2Q2UWZWcWVT0gHfAUFVX3lxTE1WLTBkekNEQXZmNUZKMjBoN2Itb0FhUVN3c0U4SmlFaXh1Mk0xS2JsZVNYalV1R3BGWi1RcFZoaW1ONlpJTDFLOGwzbkxXVElYTkxKb0MxTi1fVjdSbGFFczhVbVk2WEJINFVOY3lZblBQUjBIM1p1VnhKYUpfMTJyQllhWE81YTY2VWJfdE5IMTJJdnlQV1Q4ZXl3dGR6MnUxRExFR0J4THlrMS1ZQS1wUmVfSXpRa1BBbnJoV2xmVkJNVF9VcnVYZ1lfaVVqdks4MW80em91YlJHZ08zeUU?oc=5",
       "consulta": "\"pede recuperação judicial\"",
       "data_publicacao": "Tue, 15 Sep 2026 20:55:58 GMT",
@@ -3176,7 +3288,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Após afastar presidente, Apex Partners pede recuperação judicial e aponta dívida de R$ 985,6 milhões",
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNZTlQU0dCTUtzZ1JmcmE1X1BnZVVxNHhzTXNROThWLWtsVmVDZnVpdFVZdXpNTjJ2dGoxUk82ZC1XaVE3XzRPUDhmN3NieXpqR1pBeWs4V0Z1Wm9vR250aFY1TnpvYWJXc3JmSXlQTmVRdnBlYU5LNFNydWFGa1EzLWlSN2N2ZW9nRjlaY2hhT2syb2dRdGZPZFFBRXJWTGdsNjFfYUk5OGhzZlphZ0x2WldqRmRaQnVLU2kydWJia2xLQjZHbVZXM2Q2UWZWcWVT0gHfAUFVX3lxTE1WLTBkekNEQXZmNUZKMjBoN2Itb0FhUVN3c0U4SmlFaXh1Mk0xS2JsZVNYalV1R3BGWi1RcFZoaW1ONlpJTDFLOGwzbkxXVElYTkxKb0MxTi1fVjdSbGFFczhVbVk2WEJINFVOY3lZblBQUjBIM1p1VnhKYUpfMTJyQllhWE81YTY2VWJfdE5IMTJJdnlQV1Q4ZXl3dGR6MnUxRExFR0J4THlrMS1ZQS1wUmVfSXpRa1BBbnJoV2xmVkJNVF9VcnVYZ1lfaVVqdks4MW80em91YlJHZ08zeUU?oc=5",
-      "veiculo": "Valor Econômico"
+      "veiculo": "valor.globo.com"
     },
     {
       "buscador": "google_news",
@@ -3278,22 +3390,8 @@
     },
     {
       "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMimwFBVV95cUxNbm9JUmsxVHA2dUREX3FhYkN5eTVoS1B1NkhfcEVKWTY5d0JKTUtYWFpIQUw4bzNwaGlCbUk2c1JuNEt6MWFUc3NFbktvOHVCQmlFdFFrR2FBRHA0dklvaGhibE5jTW9JQjNCX0VPNXdhcXJBMUFHb0pkV2t3MzJ5Rk9obl9iaHNGWndGM2ZtZkVRa1g2aXU2UlhqQQ?oc=5",
-      "consulta": "\"pede recuperação judicial\"",
-      "data_publicacao": "Tue, 15 Sep 2026 17:12:46 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-09-16",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Apex Partners pede recuperação judicial por dívida de R$ 985 milhões",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbm9JUmsxVHA2dUREX3FhYkN5eTVoS1B1NkhfcEVKWTY5d0JKTUtYWFpIQUw4bzNwaGlCbUk2c1JuNEt6MWFUc3NFbktvOHVCQmlFdFFrR2FBRHA0dklvaGhibE5jTW9JQjNCX0VPNXdhcXJBMUFHb0pkV2t3MzJ5Rk9obl9iaHNGWndGM2ZtZkVRa1g2aXU2UlhqQQ?oc=5",
-      "veiculo": "UOL Economia"
-    },
-    {
-      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiggFBVV95cUxPY2RYQUppVkFnbmtjUTBJS1VVM0F1a3F5UXMxbVJIN1BEVnEtMDB4OG4yLU55NDdkekhTbnEtblJKNzZaZHFDY2xXN1hDMllIaWlIT1IzWFU0UngxaG5yR2k1RkhtZ09sQlZUSDcxMEd3T1JTZlUxb2lDeDlYSFFWNDVn?oc=5",
-      "consulta": "\"pede recuperação judicial\"",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Tue, 15 Sep 2026 15:24:17 GMT",
       "empresa": null,
       "fonte": "noticia",
@@ -3419,7 +3517,7 @@
     {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiiAFBVV95cUxNQWNxTlJtVHBKd0c3Tm5Zck5mVTl3REVuS2Uwd0tKakJZX3JDbDVpMFB4aTNTV0tIR0VVNGcyMm93WHpxYmsxZ1ZEbVE4MzRxT0dkMUNaRVdGbnpBNDRTaEE2SGhWR01pYXA5bHRueTZfbkszWlZoYkR0NmdodGp1V2NCaG9IMnl0?oc=5",
-      "consulta": "\"pede recuperação judicial\"",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Tue, 15 Sep 2026 13:52:31 GMT",
       "empresa": null,
       "fonte": "noticia",
@@ -3428,7 +3526,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Apex pede recuperação judicial com dívida de R$ 985 milhões",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNQWNxTlJtVHBKd0c3Tm5Zck5mVTl3REVuS2Uwd0tKakJZX3JDbDVpMFB4aTNTV0tIR0VVNGcyMm93WHpxYmsxZ1ZEbVE4MzRxT0dkMUNaRVdGbnpBNDRTaEE2SGhWR01pYXA5bHRueTZfbkszWlZoYkR0NmdodGp1V2NCaG9IMnl0?oc=5",
-      "veiculo": "Folha do ES"
+      "veiculo": "folhadoes.com"
     },
     {
       "buscador": "google_news",
@@ -3442,7 +3540,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Master Capixaba: Apex Partners entra com pedido de recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPQkhkbDRKbE5YNXdfSnh4ZkxvYWZVR0JNalZIUThVR2NhTnVxM19EcGlFRWpxYkxiUF9PTEhKaWxSMUVWaGhtdS05RzNPcW5lTkYxZHM4ZWtQVGlzQm0wWHRxeXRuLXhVSUFUX0YySml6M2JnNlp0ZTg2Mi1zWERJXzNwRzM3bHBxUGhPV29MUWI?oc=5",
-      "veiculo": "Times Brasil | CNBC"
+      "veiculo": "timesbrasil.com.br"
     },
     {
       "buscador": "google_news",
@@ -3512,7 +3610,35 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Apex Partners entra com pedido de recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPUllvXzlFQkVsSWxQQmlxU3VFZUN4QlJGY1RNNlBCT0I3aHJUMEQ2OXFpZlJGUFhFVnlCcVNVZjF5aExoblhtTk82RFNvdm1LTmZHZS11dldFLVU0bS1zdzRWaGhINXNsWWIyMmg4bVNxSmdrV1VPYlNJSlVPQV9XcGs0c0JvVXdPU1lIZF96eDV0LXpLN1E?oc=5",
-      "veiculo": "simnoticias.com.br"
+      "veiculo": "Sim Notícias"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eaea06f4b93bc110d636b8c2ddb&url=https%3a%2f%2fvalor.globo.com%2ffinancas%2fnoticia%2f2026%2f09%2f15%2fgestora-capixaba-apex-pede-recuperao-judicial-e-aponta-dvida-de-r-9856-milhes.ghtml&c=4504317945570408446&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Tue, 15 Sep 2026 10:50:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Após afastar presidente, Apex Partners pede recuperação judicial e aponta dívida de R$ 985,6 milhões",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eaea06f4b93bc110d636b8c2ddb&url=https%3a%2f%2fvalor.globo.com%2ffinancas%2fnoticia%2f2026%2f09%2f15%2fgestora-capixaba-apex-pede-recuperao-judicial-e-aponta-dvida-de-r-9856-milhes.ghtml&c=4504317945570408446&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb1f1504d06a028a46beed13af5&url=https%3a%2f%2fvalor.globo.com%2ffinancas%2fnoticia%2f2026%2f09%2f15%2fgestora-capixaba-apex-pede-recuperao-judicial-e-aponta-dvida-de-r-9856-milhes.ghtml&c=4504317945570408446&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Tue, 15 Sep 2026 10:50:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Após afastar presidente, Apex Partners pede recuperação judicial e aponta dívida de R$ 985,6 milhões",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb1f1504d06a028a46beed13af5&url=https%3a%2f%2fvalor.globo.com%2ffinancas%2fnoticia%2f2026%2f09%2f15%2fgestora-capixaba-apex-pede-recuperao-judicial-e-aponta-dvida-de-r-9856-milhes.ghtml&c=4504317945570408446&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -3698,6 +3824,20 @@
     },
     {
       "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eaea06f4b93bc110d636b8c2ddb&url=https%3a%2f%2ftimesbrasil.com.br%2fempresas-e-negocios%2fapex-partners-pede-recuperacao-judicial%2f&c=13580763787025517283&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Tue, 15 Sep 2026 03:15:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Master Capixaba: Apex Partners entra com pedido de recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eaea06f4b93bc110d636b8c2ddb&url=https%3a%2f%2ftimesbrasil.com.br%2fempresas-e-negocios%2fapex-partners-pede-recuperacao-judicial%2f&c=13580763787025517283&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab1574be762420bb38f418b896f4421&url=https%3a%2f%2ftimesbrasil.com.br%2fempresas-e-negocios%2fapex-partners-pede-recuperacao-judicial%2f&c=13580763787025517283&mkt=pt-br",
       "consulta": "\"pede recuperação judicial\"",
       "data_publicacao": "Tue, 15 Sep 2026 03:15:00 GMT",
@@ -3708,6 +3848,20 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Master Capixaba: Apex Partners entra com pedido de recuperação judicial",
       "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab1574be762420bb38f418b896f4421&url=https%3a%2f%2ftimesbrasil.com.br%2fempresas-e-negocios%2fapex-partners-pede-recuperacao-judicial%2f&c=13580763787025517283&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eaea06f4b93bc110d636b8c2ddb&url=https%3a%2f%2fwww.folhavitoria.com.br%2feconomia%2fapex-pede-recuperacao-judicial-com-divida-perto-de-r-1-bilhao-e-justica-vai-decidir-futuro-do-grupo%2f&c=18443437992681177702&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Tue, 15 Sep 2026 01:55:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Apex pede recuperação judicial com dívida perto de R$ 1 bilhão e Justiça vai decidir futuro do grupo",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eaea06f4b93bc110d636b8c2ddb&url=https%3a%2f%2fwww.folhavitoria.com.br%2feconomia%2fapex-pede-recuperacao-judicial-com-divida-perto-de-r-1-bilhao-e-justica-vai-decidir-futuro-do-grupo%2f&c=18443437992681177702&mkt=pt-br",
       "veiculo": ""
     },
     {
@@ -4030,7 +4184,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "AirBaltic pede recuperação judicial nos EUA após disparada nos preços de combustíveis",
       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPUVB3cktiMERHYnZFTmFDNXZiWEFNR0RxbnBkRFRqMlpmRTJ3eDNwUDBkakZheG9pclZYY1c5MVEzZl9FUWZyY2tpNVFaQzE5WXJjSWJSZHhqX1VkN3VTLVJrWF9zTkZwV2k1NWtwTGIzb2FhdU5VNFFXSUY4TXN2QkE1aU1yd2tDUkVraUZEdkl2eXpsX3RTZ2t5MW5YaTNDWmVsTWNmdkVPY0dxbnJmeFVaWXk3RXY5TmVtbzFGaHRmTF93elN2d0o0WmxaaVI3ZldwU3pLVEJVN1XSAeoBQVVfeXFMT00zN3g1S0ZEU0pKOFlheXlmMWpDeWxIUW1IbnJMbWZEVXI5YU9LUU9OWlJvYTZvaGNGd2RSOEEtWUU0QXlHb2YzYWcxbW5qZ0dpWDlDc2NaX3dWQksyNDkxQ0NaM0J4cWgxWkQzaTl5cGFpU2trcnlNVTZrSU92LTdVQ2lYOFowRnY1UEZUZWlJekpLel9RQW92SlhwakM2RXUzXzdvUnNMVmtDV2JpVlc1MjZpdk9WQWxXdDJNT2p2ejVVWWRYd21CTDFScnZUZ2xNRWRZcEVXbHZaNFk0Z3lTTkh4a3B3SlJB?oc=5",
-      "veiculo": "Valor Econômico"
+      "veiculo": "valor.globo.com"
     },
     {
       "buscador": "google_news",
@@ -4143,6 +4297,34 @@
       "titulo": "Fábrica de sorvetes com 56 anos de história acumula R$ 80 milhões em dívidas e recorre à Justiça para continuar funcionando",
       "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQREc5dXdjeGhaZjczZ2pCMko3dDRYOWx0eDUyZkdLTWVDMlNPY0Fqc1FtMUlfM1dINkJvY1JXZngzeE5wR2FkZ0d6VHItMnpYMU9Db3dhaHptaVRfbFFreGt6SlpDV1k2ZmdCUGNGQi1hLUdaTTRHNk5NUTV2Z2FLT1doRk9DdjkxTzlmMkNPaF9zZi11Tmx1dVhGa3V1dUt1bWhOY3NmVTVhMDJIdXBzRGVYVF9JeEQyYVBmRVBMM2tBbUdSOW1mOEEtYjVUWTBQWjYwWjdwTV9TZmRpaWM0b0NUMWhBUVpSMVFpNkpYdnZ6MkszdGJlQ0sta0htODNoZzBjNHhhSHFhbXdsblRV?oc=5",
       "veiculo": "Diário do Comércio"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eae7d16463fa559e08cad601269&url=https%3a%2f%2fwww.panrotas.com.br%2faviacao%2fempresas%2f2026%2f09%2fairbaltic-entra-com-pedido-de-recuperacao-judicial-nos-estados-unidos_231936.html&c=15457311267492811572&mkt=pt-br",
+      "consulta": "\"entra com pedido de recuperação judicial\"",
+      "data_publicacao": "Mon, 14 Sep 2026 06:52:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "AirBaltic entra com pedido de recuperação judicial nos Estados Unidos",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eae7d16463fa559e08cad601269&url=https%3a%2f%2fwww.panrotas.com.br%2faviacao%2fempresas%2f2026%2f09%2fairbaltic-entra-com-pedido-de-recuperacao-judicial-nos-estados-unidos_231936.html&c=15457311267492811572&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb153004040997caa2bf74b0126&url=https%3a%2f%2fwww.panrotas.com.br%2faviacao%2fempresas%2f2026%2f09%2fairbaltic-entra-com-pedido-de-recuperacao-judicial-nos-estados-unidos_231936.html&c=15457311267492811572&mkt=pt-br",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 14 Sep 2026 06:52:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "AirBaltic entra com pedido de recuperação judicial nos Estados Unidos",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eb153004040997caa2bf74b0126&url=https%3a%2f%2fwww.panrotas.com.br%2faviacao%2fempresas%2f2026%2f09%2fairbaltic-entra-com-pedido-de-recuperacao-judicial-nos-estados-unidos_231936.html&c=15457311267492811572&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -4342,6 +4524,20 @@
     },
     {
       "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eaea06f4b93bc110d636b8c2ddb&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f09%2f14%2fairbaltic-pede-recuperacao-judicial-nos-eua-apos-disparada-nos-precos-de-combustiveis.ghtml&c=376271119325658544&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Mon, 14 Sep 2026 04:48:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "AirBaltic pede recuperação judicial nos EUA após disparada nos preços de combustíveis",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eaea06f4b93bc110d636b8c2ddb&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f09%2f14%2fairbaltic-pede-recuperacao-judicial-nos-eua-apos-disparada-nos-precos-de-combustiveis.ghtml&c=376271119325658544&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab1574be762420bb38f418b896f4421&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f09%2f14%2fairbaltic-pede-recuperacao-judicial-nos-eua-apos-disparada-nos-precos-de-combustiveis.ghtml&c=376271119325658544&mkt=pt-br",
       "consulta": "\"pede recuperação judicial\"",
       "data_publicacao": "Mon, 14 Sep 2026 04:48:00 GMT",
@@ -4436,6 +4632,20 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "AirBaltic pede recuperação judicial nos EUA após disparada nos preços de combustíveis",
       "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aa81f270ffe42548dd18c9e1fad351a&url=https%3a%2f%2fvalor.globo.com%2fempresas%2fnoticia%2f2026%2f09%2f14%2fairbaltic-pede-recuperacao-judicial-nos-eua-apos-disparada-nos-precos-de-combustiveis.ghtml&c=376271119325658544&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eafdddc4c7997f77b7c25e7c08c&url=https%3a%2f%2fwww.jornaldocomercio.com%2feconomia%2f2026%2f09%2f1263016-sorvelandia-protocola-pedido-de-recuperacao-judicial.html&c=17351181803423264365&mkt=pt-br",
+      "consulta": "\"protocola pedido de recuperação judicial\"",
+      "data_publicacao": "Sun, 13 Sep 2026 15:57:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-09-22",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Sorvelândia protocola pedido de recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ab28eafdddc4c7997f77b7c25e7c08c&url=https%3a%2f%2fwww.jornaldocomercio.com%2feconomia%2f2026%2f09%2f1263016-sorvelandia-protocola-pedido-de-recuperacao-judicial.html&c=17351181803423264365&mkt=pt-br",
       "veiculo": ""
     },
     {
@@ -8415,13 +8625,13 @@
       "veiculo": "CNN Brasil"
     }
   ],
-  "gerado_em": "2026-09-21T16:08:40.057298+00:00",
+  "gerado_em": "2026-09-22T14:18:05.362854+00:00",
   "janela_dias": 30,
-  "novos_hoje": 14,
+  "novos_hoje": 15,
   "por_tipo": {
     "cautelar_pre_rj": 1,
-    "falencia": 72,
-    "noticia_rj_ou_cautelar": 433,
+    "falencia": 73,
+    "noticia_rj_ou_cautelar": 447,
     "recuperacao_judicial": 95
   },
   "por_tribunal": {
@@ -8442,12 +8652,12 @@
     "TJPI": 2,
     "TJPR": 2,
     "TJRJ": 19,
-    "TJRN": 2,
+    "TJRN": 3,
     "TJRS": 27,
     "TJSC": 7,
     "TJSE": 1,
     "TJSP": 9,
     "TJTO": 9
   },
-  "total": 601
+  "total": 616
 }
