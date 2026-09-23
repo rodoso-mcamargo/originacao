@@ -1,0 +1,33 @@
+name: Taxas CRI e CRA
+on:
+  workflow_dispatch:
+    inputs:
+      inspecionar:
+        description: "sim = so descreve a tabela, nao grava"
+        required: false
+        default: "nao"
+  schedule:
+    - cron: "45 11 * * 1-5"
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar deps
+        run: pip install requests beautifulsoup4
+      - name: Coletar taxas CRI/CRA
+        run: |
+          python cri_cra.py ${{ github.event.inputs.inspecionar == 'sim' && '--inspecionar' || '' }}
+      - name: Salvar no repositorio
+        if: ${{ github.event.inputs.inspecionar != 'sim' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/cri_cra/ || echo "nada"
+          git commit -m "cri/cra: atualiza dados/cri_cra" || echo "sem mudancas"
+          git push
