@@ -33,8 +33,8 @@ DIR_OUT = pathlib.Path("dados/cri_cra")
 
 # nome normalizado -> variantes de cabecalho aceitas (comparacao sem acento/caixa)
 ALIASES = {
-    "emissor":        ["emissor", "devedor", "originador"],
-    "securitizadora": ["securitizadora", "emissora", "companhia securitizadora"],
+    "emissor":        ["risco de credito", "devedor", "originador", "risco credito"],
+    "securitizadora": ["emissor", "securitizadora", "emissora", "companhia securitizadora"],
     "serie":          ["serie", "serie/emissao"],
     "codigo":         ["codigo", "codigo do ativo", "codigo ativo", "cod"],
     "vencimento":     ["vencimento", "data de vencimento"],
