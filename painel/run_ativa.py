@@ -187,7 +187,9 @@ def carregar_runs(pasta: pathlib.Path) -> dict:
         if not f.is_file():
             continue
         try:
-            p = parse_run(f.read_text(encoding="utf-8", errors="replace"))
+            # newline="": preserva o \r\n que o Excel poe DENTRO da celula
+            with open(f, encoding="utf-8", errors="replace", newline="") as fh:
+                p = parse_run(fh.read())
         except Exception as e:  # anexo estranho nao derruba o resto
             print(f"[run] ignorado {f.name}: {e}", file=sys.stderr)
             continue
@@ -353,6 +355,85 @@ def reconstruir(runs: dict, M) -> dict | None:
     return snap
 
 
+# ── nota de credito do run ─────────────────────────────────────────────────
+# O run traz a nota vigente por papel ("AA- FITCH", "AAA S&P", "A+ MOODYS").
+# Escala nacional, do melhor ao pior; F1+ e afins (curto prazo) ficam de fora.
+ESCALA = ["AAA", "AA+", "AA", "AA-", "A+", "A", "A-", "BBB+", "BBB", "BBB-", "BB+", "BB", "BB-",
+          "B+", "B", "B-", "CCC+", "CCC", "CCC-", "CC", "C", "RD", "SD", "D"]
+AGENCIAS = {"FITCH": "Fitch", "S&P": "S&P Global", "MOODYS": "Moody's", "MOODY'S": "Moody's",
+            "MOODY´S": "Moody's", "MOODY`S": "Moody's"}
+NOTA_CORTE = ESCALA.index("A+")      # A+ ou pior = nota baixa para o painel
+
+
+def nota(rt):
+    """'AA- FITCH' -> {'grau': 'AA-', 'ag': 'Fitch', 'nivel': 3}; None se nao for escala de longo prazo."""
+    if not rt:
+        return None
+    partes = rt.strip().upper().split()
+    if len(partes) < 2 or partes[0] not in ESCALA:
+        return None
+    ag = AGENCIAS.get(" ".join(partes[1:]).replace("’", "'"))
+    return {"grau": partes[0], "ag": ag or " ".join(partes[1:]).title(), "nivel": ESCALA.index(partes[0])}
+
+
+def mudancas_de_nota(runs: dict) -> list[dict]:
+    """Compara a nota de cada papel entre runs consecutivos (mesma agencia).
+    A data e a do run em que a mudanca apareceu; a acao da agencia caiu entre
+    o run anterior e esse."""
+    hist = {}
+    for (t, d) in sorted(runs, key=lambda k: k[1]):
+        if t not in FAMS_DO_RUN:
+            continue
+        for x in runs[(t, d)]:
+            n = nota(x.get("rating"))
+            if n:
+                hist.setdefault(x["cod"], []).append((d, n, x.get("emissor")))
+    out = []
+    for cod, pts in hist.items():
+        for (d0, n0, _), (d1, n1, emi) in zip(pts, pts[1:]):
+            if n0["ag"] == n1["ag"] and n0["grau"] != n1["grau"]:
+                out.append({"cod": cod, "emissor": emi, "agencia": n1["ag"], "de": n0["grau"],
+                            "para": n1["grau"], "data": d1, "run_anterior": d0,
+                            "acao": "rebaixamento" if n1["nivel"] > n0["nivel"] else "elevacao"})
+    return out
+
+
+def mesclar_ratings(mud: list[dict]) -> bool:
+    """Acrescenta as mudancas de nota a dados/ratings.json, agrupadas por
+    emissor (nome da ANBIMA quando o codigo esta no painel). Idempotente."""
+    f = DADOS / "ratings.json"
+    if not mud or not f.exists():
+        return False
+    R = json.loads(f.read_text(encoding="utf-8"))
+    ult = json.loads((DADOS / "ultimo.json").read_text(encoding="utf-8"))
+    emi_anb = {p["codigo"]: p.get("emissor") for p in ult.get("papeis", [])}
+    idx = {e["emissor"].upper(): e for e in R.get("emissores", [])}
+    por = {}
+    for m in mud:
+        por.setdefault((emi_anb.get(m["cod"]) or m["emissor"] or m["cod"], m["agencia"], m["de"],
+                        m["para"], m["data"], m["run_anterior"], m["acao"]), []).append(m["cod"])
+    mexeu = False
+    for (emi, ag, de, para, data, d0, acao), cods in por.items():
+        e = idx.get(emi.upper())
+        if e is None:
+            e = {"emissor": emi, "papeis": [], "d_spread_21d": None, "achados": [],
+                 "nota_selecao": "mudanca de nota vista no run da Ativa"}
+            R.setdefault("emissores", []).append(e)
+            idx[emi.upper()] = e
+        resumo = (f"Nota {ag} passou de {de} para {para} no run da Ativa "
+                  f"(entre os runs de {d0} e {data}; papeis {', '.join(sorted(cods))})")
+        if any(a.get("resumo") == resumo for a in e.get("achados", [])):
+            continue
+        e.setdefault("achados", []).append({"agencia": ag, "acao": acao, "resumo": resumo,
+                                            "data": data, "fonte": "Run da Ativa (e-mail)", "url": None})
+        e["papeis"] = sorted(set(e.get("papeis") or []) | set(cods))
+        mexeu = True
+    if mexeu:
+        R["pesquisado_em"] = max(R.get("pesquisado_em") or "", max(m["data"] for m in mud))
+        f.write_text(json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")
+    return mexeu
+
+
 # ── payload da secao nova ──────────────────────────────────────────────────
 def payload_secao(runs: dict) -> dict | None:
     ult = {}
@@ -366,6 +447,9 @@ def payload_secao(runs: dict) -> dict | None:
         for x in runs[(t, d)]:
             y = {k: v for k, v in x.items() if v not in (None, False, "")}
             y["run"] = t
+            n = nota(x.get("rating"))
+            if n:
+                y["nota"] = n
             out["rows"].append(y)
     return out
 
@@ -377,6 +461,13 @@ def main() -> int:
     import monitor as M
     snap = reconstruir(runs, M)
     sec = payload_secao(runs)
+    mud = mudancas_de_nota(runs)
+    if sec is not None:
+        sec["mudancas_nota"] = mud
+    for m in mud:
+        print(f"[run] nota {m['cod']}: {m['agencia']} {m['de']} -> {m['para']} (run de {m['data']})")
+    if mesclar_ratings(mud):
+        print("RATINGS_ALTERADOS=1  (dados/ratings.json mudou: suba para claude/ratings-credito.json)")
     (DADOS / "run").mkdir(parents=True, exist_ok=True)
     (DADOS / "run" / "ultimo.json").write_text(json.dumps(sec or {}, ensure_ascii=False), encoding="utf-8")
     if snap:

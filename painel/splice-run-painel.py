@@ -187,6 +187,90 @@ function secaoRun(){
     <div class="rn-more" id="rnMore"></div>
   </section>`;
 }
+/* ── Nota do run × taxa: reforço para originação ─────────────────────
+   O run da Ativa traz a nota vigente de ~1/3 das debêntures. Nota baixa (A+
+   ou pior, escala nacional) sozinha não diz nada de novo; nota baixa COM a
+   taxa andando contra o emissor — spread abrindo em 21 pregões ou taxa bem
+   acima da emissão — é o custo de funding subindo para quem já tem pouco
+   espaço: candidato natural a conversa de passivo. Reforça a tese; não prova. */
+const NOTA_CORTE = 4;              // índice na escala: 0=AAA … 4=A+ … (A+ ou pior)
+const PIORA_D21 = 25, PIORA_EMIS = 100;
+const RN_NOTA = new Map(), RN_NOTA_EMI = new Map();
+((RA.run && RA.run.rows) || []).forEach(x=>{
+  if (x.tp!=="DEB" || !x.nota) return;
+  RN_NOTA.set(x.cod, x.nota);
+  const p = RN_PAP.get(x.cod), k = p ? gkDeb(p) : semAcento(x.emissor);
+  const a = RN_NOTA_EMI.get(k);
+  if (!a || x.nota.nivel > a.nivel) RN_NOTA_EMI.set(k, x.nota);   // a pior nota do emissor
+});
+function notaDe(p){ return RN_NOTA.get(p.codigo) || RN_NOTA_EMI.get(gkDeb(p)) || null; }
+function difEmis(p){ return (p.taxa_indicativa!=null && p.taxa_emissao!=null && p.familia!=="DI_PCT")
+  ? Math.round((p.taxa_indicativa - p.taxa_emissao)*1000)/10 : null; }
+function taxaPiorou(p){ const d = difEmis(p);
+  return (p.d_spread_21d ?? 0) >= PIORA_D21 || (d ?? 0) >= PIORA_EMIS; }
+function reforcoNota(p){ const n = notaDe(p);
+  if (!n || n.nivel < NOTA_CORTE) return 0;
+  return taxaPiorou(p) ? 0.8 : 0.4; }
+const RN_MUD = (RA.run && RA.run.mudancas_nota) || [];
+
+function secaoNotaTaxa(){
+  if (!RN_NOTA.size) return "";
+  const por = new Map();
+  D.papeis.forEach(p=>{
+    const n = notaDe(p); if (!n || n.nivel < NOTA_CORTE || p.spread_bps==null) return;
+    const k = gkDeb(p), o = {p, n, piorou: taxaPiorou(p), d21: p.d_spread_21d, dif: difEmis(p)};
+    const a = por.get(k);
+    const peso = x => (x.piorou?1e6:0) + (x.d21??-999)*10 + (x.dif??0);
+    if (!a || peso(o) > peso(a)) por.set(k, o);
+  });
+  const todos = [...por.values()].sort((a,b)=> (b.piorou-a.piorou) || (b.n.nivel-a.n.nivel) || ((b.d21??-999)-(a.d21??-999)));
+  const fortes = todos.filter(o=>o.piorou), resto = todos.filter(o=>!o.piorou);
+  const linha = (o,i) => { const p = o.p, a = acaoDe(p), m = [];
+    m.push(["alerta", `nota ${o.n.grau} ${o.n.ag}`]);
+    if ((o.d21??0) >= PIORA_D21) m.push(["abre", `${sgn(o.d21)} bps em 21 pregões`]);
+    if ((o.dif??0) >= PIORA_EMIS) m.push(["abre", `${sgn(o.dif)} bps vs emissão`]);
+    if (tomAcao(a)) m.push(["alerta", `${a.ticker} ${rotAcao(a)}`]);
+    if (RN_MUD.some(x=>RN_PAP.get(x.cod) && gkDeb(RN_PAP.get(x.cod))===gkDeb(p) && x.acao==="rebaixamento"))
+      m.push(["alerta", "rebaixada no run"]);
+    if ((p.liquidez??0) < 45) m.push(["alerta", `liquidez ${f0(p.liquidez)} — marcação frágil`]);
+    return `<tr data-i="${D.papeis.indexOf(p)}">
+      <td class="mov-rk">${i+1}</td>
+      <td class="l"><span class="cod">${esc(p.emissor)}</span>${nomeGrupo(p.grupo)}${seloRating(p)}${seloAcao(p)}
+        <span class="emi">papel de referência ${esc(p.codigo)} · ${esc(p.indice_bruto||"")}</span></td>
+      <td class="mono"><b>${esc(o.n.grau)}</b> <span class="rn-src">${esc(o.n.ag)}</span></td>
+      <td class="mono">${taxaEmissao(p,true)}</td><td class="mono">${taxaCotada(p,true)}</td>
+      <td>${o.dif==null?"—":`<span class="${o.dif>0?"rn-up":"rn-dn"}">${sgn(o.dif)}</span>`}</td>
+      <td>${o.d21==null?"—":`<span class="${o.d21>0?"rn-up":"rn-dn"}">${sgn(o.d21)}</span>`}</td>
+      <td><b>${f0(p.spread_bps)}</b></td><td>${medidorLiq(p.liquidez)}</td>
+      <td style="white-space:normal;min-width:260px"><span class="chips">${m.map(([t,x])=>`<span class="chip ${t}">${esc(x)}</span>`).join("")}</span></td>
+    </tr>`; };
+  const cab = `<thead><tr><th></th><th class="l">Emissor</th><th title="nota do run da Ativa (a pior entre os papéis do emissor quando o papel não tem nota própria)">Nota</th>
+    <th>Na emissão</th><th>Taxa hoje</th><th title="taxa de hoje menos a da emissão, bps">Δ emissão</th>
+    <th title="variação de spread em 21 pregões">Δ 21d</th><th>Spread</th><th>Liquidez</th><th>Leitura</th></tr></thead>`;
+  const mud = RN_MUD.length ? `<p class="note" style="margin:14px 0 0"><b>Mudanças de nota vistas no run:</b> ${
+    RN_MUD.map(x=>`${esc(x.cod)} ${esc(x.agencia)} ${esc(x.de)} → <b>${esc(x.para)}</b> (${dataBR(x.data)})`).join(" · ")}.
+    Elas entram também em "Rating e notícia de crédito" e no eixo de rating da triagem.</p>` : "";
+  return `<section style="margin-top:34px">
+    <div class="head"><h2>Nota baixa e taxa piorando</h2>
+      <span class="eyebrow">nota do run da Ativa · corte A+ · ${fortes.length} emissores com taxa piorando</span></div>
+    <p class="note">Emissores com nota <b>A+ ou pior</b> (a nota que o run da Ativa informa por papel)
+    cujo papel de referência está com a taxa <b>andando contra</b>: spread abrindo pelo menos ${PIORA_D21} bps
+    em 21 pregões, ou taxa de hoje pelo menos ${PIORA_EMIS} bps acima da emissão. Para originação a leitura é
+    de reforço: crédito já fraco com o custo de funding subindo é quem mais cedo precisa conversar sobre
+    passivo — refinanciamento, alongamento, waiver. <b>Reforça a tese, não prova</b>: confira balanço,
+    covenants e fatos relevantes. O run não diz a escala da nota: BBB/BB em emissor grande costuma ser
+    escala <b>global</b> (teto soberano), não sinal de stress local — e uma nota fora do padrão (RD, D)
+    vale confirmar na agência antes de usar. O mesmo sinal soma no eixo de rating da triagem do topo (nota baixa com
+    taxa piorando pesa quase como rebaixamento; nota baixa estável, como meia perspectiva negativa).</p>
+    ${fortes.length ? `<div class="tw"><table>${cab}<tbody>${fortes.map(linha).join("")}</tbody></table></div>`
+      : `<div class="tw"><p class="empty">Nenhum emissor com nota baixa e taxa piorando hoje.</p></div>`}
+    ${resto.length ? `<details style="margin-top:12px"><summary class="note" style="cursor:pointer;margin:0">
+      Nota baixa, taxa estável (${resto.length}) — só para acompanhar</summary>
+      <div class="tw" style="margin-top:8px"><table>${cab}<tbody>${resto.map(linha).join("")}</tbody></table></div></details>` : ""}
+    ${mud}
+  </section>`;
+}
+
 function initRun(){
   if (!document.getElementById("rnTb")) return;
   const U=document.getElementById("rnU"), O=document.getElementById("rnO"),
@@ -201,6 +285,17 @@ function initRun(){
 inner = rep(inner, "function montar(){", JS + "\nfunction montar(){")
 inner = rep(inner, "    </div></header>\n", "    </div></header>\n    ${bannerFonte()}\n")
 inner = rep(inner, "    ${secaoParalelo()}", "    ${secaoParalelo()}\n\n    ${secaoRun()}")
+inner = rep(inner, "    ${secaoTriagemCC()}", "    ${secaoNotaTaxa()}\n\n    ${secaoTriagemCC()}")
+# nota do run no eixo de rating da triagem e nos motivos
+inner = rep(inner, """  const rating = ach.some(x=>x.acao==="rebaixamento") ? 1
+               : ach.some(x=>ACAO_TOM[x.acao]==="baixa") ? 0.6 : 0;""",
+"""  const rating = Math.max(ach.some(x=>x.acao==="rebaixamento") ? 1
+               : ach.some(x=>ACAO_TOM[x.acao]==="baixa") ? 0.6 : 0, reforcoNota(p));""")
+inner = rep(inner, """function motivosTriagem(s){
+  const p = s.p, m = [];""", """function motivosTriagem(s){
+  const p = s.p, m = [];
+  { const n = notaDe(p); if (n && n.nivel >= NOTA_CORTE)
+      m.push(["alerta", `nota ${n.grau} ${n.ag}${taxaPiorou(p) ? " + taxa piorando" : ""}`]); }""")
 inner = rep(inner, "  initGestoras();\n", "  initGestoras();\n  initRun();\n")
 
 open(OUT, "w", encoding="utf-8").write(inner)
