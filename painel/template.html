@@ -1,0 +1,2218 @@
+<meta charset="utf-8">
+<title>Radar do Secundário</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+/* ── tokens ───────────────────────────────────────────────────────────────
+   Chrome é acromático de propósito: cor só significa dado.               */
+:root{
+  color-scheme: light;
+  --page:#f1f3f4; --surface:#ffffff; --surface-2:#f7f8f9;
+  --ink:#101417; --ink-2:#4e5559; --muted:#858d92;
+  --line:#e0e4e7; --line-strong:#c8ced2;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --abre:#c0453f; --fecha:#2a6fb5; --neutro:#9aa1a6;
+  --critico:#d03b3b; --aviso:#b07600;
+  --ring:rgba(42,120,214,.45);
+  --grid:#e8ebed;
+  --demo-bg:#fff4e0; --demo-ink:#7a4a00; --demo-line:#e0b46a;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --page:#0d1012; --surface:#171b1e; --surface-2:#1e2327;
+    --ink:#eef1f2; --ink-2:#a8b1b6; --muted:#7b858a;
+    --line:#262c30; --line-strong:#394247;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+    --abre:#e0645c; --fecha:#5b9ce0; --neutro:#7b858a;
+    --critico:#e0645c; --aviso:#d9a441;
+    --ring:rgba(57,135,229,.5);
+    --grid:#22282c;
+    --demo-bg:#2a1f0d; --demo-ink:#e8b96b; --demo-line:#6b4f1f;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --page:#0d1012; --surface:#171b1e; --surface-2:#1e2327;
+  --ink:#eef1f2; --ink-2:#a8b1b6; --muted:#7b858a;
+  --line:#262c30; --line-strong:#394247;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --abre:#e0645c; --fecha:#5b9ce0; --neutro:#7b858a;
+  --critico:#e0645c; --aviso:#d9a441;
+  --ring:rgba(57,135,229,.5);
+  --grid:#22282c;
+  --demo-bg:#2a1f0d; --demo-ink:#e8b96b; --demo-line:#6b4f1f;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--page); color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:14px; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+/* Fluido: ocupa a largura da tela. O texto corrido continua limitado em ch
+   pelos seus proprios seletores, senao viraria linha de 200 caracteres. */
+.wrap{max-width:2800px; margin:0 auto; padding:0 clamp(16px,2.2vw,44px) 72px}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif; text-wrap:balance; margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+.num{font-variant-numeric:tabular-nums}
+
+/* ── faixa de demo ───────────────────────────────────────────────────── */
+.demo{
+  background:var(--demo-bg); color:var(--demo-ink);
+  border-bottom:1px solid var(--demo-line);
+  padding:10px 24px; font-size:13px; font-weight:600;
+  display:flex; gap:10px; align-items:baseline; justify-content:center;
+}
+.demo span{font-weight:400}
+
+/* ── masthead ────────────────────────────────────────────────────────── */
+header{border-bottom:2px solid var(--ink); padding:28px 0 14px; margin-bottom:0}
+.mast{display:flex; flex-wrap:wrap; gap:20px 32px; align-items:flex-end; justify-content:space-between}
+h1{font-size:clamp(26px,3.4vw,38px); font-weight:700; letter-spacing:-.02em; line-height:1.05}
+.sub{color:var(--ink-2); font-size:14px; margin-top:6px; max-width:56ch}
+.mast-meta{display:flex; gap:24px; flex-wrap:wrap}
+.meta-b{display:flex; flex-direction:column; gap:2px}
+.meta-b dt{font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); font-weight:600}
+.meta-b dd{margin:0; font-size:15px; font-weight:600}
+
+/* ── tiles de resumo ─────────────────────────────────────────────────── */
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px;
+  background:var(--line); border:1px solid var(--line); border-top:none; margin-bottom:44px}
+.tile{background:var(--surface); padding:18px 20px 16px; display:flex; flex-direction:column; gap:5px}
+.tile dt{font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); font-weight:600}
+.tile .v{font-family:Archivo,sans-serif; font-size:30px; font-weight:600; letter-spacing:-.02em; line-height:1}
+.tile .v small{font-size:14px; font-weight:500; color:var(--ink-2); margin-left:3px}
+.tile .d{font-size:12.5px; font-weight:500; display:flex; align-items:center; gap:5px}
+.tile .n{font-size:12px; color:var(--muted)}
+.dot{width:8px; height:8px; border-radius:2px; flex:none}
+
+/* ── seções ──────────────────────────────────────────────────────────── */
+section{margin-bottom:52px}
+.head{display:flex; align-items:baseline; justify-content:space-between; gap:20px;
+  flex-wrap:wrap; border-bottom:1px solid var(--line-strong); padding-bottom:9px; margin-bottom:20px}
+.head h2{font-size:19px; font-weight:600; letter-spacing:-.01em}
+.head .eyebrow{font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--muted); font-weight:600}
+.note{color:var(--ink-2); font-size:13px; max-width:74ch; margin:-8px 0 18px}
+
+/* ── legenda ─────────────────────────────────────────────────────────── */
+.legend{display:flex; gap:18px; flex-wrap:wrap; align-items:center; font-size:12.5px; color:var(--ink-2)}
+.legend b{display:flex; align-items:center; gap:6px; font-weight:500}
+
+/* ── gráficos ────────────────────────────────────────────────────────── */
+.facets{display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:18px; margin-top:16px}
+.panel{background:var(--surface); border:1px solid var(--line); padding:16px 14px 8px}
+.panel h3{font-size:13px; font-weight:600; margin-bottom:2px; display:flex; align-items:center; gap:7px}
+.panel .cnt{font-size:11.5px; color:var(--muted); font-weight:400; font-family:"IBM Plex Mono",monospace}
+.chart{width:100%; height:auto; display:block; overflow:visible}
+.chart text{font-family:"IBM Plex Mono",monospace; font-size:10px; fill:var(--muted)}
+.chart .axis-t{font-family:"IBM Plex Sans",sans-serif; font-size:10.5px; fill:var(--ink-2); font-weight:500}
+.gridline{stroke:var(--grid); stroke-width:1}
+.baseline{stroke:var(--line-strong); stroke-width:1}
+/* Cada ponto carrega um alvo circular invisível de raio 7 — o desenho em si é
+   pequeno demais para acertar, e o miolo dos anéis não captura clique nenhum. */
+.pt{cursor:pointer}
+.pt .alvo{fill:transparent; stroke:transparent; pointer-events:all}
+.pt .marca{pointer-events:none}
+.pt:hover .marca{stroke:var(--ink); stroke-width:2}
+/* seta ativa no gráfico de deslocamento: quem manda é a busca do ponto mais
+   próximo em JS, não o :hover, porque acertar uma linha de 2px com o mouse é
+   pedir demais — sobretudo onde as setas se amontoam. */
+svg[data-desloc]{cursor:crosshair}
+.pt.ativo .marca{stroke-width:3.4}
+.pt.ativo .rot{font-size:11px !important}
+
+/* ── tooltip ─────────────────────────────────────────────────────────── */
+#tip{position:fixed; pointer-events:none; z-index:60; opacity:0; transition:opacity .1s;
+  background:var(--surface); border:1px solid var(--line-strong); padding:9px 11px;
+  box-shadow:0 6px 22px rgba(0,0,0,.16); font-size:12.5px; max-width:260px; line-height:1.45}
+#tip.on{opacity:1}
+#tip .t-c{font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:13px}
+#tip .t-e{color:var(--ink-2); font-size:11.5px; margin-bottom:5px}
+#tip .t-r{display:flex; justify-content:space-between; gap:16px}
+#tip .t-r span:last-child{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-weight:500}
+
+/* ── maiores movimentos ──────────────────────────────────────────────── */
+.movs{display:grid; grid-template-columns:repeat(auto-fit,minmax(560px,1fr)); gap:1px;
+  background:var(--line); border:1px solid var(--line)}
+.mov-col{background:var(--surface); padding:0 0 6px}
+.mov-cab{display:flex; align-items:baseline; gap:9px; padding:13px 16px 10px;
+  border-bottom:1px solid var(--line)}
+.mov-cab h3{font-size:13.5px; font-weight:600; display:flex; align-items:center; gap:7px}
+.mov-cab .n{font-size:11.5px; color:var(--muted); font-family:"IBM Plex Mono",monospace}
+.mov-row{display:grid; grid-template-columns:20px minmax(120px,1fr) 88px 88px 58px 104px; gap:8px;
+  align-items:center; padding:7px 16px; border-bottom:1px solid var(--line)}
+.mov-head{display:grid; grid-template-columns:20px minmax(120px,1fr) 88px 88px 58px 104px; gap:8px;
+  padding:6px 16px; background:var(--surface-2); border-bottom:1px solid var(--line-strong);
+  font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2);
+  font-weight:600}
+.mov-head span:nth-child(n+3){text-align:right}
+.mov-row:last-child{border-bottom:none}
+.mov-row:hover{background:var(--surface-2)}
+.mov-rk{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--muted);
+  font-variant-numeric:tabular-nums; text-align:right}
+.mov-id{min-width:0}
+.mov-id b{font-family:"IBM Plex Mono",monospace; font-size:12.5px; font-weight:600;
+  display:flex; align-items:center; gap:6px}
+.mov-id span{display:block; color:var(--ink-2); font-size:11.5px; overflow:hidden;
+  text-overflow:ellipsis; white-space:nowrap}
+.mov-tx{font-family:"IBM Plex Mono",monospace; font-size:11px; text-align:right;
+  color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis}
+.mov-tx-hoje{color:var(--ink-2); font-weight:500}
+.mov-sp{font-family:"IBM Plex Mono",monospace; font-size:12.5px; text-align:right;
+  font-variant-numeric:tabular-nums; color:var(--ink-2)}
+.mov-d{display:flex; align-items:center; gap:8px; justify-content:flex-end}
+.mov-d b{font-family:"IBM Plex Mono",monospace; font-size:13px; font-weight:600;
+  font-variant-numeric:tabular-nums; min-width:52px; text-align:right}
+.mov-bar{width:56px; height:12px; flex:none; background:var(--surface-2)}
+.mov-bar i{display:block; height:12px}
+.mov-vazio{padding:22px 16px; color:var(--muted); font-size:13px}
+.cda-row{display:grid; grid-template-columns:22px 1fr 54px 116px; gap:10px;
+  align-items:center; padding:7px 16px; border-bottom:1px solid var(--line)}
+.cda-row:last-child{border-bottom:none}
+.cda-row:hover{background:var(--surface-2)}
+.cda-nome{font-size:12.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.cda-n{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--muted);
+  text-align:right; font-variant-numeric:tabular-nums}
+.cda-v{display:flex; align-items:center; gap:8px; justify-content:flex-end}
+.cda-v b{font-family:"IBM Plex Mono",monospace; font-size:12.5px; font-weight:600;
+  font-variant-numeric:tabular-nums; min-width:64px; text-align:right; white-space:nowrap}
+.periodo{display:flex; border:1px solid var(--line-strong); background:var(--surface)}
+.periodo button{font-family:inherit; font-size:12.5px; font-weight:500; padding:6px 13px;
+  background:none; border:none; border-right:1px solid var(--line-strong); color:var(--ink-2);
+  cursor:pointer}
+.periodo button:last-child{border-right:none}
+.periodo button[aria-pressed="true"]{background:var(--ink); color:var(--surface); font-weight:600}
+.chk{display:flex; align-items:center; gap:7px; font-size:12.5px; color:var(--ink-2);
+  cursor:pointer; user-select:none}
+
+/* Regra própria, não herdada do container: o arquivo precisa se comportar
+   igual aberto direto do disco e publicado. */
+[hidden]{display:none !important}
+.btn{font-family:inherit; font-size:12.5px; font-weight:600; padding:6px 13px;
+  background:var(--surface); border:1px solid var(--line-strong); color:var(--ink-2);
+  cursor:pointer; white-space:nowrap}
+.btn:hover{color:var(--ink); border-color:var(--ink-2)}
+.btn[aria-expanded="true"]{background:var(--ink); color:var(--surface); border-color:var(--ink)}
+.head-dir{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+
+/* ── rating e notícia de crédito ─────────────────────────────────────── */
+.rat{display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:1px;
+  background:var(--line); border:1px solid var(--line)}
+.rat-c{background:var(--surface); padding:10px 14px}
+.rat-h{display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; margin-bottom:5px}
+.rat-h b{font-size:12.5px}
+.rat-h .pap{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--muted)}
+.rat-h .dl{font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600;
+  color:var(--abre); margin-left:auto; font-variant-numeric:tabular-nums}
+.rat-i{display:flex; gap:7px; align-items:baseline; padding:3px 0; font-size:12px;
+  line-height:1.4; min-width:0}
+.rat-ag{font-size:9.5px; letter-spacing:.04em; text-transform:uppercase; font-weight:600;
+  padding:1px 5px; border:1px solid; white-space:nowrap; flex:none}
+.rat-ag.baixa{color:var(--abre); border-color:var(--abre)}
+.rat-ag.sobe{color:var(--fecha); border-color:var(--fecha)}
+.rat-ag.neutro{color:var(--muted); border-color:var(--line-strong)}
+.rat-i a{color:var(--ink-2); text-decoration:underline; text-underline-offset:2px;
+  text-decoration-color:var(--line-strong); white-space:nowrap; margin-left:auto;
+  overflow:hidden; text-overflow:ellipsis; min-width:0; flex-shrink:1}
+.rat-i a:hover{color:var(--ink); text-decoration-color:var(--ink)}
+.rat-i .dt{color:var(--muted); font-size:11px; white-space:nowrap}
+.selo{font-size:9px; letter-spacing:.04em; text-transform:uppercase; font-weight:600;
+  padding:0 4px; border:1px solid; margin-left:5px; vertical-align:1px; cursor:help}
+.selo.baixa{color:var(--abre); border-color:var(--abre)}
+.selo.sobe{color:var(--fecha); border-color:var(--fecha)}
+
+/* ── controles ───────────────────────────────────────────────────────── */
+.controls{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:14px}
+.controls label{font-size:11px; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--muted); font-weight:600; margin-right:-4px}
+select,input[type=search]{
+  font-family:inherit; font-size:13px; color:var(--ink); background:var(--surface);
+  border:1px solid var(--line-strong); padding:6px 9px; border-radius:0}
+input[type=search]{min-width:190px}
+select:focus-visible,input:focus-visible,th[role=button]:focus-visible,button:focus-visible{
+  outline:2px solid var(--ring); outline-offset:1px}
+
+/* ── tabelas ─────────────────────────────────────────────────────────── */
+.tw{overflow-x:auto; background:var(--surface); border:1px solid var(--line)}
+table{border-collapse:collapse; width:100%; font-size:13px}
+thead th{
+  position:sticky; top:0; background:var(--surface-2); z-index:2;
+  text-align:right; padding:9px 11px; font-size:10.5px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--ink-2); font-weight:600; white-space:nowrap;
+  border-bottom:1px solid var(--line-strong); cursor:pointer; user-select:none}
+thead th:first-child,thead th.l{text-align:left}
+thead th[aria-sort]{color:var(--ink)}
+tbody td{padding:8px 11px; text-align:right; border-bottom:1px solid var(--line);
+  white-space:nowrap; font-variant-numeric:tabular-nums}
+tbody td.l{text-align:left; font-variant-numeric:normal}
+tbody tr:hover{background:var(--surface-2)}
+tbody tr:last-child td{border-bottom:none}
+.cod{font-family:"IBM Plex Mono",monospace; font-weight:600}
+.emi{color:var(--ink-2); font-size:12px; max-width:none; overflow:hidden;
+  text-overflow:ellipsis; display:block; white-space:nowrap}
+.fam{display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--ink-2)}
+
+/* barra divergente de Δ spread */
+.delta{display:flex; align-items:center; justify-content:flex-end; gap:8px}
+.dbar{width:52px; height:14px; position:relative; flex:none;
+  border-left:1px solid var(--line-strong)}
+.dbar i{position:absolute; top:2px; height:10px; border-radius:0 2px 2px 0; display:block}
+.dbar.neg{border-left:none; border-right:1px solid var(--line-strong)}
+.dbar.neg i{border-radius:2px 0 0 2px; right:0}
+
+/* chips de sinal */
+.chips{display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end}
+.chip{font-size:11px; font-weight:500; padding:2px 7px; border:1px solid; white-space:nowrap}
+.chip.abre{color:var(--abre); border-color:var(--abre)}
+.chip.fecha{color:var(--fecha); border-color:var(--fecha)}
+.chip.alerta{color:var(--critico); border-color:var(--critico)}
+
+/* medidor de liquidez */
+.liq{display:inline-flex; align-items:center; gap:7px; justify-content:flex-end}
+.liqbar{width:36px; height:4px; background:var(--line); flex:none}
+.liqbar i{display:block; height:4px; background:var(--ink-2)}
+
+.empty{padding:28px; text-align:center; color:var(--muted)}
+footer{border-top:1px solid var(--line); padding-top:18px; color:var(--muted); font-size:12.5px}
+footer p{margin:0 0 7px; max-width:78ch}
+footer code{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--ink-2)}
+
+/* ── CRI e CRA ───────────────────────────────────────────────────────── */
+.cc-bar{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:12px}
+.cc-f{display:flex; align-items:center; gap:7px; color:var(--muted); font-size:11px;
+  letter-spacing:.06em; text-transform:uppercase; font-weight:600}
+.cc-cnt{color:var(--muted); font-size:12px; margin:2px 0 10px}
+.cc-more{margin:12px 0 0; text-align:center}
+.cc-tp{font-size:9.5px; letter-spacing:.05em; text-transform:uppercase; font-weight:700;
+  padding:0 4px; border:1px solid var(--line-strong); color:var(--ink-2); margin-left:6px;
+  vertical-align:1px}
+.cc-tk{font-family:"IBM Plex Mono",monospace; color:var(--muted); font-size:11px; margin-left:6px}
+.cc-leg{display:flex; gap:16px; flex-wrap:wrap; align-items:center; font-size:12px;
+  color:var(--ink-2); margin:10px 0 0}
+.cc-leg svg{vertical-align:-2px; margin-right:5px}
+.cc-sub{margin-top:30px}
+.cc-sub .head{border-bottom-width:1px; margin-bottom:12px}
+.cc-sub .head h2{font-size:16px}
+thead th[data-cs]{cursor:pointer}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+@media (max-width:640px){
+  .wrap{padding:0 14px 56px}
+  .emi{max-width:22ch}
+}
+</style>
+
+<div id="app"></div>
+<div id="tip" role="tooltip" aria-hidden="true"></div>
+
+<script>
+const D = /*__DADOS__*/null;
+
+/* ── formatação ─────────────────────────────────────────────────────── */
+const f0 = n => n==null ? "—" : (Math.round(n)===0 ? "0" : Math.round(n).toLocaleString("pt-BR"));
+const f1 = n => n==null ? "—" : n.toLocaleString("pt-BR",{minimumFractionDigits:1,maximumFractionDigits:1});
+const f2 = n => n==null ? "—" : n.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
+const sgn = n => n==null ? "—" : (n>0?"+":"") + f0(n);
+const dataBR = s => s ? s.split("-").reverse().join("/") : "—";
+const mesBR = s => { if(!s) return "—";
+  const [a,m]=s.split("-");
+  return ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"][+m-1]+"/"+a; };
+const brl = v => v==null ? "—"
+  : Math.abs(v) >= 1e9 ? (v/1e9).toLocaleString("pt-BR",{maximumFractionDigits:1})+" bi"
+  : Math.abs(v) >= 1e6 ? (v/1e6).toLocaleString("pt-BR",{maximumFractionDigits:0})+" mi"
+  : Math.abs(v) >= 1e3 ? (v/1e3).toLocaleString("pt-BR",{maximumFractionDigits:0})+" mil"
+  : Math.round(v).toLocaleString("pt-BR");
+const CORF = {DI_SPREAD:"var(--s1)", IPCA:"var(--s2)", DI_PCT:"var(--s3)"};
+const rotF = f => D.rotulos.familia[f] || f;
+
+/* ── CRI e CRA: dados e utilidades ──────────────────────────────────────
+   Nomes chegam de fontes diferentes (ANBIMA debêntures, ANBIMA CRI/CRA,
+   levantamento de rating) com e sem acento; toda comparação de nome passa
+   por aqui. */
+const semAcento = s => String(s ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  .toUpperCase().replace(/\s+/g, " ").trim();
+const CC = (D.cricra && Array.isArray(D.cricra.rows)) ? D.cricra.rows : [];
+const ROT_FAM_CC = {IPCA:"IPCA +", DI_SPREAD:"DI +", DI_PCT:"% do DI", OUTRO:"pré / sem indexador"};
+const ccUI = {curva:true, ord:"score", asc:false, tp:"todos", fam:"todos", aberto:false};
+const taxaCC = (r, curto) => fmtTaxa(r.tx, r.fam==="OUTRO" ? "PRE" : r.fam, curto);
+// Grupo econômico: o gerador carimba "gk" (chave) em debêntures e CRI/CRA, e o
+// rótulo "grupo"/"grp" quando o vínculo vem do mapa curado (Hapvida = BCBF +
+// Ultra Som, MBRF = Marfrig + BRF...). Mesmo grupo conta como UM nome nas
+// triagens e é a chave da lista em paralelo.
+const gkDeb = p => p.gk || semAcento(p.emissor);
+const gkCC  = r => r.gk || semAcento(r.dev) || r.cod;
+const DEB_GK = new Set(D.papeis.map(gkDeb));
+const temDebenture = r => DEB_GK.has(gkCC(r));
+const nomeGrupo = g => g ? `<span class="cc-tp" title="grupo econômico: empresas do mesmo grupo contam como um nome só">grupo ${esc(g)}</span>` : "";
+
+// A taxa indicativa na convenção em que a mesa cota o papel. Não é o spread:
+// para DI+ as duas coincidem, mas para IPCA+ a taxa é a real cheia e o spread
+// é o que sobra depois de descontar a NTN-B.
+function fmtTaxa(t, familia, curto){
+  if (t == null) return `<span style="color:var(--muted)">—</span>`;
+  const v = f2(t);
+  if (familia === "DI_SPREAD") return (curto ? "DI+" : "DI + ") + v + "%";
+  if (familia === "IPCA")      return (curto ? "IPCA+" : "IPCA + ") + v + "%";
+  if (familia === "IGPM")      return (curto ? "IGPM+" : "IGP-M + ") + v + "%";
+  if (familia === "DI_PCT")    return v + (curto ? "% DI" : "% do DI");
+  return v + "%";
+}
+const taxaCotada  = (p,c) => fmtTaxa(p.taxa_indicativa, p.familia, c);
+const taxaEmissao = (p,c) => fmtTaxa(p.taxa_emissao,    p.familia, c);
+const esc = s => String(s??"").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ── tooltip ────────────────────────────────────────────────────────── */
+const tip = document.getElementById("tip");
+function mostrarTip(html, ev){
+  tip.innerHTML = html; tip.classList.add("on");
+  const r = tip.getBoundingClientRect();
+  let x = ev.clientX + 14, y = ev.clientY + 14;
+  if (x + r.width  > innerWidth  - 8) x = ev.clientX - r.width  - 14;
+  if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - 14;
+  tip.style.left = Math.max(8,x) + "px"; tip.style.top = Math.max(8,y) + "px";
+}
+const esconderTip = () => tip.classList.remove("on");
+addEventListener("scroll", esconderTip, {passive:true});
+
+function tipPapel(p){
+  const l = (k,v) => `<div class="t-r"><span>${k}</span><span>${v}</span></div>`;
+  // Δ vs emissão só onde a subtração tem sentido: em "% do DI" a taxa é
+  // percentual DO CDI, não ponto de taxa, e a diferença sairia em outra unidade.
+  const difEmis = (p.taxa_indicativa!=null && p.taxa_emissao!=null && p.familia!=="DI_PCT")
+    ? Math.round((p.taxa_indicativa - p.taxa_emissao)*1000)/10 : null;
+  return `<div class="t-c">${esc(p.codigo)}</div><div class="t-e">${esc(p.emissor)}</div>`
+    + l("Na emissão", taxaEmissao(p,true))
+    + l("Taxa hoje", taxaCotada(p,true))
+    + (difEmis!=null ? l("Δ vs emissão",
+        `<span style="color:${difEmis>0?"var(--abre)":difEmis<0?"var(--fecha)":"inherit"}">${sgn(difEmis)} bps</span>`)
+      : "")
+    + l("Spread", f0(p.spread_bps)+" bps")
+    + l("Índice", esc(p.indice_bruto))
+    + l("Duration", f1(p.duration_anos)+" a")
+    + l("Vencimento", dataBR(p.vencimento))
+    + l("PU / par", f1(p.pct_pu_par)+"%")
+    + l("Δ 1 dia", sgn(p.d_spread_1d)+" bps")
+    + l("Δ 5 dias", sgn(p.d_spread_5d)+" bps")
+    + l("z-score 60d", p.zscore_spread==null?"—":f2(p.zscore_spread))
+    + l("Liquidez", p.liquidez==null?"—":f0(p.liquidez)+"/100")
+    + (()=>{ const a = acaoDe(p); if (!a) return "";
+        const linhas = [["Ação", esc(a.ticker) + (acaoControladora(a) ? " (controladora)" : "")]];
+        if (a.var_3m  != null) linhas.push(["3 meses",  `${sgn(a.var_3m)}%`]);
+        if (a.var_6m  != null) linhas.push(["6 meses",  `${sgn(a.var_6m)}%`]);
+        if (a.var_12m != null) linhas.push(["12 meses", `${sgn(a.var_12m)}%`]);
+        if (a.queda_max_52s != null) linhas.push(["Da máx. 52s", `${sgn(a.queda_max_52s)}%`]);
+        return `<div style="border-top:1px solid var(--line); margin-top:6px; padding-top:5px">`
+          + `<div class="t-e" style="margin:0 0 3px">ação do emissor — sinal de alerta, não causa</div>`
+          + linhas.map(([k,v])=>l(k,v)).join("") + `</div>`;
+      })()
+    + (p.cda_fundos ? `<div style="border-top:1px solid var(--line); margin-top:6px; padding-top:5px">`
+        + `<div class="t-e" style="margin:0 0 3px">carteiras em ${mesBR(D.cda?.mes)}</div>`
+        + l("Detido por", p.cda_fundos + " fundos")
+        + l("Estoque", "R$ " + brl(p.cda_vl_total))
+        + l("Top 5", p.cda_top5_pct==null?"—":f1(p.cda_top5_pct)+"%")
+        + (p.cda_vendido ? l("Vendido no mês", "R$ " + brl(p.cda_vendido)) : "")
+        + (p.cda_detentores||[]).slice(0,3).map(d=>
+            `<div class="t-r" style="gap:10px"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px">${esc(d.fundo)}</span>`
+            + `<span>${brl(d.vl)}</span></div>`).join("")
+        + `</div>` : "");
+}
+
+function tipCC(r){
+  const l = (k,v) => `<div class="t-r"><span>${k}</span><span>${v}</span></div>`;
+  return `<div class="t-c">${esc(r.cod)}<span class="cc-tp">${esc(r.tp||"")}</span></div>`
+    + `<div class="t-e">${esc(r.dev||"—")}</div>`
+    + l("Securitizadora", `<span style="font-family:inherit">${esc((r.sec||"—").slice(0,26))}</span>`)
+    + l("Indexador", esc(r.idx || ROT_FAM_CC[r.fam] || "—"))
+    + l("Taxa hoje", taxaCC(r,true))
+    + l("Spread", r.spread==null ? "—" : f0(r.spread)+" bps")
+    + (r.med_pares!=null ? l("Mediana pares", f0(r.med_pares)+" bps") : "")
+    + l("Duration", r.dur==null ? "—" : f1(r.dur)+" a")
+    + l("Vencimento", dataBR(r.venc))
+    + l("PU / par", r.par==null ? "—" : f1(r.par)+"%")
+    + (r.d1!=null ? l("Δ 1 pregão", sgn(r.d1)+" bps") : "")
+    + (r.dj!=null ? l(`Δ ${r.nj} pregões`, sgn(r.dj)+" bps") : "")
+    + (r.d30!=null ? l("Δ 5×5 há 30d", sgn(r.d30)+" bps") : "")
+    + l("Score stress", r.score==null ? "—" : f0(r.score)+"/100")
+    + (r.so_pu ? `<div class="t-e" style="margin:5px 0 0">ANBIMA marca só o PU deste papel — sem taxa indicativa</div>` : "");
+}
+
+/* ── escala de spread: ninguém fica fora do enquadramento ────────────
+   O papel em stress é o que mais interessa olhar, então o eixo tem que
+   caber o crédito a 1.900 bps E a nuvem entre -50 e 300 no mesmo desenho.
+   Linear até LIN_BPS, logarítmica acima — contínua na fronteira (a
+   derivada bate em |v|=LIN_BPS), aceita spread negativo, que é o normal
+   do IPCA+ incentivado, e nunca descarta um ponto. A linha tracejada no
+   gráfico marca onde a compressão começa, para ninguém ler distância
+   vertical acima dela como se fosse linear. */
+const LIN_BPS = 100;
+const comp = v => Math.abs(v) <= LIN_BPS
+  ? v
+  : Math.sign(v) * LIN_BPS * (1 + Math.log(Math.abs(v)/LIN_BPS));
+// Ordem de PRIORIDADE, não de valor: o zero entra sempre, depois a fronteira
+// da compressão, depois as décadas, e só então os cortes finos. Assim um eixo
+// apertado nunca perde o zero para um tick de 25 que chegou antes na fila.
+const TICKS_ORDEM = [0, 100,-100, 500,-500, 1000,-1000, 2000,-2000, 5000,-5000,
+                     10000,-10000, 20000,-20000, 200,-200, 50,-50, 25,-25,
+                     300,-300, 750,-750, 1500,-1500];
+
+function escalaY(valores, topo, ih){
+  const vs = valores.filter(v => v!=null && isFinite(v));
+  let lo = Math.min(0, ...vs), hi = Math.max(...vs);
+  if (!(hi > lo)) hi = lo + 1;
+  // folga só no topo, e no espaço já comprimido: 3% do vão desenhado
+  const flo = comp(lo), fhi = comp(hi) + (comp(hi)-comp(lo))*0.03;
+  const span = (fhi - flo) || 1;
+  const Y = v => topo + ih - (comp(Math.min(Math.max(v,lo),hi)) - flo)/span*ih;
+  const ticks = [];
+  TICKS_ORDEM.forEach(t => {
+    if (t < lo || t > hi) return;
+    if (ticks.every(a => Math.abs(Y(a) - Y(t)) >= 13)) ticks.push(t);
+  });
+  ticks.sort((a,b)=>a-b);
+  return {Y, lo, hi, ticks, comprimida: hi > LIN_BPS};
+}
+
+// linha tracejada onde a escala deixa de ser linear
+function marcaCompressao(esc, x1, x2){
+  if (!esc.comprimida) return "";
+  const y = esc.Y(LIN_BPS).toFixed(1);
+  return `<line x1="${x1}" x2="${x2}" y1="${y}" y2="${y}" stroke="var(--line-strong)"
+    stroke-width="1" stroke-dasharray="3 3"/>`;
+}
+
+/* ── gráfico 1: curva de crédito (dispersão facetada) ───────────────── */
+function curvaCredito(fam){
+  const pts = D.papeis.filter(p => p.familia===fam && p.duration_anos!=null && p.spread_bps!=null);
+  // CRI/CRA do mesmo indexador, no mesmo eixo: o spread foi calculado com a
+  // mesma régua das debêntures (NTN-B implícita para IPCA+, CDI para DI).
+  // Com eles, a faceta de % do DI (3 debêntures, ~50 CRI/CRA) passa a existir.
+  const ptsCC = ccUI.curva ? CC.filter(r => r.fam===fam && r.dur!=null && r.spread!=null) : [];
+  if (pts.length + ptsCC.length < 4) return "";
+
+  const W=520, H=260, M={t:12,r:16,b:34,l:52};
+  const iw=W-M.l-M.r, ih=H-M.t-M.b;
+  const xs=pts.map(p=>p.duration_anos).concat(ptsCC.map(r=>r.dur));
+  const ys=pts.map(p=>p.spread_bps).concat(ptsCC.map(r=>r.spread));
+  const xmax=Math.max(...xs)*1.04;
+  const escY = escalaY(ys, M.t, ih);
+  const X=v=>M.l+Math.min(v,xmax)/xmax*iw, Y=escY.Y;
+
+  const passo=v=>{const b=Math.pow(10,Math.floor(Math.log10(v)));const n=v/b;return (n<=2?2:n<=5?5:10)*b};
+  const ticksY=escY.ticks;
+  let ticksX=[]; const px=passo(xmax/5);
+  for(let v=0; v<=xmax; v+=px) ticksX.push(v);
+
+  const grid = ticksY.map(v=>`<line class="gridline" x1="${M.l}" x2="${W-M.r}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/>`).join("")
+    + ticksY.map(v=>`<text x="${M.l-8}" y="${(Y(v)+3.5).toFixed(1)}" text-anchor="end">${f0(v)}</text>`).join("")
+    + ticksX.map(v=>`<text x="${X(v).toFixed(1)}" y="${H-M.b+16}" text-anchor="middle">${f0(v)}</text>`).join("")
+    + marcaCompressao(escY, M.l, W-M.r)
+    + `<line class="baseline" x1="${M.l}" x2="${W-M.r}" y1="${M.t+ih}" y2="${M.t+ih}"/>`
+    + `<text class="axis-t" x="${M.l+iw/2}" y="${H-4}" text-anchor="middle">duration (anos)</text>`
+    + `<text class="axis-t" x="${-(M.t+ih/2)}" y="13" text-anchor="middle" transform="rotate(-90)">spread (bps)${escY.comprimida?" · log acima de "+LIN_BPS:""}</text>`;
+
+  // Nada sai do desenho: a escala acomoda do papel mais apertado ao mais
+  // estressado. O que antes virava um contador de "N acima da escala"
+  // agora é ponto visível, que é o que se quer inspecionar.
+  const dentro = pts;
+
+  const indice = new Map(D.papeis.map((p,i)=>[p.codigo,i]));
+  const marks = dentro.map(p=>{
+    const tem = (p.sinais||[]).some(s=>SINAL_DESTAQUE.has(s.tipo));
+    const cx=X(p.duration_anos).toFixed(1), cy=Y(p.spread_bps).toFixed(1);
+    return `<g class="pt" data-i="${indice.get(p.codigo)}">
+      <circle class="alvo" cx="${cx}" cy="${cy}" r="6"/>
+      <circle class="marca" cx="${cx}" cy="${cy}" r="${tem?5:3.4}"
+        fill="${CORF[fam]}" fill-opacity="${tem?0:.62}"
+        stroke="${CORF[fam]}" stroke-width="${tem?2:0}"/>
+    </g>`;
+  }).join("");
+
+  const marksCC = ptsCC.map(r=>{
+    const cx=X(r.dur), cy=Y(r.spread), s=3.4, cor=CORF[fam];
+    const forma = r.tp==="CRA"
+      ? `<path class="marca" d="M${cx.toFixed(1)} ${(cy-s*1.3).toFixed(1)} L${(cx+s*1.3).toFixed(1)} ${cy.toFixed(1)} L${cx.toFixed(1)} ${(cy+s*1.3).toFixed(1)} L${(cx-s*1.3).toFixed(1)} ${cy.toFixed(1)} Z"
+          fill="${cor}" fill-opacity=".22" stroke="var(--ink)" stroke-width="1"/>`
+      : `<rect class="marca" x="${(cx-s).toFixed(1)}" y="${(cy-s).toFixed(1)}" width="${(2*s).toFixed(1)}" height="${(2*s).toFixed(1)}"
+          fill="${cor}" fill-opacity=".22" stroke="var(--ink)" stroke-width="1"/>`;
+    return `<g class="pt" data-cc="${CC.indexOf(r)}">
+      <circle class="alvo" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="6"/>${forma}</g>`;
+  }).join("");
+
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img"
+    aria-label="Dispersão de spread por duration — ${rotF(fam)}, todos os ${pts.length} papéis${ptsCC.length?` e ${ptsCC.length} CRI/CRA`:""}, eixo de ${f0(escY.lo)} a ${f0(escY.hi)} bps">
+    ${grid}${marks}${marksCC}</svg>`;
+}
+
+// Facetas da curva num container próprio, para o liga/desliga de CRI/CRA
+// redesenhar só o gráfico.
+function facetasCurva(){
+  return Object.keys(D.evolucao.familias).map(f=>{
+    const n=D.papeis.filter(p=>p.familia===f).length;
+    const ncc = ccUI.curva ? CC.filter(r=>r.fam===f && r.dur!=null && r.spread!=null).length : 0;
+    const sv=curvaCredito(f);
+    return sv?`<div class="panel"><h3><span class="dot" style="background:${CORF[f]}"></span>
+      ${rotF(f)} <span class="cnt">${n} debêntures${ncc?` · ${ncc} CRI/CRA`:""}</span></h3>${sv}</div>`:"";
+  }).join("");
+}
+const SINAL_DESTAQUE = new Set(["spread_esticado","caro_vs_pares","abertura_semana","desconto_pu"]);
+
+/* ── quem se deslocou na curva ───────────────────────────────────────
+   Média contra média, nunca dia contra dia: um pregão isolado carrega o
+   ruído da marcação daquele dia e inventa deslocamento que não houve. */
+const N_DESLOC = 20;
+
+const JANELAS_DESLOC = {
+  "5v30": {
+    d:"d_5v30", base:"spread_base30",
+    bt:"5 pregões × 5 há 30 dias", eyebrow:"média de 5 pregões contra a média de 5 pregões há 21 pregões",
+    colBase:"Spread há 30d", tBase:"média dos 5 pregões que terminam 21 pregões atrás",
+    texto:"os últimos 5 pregões contra os 5 pregões que terminam há 21 pregões (cerca de 30 dias corridos)",
+  },
+  "5v3m": {
+    d:"d_5v3m", base:"spread_base3m",
+    bt:"5 pregões × 15 há 3 meses", eyebrow:"média de 5 pregões contra a média de 15 pregões há 63 pregões",
+    colBase:"Spread há 3m", tBase:"média dos 15 pregões que terminam 63 pregões atrás",
+    texto:"os últimos 5 pregões contra os 15 pregões que terminam há 63 pregões (cerca de 3 meses)",
+  },
+};
+const janelaDesloc = () => JANELAS_DESLOC[estado.desloc];
+
+// Geometria do último desenho, em unidades do viewBox, para a busca do ponto
+// mais próximo no hover. Reconstruída a cada render.
+let GEO_DESLOC = null;
+let ativoDesloc = null;
+
+function deslocamentos(){
+  const J = janelaDesloc();
+  return D.papeis
+    .filter(p => p[J.d]!=null && p[J.d] > 0
+                 && p.duration_anos!=null && p.spread_5d!=null && p[J.base]!=null
+                 && (p.liquidez??0) >= 45)
+    .sort((a,b)=>b[J.d]-a[J.d])
+    .slice(0,N_DESLOC);
+}
+
+function curvaDeslocamento(){
+  const J = janelaDesloc();
+  const alvos = deslocamentos();
+  if (alvos.length < 4) return "";
+  const fundo = D.papeis.filter(p=>p.duration_anos!=null && p.spread_bps!=null);
+  // A nuvem de fundo também em média de 5 pregões quando o papel tem
+  // histórico: ler seta de média contra ponto de um dia só seria comparar
+  // medidas diferentes no mesmo eixo.
+  const yFundo = p => p.spread_5d ?? p.spread_bps;
+
+  const W=1080, H=430, M={t:18,r:22,b:44,l:60};
+  const iw=W-M.l-M.r, ih=H-M.t-M.b;
+
+  // Escala que cabe todo mundo: o universo inteiro E as duas pontas de cada
+  // seta (onde o papel estava e onde está). Crédito estressado é exatamente o
+  // que se quer inspecionar aqui, então nada é recortado — a compressão
+  // logarítmica acima de LIN_BPS é o que deixa a nuvem legível ao mesmo tempo.
+  const dominio = fundo.map(yFundo).concat(alvos.map(p=>p[J.base]));
+  const escY = escalaY(dominio, M.t, ih);
+  const xmax = Math.max(...fundo.map(p=>p.duration_anos)) * 1.03;
+  const X=v=>M.l+Math.min(v,xmax)/xmax*iw;
+  const Y=escY.Y;
+
+  const passo=v=>{const b=Math.pow(10,Math.floor(Math.log10(v)));const n=v/b;return (n<=2?2:n<=5?5:10)*b};
+  const px=passo(xmax/6);
+  let svg="";
+  escY.ticks.forEach(v=>{
+    svg += `<line class="gridline" x1="${M.l}" x2="${W-M.r}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/>`
+         + `<text x="${M.l-8}" y="${(Y(v)+3.5).toFixed(1)}" text-anchor="end">${f0(v)}</text>`;
+  });
+  for(let v=0; v<=xmax; v+=px)
+    svg += `<text x="${X(v).toFixed(1)}" y="${H-M.b+16}" text-anchor="middle">${f0(v)}</text>`;
+  svg += marcaCompressao(escY, M.l, W-M.r);
+
+  // universo inteiro, recessivo: é a curva contra a qual se lê o deslocamento
+  svg += fundo.map(p=>
+    `<circle cx="${X(p.duration_anos).toFixed(1)}" cy="${Y(yFundo(p)).toFixed(1)}" r="2.2"
+      fill="var(--neutro)" fill-opacity=".28"/>`).join("");
+
+  svg += `<defs>
+    <marker id="setaA" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="var(--abre)"/></marker>
+    <marker id="setaF" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="var(--fecha)"/></marker></defs>`;
+
+  const idx = new Map(D.papeis.map((p,i)=>[p.codigo,i]));
+  const visiveis = alvos;
+  const rotulados = visiveis.slice(0,8);
+
+  // Papéis do mesmo emissor caem quase no mesmo ponto (IRJS14 e IRJS15, por
+  // exemplo). Afasta os rótulos na vertical quando ficam perto demais.
+  const posRot = new Map();
+  [...rotulados]
+    .map(p => ({p, x:X(p.duration_anos), y:Y(p.spread_5d)+3.5}))
+    .sort((a,b)=>a.y-b.y)
+    .forEach((r,i,arr) => {
+      for (let k=0; k<i; k++){
+        const o = arr[k];
+        if (Math.abs(o.x-r.x) < 52 && r.y - o.y < 12) r.y = o.y + 12;
+      }
+      posRot.set(r.p.codigo, r.y);
+    });
+  // Geometria guardada para a busca do ponto mais próximo: a seta inteira é
+  // alvo, não só a ponta.
+  const geo = [];
+  svg += visiveis.map(p=>{
+    const abriu = p[J.d] > 0;
+    const cor = abriu ? "var(--abre)" : "var(--fecha)";
+    const x = X(p.duration_anos), y1 = Y(p[J.base]), y2 = Y(p.spread_5d);
+    const rot = rotulados.includes(p);
+    geo.push({i: idx.get(p.codigo), x, y1, y2});
+    return `<g class="pt" data-i="${idx.get(p.codigo)}">
+      <line class="alvo" x1="${x.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x.toFixed(1)}"
+        y2="${y2.toFixed(1)}" stroke-width="16" stroke-linecap="round"/>
+      <circle class="marca" cx="${x.toFixed(1)}" cy="${y1.toFixed(1)}" r="3"
+        fill="var(--surface)" stroke="${cor}" stroke-width="1.2" stroke-opacity=".55"/>
+      <line class="marca" x1="${x.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x.toFixed(1)}"
+        y2="${y2.toFixed(1)}" stroke="${cor}" stroke-width="2"
+        marker-end="url(#${abriu?"setaA":"setaF"})"/>
+      ${rot ? `<text class="marca rot" x="${(x+8).toFixed(1)}" y="${posRot.get(p.codigo).toFixed(1)}"
+        style="font-size:9.5px; font-weight:600" fill="${cor}">${esc(p.codigo)}</text>` : ""}
+    </g>`;
+  }).join("");
+  GEO_DESLOC = {W, H, itens: geo};
+
+  svg += `<line class="baseline" x1="${M.l}" x2="${W-M.r}" y1="${M.t+ih}" y2="${M.t+ih}"/>`
+    + `<text class="axis-t" x="${M.l+iw/2}" y="${H-6}" text-anchor="middle">duration (anos)</text>`
+    + `<text class="axis-t" x="${-(M.t+ih/2)}" y="14" text-anchor="middle" transform="rotate(-90)">spread (bps)${escY.comprimida?" · log acima de "+LIN_BPS:""}</text>`
+    + (escY.comprimida ? `<text x="${W-M.r}" y="${M.t+2}" text-anchor="end">universo completo — ${f0(escY.hi)} bps no topo</text>` : "");
+
+  return `<svg class="chart" data-desloc="1" viewBox="0 0 ${W} ${H}" role="img"
+    aria-label="Deslocamento na curva de crédito: ${J.eyebrow}, ${alvos.length} papéis que mais abriram">${svg}</svg>`;
+}
+
+const colsDesloc = () => {
+  const J = janelaDesloc();
+  return [
+    {k:null,               r:"",                l:false, t:"posição no ranking de maiores aberturas"},
+    {k:"codigo",           r:"Papel",           l:true},
+    {k:"taxa_emissao",     r:"Na emissão",      l:true,  t:"taxa da emissão"},
+    {k:"duration_anos",    r:"Dur.",            l:false},
+    {k:J.base,             r:J.colBase,         l:false, t:J.tBase},
+    {k:"spread_5d",        r:"Spread 5 pregões",l:false, t:"média do spread nos últimos 5 pregões, em bps sobre o benchmark do indexador"},
+    {k:J.d,                r:"Δ",               l:false, t:"diferença entre as duas médias, em bps"},
+    {k:"taxa_indicativa",  r:"Taxa indicativa", l:false, t:"taxa indicativa ANBIMA de hoje, na convenção em que o papel é cotado"},
+    {k:"liquidez",         r:"Liquidez",        l:false},
+  ];
+};
+
+// A ordenação reordena as linhas, não muda a seleção: o conjunto continua sendo
+// os N maiores aumentos de spread, e o número da primeira coluna guarda essa
+// posição original para não se perder ao ordenar por outra coisa.
+function linhasDesloc(){
+  const J = janelaDesloc();
+  const cols = colsDesloc();
+  const alvos = deslocamentos().map((p,i)=>({p, rank:i+1}));
+
+  const k = estado.ordD, dir = estado.dirD;
+  alvos.sort((A,B)=>{
+    let x=A.p[k], y=B.p[k];
+    if (x==null) return 1;
+    if (y==null) return -1;
+    return typeof x==="string" ? dir*x.localeCompare(y,"pt-BR") : dir*(x-y);
+  });
+
+  const cab = cols.map(c=>{
+    if (!c.k) return `<th></th>`;
+    const at = estado.ordD===c.k ? ` aria-sort="${dir===1?"ascending":"descending"}"` : "";
+    const seta = estado.ordD===c.k ? (dir===1?" ↑":" ↓") : "";
+    return `<th role="button" tabindex="0" data-kd="${c.k}"${c.l?' class="l"':""}${at}`
+         + `${c.t?` title="${esc(c.t)}"`:""}>${c.r}${seta}</th>`;
+  }).join("");
+
+  const corpo = alvos.map(({p, rank})=>`<tr data-i="${D.papeis.indexOf(p)}">
+    <td class="mov-rk" title="${rank}º maior abertura">${rank}</td>
+    <td class="l"><span class="cod">${esc(p.codigo)}</span>${seloRating(p)}${seloAcao(p)}
+      <span class="emi" title="${esc(p.emissor)}">${esc(p.emissor)}</span></td>
+    <td class="l"><span class="fam"><span class="dot" style="background:${CORF[p.familia]||"var(--neutro)"}"></span>${esc(p.indice_bruto||"")}</span></td>
+    <td>${f1(p.duration_anos)}</td>
+    <td class="mono" style="color:var(--ink-2)">${f0(p[J.base])}</td>
+    <td><b>${f0(p.spread_5d)}</b></td>
+    <td><b style="color:${p[J.d]>0?"var(--abre)":"var(--fecha)"}">${sgn(p[J.d])}</b></td>
+    <td class="mono">${taxaCotada(p)}</td>
+    <td>${medidorLiq(p.liquidez)}</td>
+  </tr>`).join("");
+
+  document.getElementById("tabDesloc").innerHTML =
+    `<div class="tw"><table><thead><tr>${cab}</tr></thead><tbody>${corpo}</tbody></table></div>`;
+}
+
+function limparAtivoDesloc(){
+  if (ativoDesloc){ ativoDesloc.classList.remove("ativo"); ativoDesloc = null; }
+}
+
+// Acertar com o mouse uma linha de 2px é pedir demais, e onde as setas se
+// amontoam o alvo de cada uma some. Então o gráfico inteiro captura o
+// movimento e escolhe a seta MAIS PRÓXIMA do cursor — distância até o
+// segmento, não até a ponta —, desde que dentro de um raio de tolerância.
+// Fora dele nada é destacado: melhor não mostrar nada do que mostrar o papel
+// errado com ar de certeza.
+const RAIO_DESLOC = 34;   // em unidades do viewBox (1080 de largura)
+
+function hoverDesloc(svg, ev){
+  const G = GEO_DESLOC;
+  if (!G || !G.itens.length) return;
+  const r = svg.getBoundingClientRect();
+  if (!r.width) return;
+  const k = G.W / r.width;                       // viewBox por pixel
+  const px = (ev.clientX - r.left) * k, py = (ev.clientY - r.top) * k;
+
+  let melhor = null, dmin = Infinity;
+  for (const it of G.itens){
+    const alto = Math.min(it.y1, it.y2), baixo = Math.max(it.y1, it.y2);
+    const dy = py < alto ? alto - py : py > baixo ? py - baixo : 0;
+    const d = Math.hypot(px - it.x, dy);
+    if (d < dmin){ dmin = d; melhor = it; }
+  }
+  if (!melhor || dmin > RAIO_DESLOC){ limparAtivoDesloc(); esconderTip(); return; }
+
+  const g = svg.querySelector(`g.pt[data-i="${melhor.i}"]`);
+  if (g !== ativoDesloc){ limparAtivoDesloc(); ativoDesloc = g; if (g) g.classList.add("ativo"); }
+  mostrarTip(tipPapel(D.papeis[melhor.i]), ev);
+}
+
+// Redesenha gráfico e tabela quando a janela muda. A ordenação volta para o
+// Δ da janela nova: manter a coluna anterior ordenaria por um campo que
+// acabou de sair da tabela.
+function renderDesloc(){
+  const J = janelaDesloc();
+  if (!["codigo","taxa_emissao","duration_anos","spread_5d","taxa_indicativa","liquidez"]
+        .includes(estado.ordD)) { estado.ordD = J.d; estado.dirD = -1; }
+  limparAtivoDesloc();
+  const g = document.getElementById("desChart");
+  if (g) g.innerHTML = curvaDeslocamento();
+  const cab = document.getElementById("desEyebrow");
+  if (cab) cab.textContent = `${J.eyebrow} · ${N_DESLOC} maiores aberturas`;
+  const txt = document.getElementById("desTexto");
+  if (txt) txt.textContent = J.texto;
+  linhasDesloc();
+}
+
+function secaoDeslocamento(){
+  if (!Object.values(JANELAS_DESLOC).some(J =>
+        D.papeis.filter(p=>p[J.d]!=null && p[J.d]>0 && (p.liquidez??0)>=45).length >= 4))
+    return "";
+  const J = janelaDesloc();
+
+  return `<section>
+    <div class="head">
+      <h2>Quem se deslocou na curva</h2>
+      <span class="eyebrow" id="desEyebrow">${J.eyebrow} · ${N_DESLOC} maiores aberturas</span>
+    </div>
+    <p class="note">O <b>trajeto</b> de cada papel na curva de crédito, não o retrato de hoje.
+    Cada seta sai de onde o papel estava e termina onde está agora, e as duas pontas são
+    <b>médias</b>, não pregões isolados: um dia solto carrega o ruído da marcação daquele dia
+    — bid-ask largo, poucos informantes — e inventa deslocamento que não houve. A janela
+    escolhida compara <span id="desTexto">${J.texto}</span>.</p>
+    <div class="controls">
+      <label>Janela</label>
+      <div class="periodo" id="desJanela" role="group" aria-label="Janela de comparação">
+        ${Object.entries(JANELAS_DESLOC).map(([id,x])=>
+          `<button type="button" data-dj="${id}" aria-pressed="${id===estado.desloc}">${x.bt}</button>`).join("")}
+      </div>
+    </div>
+    <p class="note" style="margin:0 0 14px">Só entram os que <b>abriram</b> spread: as
+    ${N_DESLOC} maiores altas da janela, entre papéis com liquidez de pelo menos 45. Os pontos
+    cinza ao fundo são o universo inteiro — também em média de 5 pregões — para você ver se o
+    papel se afastou da nuvem ou só acompanhou o movimento geral. <b>Todas as setas
+    aparecem</b>, inclusive as dos papéis mais estressados: acima de ${LIN_BPS} bps (linha
+    tracejada) o eixo é logarítmico, então lá em cima o comprimento da seta é comprimido — o Δ
+    exato está na tabela.</p>
+    <div class="panel" id="desChart"></div>
+    <p class="note" style="margin:14px 0 0">Clique em qualquer cabeçalho para reordenar. A
+    ordenação muda só a leitura da lista — o conjunto continua sendo as ${N_DESLOC} maiores
+    aberturas, e o número à esquerda guarda a posição de cada papel nesse ranking.</p>
+    <div id="tabDesloc" style="margin-top:12px"></div>
+    ${blocoDeslocCC()}
+  </section>`;
+}
+
+/* ── distância entre a taxa de hoje e a da emissão ──────────────────── */
+const N_EMISSAO = 20;
+
+// IPCA+ e DI+ vão em listas separadas de propósito: um é taxa real cheia (4 a
+// 12%) e o outro é spread sobre o CDI (0,5 a 15%), então num ranking único por
+// módulo o IPCA+ ocupa quase todas as vagas e o DI+ desaparece.
+// Papéis "% do DI" ficam fora dos dois: ali a taxa é percentual DO CDI, não
+// ponto de taxa, e a subtração daria um número em outra unidade.
+const FAMS_EMISSAO = [
+  {f:"IPCA",      rot:"IPCA +", cor:"var(--s2)"},
+  {f:"DI_SPREAD", rot:"DI +",   cor:"var(--s1)"},
+];
+
+// Só quem se afastou PARA CIMA: hoje se exige mais taxa do que na emissão.
+// O papel que fechou não é a pergunta desta seção — quem origina quer ver
+// onde a última operação envelheceu mal, não onde ficou cara.
+function distanciaEmissao(fam){
+  return D.papeis
+    .filter(p => p.familia===fam && p.taxa_indicativa!=null && p.taxa_emissao!=null
+                 && (p.liquidez??0) >= 45)
+    .map(p => ({p, dif: Math.round((p.taxa_indicativa - p.taxa_emissao)*1000)/10}))
+    .filter(o => o.dif > 0)
+    .sort((x,y)=>y.dif-x.dif)
+    .slice(0,N_EMISSAO);
+}
+
+const COLS_EMISSAO = [
+  {k:null,              r:"",              l:false},
+  {k:"codigo",          r:"Papel",         l:true},
+  {k:"taxa_emissao",    r:"Na emissão",    l:true,  t:"taxa da emissão"},
+  {k:"taxa_indicativa", r:"Taxa hoje",     l:false, t:"taxa indicativa ANBIMA de hoje"},
+  {k:"dif",             r:"Δ vs emissão",  l:false, t:"taxa de hoje menos a da emissão, em bps"},
+  {k:"duration_anos",   r:"Dur.",          l:false},
+  {k:"spread_bps",      r:"Spread hoje",   l:false, t:"spread sobre o benchmark do indexador, em bps"},
+  {k:"liquidez",        r:"Liquidez",      l:false},
+];
+
+function linhasEmissao(fam){
+  const itens = distanciaEmissao(fam).map((o,i)=>({...o, rank:i+1}));
+  if (!itens.length) return;
+  const k = estado.ordE[fam], dir = estado.dirE[fam];
+  const val = o => k==="dif" ? o.dif : o.p[k];
+  itens.sort((A,B)=>{
+    let x=val(A), y=val(B);
+    if (x==null) return 1;
+    if (y==null) return -1;
+    return typeof x==="string" ? dir*x.localeCompare(y,"pt-BR") : dir*(x-y);
+  });
+  const escala = Math.max(...itens.map(o=>Math.abs(o.dif)), 1);
+
+  const cab = COLS_EMISSAO.map(c=>{
+    if (!c.k) return `<th></th>`;
+    const at = k===c.k ? ` aria-sort="${dir===1?"ascending":"descending"}"` : "";
+    const seta = k===c.k ? (dir===1?" ↑":" ↓") : "";
+    return `<th role="button" tabindex="0" data-ke="${c.k}"${c.l?' class="l"':""}${at}`
+         + `${c.t?` title="${esc(c.t)}"`:""}>${c.r}${seta}</th>`;
+  }).join("");
+
+  const corpo = itens.map(({p, dif, rank})=>`<tr data-i="${D.papeis.indexOf(p)}">
+    <td class="mov-rk" title="${rank}º maior alta vs emissão">${rank}</td>
+    <td class="l"><span class="cod">${esc(p.codigo)}</span>${seloRating(p)}${seloAcao(p)}
+      <span class="emi" title="${esc(p.emissor)}">${esc(p.emissor)}</span></td>
+    <td class="l mono" style="color:var(--ink-2)">${taxaEmissao(p)}</td>
+    <td class="mono">${taxaCotada(p)}</td>
+    <td>${barraDelta(dif, escala)}</td>
+    <td>${f1(p.duration_anos)}</td>
+    <td><b>${f0(p.spread_bps)}</b></td>
+    <td>${medidorLiq(p.liquidez)}</td>
+  </tr>`).join("");
+
+  document.querySelector(`[data-tabemis="${fam}"]`).innerHTML =
+    `<div class="tw"><table><thead><tr>${cab}</tr></thead><tbody>${corpo}</tbody></table></div>`;
+}
+
+function secaoEmissao(){
+  const blocos = FAMS_EMISSAO.map(({f, rot, cor})=>{
+    const itens = distanciaEmissao(f);
+    if (itens.length < 3) return "";
+    return `<div style="margin-top:26px">
+      <div class="head" style="border-bottom-width:1px; margin-bottom:12px">
+        <h2 style="font-size:16px"><span class="dot" style="background:${cor}"></span>
+          ${rot} <span style="font-weight:400; color:var(--muted)">— ${itens.length} maiores altas</span></h2>
+        <span class="eyebrow">de +${f0(itens[itens.length-1].dif)} a +${f0(itens[0].dif)} bps vs emissão</span>
+      </div>
+      <div data-tabemis="${f}"></div>
+    </div>`;
+  }).join("");
+  if (!blocos.trim()) return "";
+
+  return `<section>
+    <div class="head">
+      <h2>Distância da emissão</h2>
+      <span class="eyebrow">só quem abriu · taxa de hoje contra a de lançamento</span>
+    </div>
+    <p class="note">Quanto o papel se afastou <b>para cima</b> do preço a que foi vendido:
+    hoje se exige mais taxa do que na emissão. Quem fechou contra a emissão fica de fora da
+    lista de propósito — a pergunta aqui é onde a última operação envelheceu mal, que é a
+    referência incômoda na hora de precificar a próxima do mesmo emissor.
+    As duas listas são <b>separadas</b> porque as unidades não se comparam: IPCA+ é taxa real
+    cheia e DI+ é spread sobre o CDI, então num ranking único o IPCA+ tomaria quase todas as
+    vagas. Entram as ${N_EMISSAO} maiores altas de cada família, com liquidez de pelo
+    menos 45. Qualquer cabeçalho ordena.</p>
+    ${blocos}
+    <p class="note" style="margin-top:16px">Duas ressalvas. A distância não é só crédito: a
+    curva de juros andou desde que esses papéis foram emitidos, e parte do movimento é o
+    mercado inteiro, não o emissor. E papéis <code>% do DI</code>, pré-fixados e IGP-M ficam de
+    fora, porque a subtração ali daria um número em outra unidade.</p>
+  </section>`;
+}
+
+/* ── gráfico 2: evolução da mediana ─────────────────────────────────── */
+function evolucao(){
+  const ev=D.evolucao, fams=Object.keys(ev.familias);
+  if (!fams.length || ev.datas.length<4) return "";
+  const W=1080, H=290, M={t:16,r:112,b:40,l:56};
+  const iw=W-M.l-M.r, ih=H-M.t-M.b;
+  const todos=fams.flatMap(f=>ev.familias[f]).filter(v=>v!=null);
+  const lo=Math.min(...todos)*0.94, hi=Math.max(...todos)*1.06;
+  const X=i=>M.l+(ev.datas.length<2?0:i/(ev.datas.length-1)*iw);
+  const Y=v=>M.t+ih-(v-lo)/(hi-lo||1)*ih;
+
+  const passo=v=>{const b=Math.pow(10,Math.floor(Math.log10(v)));const n=v/b;return (n<=2?2:n<=5?5:10)*b};
+  const py=passo((hi-lo)/4); let ty=[];
+  for(let v=Math.ceil(lo/py)*py; v<=hi; v+=py) ty.push(v);
+
+  let svg = ty.map(v=>`<line class="gridline" x1="${M.l}" x2="${W-M.r}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/>`
+    + `<text x="${M.l-8}" y="${(Y(v)+3.5).toFixed(1)}" text-anchor="end">${f0(v)}</text>`).join("");
+
+  // ticks param em 0,92 do eixo: o último rótulo não disputa espaço com a legenda final
+  const nx=Math.min(6,ev.datas.length);
+  for(let k=0;k<nx;k++){
+    const i=Math.round(k*(ev.datas.length-1)*0.92/(nx-1||1));
+    svg += `<text x="${X(i).toFixed(1)}" y="${H-M.b+16}" text-anchor="middle">${dataBR(ev.datas[i]).slice(0,5)}</text>`;
+  }
+  svg += `<line class="baseline" x1="${M.l}" x2="${W-M.r}" y1="${M.t+ih}" y2="${M.t+ih}"/>`
+      +  `<text class="axis-t" x="${-(M.t+ih/2)}" y="13" text-anchor="middle" transform="rotate(-90)">mediana do spread (bps)</text>`;
+
+  const rotulos=[];
+  fams.forEach(f=>{
+    const s=ev.familias[f];
+    let d="", aberto=false, ult=-1;
+    s.forEach((v,i)=>{ if(v==null){aberto=false;return}
+      d += (aberto?"L":"M") + X(i).toFixed(1) + " " + Y(v).toFixed(1) + " "; aberto=true; ult=i; });
+    svg += `<path d="${d}" fill="none" stroke="${CORF[f]}" stroke-width="2"
+      stroke-linejoin="round" stroke-linecap="round"/>`;
+    if (ult>=0){
+      svg += `<circle cx="${X(ult).toFixed(1)}" cy="${Y(s[ult]).toFixed(1)}" r="3.5" fill="${CORF[f]}"
+        stroke="var(--surface)" stroke-width="2"/>`;
+      rotulos.push({f, y:Y(s[ult]), v:s[ult]});
+    }
+  });
+
+  // rótulos diretos à direita, afastados entre si para nunca colidirem
+  const GAP=34;
+  rotulos.sort((a,b)=>a.y-b.y);
+  rotulos.forEach((r,i)=>{ if(i>0 && r.y - rotulos[i-1].y < GAP) r.y = rotulos[i-1].y + GAP; });
+  const excesso = rotulos.length ? Math.max(0, rotulos[rotulos.length-1].y - (M.t+ih)) : 0;
+  rotulos.forEach(r=>{
+    const y = Math.max(M.t+10, r.y - excesso);
+    svg += `<text class="axis-t" x="${W-M.r+10}" y="${y.toFixed(1)}" fill="var(--ink)"
+       style="font-weight:600">${rotF(r.f)}</text>`
+      + `<text x="${W-M.r+10}" y="${(y+14).toFixed(1)}">${f0(r.v)} bps</text>`;
+  });
+
+  // camada de leitura: faixa vertical por data
+  const faixas = ev.datas.map((dt,i)=>{
+    const w=iw/(ev.datas.length-1||1);
+    const vals=fams.filter(f=>ev.familias[f][i]!=null)
+      .map(f=>`<div class="t-r"><span>${rotF(f)}</span><span>${f0(ev.familias[f][i])} bps</span></div>`).join("");
+    return `<rect x="${(X(i)-w/2).toFixed(1)}" y="${M.t}" width="${w.toFixed(1)}" height="${ih}"
+      fill="transparent" data-ev="${esc(`<div class="t-c">${dataBR(dt)}</div>${vals}`)}"/>`;
+  }).join("");
+
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img"
+    aria-label="Evolução da mediana de spread por família de indexador">${svg}${faixas}</svg>`;
+}
+
+/* ── rating e notícia de crédito ────────────────────────────────────── */
+const ACAO_ROT = {
+  rebaixamento:"rebaixou", elevacao:"elevou", perspectiva_negativa:"persp. negativa",
+  perspectiva_positiva:"persp. positiva", em_revisao:"em revisão",
+  afirmacao:"afirmou", relatorio:"relatório",
+};
+const ACAO_TOM = {
+  rebaixamento:"baixa", perspectiva_negativa:"baixa", em_revisao:"baixa",
+  elevacao:"sobe", perspectiva_positiva:"sobe",
+};
+
+Object.assign(ACAO_ROT, {evento_credito:"evento de crédito"});
+Object.assign(ACAO_TOM, {evento_credito:"baixa"});
+
+// Emissor -> achados, para carimbar as tabelas de movimento sem repetir o texto.
+const RATING_POR_EMISSOR = (()=>{
+  const m = new Map();
+  (D.ratings?.emissores || []).forEach(e=>{
+    if ((e.achados||[]).length) m.set(semAcento(e.emissor), e.achados);
+  });
+  return m;
+})();
+
+function achadosDe(p){
+  // Acento normalizado dos dois lados: a CSN vem com acento na ANBIMA e sem
+  // no levantamento de rating, e o selo não chegava aos papéis dela.
+  const k = semAcento(p.emissor);
+  if (!k) return null;
+  if (RATING_POR_EMISSOR.has(k)) return RATING_POR_EMISSOR.get(k);
+  if (k.length < 6) return null;                   // nome curto demais para casar por prefixo
+  for (const [nome, ach] of RATING_POR_EMISSOR)   // o nome diverge entre as fontes
+    if (nome.startsWith(k.slice(0,18)) || k.startsWith(nome.slice(0,18))) return ach;
+  return null;
+}
+
+function seloRating(p){
+  const ach = achadosDe(p);
+  if (!ach) return "";
+  const tom = ach.some(x=>ACAO_TOM[x.acao]==="baixa") ? "baixa"
+            : ach.some(x=>ACAO_TOM[x.acao]==="sobe")  ? "sobe" : null;
+  if (!tom) return "";
+  const txt = ach.map(x=>`${x.agencia}: ${ACAO_ROT[x.acao]||x.acao}`).join(" · ");
+  return `<span class="selo ${tom}" title="${esc(txt)} — ver Rating e notícia de crédito">rating</span>`;
+}
+
+/* ── ação do emissor: mesmo papel do rating ──────────────────────────
+   Sinal de corroboração, nunca de causa. Ação caindo forte é a leitura que o
+   equity faz da mesma empresa cujo spread abriu; as duas coisas ficam lado a
+   lado e quem lê tira a conclusão.
+
+   A cobertura é parcial POR ESTRUTURA do mercado, não por falha de
+   mapeamento: boa parte do universo é SPE de saneamento e de concessão, que
+   não tem equity negociado — e é justamente onde o spread costuma estar mais
+   largo. Emissor sem ticker entra com ZERO neste eixo, exatamente como
+   emissor sem achado de agência, então a ausência nunca empurra ninguém para
+   baixo na fila; só deixa de somar. */
+const ACAO_POR_EMISSOR = (()=>{
+  const m = new Map();
+  (D.acoes?.emissores || []).forEach(a=>{
+    if (a && a.emissor) m.set(String(a.emissor).toUpperCase(), a);
+  });
+  return m;
+})();
+
+function acaoDe(p){
+  const k = (p.emissor||"").toUpperCase();
+  if (!k || !ACAO_POR_EMISSOR.size) return null;
+  if (ACAO_POR_EMISSOR.has(k)) return ACAO_POR_EMISSOR.get(k);
+  for (const [nome, a] of ACAO_POR_EMISSOR)   // o nome diverge entre as fontes
+    if (nome.startsWith(k.slice(0,18)) || k.startsWith(nome.slice(0,18))) return a;
+  return null;
+}
+
+// Cortes fixos e deliberadamente grosseiros: o eixo é de alerta, não de
+// precificação, e calibrar decimal aqui só daria falsa precisão. "forte" pesa
+// como rebaixamento de nota; "moderada", como perspectiva negativa.
+const ACAO_FORTE = -40, ACAO_MODERADA = -20;
+const ACAO_DD_FORTE = -50, ACAO_DD_MODERADA = -35;
+
+function tomAcao(a){
+  if (!a) return null;
+  const v = a.var_12m, dd = a.queda_max_52s;
+  if ((v!=null && v <= ACAO_FORTE) || (dd!=null && dd <= ACAO_DD_FORTE)) return "forte";
+  if ((v!=null && v <= ACAO_MODERADA) || (dd!=null && dd <= ACAO_DD_MODERADA)) return "moderada";
+  return null;
+}
+const acaoControladora = a => !!a && a.vinculo === "controladora";
+
+// Texto curto do movimento: prefere a janela de 12 meses e cai para a
+// distância da máxima quando a série não tem 12 meses.
+function rotAcao(a){
+  if (!a) return "";
+  if (a.var_12m != null) return `${sgn(a.var_12m)}% em 12m`;
+  if (a.queda_max_52s != null) return `${sgn(a.queda_max_52s)}% da máx. 52s`;
+  return "";
+}
+
+function seloAcao(p){
+  const a = acaoDe(p);
+  if (!tomAcao(a)) return "";
+  const de = acaoControladora(a) ? " — ação da CONTROLADORA, não da emissora" : "";
+  return `<span class="selo baixa" title="${esc(a.ticker)} ${rotAcao(a)}${de}`
+    + ` — queda de ação é sinal de alerta, não causa do movimento de spread">ação ↓</span>`;
+}
+
+// Carimba a variação da ação em cada papel uma vez só. Assim a coluna da
+// tabela ordena pelo mesmo caminho de todas as outras e o filtro é uma
+// comparação direta, sem caso especial no comparador.
+if (ACAO_POR_EMISSOR.size) D.papeis.forEach(p=>{
+  const a = acaoDe(p);
+  if (!a) return;
+  p.acao_ticker = a.ticker;
+  p.acao_var = a.var_12m != null ? a.var_12m : a.queda_max_52s;
+  p.acao_ctrl = acaoControladora(a);
+  p.acao_tom  = tomAcao(a);
+});
+
+// Data do achado: a fonte às vezes dá só o mês (/2026/03/ no caminho do PDF),
+// então cada item vira um INTERVALO. Sem data continua sem data: não se
+// inventa dia para caber numa janela.
+function periodoAchado(x){
+  const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(String(x.data||""));
+  if (!m) return null;
+  const a=+m[1], mes=+m[2], d=m[3]?+m[3]:null;
+  return d
+    ? {ini:Date.UTC(a,mes-1,d), fim:Date.UTC(a,mes-1,d), precisao:"dia"}
+    : {ini:Date.UTC(a,mes-1,1), fim:Date.UTC(a,mes,0),   precisao:"mês"};
+}
+
+const JANELA_DIAS = 30;
+function janelaRating(){
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(D.data||"");
+  if (!m) return null;
+  const fim = Date.UTC(+m[1], +m[2]-1, +m[3]);
+  return {ini: fim - JANELA_DIAS*86400000, fim};
+}
+
+// "Rebaixado" aqui é rebaixamento de nota, não perspectiva: mudar outlook
+// não é a mesma coisa que perder degrau, e misturar os dois inflaria a lista.
+const eRebaixamento = x => x.acao === "rebaixamento";
+
+function cardRating(e, achados, vazio){
+  const itens = achados.length
+    ? achados.map(x=>{
+        const tom = ACAO_TOM[x.acao] || "neutro";
+        const per = periodoAchado(x);
+        return `<div class="rat-i">
+          <span class="rat-ag ${tom}">${esc(x.agencia||"—")}</span>
+          <span title="${esc(x.resumo||"")}">${esc(ACAO_ROT[x.acao]||x.acao||"")}</span>
+          ${x.data ? `<span class="dt"${per&&per.precisao==="mês"?' title="a fonte dá só o mês"':""}>${esc(x.data)}${per&&per.precisao==="mês"?" (mês)":""}</span>` : `<span class="dt" title="a fonte não traz data">sem data</span>`}
+          ${x.url ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.fonte||"fonte")}</a>` : ""}
+        </div>`;
+      }).join("")
+    : `<div class="rat-i"><span class="dt">${vazio}</span></div>`;
+  return `<div class="rat-c">
+    <div class="rat-h">
+      <b>${esc(e.emissor)}</b>${e.classe ? `<span class="cc-tp">${esc(e.classe)}</span>` : ""}
+      ${e.papeis && e.papeis.length ? `<span class="pap">${esc(e.papeis.join(" "))}</span>` : ""}
+      ${e.d_spread_21d != null ? `<span class="dl">${sgn(e.d_spread_21d)}</span>` : ""}
+    </div>${itens}${(()=>{
+      // A ação entra no MESMO cartão do rating, e de propósito: é a outra
+      // leitura de mercado sobre a mesma empresa. Fica ao lado, sem virar
+      // explicação do spread.
+      const a = acaoDe({emissor: e.emissor});
+      if (!a || (a.var_12m==null && a.queda_max_52s==null)) return "";
+      const tom = tomAcao(a);
+      return `<div class="rat-i">
+        <span class="rat-ag ${tom ? "baixa" : "neutro"}">ação</span>
+        <span title="${esc(a.ticker)}${acaoControladora(a) ? " — ação da controladora, não da emissora" : ""}">${esc(a.ticker)} ${rotAcao(a)}${
+          acaoControladora(a) ? " (controladora)" : ""}</span>
+        ${a.atualizado_em ? `<span class="dt">${esc(a.atualizado_em)}</span>` : ""}
+      </div>`;
+    })()}</div>`;
+}
+
+function listaRatings(){
+  const R = D.ratings, alvo = document.getElementById("ratLista");
+  if (!alvo) return;
+
+  if (estado.ratView !== "rebaixa30"){
+    alvo.innerHTML = `<div class="rat">`
+      + R.emissores.map(e=>cardRating(e, e.achados||[], "busca não encontrou ação de rating")).join("")
+      + `</div>`;
+    return;
+  }
+
+  const j = janelaRating();
+  const dentro = [], semData = [], fora = [];
+  R.emissores.forEach(e=>{
+    (e.achados||[]).filter(eRebaixamento).forEach(x=>{
+      const per = periodoAchado(x);
+      if (!per) semData.push({e,x});
+      else if (j && per.fim >= j.ini && per.ini <= j.fim) dentro.push({e,x});
+      else fora.push({e,x});
+    });
+  });
+
+  const porEmissor = lista => {
+    const m = new Map();
+    lista.forEach(({e,x}) => (m.get(e) || m.set(e,[]).get(e)).push(x));
+    return [...m].map(([e,ach])=>cardRating(e, ach, "")).join("");
+  };
+
+  const ini = j ? new Date(j.ini).toISOString().slice(0,10) : null;
+  alvo.innerHTML = dentro.length
+    ? `<div class="rat">${porEmissor(dentro)}</div>`
+    : `<div class="tw"><p class="empty">Nenhum rebaixamento com data dentro da janela de
+       ${JANELA_DIAS} dias (${dataBR(ini)} a ${dataBR(D.data)}).</p></div>`;
+
+  const resto = [];
+  if (semData.length) resto.push(`<b>${semData.length}</b> ${semData.length===1
+      ? "rebaixamento levantado não traz data na fonte, então não dá para situá-lo na janela"
+      : "rebaixamentos levantados não trazem data na fonte, então não dá para situá-los na janela"}`);
+  if (fora.length) resto.push(`<b>${fora.length}</b> ${fora.length===1?"está datado":"estão datados"} fora dos ${JANELA_DIAS} dias`);
+  if (resto.length)
+    alvo.innerHTML += `<p class="note" style="margin:14px 0 0">${resto.join(" · ")}. ${
+      semData.length ? "Ficam listados abaixo para conferência na fonte — a data não foi inferida." : ""}</p>`
+      + (semData.length ? `<div class="rat" style="margin-top:10px">${porEmissor(semData)}</div>` : "");
+}
+
+function secaoRatings(){
+  const R = D.ratings;
+  if (!R || !R.emissores || !R.emissores.length) return "";
+  const nReb = R.emissores.reduce((s,e)=>s+(e.achados||[]).filter(eRebaixamento).length, 0);
+
+  return `<section>
+    <div class="head">
+      <h2>Rating e notícia de crédito</h2>
+      <span class="eyebrow">levantado em ${dataBR(R.pesquisado_em)}</span>
+    </div>
+    <p class="note">Ações de agência nos emissores que mais abriram spread${CC.length
+    ? " e nos devedores do topo da triagem de CRI/CRA (marcados com a etiqueta do papel)" : ""}. Material de
+    terceiros levantado por busca, <b>sem auditoria</b>: o resumo aparece ao passar o mouse e
+    o link leva à fonte — <b>confirme lá antes de usar</b>. As duas informações ficam lado a
+    lado de propósito, o painel não afirma que uma causou a outra. O selo
+    <span class="selo baixa">rating</span> nas tabelas acima marca os papéis destes emissores.
+    A visão de <b>rebaixamentos</b> filtra só perda de nota — perspectiva negativa e revisão
+    ficam de fora — e usa a data que a fonte publicou; quando a fonte não datou, o item
+    aparece separado em vez de entrar na janela por chute.</p>
+    <div class="controls">
+      <label>Visão</label>
+      <div class="periodo" id="ratView" role="group" aria-label="Visão de rating">
+        <button type="button" data-rv="todos" aria-pressed="true">todos os emissores</button>
+        <button type="button" data-rv="rebaixa30" aria-pressed="false">rebaixados · ${JANELA_DIAS} dias${nReb?` (${nReb})`:""}</button>
+      </div>
+    </div>
+    <div id="ratLista"></div>
+  </section>`;
+}
+
+/* ── triagem: onde o mercado está pedindo prêmio de stress ───────────
+   O painel NÃO afirma que a empresa está em reestruturação — isso se
+   confirma em balanço, covenant, fato relevante e conversa com a companhia,
+   não em tela de spread. O que este bloco faz é ordenar os emissores pelo
+   tamanho do prêmio que o mercado exige hoje e pelo quanto esse prêmio
+   piorou, juntando as ações de rating já levantadas. É pauta de
+   investigação, não diagnóstico. */
+const TRIAGEM_N = 15;
+const lim01 = v => Math.max(0, Math.min(1, v));
+
+function stressPapel(p){
+  const dif = (p.taxa_indicativa!=null && p.taxa_emissao!=null && p.familia!=="DI_PCT")
+    ? Math.round((p.taxa_indicativa - p.taxa_emissao)*1000)/10 : null;
+  const ach = achadosDe(p) || [];
+  const rating = ach.some(x=>x.acao==="rebaixamento") ? 1
+               : ach.some(x=>ACAO_TOM[x.acao]==="baixa") ? 0.6 : 0;
+  // Ação do emissor entra igual ao rating: queda forte pesa como rebaixamento
+  // de nota, queda moderada como perspectiva negativa. Ticker de CONTROLADORA
+  // vale menos — SPE com receita ring-fenced não anda junto com a holding, e o
+  // mesmo tombo diz menos sobre este papel do que diria sobre a matriz.
+  const aq = acaoDe(p), tomA = tomAcao(aq);
+  const acao = (tomA==="forte" ? 1 : tomA==="moderada" ? 0.6 : 0)
+             * (acaoControladora(aq) ? 0.6 : 1);
+  // Cada eixo entra normalizado em 0–1 e satura: um papel a 3.000 bps não
+  // vale o triplo de um a 1.000 na hora de montar a fila, senão um único
+  // outlier ocupa a lista inteira.
+  const c = {
+    nivel:   lim01((p.spread_bps ?? 0)/1000),
+    pares:   p.percentil_pares==null ? 0 : lim01((p.percentil_pares-50)/50),
+    emissao: dif==null ? 0 : lim01(dif/500),
+    d21:     lim01((p.d_spread_21d ?? 0)/100),
+    janela:  lim01((p.d_spread_janela ?? 0)/300),
+    pu:      p.percentil_pu==null ? 0 : lim01((30-p.percentil_pu)/30),
+    rating,
+    acao,
+  };
+  const bruto = c.nivel*.15 + c.emissao*.15 + c.pares*.15 + c.d21*.15
+              + c.janela*.10 + c.pu*.10 + c.rating*.10 + c.acao*.10;
+  // Liquidez não elimina, pondera. Spread de papel que não negocia é
+  // marcação, não preço: sem esse desconto a lista vira uma coleção de
+  // papéis com liquidez zero, que é o erro que o filtro >=45 evita nos
+  // outros rankings. Aqui o papel ilíquido continua elegível, mas precisa
+  // de evidência bem mais forte para subir — e entra com o alerta na linha.
+  const conf = 0.55 + 0.45*lim01((p.liquidez ?? 0)/60);
+  return {p, dif, ach, acao: aq, tomA, c, bruto, conf, score: bruto*conf};
+}
+
+function motivosTriagem(s){
+  const p = s.p, m = [];
+  if ((p.spread_bps ?? 0) >= 350) m.push(["abre", `spread ${f0(p.spread_bps)} bps`]);
+  if (s.dif != null && s.dif >= 100) m.push(["abre", `${sgn(s.dif)} bps vs emissão`]);
+  if ((p.percentil_pares ?? 0) >= 90) m.push(["abre", `p${f0(p.percentil_pares)} vs pares`]);
+  if ((p.d_spread_21d ?? 0) >= 25) m.push(["abre", `${sgn(p.d_spread_21d)} em 21 pregões`]);
+  if ((p.d_spread_janela ?? 0) >= 120) m.push(["abre", `${sgn(p.d_spread_janela)} na janela`]);
+  if ((p.percentil_pu ?? 100) <= 10) m.push(["abre", `PU ${f1(p.pct_pu_par)}% do par`]);
+  s.ach.filter(x=>ACAO_TOM[x.acao]==="baixa").slice(0,2).forEach(x=>
+    m.push(["alerta", `${x.agencia}: ${ACAO_ROT[x.acao]||x.acao}`]));
+  if (s.tomA)
+    m.push(["alerta", `${s.acao.ticker} ${rotAcao(s.acao)}`
+      + (acaoControladora(s.acao) ? " (controladora)" : "")]);
+  if ((p.liquidez ?? 0) < 45)
+    m.push(["alerta", `liquidez ${f0(p.liquidez)} — marcação frágil`]);
+  return m;
+}
+
+function triagem(){
+  const porEmissor = new Map();
+  D.papeis.forEach(p=>{
+    if (!p.emissor || p.spread_bps==null) return;
+    const s = stressPapel(p);
+    const k = p.gk || p.emissor;            // um nome por grupo econômico
+    const at = porEmissor.get(k);
+    if (!at || s.score > at.score) porEmissor.set(k, s);
+  });
+  return [...porEmissor.values()].sort((a,b)=>b.score-a.score).slice(0,TRIAGEM_N);
+}
+
+function secaoTriagem(){
+  const lista = triagem();
+  if (lista.length < 5) return "";
+  const nRating = lista.filter(s=>s.ach.some(x=>ACAO_TOM[x.acao]==="baixa")).length;
+  const nIliq = lista.filter(s=>(s.p.liquidez??0) < 45).length;
+  const nAcao = lista.filter(s=>s.tomA).length;
+  const nSemAcao = ACAO_POR_EMISSOR.size ? lista.filter(s=>!s.acao).length : 0;
+
+  const linhas = lista.map((s,i)=>{
+    const p = s.p;
+    return `<tr data-i="${D.papeis.indexOf(p)}">
+      <td class="mov-rk">${i+1}</td>
+      <td class="l"><span class="cod">${esc(p.emissor)}</span>${nomeGrupo(p.grupo)}${seloRating(p)}${seloAcao(p)}
+        <span class="emi">papel de referência ${esc(p.codigo)}${esc(p.indice_bruto?" · "+p.indice_bruto:"")}</span></td>
+      <td class="mono">${taxaEmissao(p,true)}</td>
+      <td class="mono">${taxaCotada(p,true)}</td>
+      <td><b>${f0(p.spread_bps)}</b></td>
+      <td><b style="color:${s.dif>0?"var(--abre)":"var(--ink-2)"}">${s.dif==null?"—":sgn(s.dif)}</b></td>
+      <td>${p.d_spread_21d==null?"—":`<span style="color:${p.d_spread_21d>0?"var(--abre)":"var(--fecha)"}">${sgn(p.d_spread_21d)}</span>`}</td>
+      ${!ACAO_POR_EMISSOR.size ? "" : (()=>{
+        const a = s.acao;
+        if (!a || (a.var_12m==null && a.queda_max_52s==null))
+          return `<td><span style="color:var(--muted)" title="emissor sem ação negociada, ou fora do mapa emissor→ticker — não pontua neste eixo">sem ação</span></td>`;
+        const v = a.var_12m!=null ? a.var_12m : a.queda_max_52s;
+        const tit = `${a.ticker}${acaoControladora(a)?" — ação da controladora, não da emissora":""}`
+          + (a.var_12m==null ? " · sem 12 meses de série, mostrando a queda desde a máxima de 52 semanas" : "")
+          + (a.atualizado_em ? ` · fechamento de ${dataBR(a.atualizado_em)}` : "");
+        return `<td title="${esc(tit)}"><span style="${s.tomA?"color:var(--abre); font-weight:600":"color:var(--ink-2)"}">${sgn(v)}%</span>`
+          + `${acaoControladora(a)?`<span style="color:var(--muted); font-size:11px"> ctrl</span>`:""}</td>`;
+      })()}
+      <td${p.percentil_pu!=null?` title="decil ${f0(p.percentil_pu)} de PU no bucket ${esc(p.bucket||"")}"`:""}
+        >${p.pct_pu_par==null ? "—"
+          : `<span style="${(p.percentil_pu ?? 100) <= 10 ? "color:var(--abre); font-weight:600" : ""}">${f1(p.pct_pu_par)}</span>`}</td>
+      <td>${medidorLiq(p.liquidez)}</td>
+      <td><span class="chips">${motivosTriagem(s).map(([tom,txt])=>
+        `<span class="chip ${tom}">${esc(txt)}</span>`).join("")}</span></td>
+    </tr>`;
+  }).join("");
+
+  return `<section style="margin-top:34px">
+    <div class="head">
+      <h2>Onde o mercado está pedindo prêmio de stress</h2>
+      <span class="eyebrow">${TRIAGEM_N} emissores · triagem para investigar</span>
+    </div>
+    <p class="note">A fila combina, com pesos: prêmio contra a emissão, nível absoluto de
+    spread, posição contra os pares e abertura em 21 pregões (15% cada); abertura na janela
+    inteira, desconto no PU, ação de rating e queda da ação do emissor (10% cada). Cada eixo
+    satura, para um único papel de 3.000 bps não dominar a lista. O emissor
+    entra pelo <b>pior papel</b> dele, que é o mostrado na linha, e empresas do mesmo
+    <b>grupo econômico</b> contam como um nome só.
+    ${nRating ? `${nRating} dos ${TRIAGEM_N} têm ação de agência no levantamento. ` : ""}
+    ${nAcao ? `${nAcao} ${nAcao===1?"tem":"têm"} a ação em queda relevante. ` : ""}
+    ${nIliq ? `${nIliq} ${nIliq===1?"tem":"têm"} liquidez abaixo de 45 — nesses, a marcação é frágil e o spread pode ser ruído.` : ""}</p>
+    ${!ACAO_POR_EMISSOR.size ? "" : `<p class="note" style="margin:-8px 0 18px">Sobre a
+    coluna de ação: ela <b>corrobora, não explica</b> — o painel põe a queda do equity ao
+    lado da abertura do spread e não afirma que uma causou a outra. A cobertura é parcial por
+    estrutura do mercado, não por falha de cadastro: SPE de saneamento e de concessão não tem
+    ação negociada, e é justamente onde o spread costuma estar mais largo${
+      nSemAcao ? ` — ${nSemAcao} dos ${TRIAGEM_N} desta lista estão nessa situação` : ""}.
+    Emissor sem ticker entra com <b>zero</b> neste eixo, igual a emissor sem achado de
+    agência: a ausência não pontua, mas também não penaliza. Onde o ticker é da
+    <b>controladora</b> (marcado <code>ctrl</code>), o eixo entra com peso reduzido, porque
+    SPE de receita ring-fenced não anda junto com a holding.</p>`}
+    <div class="tw"><table><thead><tr>
+      <th></th><th class="l">Emissor</th>
+      <th title="taxa da emissão do papel de referência">Na emissão</th>
+      <th title="taxa indicativa ANBIMA de hoje">Taxa hoje</th>
+      <th title="spread sobre o benchmark do indexador">Spread</th>
+      <th title="taxa de hoje menos a da emissão, em bps">Δ emissão</th>
+      <th title="variação de spread em 21 pregões">Δ 21d</th>
+      ${!ACAO_POR_EMISSOR.size ? "" : `<th title="variação da ação do emissor em 12 meses — ou, quando a série é mais curta, a queda desde a máxima de 52 semanas. 'ctrl' marca ticker da controladora, sinal mais fraco. Emissor sem ação não é penalizado: apenas não pontua neste eixo">Ação 12m</th>`}
+      <th title="PU sobre o valor de par, em %. Vermelho quando está no decil mais baixo do bucket de duration — papel incentivado amortiza, então o corte é relativo aos pares, não um 95% absoluto">% par</th>
+      <th>Liquidez</th><th>Por que está na lista</th>
+    </tr></thead><tbody>${linhas}</tbody></table></div>
+  </section>`;
+}
+
+/* ── CRI e CRA: triagem própria ───────────────────────────────────────
+   Fila SEPARADA da das debêntures, por decisão de quem usa o painel: o CRI/CRA
+   não tem liquidez, taxa de emissão nem 21 pregões de histórico no arquivo da
+   ANBIMA, então os pesos não seriam os mesmos. O devedor (o "risco de
+   crédito" da ANBIMA, não a securitizadora) entra pelo pior papel dele. */
+// "MARFRIG GLOBAL FOODS S.A." e "MARFRIG GLOBAL FOODS S.A" são o mesmo devedor
+const chaveDev = s => semAcento(s).replace(/[.,\/\-]/g," ")
+  .replace(/\b(S ?A|LTDA|EIRELI)\b/g,"").replace(/\s+/g," ").trim();
+function triagemCC(){
+  const desc = (typeof DESCARTADOS!=="undefined") ? new Set(DESCARTADOS.map(chaveDev)) : new Set();
+  const por = new Map();
+  CC.forEach(r=>{
+    if (r.score==null) return;
+    if (desc.has(chaveDev(r.dev)) || (r.grp && desc.has(chaveDev(r.grp)))) return;
+    const k = gkCC(r);                       // um nome por grupo econômico
+    const at = por.get(k);
+    if (!at) por.set(k, {r, n:1, devs:new Set([chaveDev(r.dev)])});
+    else { at.n++; at.devs.add(chaveDev(r.dev)); if (r.score > at.r.score) at.r = r; }
+  });
+  return [...por.values()].sort((a,b)=>b.r.score-a.r.score).slice(0,TRIAGEM_N);
+}
+
+function motivosCC(r){
+  const m = [];
+  if ((r.spread ?? 0) >= 350) m.push(["abre", `spread ${f0(r.spread)} bps`]);
+  if (r.spread!=null && r.med_pares!=null && r.spread - r.med_pares >= 150)
+    m.push(["abre", `${sgn(r.spread - r.med_pares)} vs pares`]);
+  if (r.par!=null && r.par <= 85) m.push(["abre", `PU ${f1(r.par)}% do par`]);
+  if ((r.dj ?? 0) >= 50) m.push(["abre", `${sgn(r.dj)} em ${r.nj} pregões`]);
+  (achadosDe({emissor:r.dev})||[]).filter(x=>ACAO_TOM[x.acao]==="baixa").slice(0,2).forEach(x=>
+    m.push(["alerta", `${x.agencia}: ${ACAO_ROT[x.acao]||x.acao}`]));
+  if (r.so_pu) m.push(["alerta", "sem taxa ANBIMA — só PU"]);
+  return m;
+}
+
+function secaoTriagemCC(){
+  const lista = triagemCC();
+  if (lista.length < 5) return "";
+  const nPu = lista.filter(o=>o.r.so_pu).length;
+  const linhas = lista.map((o,i)=>{
+    const r = o.r;
+    return `<tr data-cc="${CC.indexOf(r)}">
+      <td class="mov-rk">${i+1}</td>
+      <td class="l"><span class="cod">${esc(r.dev||"—")}</span>${nomeGrupo(r.grp)}${seloRating({emissor:r.dev})}
+        <span class="emi">${esc(r.cod)}<span class="cc-tp">${esc(r.tp||"")}</span> · ${esc((r.sec||"").slice(0,32))}${
+          o.n>1?` · ${o.n} papéis`:""}${o.devs.size>1?` de ${o.devs.size} empresas do grupo`:""}${
+          temDebenture(r)?` · <b>${r.grp?"grupo também emite":"também emite"} debênture</b>`:""}</span></td>
+      <td class="mono">${taxaCC(r,true)}</td>
+      <td><b>${r.spread==null?"—":f0(r.spread)}</b></td>
+      <td>${r.spread!=null&&r.med_pares!=null?`<span style="color:${r.spread>r.med_pares?"var(--abre)":"var(--ink-2)"}">${sgn(r.spread-r.med_pares)}</span>`:"—"}</td>
+      <td>${r.dj==null?"—":`<span style="color:${r.dj>0?"var(--abre)":"var(--fecha)"}" title="${r.nj} pregões, desde ${dataBR(r.dj_ini)}">${sgn(r.dj)}</span>`}</td>
+      <td>${r.par==null?"—":`<span style="${r.par<=85?"color:var(--abre); font-weight:600":""}">${f1(r.par)}</span>`}</td>
+      <td>${r.dur==null?"—":f1(r.dur)}</td>
+      <td><b>${f0(r.score)}</b></td>
+      <td style="white-space:normal; min-width:300px"><span class="chips">${motivosCC(r).map(([tom,txt])=>`<span class="chip ${tom}">${esc(txt)}</span>`).join("")}</span></td>
+    </tr>`;
+  }).join("");
+  const nj = Math.max(0, ...CC.map(r=>r.nj||0));
+  return `<section style="margin-top:34px">
+    <div class="head">
+      <h2>CRI e CRA — onde o mercado pede prêmio de stress</h2>
+      <span class="eyebrow">${lista.length} devedores · triagem própria · ANBIMA ${dataBR(D.cricra.ref)}</span>
+    </div>
+    <p class="note">Fila <b>separada</b> da de debêntures. O score combina, dentro do mesmo
+    indexador e faixa de duration: nível de spread (35%), distância para a mediana dos pares
+    (25%), desconto no PU (25%) e abertura nos últimos ${nj} pregões (15%). O spread está na
+    <b>mesma régua</b> das debêntures — IPCA+ contra a NTN-B implícita, DI+ direto, % do DI
+    convertido pelo CDI — então dá para comparar com a fila de cima. O devedor é o
+    <b>risco de crédito</b> que a ANBIMA informa, não a securitizadora, e entra pelo pior papel.
+    Empresas do <b>mesmo grupo econômico</b> contam como um nome só (a linha mostra o pior papel do grupo).
+    ${nPu ? `${nPu} ${nPu===1?"entrou":"entraram"} só pelo preço: a ANBIMA publica o PU mas não
+    a taxa indicativa, o que em geral é sinal de papel em evento de crédito — score limitado a 70.` : ""}
+    Sem liquidez, taxa de emissão nem histórico longo neste arquivo: é pauta de investigação,
+    não diagnóstico.</p>
+    <div class="tw"><table><thead><tr>
+      <th></th><th class="l">Devedor</th>
+      <th title="taxa indicativa ANBIMA do papel de referência">Taxa hoje</th>
+      <th title="spread na régua das debêntures, em bps">Spread</th>
+      <th title="spread menos a mediana do mesmo indexador e faixa de duration">vs pares</th>
+      <th title="variação de spread na janela que a ANBIMA publica por papel">Δ ${nj}p</th>
+      <th title="PU sobre o valor de par, em %">% par</th>
+      <th>Dur.</th><th title="score de stress, 0 a 100">Score</th><th>Por que está na lista</th>
+    </tr></thead><tbody>${linhas}</tbody></table></div>
+  </section>`;
+}
+
+/* ── CRI e CRA no deslocamento ───────────────────────────────────────
+   A ANBIMA publica ~5 pregões por papel e a coleta diária acumula o resto.
+   Enquanto não houver 26 pregões, a janela é a curta e o painel diz qual é;
+   quando houver, passa a ser a mesma das debêntures (5 × 5 há 30 dias). */
+function blocoDeslocCC(){
+  if (!CC.length) return "";
+  const longo = CC.filter(r=>r.d30!=null).length >= 8;
+  const k = longo ? "d30" : "dj";
+  const alvos = CC.filter(r=>r[k]!=null && r[k]>0).sort((a,b)=>b[k]-a[k]).slice(0,N_DESLOC);
+  if (alvos.length < 3) return "";
+  const nj = Math.max(0, ...CC.map(r=>r.nj||0));
+  const ini = CC.map(r=>r.dj_ini).filter(Boolean).sort()[0];
+  const rot = longo ? "5 pregões × 5 há 30 dias" : `${nj} pregões, desde ${dataBR(ini)}`;
+  const linhas = alvos.map((r,i)=>`<tr data-cc="${CC.indexOf(r)}">
+    <td class="mov-rk">${i+1}</td>
+    <td class="l"><span class="cod">${esc(r.cod)}</span><span class="cc-tp">${esc(r.tp||"")}</span>${seloRating({emissor:r.dev})}
+      <span class="emi">${esc(r.dev||"—")}</span></td>
+    <td class="l"><span class="fam"><span class="dot" style="background:${CORF[r.fam]||"var(--neutro)"}"></span>${esc(r.idx||ROT_FAM_CC[r.fam]||"")}</span></td>
+    <td>${f1(r.dur)}</td>
+    <td class="mono" style="color:var(--ink-2)">${f0(longo ? r.b30 : r.spread - r.dj)}</td>
+    <td><b>${f0(longo ? r.s5 : r.spread)}</b></td>
+    <td><b style="color:var(--abre)">${sgn(r[k])}</b></td>
+    <td class="mono">${taxaCC(r)}</td>
+    <td>${r.par==null?"—":f1(r.par)}</td>
+  </tr>`).join("");
+  return `<div class="cc-sub">
+    <div class="head"><h2>CRI e CRA — quem mais abriu</h2>
+      <span class="eyebrow">${rot} · ${alvos.length} maiores aberturas</span></div>
+    <p class="note" style="margin:0 0 12px">${longo
+      ? "Mesma janela das debêntures: média dos últimos 5 pregões contra a média dos 5 que terminam 21 pregões atrás."
+      : `Janela <b>curta</b>, por enquanto: o histórico tem ${nj+1} pregões — a ANBIMA publica os últimos
+         5 de cada papel e a coleta diária, iniciada em 23/09/2026, acumula o resto. Quando o histórico chegar a 26 pregões, este bloco passa
+         sozinho para a mesma janela das debêntures (5 × 5 há 30 dias). Até lá, uma ponta é um pregão
+         isolado — leia como alerta, não como deslocamento de nível.`}
+    Sem filtro de liquidez, que o arquivo de CRI/CRA não permite medir: confira o % do par.</p>
+    <div class="tw"><table><thead><tr>
+      <th></th><th class="l">Papel</th><th class="l">Indexador</th><th>Dur.</th>
+      <th>${longo?"Spread há 30d":"Spread início"}</th><th>${longo?"Spread 5 pregões":"Spread hoje"}</th>
+      <th>Δ</th><th>Taxa indicativa</th><th>% par</th>
+    </tr></thead><tbody>${linhas}</tbody></table></div>
+  </div>`;
+}
+
+/* ── secundário de CRI e CRA: a lista inteira ─────────────────────────── */
+function ccPassa(r){
+  if (ccUI.tp!=="todos" && r.tp!==ccUI.tp) return false;
+  if (ccUI.fam!=="todos" && r.fam!==ccUI.fam) return false;
+  return true;
+}
+function ccOrdena(xs){
+  const k = ccUI.ord;
+  const v = r => k==="dev" ? semAcento(r.dev) : k==="venc" ? (r.venc||"") : r[k];
+  return xs.slice().sort((a,b)=>{
+    const x=v(a), y=v(b);
+    if (x==null || x==="") return 1;
+    if (y==null || y==="") return -1;
+    const d = typeof x==="string" ? x.localeCompare(y,"pt-BR") : x-y;
+    return ccUI.asc ? d : -d;
+  });
+}
+function ccRow(r){
+  return `<tr data-cc="${CC.indexOf(r)}">
+    <td class="l"><span class="cod">${esc(r.dev||"—")}</span>${seloRating({emissor:r.dev})}
+      <span class="emi">${esc(r.cod)}<span class="cc-tp">${esc(r.tp||"")}</span> · ${esc((r.sec||"—").slice(0,34))}</span></td>
+    <td class="l"><span class="fam"><span class="dot" style="background:${CORF[r.fam]||"var(--neutro)"}"></span>${esc(r.idx||ROT_FAM_CC[r.fam]||"")}</span></td>
+    <td class="mono">${taxaCC(r,true)}</td>
+    <td><b>${r.spread==null?"—":f0(r.spread)}</b></td>
+    <td>${r.d1==null?"—":barraDelta(r.d1,40)}</td>
+    <td>${r.dj==null?"—":barraDelta(r.dj,120)}</td>
+    <td>${r.par==null?"—":`<span style="${r.par<=85?"color:var(--abre); font-weight:600":""}">${f1(r.par)}</span>`}</td>
+    <td>${r.dur==null?"—":f1(r.dur)}</td>
+    <td class="mono" style="color:var(--muted)">${dataBR(r.venc)}</td>
+    <td>${r.score==null?"—":f0(r.score)}</td>
+  </tr>`;
+}
+function ccRender(){
+  const all = ccOrdena(CC.filter(ccPassa));
+  const vis = ccUI.aberto ? all : all.slice(0,15);
+  const cnt = document.getElementById("ccCnt");
+  if (cnt) cnt.textContent = `${all.length} papéis${ccUI.tp!=="todos"?" · "+ccUI.tp:""}${
+    ccUI.fam!=="todos"?" · "+(ROT_FAM_CC[ccUI.fam]||ccUI.fam):""} · mostrando ${vis.length}`;
+  const tb = document.getElementById("ccTb");
+  if (!tb) return;
+  tb.innerHTML = vis.map(ccRow).join("")
+    || `<tr><td class="l" colspan="10" style="padding:18px; color:var(--muted)">Nada com esses filtros.</td></tr>`;
+  const mais = document.getElementById("ccMore");
+  mais.innerHTML = all.length > 15
+    ? `<button type="button" class="btn" id="ccMb" aria-expanded="${ccUI.aberto}">${ccUI.aberto ? "▲ recolher" : "▼ ver todos ("+(all.length-15)+" restantes)"}</button>` : "";
+  const mb = document.getElementById("ccMb");
+  if (mb) mb.onclick = () => { ccUI.aberto = !ccUI.aberto; ccRender(); };
+  document.querySelectorAll("#ccTab th[data-cs]").forEach(th=>{
+    const at = th.dataset.cs===ccUI.ord;
+    th.setAttribute("aria-sort", at ? (ccUI.asc?"ascending":"descending") : "none");
+    th.textContent = th.dataset.rot + (at ? (ccUI.asc?" ↑":" ↓") : "");
+  });
+}
+function secaoCriCra(){
+  if (!CC.length) return "";
+  const c = D.cricra;
+  const fams = ["IPCA","DI_SPREAD","DI_PCT","OUTRO"].filter(f=>CC.some(r=>r.fam===f));
+  const th = (k, rot, l, tit) => `<th role="button" tabindex="0" data-cs="${k}" data-rot="${rot}"${l?' class="l"':""}${tit?` title="${esc(tit)}"`:""}>${rot}</th>`;
+  return `<section>
+    <div class="head"><h2>Secundário de CRI e CRA</h2>
+      <span class="eyebrow">ANBIMA ${dataBR(c.ref)} · ${c.n} papéis · ${c.n_cri} CRI · ${c.n_cra} CRA</span></div>
+    <p class="note">Todos os certificados de recebíveis imobiliários (CRI) e do agronegócio (CRA)
+    que a ANBIMA marca no secundário, um papel por linha. O nome em destaque é o <b>devedor</b> — o
+    risco de crédito — e a securitizadora vem abaixo, junto do código. O <b>spread</b> está na mesma
+    régua das debêntures: IPCA+ menos a NTN-B implícita na duration do papel, DI+ direto, % do DI
+    convertido pelo CDI corrente; pré e papéis sem indexador informado ficam sem spread. Duration
+    em anos (base 252). ${c.n - c.com_spread} papéis vêm só com PU, sem taxa indicativa. Clique nos
+    cabeçalhos para ordenar.</p>
+    <div class="cc-bar">
+      <label class="cc-f">tipo <select id="ccT"><option value="todos">CRI + CRA</option>
+        <option value="CRI">só CRI</option><option value="CRA">só CRA</option></select></label>
+      <label class="cc-f">indexador <select id="ccF"><option value="todos">todos</option>
+        ${fams.map(f=>`<option value="${f}">${esc(ROT_FAM_CC[f])}</option>`).join("")}</select></label>
+    </div>
+    <div class="cc-cnt" id="ccCnt"></div>
+    <div class="tw"><table id="ccTab"><thead><tr>
+      ${th("dev","Devedor",true)}<th class="l">Indexador</th>
+      ${th("tx","Taxa ind.",false,"taxa indicativa ANBIMA")}${th("spread","Spread",false,"bps, na régua das debêntures")}
+      ${th("d1","Δ 1p",false,"variação de spread no último pregão, bps")}${th("dj","Δ janela",false,"variação de spread nos pregões que a ANBIMA publica, bps")}
+      ${th("par","% par",false,"PU sobre o par")}${th("dur","Dur.",false,"anos")}${th("venc","Venc.")}${th("score","Score",false,"score de stress da triagem de CRI/CRA")}
+    </tr></thead><tbody id="ccTb"></tbody></table></div>
+    <div class="cc-more" id="ccMore"></div>
+  </section>`;
+}
+function initCriCra(){
+  const cb = document.getElementById("curvaCC");
+  if (cb) cb.addEventListener("change", e=>{
+    ccUI.curva = e.target.checked;
+    const fc = document.getElementById("curvaFacets");
+    if (fc) fc.innerHTML = facetasCurva();
+  });
+  if (!document.getElementById("ccTab")) return;
+  const T=document.getElementById("ccT"), F=document.getElementById("ccF");
+  if (T) T.onchange = e => { ccUI.tp = e.target.value; ccUI.aberto = false; ccRender(); };
+  if (F) F.onchange = e => { ccUI.fam = e.target.value; ccUI.aberto = false; ccRender(); };
+  const ord = k => {
+    if (ccUI.ord===k) ccUI.asc = !ccUI.asc;
+    else { ccUI.ord = k; ccUI.asc = (k==="dev" || k==="venc" || k==="par"); }
+    ccRender();
+  };
+  document.querySelectorAll("#ccTab th[data-cs]").forEach(th=>{
+    th.onclick = () => ord(th.dataset.cs);
+    th.onkeydown = e => { if (e.key==="Enter"||e.key===" "){ e.preventDefault(); ord(th.dataset.cs);} };
+  });
+  ccRender();
+}
+
+/* ── mesmo grupo, dois mercados ──────────────────────────────────────
+   O mesmo risco de crédito cotado em debênture e em CRI/CRA, lado a lado,
+   dentro do mesmo indexador. Mediana por grupo: a diferença é a primeira
+   pergunta de valor relativo, não a resposta — estrutura, lastro, garantia e
+   prazo mudam de um instrumento para o outro. */
+const pUI = {ord:"dif", asc:false, fam:"todos", aberto:false};
+const medianaJS = xs => { const v = xs.filter(x=>x!=null && isFinite(x)).sort((a,b)=>a-b);
+  if (!v.length) return null; const m = v.length>>1; return v.length%2 ? v[m] : (v[m-1]+v[m])/2; };
+function paralelo(){
+  const g = new Map();
+  const slot = k => g.get(k) || g.set(k, {deb:{}, cc:{}, grupo:null, nomeDeb:null, nomeCC:null}).get(k);
+  D.papeis.forEach(p=>{
+    if (p.spread_bps==null) return;
+    const o = slot(gkDeb(p)); (o.deb[p.familia] ||= []).push(p);
+    o.nomeDeb ||= p.emissor; if (p.grupo) o.grupo = p.grupo;
+  });
+  CC.forEach(r=>{
+    if (r.spread==null) return;
+    const k = gkCC(r); if (!g.has(k)) return;
+    const o = g.get(k); (o.cc[r.fam] ||= []).push(r);
+    o.nomeCC ||= r.dev; if (r.grp) o.grupo = r.grp;
+  });
+  const rows = []; let semComum = 0;
+  g.forEach(o=>{
+    if (!Object.keys(o.cc).length) return;
+    let achou = false;
+    ["IPCA","DI_SPREAD","DI_PCT"].forEach(fam=>{
+      const d = o.deb[fam], c = o.cc[fam];
+      if (!d || !c) return;
+      achou = true;
+      const sd = medianaJS(d.map(p=>p.spread_bps)), sc = medianaJS(c.map(r=>r.spread));
+      const pd = d.reduce((a,b)=>b.spread_bps>a.spread_bps?b:a), pc = c.reduce((a,b)=>b.spread>a.spread?b:a);
+      rows.push({nome:o.grupo||o.nomeDeb, grupo:o.grupo, emis:o.nomeDeb, dev:o.nomeCC, fam,
+        nd:d.length, nc:c.length, sd, sc, dif: sc-sd,
+        dd:medianaJS(d.map(p=>p.duration_anos)), dc:medianaJS(c.map(r=>r.dur)),
+        d21:medianaJS(d.map(p=>p.d_spread_21d)), dj:medianaJS(c.map(r=>r.dj)),
+        refD:pd.codigo, refC:pc.cod, iRefD:D.papeis.indexOf(pd), iRefC:CC.indexOf(pc)});
+    });
+    if (!achou) semComum++;
+  });
+  return {rows, semComum};
+}
+function leituraPar(x){
+  const m = [];
+  if (x.dif >= 75) m.push(["abre", `CRI/CRA paga ${sgn(x.dif)}`]);
+  else if (x.dif <= -75) m.push(["fecha", `debênture paga ${sgn(-x.dif)}`]);
+  if (x.dd!=null && x.dc!=null && Math.abs(x.dd-x.dc) > 2) m.push(["alerta", `prazos diferentes (${f1(x.dd)} × ${f1(x.dc)} a)`]);
+  return m;
+}
+function parRender(){
+  const tb = document.getElementById("parTb"); if (!tb) return;
+  const k = pUI.ord;
+  const all = paralelo().rows.filter(x=>pUI.fam==="todos" || x.fam===pUI.fam).sort((a,b)=>{
+    const x=a[k], y=b[k]; if (x==null) return 1; if (y==null) return -1;
+    const d = typeof x==="string" ? x.localeCompare(y,"pt-BR") : x-y; return pUI.asc ? d : -d; });
+  const vis = pUI.aberto ? all : all.slice(0,20);
+  const esc2 = Math.max(1, ...all.map(x=>Math.abs(x.dif)));
+  tb.innerHTML = vis.map(x=>`<tr>
+    <td class="l"><span class="cod">${esc(x.nome)}</span>${x.grupo?"":""}${seloRating({emissor:x.emis})}
+      <span class="emi">${x.grupo ? esc(x.emis)+" · "+esc(x.dev) : "debênture e CRI/CRA do mesmo emissor"}</span></td>
+    <td class="l"><span class="fam"><span class="dot" style="background:${CORF[x.fam]}"></span>${esc(ROT_FAM_CC[x.fam])}</span></td>
+    <td data-i="${x.iRefD}" title="pior papel: ${esc(x.refD)}">${x.nd}</td>
+    <td><b>${f0(x.sd)}</b></td><td>${f1(x.dd)}</td>
+    <td>${x.d21==null?"—":`<span style="color:${x.d21>0?"var(--abre)":"var(--fecha)"}">${sgn(x.d21)}</span>`}</td>
+    <td data-cc="${x.iRefC}" title="pior papel: ${esc(x.refC)}">${x.nc}</td>
+    <td><b>${f0(x.sc)}</b></td><td>${f1(x.dc)}</td>
+    <td>${x.dj==null?"—":`<span style="color:${x.dj>0?"var(--abre)":"var(--fecha)"}">${sgn(x.dj)}</span>`}</td>
+    <td>${barraDelta(Math.round(x.dif), esc2)}</td>
+    <td style="white-space:normal; min-width:220px"><span class="chips">${leituraPar(x).map(([t,s])=>`<span class="chip ${t}">${esc(s)}</span>`).join("")}</span></td>
+  </tr>`).join("") || `<tr><td class="l" colspan="12" style="padding:18px; color:var(--muted)">Nada com esse filtro.</td></tr>`;
+  const cnt = document.getElementById("parCnt");
+  if (cnt) cnt.textContent = `${all.length} pares grupo × indexador · mostrando ${vis.length}`;
+  const mais = document.getElementById("parMore");
+  mais.innerHTML = all.length > 20 ? `<button type="button" class="btn" id="parMb" aria-expanded="${pUI.aberto}">${pUI.aberto?"▲ recolher":"▼ ver todos ("+(all.length-20)+" restantes)"}</button>` : "";
+  const mb = document.getElementById("parMb"); if (mb) mb.onclick = () => { pUI.aberto = !pUI.aberto; parRender(); };
+  document.querySelectorAll("#parTab th[data-ps]").forEach(th=>{
+    const at = th.dataset.ps===pUI.ord;
+    th.setAttribute("aria-sort", at ? (pUI.asc?"ascending":"descending") : "none");
+    th.textContent = th.dataset.rot + (at ? (pUI.asc?" ↑":" ↓") : "");
+  });
+}
+function secaoParalelo(){
+  if (!CC.length) return "";
+  const {rows, semComum} = paralelo();
+  if (rows.length < 3) return "";
+  const nG = new Set(rows.map(x=>x.nome)).size;
+  const th = (k, rot, tit) => `<th role="button" tabindex="0" data-ps="${k}" data-rot="${rot}"${k==="nome"?' class="l"':""}${tit?` title="${esc(tit)}"`:""}>${rot}</th>`;
+  return `<section>
+    <div class="head"><h2>Mesmo grupo, dois mercados — debênture × CRI/CRA</h2>
+      <span class="eyebrow">${nG} grupos com papel nos dois · mediana de spread por indexador</span></div>
+    <p class="note">Os nomes que aparecem <b>em paralelo</b>: o mesmo grupo econômico com
+    debênture e com CRI/CRA marcados hoje, lado a lado, dentro do <b>mesmo indexador</b>. Cada
+    lado mostra a mediana de spread e de duration dos papéis do grupo; a diferença é CRI/CRA
+    menos debênture. É o ponto de partida para valor relativo, não a conclusão: lastro,
+    garantia, subordinação e prazo mudam de um instrumento para o outro, e no DI+ o CRI/CRA é
+    isento para pessoa física enquanto a debênture comum não é — ali é normal o CRI/CRA
+    negociar mais apertado. Sem ajuste de imposto nos números.${semComum ? ` ${semComum}
+    ${semComum===1?"grupo tem":"grupos têm"} papel nos dois mercados mas em indexadores
+    diferentes e fica${semComum===1?"":"m"} de fora.` : ""} Passe o mouse no número de papéis
+    para ver o pior papel de cada lado.</p>
+    <div class="cc-bar">
+      <label class="cc-f">indexador <select id="parF"><option value="todos">todos</option>
+        ${["IPCA","DI_SPREAD","DI_PCT"].filter(f=>rows.some(x=>x.fam===f)).map(f=>`<option value="${f}">${esc(ROT_FAM_CC[f])}</option>`).join("")}</select></label>
+    </div>
+    <div class="cc-cnt" id="parCnt"></div>
+    <div class="tw"><table id="parTab"><thead>
+      <tr><th colspan="2"></th>
+        <th colspan="4" style="text-align:center; border-left:1px solid var(--line-strong)">Debênture</th>
+        <th colspan="4" style="text-align:center; border-left:1px solid var(--line-strong)">CRI / CRA</th>
+        <th colspan="2" style="border-left:1px solid var(--line-strong)"></th></tr>
+      <tr>${th("nome","Grupo / emissor")}<th class="l">Indexador</th>
+        ${th("nd","Papéis")}${th("sd","Spread","mediana, bps")}${th("dd","Dur.","mediana, anos")}${th("d21","Δ21d","mediana da variação em 21 pregões")}
+        ${th("nc","Papéis")}${th("sc","Spread","mediana, bps")}${th("dc","Dur.","mediana, anos")}${th("dj","Δ janela","mediana da variação nos pregões disponíveis")}
+        ${th("dif","CRI/CRA − deb.","diferença das medianas, bps")}<th>Leitura</th></tr>
+    </thead><tbody id="parTb"></tbody></table></div>
+    <div class="cc-more" id="parMore"></div>
+  </section>`;
+}
+function initParalelo(){
+  if (!document.getElementById("parTab")) return;
+  const F = document.getElementById("parF");
+  if (F) F.onchange = e => { pUI.fam = e.target.value; pUI.aberto = false; parRender(); };
+  const ord = k => { if (pUI.ord===k) pUI.asc = !pUI.asc; else { pUI.ord = k; pUI.asc = (k==="nome"); } parRender(); };
+  document.querySelectorAll("#parTab th[data-ps]").forEach(th=>{
+    th.onclick = () => ord(th.dataset.ps);
+    th.onkeydown = e => { if (e.key==="Enter"||e.key===" "){ e.preventDefault(); ord(th.dataset.ps);} };
+  });
+  parRender();
+}
+
+/* ── linhas de tabela ───────────────────────────────────────────────── */
+function barraDelta(v, escala){
+  if (v==null) return `<span class="delta"><span>—</span></span>`;
+  const neg=v<0, w=Math.min(100, Math.abs(v)/escala*100);
+  return `<span class="delta"><span>${sgn(v)}</span>`
+    + `<span class="dbar${neg?" neg":""}"><i style="width:${w.toFixed(0)}%;`
+    + `background:${neg?"var(--fecha)":"var(--abre)"}"></i></span></span>`;
+}
+function chips(p){
+  const s=(p.sinais||[]).filter(x=>x.tipo!=="baixa_liquidez"||true);
+  if(!s.length) return `<span style="color:var(--muted)">—</span>`;
+  return `<span class="chips">` + s.map(x=>{
+    const tom=D.rotulos.tom[x.tipo]||"abre";
+    return `<span class="chip ${tom}" title="${esc(x.detalhe)}">${esc(D.rotulos.sinal[x.tipo]||x.tipo)}</span>`;
+  }).join("") + `</span>`;
+}
+function medidorLiq(v){
+  if(v==null) return "—";
+  return `<span class="liq">${f0(v)}<span class="liqbar"><i style="width:${Math.min(100,v)}%"></i></span></span>`;
+}
+
+const COLUNAS = [
+  {k:"codigo",   r:"Papel",     l:true, v:p=>`<span class="cod">${esc(p.codigo)}</span><span class="emi" title="${esc(p.emissor)}">${esc(p.emissor)}</span>`},
+  {k:"familia",  r:"Indexador", l:true, v:p=>`<span class="fam"><span class="dot" style="background:${CORF[p.familia]||"var(--neutro)"}"></span>${esc(p.indice_bruto||rotF(p.familia))}</span>`},
+  {k:"vencimento", r:"Venc.",   l:false, v:p=>dataBR(p.vencimento)},
+  {k:"duration_anos", r:"Dur.", l:false, v:p=>f1(p.duration_anos)},
+  {k:"spread_bps", r:"Spread",  l:false, v:p=>`<b>${f0(p.spread_bps)}</b>`},
+  {k:"d_spread_1d", r:"Δ 1d",   l:false, v:p=>barraDelta(p.d_spread_1d,40)},
+  {k:"d_spread_5d", r:"Δ 5d",   l:false, v:p=>barraDelta(p.d_spread_5d,90)},
+  {k:"zscore_spread", r:"z 60d", l:false, v:p=>p.zscore_spread==null?"—":f2(p.zscore_spread)},
+  {k:"pct_pu_par", r:"% par",   l:false, v:p=>f1(p.pct_pu_par)},
+  {k:"liquidez",  r:"Liquidez", l:false, v:p=>medidorLiq(p.liquidez)},
+  {k:"cda_fundos", r:"Fundos",  l:false, v:p=>p.cda_fundos==null
+      ? `<span style="color:var(--muted)">—</span>` : f0(p.cda_fundos)},
+  {k:"sinais",    r:"Sinais",   l:false, v:chips},
+];
+
+// Coluna de ação só existe quando há dado de ação: sem o arquivo, nem cabeçalho
+// vazio nem filtro morto aparecem.
+if (ACAO_POR_EMISSOR.size) COLUNAS.splice(COLUNAS.length-1, 0,
+  {k:"acao_var", r:"Ação 12m", l:false, v:p=> p.acao_var==null
+    ? `<span style="color:var(--muted)" title="emissor sem ação negociada, ou fora do mapa emissor→ticker">—</span>`
+    : `<span title="${esc(p.acao_ticker||"")}${p.acao_ctrl?" — ação da controladora":""}"`
+      + ` style="${p.acao_tom?"color:var(--abre); font-weight:600":""}">${sgn(p.acao_var)}%`
+      + `${p.acao_ctrl?`<span style="color:var(--muted); font-size:11px"> ctrl</span>`:""}</span>`});
+
+const estado = {ord:"spread_bps", dir:-1, desloc:"5v30", ordD:"d_5v30", dirD:-1, ordE:{IPCA:"dif",DI_SPREAD:"dif"}, dirE:{IPCA:-1,DI_SPREAD:-1}, fam:"", bucket:"", sinal:"", liq:0, q:"", acao:"",
+                janela:"d_spread_1d", movIliq:false, ratView:"todos"};
+
+/* ── maiores movimentos ─────────────────────────────────────────────── */
+const N_MOV = 12;
+const ROT_JANELA = {d_spread_1d:"no dia", d_spread_5d:"em 5 pregões", d_spread_21d:"em 21 pregões"};
+
+function linhaMov(p, i, escala, j){
+  const v = p[j], neg = v < 0;
+  const w = escala ? Math.max(4, Math.abs(v)/escala*100) : 0;
+  const cor = neg ? "var(--fecha)" : "var(--abre)";
+  const dpu = p.d_pu_1d_pct;
+  return `<div class="mov-row" data-i="${D.papeis.indexOf(p)}">
+    <span class="mov-rk">${i+1}</span>
+    <span class="mov-id">
+      <b><span class="dot" style="background:${CORF[p.familia]||"var(--neutro)"}"></span>${esc(p.codigo)}</b>
+      <span title="${esc(p.emissor)}">${esc(p.emissor)}</span>
+    </span>
+    <span class="mov-tx" title="taxa de emissão">${taxaEmissao(p,true)}</span>
+    <span class="mov-tx mov-tx-hoje" title="taxa indicativa ANBIMA de hoje">${taxaCotada(p,true)}</span>
+    <span class="mov-sp" title="spread de mercado hoje: ${f0(p.spread_bps)} bps sobre ${esc(p.benchmark||"")}">${f0(p.spread_bps)}</span>
+    <span class="mov-d">
+      <b style="color:${cor}">${sgn(v)}</b>
+      <span class="mov-bar"><i style="width:${w.toFixed(0)}%; background:${cor};
+        ${neg?"margin-left:auto":""}"></i></span>
+    </span>
+  </div>`;
+}
+
+function movimentos(){
+  const j = estado.janela;
+  const base = D.papeis.filter(p =>
+    p[j] != null && (estado.movIliq || (p.liquidez ?? 0) >= 45));
+
+  const abriram  = base.filter(p=>p[j] > 0).sort((a,b)=>b[j]-a[j]).slice(0,N_MOV);
+  const fecharam = base.filter(p=>p[j] < 0).sort((a,b)=>a[j]-b[j]).slice(0,N_MOV);
+  // mesma escala nos dois lados: a comparação entre pontas tem que ser honesta
+  const escala = Math.max(
+    ...abriram.map(p=>Math.abs(p[j])), ...fecharam.map(p=>Math.abs(p[j])), 1);
+
+  const rotD = {d_spread_1d:"Δ dia", d_spread_5d:"Δ 5 pregões", d_spread_21d:"Δ 21 pregões"}[j];
+  const col = (titulo, cor, lista, vazio) => `<div class="mov-col">
+    <div class="mov-cab">
+      <h3><span class="dot" style="background:${cor}"></span>${titulo}</h3>
+      <span class="n">${lista.length ? lista.length + " papéis" : ""}</span>
+    </div>
+    ${lista.length ? `<div class="mov-head"><span></span><span>papel</span>
+        <span title="taxa da emissão">emissão</span>
+        <span title="taxa indicativa ANBIMA de hoje">taxa hoje</span>
+        <span title="spread de mercado hoje, em bps sobre o benchmark do indexador">spread</span>
+        <span>${rotD}</span></div>`
+      + lista.map((p,i)=>linhaMov(p,i,escala,j)).join("")
+      : `<p class="mov-vazio">${vazio}</p>`}
+  </div>`;
+
+  document.getElementById("movs").innerHTML =
+      col(`Abriram spread ${ROT_JANELA[j]}`,  "var(--abre)",  abriram,
+          "Nenhum papel abriu spread nesta janela.")
+    + col(`Fecharam spread ${ROT_JANELA[j]}`, "var(--fecha)", fecharam,
+          "Nenhum papel fechou spread nesta janela.");
+}
+
+function filtrar(){
+  const q=estado.q.trim().toLowerCase();
+  return D.papeis.filter(p=>{
+    if(estado.fam && p.familia!==estado.fam) return false;
+    if(estado.bucket && p.bucket!==estado.bucket) return false;
+    if(estado.liq && (p.liquidez==null || p.liquidez<estado.liq)) return false;
+    if(estado.acao==="queda"   && !p.acao_tom) return false;
+    if(estado.acao==="listado" && !p.acao_ticker) return false;
+    if(estado.acao==="sem"     && p.acao_ticker) return false;
+    if(estado.sinal==="__qualquer__"){ if(!(p.sinais||[]).length) return false; }
+    else if(estado.sinal && !(p.sinais||[]).some(s=>s.tipo===estado.sinal)) return false;
+    if(q && !(p.codigo.toLowerCase().includes(q) || (p.emissor||"").toLowerCase().includes(q))) return false;
+    return true;
+  }).sort((a,b)=>{
+    const k=estado.ord; let x=a[k], y=b[k];
+    if(k==="sinais"){ x=(a.sinais||[]).length; y=(b.sinais||[]).length; }
+    if(x==null) return 1; if(y==null) return -1;
+    if(typeof x==="string") return estado.dir*x.localeCompare(y,"pt-BR");
+    return estado.dir*(x-y);
+  });
+}
+
+function tabela(){
+  const linhas=filtrar();
+  const cab=COLUNAS.map(c=>{
+    const at = estado.ord===c.k ? ` aria-sort="${estado.dir===1?"ascending":"descending"}"` : "";
+    const seta = estado.ord===c.k ? (estado.dir===1?" ↑":" ↓") : "";
+    return `<th role="button" tabindex="0" data-k="${c.k}"${c.l?' class="l"':""}${at}>${c.r}${seta}</th>`;
+  }).join("");
+  const corpo = linhas.length
+    ? linhas.slice(0,400).map(p=>`<tr>`+COLUNAS.map(c=>`<td${c.l?' class="l"':""}>${c.v(p)}</td>`).join("")+`</tr>`).join("")
+    : "";
+  document.getElementById("tabela").innerHTML = linhas.length
+    ? `<div class="tw"><table><thead><tr>${cab}</tr></thead><tbody>${corpo}</tbody></table></div>`
+      + (linhas.length>400 ? `<p class="note" style="margin-top:10px">Mostrando 400 de ${linhas.length} papéis. Refine os filtros para ver o resto.</p>` : "")
+    : `<div class="tw"><p class="empty">Nenhum papel atende a esses filtros.</p></div>`;
+  document.getElementById("cont").textContent = `${linhas.length} de ${D.papeis.length} papéis`;
+}
+
+/* ── montagem ───────────────────────────────────────────────────────── */
+function montar(){
+  const c=D.cobertura, r=D.resumo;
+  const fams=Object.keys(D.evolucao.familias);
+
+  const buckets=[...new Set(D.papeis.map(p=>p.bucket).filter(Boolean))].sort();
+  const sinaisDisp=[...new Set(D.papeis.flatMap(p=>(p.sinais||[]).map(s=>s.tipo)))].sort();
+
+  document.getElementById("app").innerHTML = `
+  ${D.demo?`<div class="demo">DADOS SIMULADOS <span>— esta página é uma prévia do layout. Nenhum número aqui veio do mercado.</span></div>`:""}
+  <div class="wrap">
+    <header><div class="mast">
+      <div>
+        <h1>Radar do Secundário</h1>
+        <p class="sub">Debêntures negociadas no mercado local, marcadas pela taxa indicativa
+        da ANBIMA e comparadas ao próprio histórico e aos pares de mesma duration${CC.length
+          ? " — e, com a mesma régua de spread, os CRI e CRA do secundário" : ""}.</p>
+      </div>
+      <dl class="mast-meta">
+        <div class="meta-b"><dt>Referência</dt><dd class="mono">${dataBR(D.data)}</dd></div>
+        <div class="meta-b"><dt>Papéis</dt><dd class="mono">${f0(c.papeis)}</dd></div>
+        <div class="meta-b"><dt>Com spread</dt><dd class="mono">${f0(c.com_spread)}</dd></div>
+        ${CC.length ? `<div class="meta-b"><dt>CRI/CRA</dt><dd class="mono">${f0(D.cricra.n)}</dd></div>` : ""}
+        <div class="meta-b"><dt>CDI</dt><dd class="mono">${D.cdi==null?"—":f2(D.cdi)+"%"}</dd></div>
+      </dl>
+    </div></header>
+
+    ${secaoTriagem()}
+
+    ${secaoTriagemCC()}
+
+    ${secaoParalelo()}
+
+    ${secaoDeslocamento()}
+
+    <section>
+      <div class="head">
+        <h2>Curva de crédito</h2>
+        <span class="eyebrow">spread × duration · ${dataBR(D.data)}</span>
+      </div>
+      <p class="note">Cada ponto é um papel. Quem está acima da nuvem paga mais prêmio para o
+      mesmo prazo — é onde a distorção costuma aparecer. Papéis <b>circulados</b> disparam
+      pelo menos um sinal de spread esticado, caro contra os pares, abertura na semana ou
+      desconto no PU. <b>Nenhum papel fica fora do enquadramento</b>: o eixo vai do mais
+      apertado ao mais estressado, e acima de ${LIN_BPS} bps passa a ser logarítmico para o
+      crédito de 1.000 ou 2.000 bps caber no mesmo desenho que a nuvem. A linha tracejada
+      marca onde a compressão começa — acima dela, distância vertical não é proporcional.</p>
+      ${CC.length ? `<div class="controls" style="margin-bottom:0">
+        <label class="chk"><input type="checkbox" id="curvaCC" checked> incluir CRI e CRA</label>
+      </div>
+      <div class="cc-leg">
+        <span><svg width="10" height="10"><circle cx="5" cy="5" r="3.6" fill="var(--neutro)"/></svg>debênture</span>
+        <span><svg width="10" height="10"><rect x="1.5" y="1.5" width="7" height="7" fill="var(--neutro)" fill-opacity=".3" stroke="var(--ink)"/></svg>CRI</span>
+        <span><svg width="12" height="12"><path d="M6 1 L11 6 L6 11 L1 6 Z" fill="var(--neutro)" fill-opacity=".3" stroke="var(--ink)"/></svg>CRA</span>
+        <span style="color:var(--muted)">CRI/CRA com o spread na mesma régua das debêntures · ANBIMA ${dataBR(D.cricra.ref)}</span>
+      </div>` : ""}
+      <div class="facets" id="curvaFacets">${facetasCurva()}</div>
+    </section>
+
+    ${secaoEmissao()}
+
+    ${secaoRatings()}
+
+    ${secaoCriCra()}
+
+    ${D.evolucao.datas.length>=4?`<section>
+      <div class="head">
+        <h2>Para onde o prêmio andou</h2>
+        <span class="eyebrow">mediana diária · ${D.evolucao.datas.length} pregões</span>
+      </div>
+      <p class="note">Mediana do spread de todos os papéis de cada indexador, dia a dia.
+      Serve de termômetro: quando a linha sobe, o mercado inteiro está pedindo mais prêmio,
+      e uma abertura individual diz menos sobre o emissor do que sobre o ambiente.</p>
+      <div class="panel">${evolucao()}</div>
+    </section>`:""}
+
+    <section>
+      <div class="head">
+        <h2>Quem mais se moveu</h2>
+        <span class="eyebrow">variação de spread · maiores 12 de cada lado</span>
+      </div>
+      <p class="note">Spread que <b>abre</b> é prêmio que aumentou: o papel ficou mais barato
+      e o mercado passou a pedir mais para carregar aquele risco. Spread que <b>fecha</b> é o
+      contrário. As barras dos dois lados estão na mesma escala, então dá para comparar a
+      magnitude de uma ponta com a outra.</p>
+      <div class="controls">
+        <label>Janela</label>
+        <div class="periodo" id="periodo" role="group" aria-label="Janela de variação">
+          <button type="button" data-j="d_spread_1d"  aria-pressed="true">1 dia</button>
+          <button type="button" data-j="d_spread_5d"  aria-pressed="false">5 dias</button>
+          <button type="button" data-j="d_spread_21d" aria-pressed="false">21 dias</button>
+        </div>
+        <label class="chk"><input type="checkbox" id="movIliq"> incluir papéis ilíquidos</label>
+      </div>
+      <div class="movs" id="movs"></div>
+    </section>
+
+    <section>
+      <div class="head">
+        <h2>Universo e watchlist</h2>
+        <div class="head-dir">
+          <span class="eyebrow" id="cont"></span>
+          <button type="button" class="btn" id="uniToggle" aria-expanded="false"
+            aria-controls="uniCorpo">abrir tabela</button>
+        </div>
+      </div>
+      <div id="uniCorpo" hidden>
+      <div class="controls">
+        <label for="fSinal">Sinal</label>
+        <select id="fSinal">
+          <option value="">todos os papéis</option>
+          <option value="__qualquer__">apenas com algum sinal</option>
+          ${sinaisDisp.map(s=>`<option value="${s}">${esc(D.rotulos.sinal[s]||s)}</option>`).join("")}
+        </select>
+        <label for="fFam">Indexador</label>
+        <select id="fFam"><option value="">todos</option>
+          ${fams.map(f=>`<option value="${f}">${rotF(f)}</option>`).join("")}</select>
+        <label for="fBucket">Duration</label>
+        <select id="fBucket"><option value="">todas</option>
+          ${buckets.map(b=>`<option value="${b}">${b}</option>`).join("")}</select>
+        ${!ACAO_POR_EMISSOR.size ? "" : `<label for="fAcao">Ação</label>
+        <select id="fAcao">
+          <option value="">todas</option>
+          <option value="queda">com queda relevante</option>
+          <option value="listado">só emissor com ação listada</option>
+          <option value="sem">sem ação listada</option>
+        </select>`}
+        <label for="fLiq">Liquidez mín.</label>
+        <select id="fLiq"><option value="0">sem filtro</option>
+          <option value="25">25</option><option value="45">45</option><option value="65">65</option></select>
+        <input type="search" id="fQ" placeholder="código ou emissor" aria-label="Buscar por código ou emissor">
+      </div>
+      <div id="tabela"></div>
+      </div>
+    </section>
+
+    <footer>
+      <p><b>Como ler.</b> Spread em bps sobre o benchmark da própria família: para papéis
+      <code>DI +</code> a taxa indicativa já é o spread; para <code>IPCA +</code> é a taxa
+      indicativa menos a NTN-B de referência, sem nenhum ajuste de imposto; para
+      <code>% do DI</code> é uma conversão aproximada pelo CDI corrente. O z-score compara o spread de hoje com os 60 pregões
+      anteriores do mesmo papel. O percentil compara com papéis do mesmo indexador e do mesmo
+      bucket de duration.</p>
+      <p><b>Liquidez é proxy, não volume.</b> A ANBIMA não publica volume neste arquivo. O escore
+      combina bid-ask (45%), dispersão entre as fontes informantes (35%) e % Reune (20%).
+      Papéis com escore abaixo de 45 não geram sinal de oportunidade — spread largo em papel
+      ilíquido costuma ser ruído de marcação.</p>
+      ${!ACAO_POR_EMISSOR.size ? "" : `<p><b>Ação do emissor é alerta, não explicação.</b>
+      Entra no painel com o mesmo peso e o mesmo papel de uma ação de agência de rating: queda
+      de 12 meses além de ${Math.abs(ACAO_FORTE)}%, ou de ${Math.abs(ACAO_DD_FORTE)}% desde a
+      máxima de 52 semanas, pesa como rebaixamento de nota; ${Math.abs(ACAO_MODERADA)}% e
+      ${Math.abs(ACAO_DD_MODERADA)}%, como perspectiva negativa. O mapa
+      <code>emissor → ticker</code> é curado à mão e cobre ${ACAO_POR_EMISSOR.size} emissores;
+      quem não está nele entra com zero neste eixo, sem penalidade. Onde o ticker é da
+      controladora o peso cai 40%, porque SPE de concessão com receita ring-fenced não
+      acompanha a holding. Cotação é de fechamento, com a defasagem do arquivo do dia.</p>`}
+      ${!CC.length ? "" : `<p><b>CRI e CRA.</b> Taxas indicativas da ANBIMA (página \"Taxas de CRI e
+      CRA\"), um papel por linha — a página traz os últimos pregões de cada papel, e o mais recente é
+      o de hoje. Spread na régua das debêntures: IPCA+ contra a NTN-B implícita nas próprias
+      debêntures IPCA+ (taxa menos spread em cada vértice, interpolada na duration do papel, sem
+      ajuste de imposto), DI+ direto, % do DI convertido pelo CDI corrente. Devedor é o campo
+      \"risco de crédito\" da ANBIMA. Triagem própria, separada da de debêntures.</p>`}
+      <p>Fonte: ANBIMA, mercado secundário de debêntures, de CRI e CRA e de títulos públicos, mais CDI do
+      Banco Central${ACAO_POR_EMISSOR.size ? `; cotações da B3 para o eixo de ação` : ""}.
+      Gerado em ${new Date(D.gerado_em).toLocaleString("pt-BR")}.
+      Isto é uma ferramenta de monitoramento, não recomendação de investimento.</p>
+    </footer>
+  </div>`;
+
+  // interações
+  const liga=(id,campo,num)=>document.getElementById(id)?.addEventListener("change",e=>{
+    estado[campo]= num ? +e.target.value : e.target.value; tabela();});
+  liga("fSinal","sinal"); liga("fFam","fam"); liga("fBucket","bucket"); liga("fLiq","liq",true);
+  liga("fAcao","acao");
+  let t; document.getElementById("fQ").addEventListener("input",e=>{
+    clearTimeout(t); t=setTimeout(()=>{estado.q=e.target.value; tabela();},140);});
+
+  const gp=document.getElementById("periodo");
+  gp.addEventListener("click",e=>{
+    const b=e.target.closest("button[data-j]"); if(!b) return;
+    estado.janela=b.dataset.j;
+    gp.querySelectorAll("button").forEach(x=>
+      x.setAttribute("aria-pressed", x===b ? "true" : "false"));
+    movimentos();
+  });
+  document.getElementById("movIliq").addEventListener("change",e=>{
+    estado.movIliq=e.target.checked; movimentos();});
+
+  // A tabela do universo nasce fechada: são 1.200 papéis e quem chega ao painel
+  // quer primeiro a triagem e os gráficos. O contador ao lado do botão continua
+  // vivo mesmo fechada, senão não dá para saber o que os filtros deixaram.
+  const ut=document.getElementById("uniToggle"), uc=document.getElementById("uniCorpo");
+  if (ut && uc) ut.addEventListener("click",()=>{
+    const abrir = ut.getAttribute("aria-expanded") !== "true";
+    ut.setAttribute("aria-expanded", abrir ? "true" : "false");
+    ut.textContent = abrir ? "fechar tabela" : "abrir tabela";
+    uc.hidden = !abrir;
+    if (abrir) document.getElementById("fQ")?.focus({preventScroll:true});
+  });
+
+  const dj=document.getElementById("desJanela");
+  if (dj) dj.addEventListener("click",e=>{
+    const b=e.target.closest("button[data-dj]"); if(!b) return;
+    estado.desloc=b.dataset.dj;
+    dj.querySelectorAll("button").forEach(x=>
+      x.setAttribute("aria-pressed", x===b ? "true" : "false"));
+    renderDesloc();
+  });
+
+  const rv=document.getElementById("ratView");
+  if (rv) rv.addEventListener("click",e=>{
+    const b=e.target.closest("button[data-rv]"); if(!b) return;
+    estado.ratView=b.dataset.rv;
+    rv.querySelectorAll("button").forEach(x=>
+      x.setAttribute("aria-pressed", x===b ? "true" : "false"));
+    listaRatings();
+  });
+
+
+  FAMS_EMISSAO.forEach(({f})=>{
+    const te=document.querySelector(`[data-tabemis="${f}"]`);
+    if (!te) return;
+    const ordenarE = k => {
+      if (estado.ordE[f]===k) estado.dirE[f]*=-1;
+      else { estado.ordE[f]=k; estado.dirE[f] = k==="codigo" ? 1 : -1; }
+      linhasEmissao(f);
+    };
+    te.addEventListener("click",e=>{
+      const th=e.target.closest("th[data-ke]"); if(th) ordenarE(th.dataset.ke);});
+    te.addEventListener("keydown",e=>{
+      const th=e.target.closest("th[data-ke]");
+      if(th && (e.key==="Enter"||e.key===" ")){ e.preventDefault(); ordenarE(th.dataset.ke);} });
+  });
+
+  const td=document.getElementById("tabDesloc");
+  if (td){
+    const ordenarD = k => {
+      if (estado.ordD===k) estado.dirD*=-1;
+      else { estado.ordD=k; estado.dirD = k==="codigo" ? 1 : -1; }
+      linhasDesloc();
+    };
+    td.addEventListener("click",e=>{
+      const th=e.target.closest("th[data-kd]"); if(th) ordenarD(th.dataset.kd);});
+    td.addEventListener("keydown",e=>{
+      const th=e.target.closest("th[data-kd]");
+      if(th && (e.key==="Enter"||e.key===" ")){ e.preventDefault(); ordenarD(th.dataset.kd);} });
+  }
+
+  document.getElementById("tabela").addEventListener("click",e=>{
+    const th=e.target.closest("th[data-k]"); if(!th) return; ordenar(th.dataset.k);});
+  document.getElementById("tabela").addEventListener("keydown",e=>{
+    const th=e.target.closest("th[data-k]"); if(!th||(e.key!=="Enter"&&e.key!==" ")) return;
+    e.preventDefault(); ordenar(th.dataset.k);});
+  function ordenar(k){
+    if(estado.ord===k) estado.dir*=-1;
+    else {estado.ord=k; estado.dir = k==="codigo" ? 1 : -1;}
+    tabela();
+  }
+
+  // tooltips dos gráficos
+  document.addEventListener("mousemove",e=>{
+    const sd=e.target.closest?.("svg[data-desloc]");
+    if(sd){ hoverDesloc(sd, e); return; }
+    limparAtivoDesloc();
+    const pcc=e.target.closest?.("[data-cc]");  // CRI/CRA: pontos e linhas
+    if(pcc && CC[+pcc.dataset.cc]){ mostrarTip(tipCC(CC[+pcc.dataset.cc]), e); return; }
+    const pt=e.target.closest?.("[data-i]");   // pontos do gráfico e linhas de movimento
+    if(pt){ mostrarTip(tipPapel(D.papeis[+pt.dataset.i]), e); return; }
+    const fx=e.target.closest?.("[data-ev]");
+    if(fx){ mostrarTip(fx.dataset.ev, e); return; }
+    esconderTip();
+  });
+
+  listaRatings();
+  initCriCra();
+  initParalelo();
+  if (document.getElementById("tabDesloc")) renderDesloc();
+  FAMS_EMISSAO.forEach(({f})=>{ if (document.querySelector(`[data-tabemis="${f}"]`)) linhasEmissao(f); });
+  movimentos();
+  tabela();
+}
+
+montar();
+</script>
