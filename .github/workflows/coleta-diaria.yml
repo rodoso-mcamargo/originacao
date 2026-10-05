@@ -94,5 +94,5 @@ jobs:
             echo "Nada mudou."
           else
             git commit -m "dados: coleta $(date -u +%Y-%m-%d)"
-            git push
+            for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && break; [ $i = 5 ] && exit 1; echo "push rejeitado ($i), tentando de novo"; sleep $((i*10)); done
           fi
