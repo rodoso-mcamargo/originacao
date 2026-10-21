@@ -22,6 +22,17 @@ import datetime as dt, io, json, pathlib, re, sys, unicodedata, urllib.request, 
 import pandas as pd
 
 AQUI = pathlib.Path(__file__).resolve().parent
+
+
+def base(nome):
+    """Acha uma base de dados/dossies/: primeiro na raiz do repositorio
+    (<raiz>/dados/dossies/<nome>), depois no caminho antigo (AQUI/dados/<nome>),
+    usado pelas tarefas que copiam scripts e bases para uma pasta de trabalho."""
+    for p in (AQUI.parent / "dados" / "dossies" / nome, AQUI / "dados" / nome):
+        if p.exists():
+            return p
+    return AQUI / "dados" / nome
+
 SRC, OUT = sys.argv[1], sys.argv[2]
 JANELA = 270
 CACHE = AQUI / "dados" / "cvm"
@@ -56,7 +67,7 @@ for p in D.get("papeis", []):
     radar.setdefault(chave(p["emissor"]), ("DEB", p["emissor"]))
 for r in (D.get("cricra") or {}).get("rows", []):
     radar.setdefault(chave(r["dev"]), ("CC", r["dev"]))
-df = AQUI / "dados" / "descartados.json"
+df = base("descartados.json")
 desc = {chave(x) for x in json.loads(df.read_text(encoding="utf-8"))["descartados"]} if df.exists() else set()
 
 
