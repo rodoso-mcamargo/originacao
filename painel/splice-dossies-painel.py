@@ -13,6 +13,17 @@ com esse nivel. Sem dossies.json, a secao entra vazia (a estrutura nao muda).
 import json, pathlib, re, sys, unicodedata
 
 AQUI = pathlib.Path(__file__).resolve().parent
+
+
+def base(nome):
+    """Acha uma base de dados/dossies/: primeiro na raiz do repositorio
+    (<raiz>/dados/dossies/<nome>), depois no caminho antigo (AQUI/dados/<nome>),
+    usado pelas tarefas que copiam scripts e bases para uma pasta de trabalho."""
+    for p in (AQUI.parent / "dados" / "dossies" / nome, AQUI / "dados" / nome):
+        if p.exists():
+            return p
+    return AQUI / "dados" / nome
+
 SRC, OUT = sys.argv[1], sys.argv[2]
 s = open(SRC, encoding="utf-8").read()
 
@@ -28,7 +39,7 @@ def norm(x):
 
 
 def ler(p, padrao):
-    p = AQUI / p
+    p = base(pathlib.Path(p).name)
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else padrao
 
 
