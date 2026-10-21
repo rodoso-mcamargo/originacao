@@ -1,0 +1,930 @@
+{
+ "atualizado_em": "2026-10-21",
+ "nota": "Dossiês de crédito do Radar (pedido do rodrigo em 21/10/2026). Chave: nome do emissor/devedor normalizado (sem acento, pontuação e sufixos) ou 'RAIZ:XXXX' para debênture ilíquida. Mantido pela tarefa 'Dossiês de crédito — Radar'; lido pelo splice-dossies-painel.py. Triagem com fontes públicas, não análise de crédito.",
+ "dossies": {
+  "RAIZ:RPAS": {
+   "nome": "Rota do Pará S.A.",
+   "tipo": "iliquida",
+   "codigos": [
+    "RPAS11"
+   ],
+   "nivel": "evento",
+   "gatilho": "debênture ilíquida na carteira da Kinea (~R$ 425 mi)",
+   "abertura_no_dossie": null,
+   "resumo": "Concessão de 526 km de rodovias estaduais no Pará com covenant de dívida líquida/EBITDA rompido em dez/2025, waiver ainda não formalizado, dívida inteira no curto prazo e ênfase de continuidade operacional do auditor; o governo suspendeu 5 das 8 praças de pedágio de março a junho de 2026.",
+   "papel": "RPAS11 · R$ 400 mi · IPCA + 8,7235% · venc. 15/12/2034 · incentivada · garantia real + fiança dos 4 sócios e 9 pessoas físicas · Fitch A+(bra) na emissão (2024)",
+   "controle": "OCI Investimentos, Conata Engenharia, Infracon Engenharia e Vetor Participações (Grupo Houer), 25% cada",
+   "sinais": [
+    {
+     "tipo": "covenant",
+     "texto": "Dívida líquida/EBITDA ajustado acima do limite em 31/12/2025 (EBITDA negativo); waiver não formalizado até 31/07/2026",
+     "data": "2026-07-31",
+     "fonte": "ITR 1T26",
+     "url": "https://rotadopara.com.br/wp-content/uploads/260731_Demonstracoes-Financeiras-1T-2026.pdf"
+    },
+    {
+     "tipo": "auditor",
+     "texto": "Deloitte: ênfase de incerteza sobre continuidade operacional e revisão com ressalva",
+     "data": "2026-07-31",
+     "fonte": "ITR 1T26",
+     "url": "https://rotadopara.com.br/wp-content/uploads/260731_Demonstracoes-Financeiras-1T-2026.pdf"
+    },
+    {
+     "tipo": "poder_concedente",
+     "texto": "Governo do Pará suspendeu as praças 1 a 5 da PA-150 por falta de manutenção; retomada total em 28/06/2026",
+     "data": "2026-03-18",
+     "fonte": "Correio de Carajás",
+     "url": "https://correiodecarajas.com.br/governador-acolhe-denuncias-de-motoristas-e-determina-suspensao-de-pedagio-na-pa-150/"
+    },
+    {
+     "tipo": "agd",
+     "texto": "AGD de 19/05/2026 suspendeu a votação de vencimento antecipado; AGD de 23/06 aprovou waivers pontuais; juros de dez/2026 capitalizados (5º aditamento)",
+     "data": "2026-06-23",
+     "fonte": "ITR 1T26",
+     "url": "https://rotadopara.com.br/wp-content/uploads/260731_Demonstracoes-Financeiras-1T-2026.pdf"
+    }
+   ],
+   "numeros": "1T26 (R$ mil): receita de pedágio 69.514; resultado operacional 16.068; resultado financeiro −17.483; lucro 663; caixa 3.600 + conta reserva 65.392; debêntures 461.033 no circulante; PL ~29.750",
+   "originacao": "Credor concentrado (Kinea), covenant estourado e relação tensa com o poder concedente: candidata a renegociação de passivo (reperfilamento, aporte ou refinanciamento com carência maior).",
+   "pendencias": [
+    "relatório do agente fiduciário (Pentágono)",
+    "escritura e aditamentos",
+    "rating atual da Fitch",
+    "ITR 2T26"
+   ],
+   "fontes": [
+    {
+     "titulo": "ITR 1T26",
+     "url": "https://rotadopara.com.br/wp-content/uploads/260731_Demonstracoes-Financeiras-1T-2026.pdf"
+    },
+    {
+     "titulo": "Aviso ao mercado da 1ª emissão",
+     "url": "https://rotadopara.com.br/wp-content/uploads/Debs-Rota-do-Para-Aviso-ao-Mercado-V.-Publicacao.pdf"
+    },
+    {
+     "titulo": "Agência iNFRA — emissão",
+     "url": "https://agenciainfra.com/blog/primeira-concessao-de-rodovias-no-para-obtem-100-de-financiamento-privado/"
+    },
+    {
+     "titulo": "Correio de Carajás — resposta da empresa",
+     "url": "https://correiodecarajas.com.br/penalizada-rota-do-para-alega-ja-ter-investido-r-400-milhoes-na-pa-150/"
+    }
+   ],
+   "pesquisado_em": "2026-10-21"
+  },
+  "CIDADE MARAVILHOSA INDUSTRIA COMERCIO ROUPAS": {
+   "nome": "Cidade Maravilhosa Indústria e Comércio de Roupas S.A.",
+   "tipo": "cri_cra",
+   "codigos": [
+    "24B0013203"
+   ],
+   "nivel": "atencao",
+   "gatilho": "CRI com abertura de +344 bps na janela (24B0013203, IPCA+, PU ~85,5% do par)",
+   "abertura_no_dossie": 344.1,
+   "resumo": "Devedora do CRI 'Grupo Soma' (138ª emissão da Virgo, hoje Riza Securitizadora), com fiança da Grupo de Moda Soma S.A. (atual Azzas 2154). A S&P rebaixou a Azzas de brAA+ para brAA e a colocou em CreditWatch negativo em 04/09/2026, depois de um 2T26 fraco e do anúncio da cisão entre Arezzo&Co e Soma; a Farm, que deve ir para uma sociedade separada, está em processo de venda.",
+   "papel": "24B0013203 (3ª série, 138ª emissão Virgo/Riza) · R$ 280,1 mi (emissão total de R$ 625 mi) · IPCA + 6,40% a.a. · vencimento em 15/02/2030, com amortização em 2 parcelas · sem garantia no CRI; o lastro são debêntures da devedora com fiança da Grupo de Moda Soma · isento de IR para pessoa física · rating da operação brAA+(sf) na emissão",
+   "controle": "Subsidiária do grupo Azzas 2154 (ex-Grupo de Moda Soma, que é a fiadora). Pela cisão anunciada em 02/09/2026, a Farm (Brasil, Internacional e Fábula) vai para uma sociedade própria, com Arezzo&Co (57,4%) e Soma (42,6%); o Cade aprovou a cisão em 15/10/2026.",
+   "numeros": "2T26, Azzas 2154 consolidado (R$ mi): receita líquida 2.600 (-8,2% a/a); EBITDA recorrente 379,6 (-29,1%; margem de 14,2%); lucro líquido recorrente 106,5 (-62,5%); dívida líquida 2.127; dívida líquida/EBITDA recorrente LTM (sem arrendamentos) 1,52x. Não há números isolados da devedora.",
+   "sinais": [
+    {
+     "tipo": "rating",
+     "texto": "A S&P rebaixou a Azzas 2154 de brAA+ para brAA e colocou o emissor e um rating de transação brAA(sf) em CreditWatch negativo, com possível novo corte em até 90 dias. Os motivos citados são a cisão, que reduz a escala, o 2T26 fraco e a falta das sinergias esperadas. O site da S&P não identifica se o rating de transação é o deste CRI.",
+     "data": "2026-09-04",
+     "fonte": "S&P Global Ratings / Money Times",
+     "url": "https://brazil.ratings.spglobal.com/ratings/pt/regulatory/org-details/sectorCode/CORP/entityId/1000569"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "Anunciada a cisão da Azzas 2154 em Arezzo&Co (bloco Birman) e Soma (bloco Jatahy). A Farm vai para uma sociedade específica, com 57,4% da Arezzo&Co e 42,6% da Soma. O anúncio não diz como a dívida será alocada.",
+     "data": "2026-09-02",
+     "fonte": "Mercado&Consumo",
+     "url": "https://mercadoeconsumo.com.br/02/09/2026/mc-capital/azzas-2154-anuncia-separacao-entre-arezzoco-e-soma/"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "O Cade aprovou a cisão da Azzas 2154.",
+     "data": "2026-10-15",
+     "fonte": "XP Investimentos (Entrega XP varejo)",
+     "url": "https://conteudos.xpi.com.br/acoes/relatorios/entrega-xp-as-principais-noticias-que-movem-o-setor-do-varejo-outubro-26-2/"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "A Farm recebeu 15 propostas não vinculantes, que a avaliam entre R$ 3,5 bi e R$ 4 bi, abaixo da expectativa dos acionistas (R$ 4,5 bi a R$ 5,5 bi). As ofertas vinculantes eram esperadas para outubro. Em 19/06/2026, a Azzas contratou o Morgan Stanley para avaliar alternativas para a Farm.",
+     "data": "2026-10-01",
+     "fonte": "TradeMap (citando Valor Econômico)",
+     "url": "https://trademap.com.br/noticias/news-8367935"
+    },
+    {
+     "tipo": "resultado",
+     "texto": "2T26 da Azzas: receita de -8,2% a/a, EBITDA recorrente de -29,1% e lucro recorrente de -62,5%. A alavancagem ficou em 1,52x dívida líquida/EBITDA.",
+     "data": "2026-08-13",
+     "fonte": "Mercado&Consumo",
+     "url": "https://mercadoeconsumo.com.br/13/08/2026/mc-capital/azzas-tem-lucro-liquido-recorrente-de-r-1065-mi-no-2t-queda-anual-de-625/"
+    },
+    {
+     "tipo": "operacional",
+     "texto": "Risco da securitizadora, não da devedora: a Riza Securitizadora (ex-Virgo) assinou termo de compromisso com a ANBIMA por suspeitas, entre elas a alocação de recursos de patrimônios separados em desacordo com os termos de securitização. Em 08/2025, o agente fiduciário Oliveira Trust pediu à Virgo extratos das aplicações de patrimônios separados, entre eles o desta emissão (138E).",
+     "data": "2026-02-20",
+     "fonte": "ANBIMA / Oliveira Trust",
+     "url": "https://www.anbima.com.br/data/files/56/00/BF/EB/C8B9D9100AA457D9BA2BA2A8/20.02.2026%20-%20TC%20-%20Ofertas%20Publicas%20-%20Riza%20Securitizadora%20S.A..pdf"
+    }
+   ],
+   "originacao": "Pode haver tese de refinanciamento ou troca de devedor e fiador quando a cisão e a eventual venda da Farm definirem quem fica com a dívida da Cidade Maravilhosa. Vale acompanhar se haverá AGE de titulares para anuência à reorganização (mudança de controle/fiança), que abre espaço para reprecificação ou nova estrutura.",
+   "pendencias": [
+    "Confirmar documentalmente que a Cidade Maravilhosa é a operadora da Farm. Há indícios (sede no Rio, diretoria com Jatahy e Birman, devedora com fiança da Soma), mas não vi fonte explícita.",
+    "Termo de securitização e escritura: covenants financeiros, cláusulas de mudança de controle/cisão e vencimento antecipado não foram verificados.",
+    "Confirmar se o rating brAA(sf) em CreditWatch negativo da S&P se refere a este CRI.",
+    "Não encontrei AGE de titulares nem waiver relacionado à cisão (fnet/RI não verificados).",
+    "Alocação da dívida e da fiança entre Arezzo&Co, Soma e a sociedade da Farm após a cisão.",
+    "Resultado das ofertas vinculantes pela Farm (outubro/2026).",
+    "Demonstrações isoladas da devedora."
+   ],
+   "fontes": [
+    {
+     "titulo": "CRI Grupo Soma, Anúncio de Encerramento (138ª emissão Virgo)",
+     "url": "https://ww69.itau.com.br/fileserver/Prospectos/CRI-Grupo-Soma-Anuncio-de-Encerramento-v.-divulgacao_pdf.pdf"
+    },
+    {
+     "titulo": "CRI Grupo Soma, Comunicado de Resultado do Bookbuilding",
+     "url": "https://cms.santander.com.br/sites/WPS/documentos/arq-Soma-Comunicado3/24-03-02_232104_cri-grupo-soma-comunicado-ao-mercado-resultado-do-book-v.-final-divulgacao.pdf"
+    },
+    {
+     "titulo": "CRI Grupo Soma, Lâmina da Oferta",
+     "url": "https://ofertaspublicas.xpi.com.br/wp-content/uploads/sites/10/2024/01/CRI-Grupo-Soma-Lamina-da-Oferta-2a-Mod.-Oferta-v.-final-pdf.pdf"
+    },
+    {
+     "titulo": "CNPJ 09.611.669/0001-94, Cidade Maravilhosa",
+     "url": "https://cnpj-api.com/en/cnpj/09611669000194"
+    },
+    {
+     "titulo": "S&P Global Ratings, Azzas 2154 S.A.",
+     "url": "https://brazil.ratings.spglobal.com/ratings/pt/regulatory/org-details/sectorCode/CORP/entityId/1000569"
+    },
+    {
+     "titulo": "Money Times: S&P corta nota nacional da Azzas após anúncio do divórcio",
+     "url": "https://www.moneytimes.com.br/azzas-2154-azza3-sp-corta-nota-nacional-e-acende-sinal-amarelo-apos-anuncio-do-divorcio-lmrs/"
+    },
+    {
+     "titulo": "Mercado&Consumo: Azzas 2154 anuncia separação entre Arezzo&Co e Soma",
+     "url": "https://mercadoeconsumo.com.br/02/09/2026/mc-capital/azzas-2154-anuncia-separacao-entre-arezzoco-e-soma/"
+    },
+    {
+     "titulo": "Mercado&Consumo: Azzas tem lucro recorrente de R$ 106,5 mi no 2T",
+     "url": "https://mercadoeconsumo.com.br/13/08/2026/mc-capital/azzas-tem-lucro-liquido-recorrente-de-r-1065-mi-no-2t-queda-anual-de-625/"
+    },
+    {
+     "titulo": "Mercado&Consumo: Azzas avalia alternativas para a Farm Rio e contrata Morgan Stanley",
+     "url": "https://mercadoeconsumo.com.br/19/06/2026/noticias-varejo/azzas-avalia-alternativas-para-a-farm-rio-e-contrata-morgan-stanley/"
+    },
+    {
+     "titulo": "TradeMap: Azzas dispara com 15 propostas pela Farm",
+     "url": "https://trademap.com.br/noticias/news-8367935"
+    },
+    {
+     "titulo": "Entrega XP: notícias do varejo, outubro/26",
+     "url": "https://conteudos.xpi.com.br/acoes/relatorios/entrega-xp-as-principais-noticias-que-movem-o-setor-do-varejo-outubro-26-2/"
+    },
+    {
+     "titulo": "ANBIMA: Termo de Compromisso da Riza Securitizadora (ex-Virgo)",
+     "url": "https://www.anbima.com.br/data/files/56/00/BF/EB/C8B9D9100AA457D9BA2BA2A8/20.02.2026%20-%20TC%20-%20Ofertas%20Publicas%20-%20Riza%20Securitizadora%20S.A..pdf"
+    },
+    {
+     "titulo": "Oliveira Trust: Notificação à Virgo (15/08/2025)",
+     "url": "https://www.oliveiratrust.com.br/docs/Notifica%C3%A7%C3%A3o_Virgo_-_20250815.docx.pdf"
+    }
+   ],
+   "pesquisado_em": "2026-10-21"
+  },
+  "ENEVA": {
+   "nome": "Eneva S.A.",
+   "tipo": "debenture",
+   "codigos": [
+    "ENEV13",
+    "ENEV19",
+    "ENEV28",
+    "ENEV39",
+    "ENEV29",
+    "ENEV32"
+   ],
+   "nivel": "atencao",
+   "gatilho": "Δ21d +150,6 bps em ENEV13 (IPCA, venc. 2027); demais séries IPCA da Eneva também com Δ21d de +88 a +90 bps; AGD de 2026-09-25 com 'não declaração do vencimento antecipado' na pauta",
+   "abertura_no_dossie": 150.6,
+   "resumo": "A AGD de set/2026 aparenta ser parte do liability management da Eneva: a 12ª emissão, que estava em tesouraria, teve os termos alterados em AGD de 22/09/2026 (IPCA + 8,00%, vencimento em 15/08/2036) e foi vendida a instituições financeiras por R$ 2,4 bi para resgatar R$ 1,4 bi em séries CDI. É uma operação estrutural, não um evento de crédito, e a S&P deu 'brAAA' à emissão. O ponto de atenção é o 2T26: EBITDA ICVM caiu 26% e a alavancagem subiu de 2,8x para 3,2x.",
+   "papel": "ENEV13 · 3ª emissão, série única (emitida em 15/12/2019) · volume não verificado · IPCA + 4,2259% a.a. · venc. 15/12/2027, amortização anual desde 15/12/2025 · quirografária · incentivada",
+   "controle": "Eneva S.A., companhia aberta listada na B3 (ENEV3), de geração termelétrica a gás e carvão e de exploração e produção de gás (Parnaíba); não foi verificado se há controlador definido.",
+   "numeros": "2T26 (R$ mi): EBITDA ICVM 1.239 (-26% a/a; ajustado 1.366); lucro líquido 31 (-91,4% a/a); dívida líquida 19.800 (mar/26: 18.500); caixa 2.537; DL/EBITDA 3,2x (mar/26: 2,8x)",
+   "sinais": [
+    {
+     "tipo": "agd",
+     "texto": "AGD da 12ª emissão em 22/09/2026 alterou os termos: IPCA + 8,00% a.a., vencimento final em 15/08/2036, amortização em 3 parcelas anuais a partir do 8º ano. As debêntures, que estavam em tesouraria, foram vendidas a instituições financeiras por R$ 2.400.019.283,60. A pauta registrada no item em 2026-09-25 (alteração de termos, autorização ao agente fiduciário, não declaração do vencimento antecipado) é compatível com essa AGD; a leitura é de que se trata de um ajuste estrutural do liability management, e não de um waiver de covenant (a ata não foi lida).",
+     "data": "2026-09-22",
+     "fonte": "Cenário Energia",
+     "url": "https://cenarioenergia.com.br/2026/09/24/eneva-conclui-liability-management-captacao-divida/"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "Primeira etapa do liability management: resgate antecipado e cancelamento de ~R$ 1,405 bi (8ª emissão, 3ª série, CDI+1,70%; 10ª emissão, 3ª série, CDI+1,00%; 11ª emissão, 2ª série, CDI+2,50%). O saldo será usado para pré-pagar outras dívidas. Pro forma, o prazo médio da dívida refinanciada passa de ~2,6 para 9,0 anos e a parcela em IPCA, de 86% para 92%.",
+     "data": "2026-09-22",
+     "fonte": "Finance News",
+     "url": "https://financenews.com.br/2026/09/eneva-conclui-etapa-de-operacao-de-liability-management/"
+    },
+    {
+     "tipo": "rating",
+     "texto": "S&P atribuiu 'brAAA' à 12ª emissão (operação de liability management).",
+     "data": "2026-09-21",
+     "fonte": "Visno Invest",
+     "url": "https://visnoinvest.com.br/news/15355/eneva-enev3-registra-rating-braaa-em-debentures-da-12a-emissao"
+    },
+    {
+     "tipo": "rating",
+     "texto": "Fitch afirmou o rating 'AAA(bra)' da Eneva e das 9ª e 13ª emissões, com perspectiva estável; projetava FCF negativo em 2025 e 2026.",
+     "data": "2025-10-17",
+     "fonte": "Monitor Mercantil",
+     "url": "https://monitormercantil.com.br/fitch-afirma-rating-aaa-da-eneva/"
+    },
+    {
+     "tipo": "rating",
+     "texto": "Fitch atribuiu 'AAA(bra)' à 14ª emissão de debêntures (já no painel).",
+     "data": "2026-02",
+     "fonte": "Cenário Energia",
+     "url": "https://cenarioenergia.com.br/2026/02/02/fitch-atribui-rating-aaabra-a-14a-emissao-de-debentures-da-eneva-e-reforca-solidez-financeira-da-companhia/"
+    },
+    {
+     "tipo": "resultado",
+     "texto": "2T26: EBITDA ICVM de R$ 1.239 mi (-26% a/a); lucro de R$ 31 mi (-91,4%); dívida líquida de R$ 19,8 bi (mar/26: R$ 18,5 bi); alavancagem de 3,2x (mar/26: 2,8x).",
+     "data": "2026-08-13",
+     "fonte": "Renova Invest",
+     "url": "https://renovainvest.com.br/blog/eneva-resultados-2t26/"
+    }
+   ],
+   "originacao": "Sem tese de stress no momento: a Eneva acessa o mercado (R$ 2,4 bi no liability management e a 14ª emissão em 2026) e segue AAA, mas a alavancagem subiu e a empresa paga IPCA + 8,00% no papel novo. Isso indica uma curva mais cara e possível espaço para novas trocas ou alongamentos na próxima etapa do liability management.",
+   "pendencias": [
+    "Não foi possível ler a ata/edital da AGD de 2026-09-25 (rad.cvm.gov.br bloqueado): não está confirmado se ela se refere à 12ª emissão nem a qual evento de vencimento antecipado a 'não declaração' se aplica",
+    "Volume, agente fiduciário e coordenador da ENEV13 não verificados",
+    "Covenant atual (DL/EBITDA) e folga no 2T26 não verificados",
+    "Receita líquida e dívida de curto prazo do 2T26 não verificadas no release oficial",
+    "Detalhes da segunda etapa do liability management (quais dívidas serão pré-pagas) não divulgados nas fontes vistas",
+    "Estrutura de controle/acionistas relevantes não verificada"
+   ],
+   "fontes": [
+    {
+     "titulo": "Cenário Energia – Eneva conclui primeira etapa de liability management (24/09/2026)",
+     "url": "https://cenarioenergia.com.br/2026/09/24/eneva-conclui-liability-management-captacao-divida/"
+    },
+    {
+     "titulo": "Finance News – Eneva conclui etapa de operação de liability management",
+     "url": "https://financenews.com.br/2026/09/eneva-conclui-etapa-de-operacao-de-liability-management/"
+    },
+    {
+     "titulo": "Visno Invest – Eneva registra rating brAAA em debêntures da 12ª emissão",
+     "url": "https://visnoinvest.com.br/news/15355/eneva-enev3-registra-rating-braaa-em-debentures-da-12a-emissao"
+    },
+    {
+     "titulo": "Renova Invest – Eneva: EBITDA cai 26% no 2T26",
+     "url": "https://renovainvest.com.br/blog/eneva-resultados-2t26/"
+    },
+    {
+     "titulo": "Monitor Mercantil – Fitch afirma rating AAA da Eneva",
+     "url": "https://monitormercantil.com.br/fitch-afirma-rating-aaa-da-eneva/"
+    },
+    {
+     "titulo": "Mais Retorno – ENEV13",
+     "url": "https://maisretorno.com/debentures/enev13"
+    },
+    {
+     "titulo": "Clube FII News – AGD da 12ª emissão (nov/2025, suspensão de pagamentos enquanto em tesouraria)",
+     "url": "https://www.clubefiinews.com.br/acoes/eneva-assembleia-geral-de-debenturistas-12-emissao-debentures-suspensao-pagamentos"
+    }
+   ],
+   "pesquisado_em": "2026-10-21"
+  },
+  "MOVIDA PARTICIPACOES": {
+   "nome": "Movida Participações S.A.",
+   "tipo": "debenture",
+   "codigos": [
+    "MOVI37",
+    "CRI 23J1127308",
+    "CRI 23F1519397"
+   ],
+   "nivel": "sem_sinal",
+   "gatilho": "Δ21d +116 bps em MOVI37 (IPCA + 13,07%, 84,8% do par); CRIs Opea com aberturas de ~+52 e ~+49 bps na janela",
+   "abertura_no_dossie": 116.0,
+   "resumo": "Não achei evento formal de crédito: a Fitch afirmou a Movida em 'BB-'/'AA(bra)' com perspectiva estável em 01/06/2026, e a Moody's Local afirmou o grupo (Movida AA+.br) com perspectiva estável em set/2026. A alavancagem caiu para 2,7x no 2T26, a Simpar fez aporte de capital e os vencimentos de 2026 foram alongados. O rebaixamento da Fitch para BB-/AA(bra) que aparece no painel é de jun/2025 e ficou fora da janela de 12 meses.",
+   "papel": "MOVI37 · 7ª emissão, 3ª série (emitida em 15/09/2021) · volume não confirmado · IPCA + 7,6366% a.a., juros semestrais · vence em 15/09/2031, com amortização anual a partir de 15/09/2029 · quirografária · não incentivada",
+   "controle": "Controlada pela Simpar S.A. (60,9% após o aumento de capital de 2026, segundo a Fitch), que é controlada pela JSP. A BNDESPar entrou como minoritária. O rating é vinculado ao da Simpar e há pouca blindagem jurídica (ring-fencing) entre as duas.",
+   "numeros": "2T26 (R$ mi): receita líquida 3.770; EBITDA 1.690; lucro líquido 135,6; dívida líquida/EBITDA 2,7x (2T25: 2,9x). Mar/26 (Fitch): caixa 3.900; dívida total ajustada 21.700, dos quais 4.500 de curto prazo",
+   "sinais": [
+    {
+     "tipo": "rating",
+     "texto": "Fitch afirma a Movida em 'BB-' (IDR) e 'AA(bra)' (nacional, inclusive para as debêntures quirografárias), com perspectiva estável. A agência espera alavancagem abaixo de 3,0x, com apoio do aporte de R$ 750 mi. A Movida seria revista se a Simpar fosse rebaixada ou se piorasse o crédito de Simpar, Vamos ou JSL.",
+     "data": "2026-06-01",
+     "fonte": "Fitch Ratings (via RI Movida)",
+     "url": "https://api.mziq.com/mzfilemanager/v2/d/437bf607-6e35-4ac9-973f-608b2497e42d/15c774cf-58fd-d691-39e1-a2effb066b19?origin=2"
+    },
+    {
+     "tipo": "rating",
+     "texto": "Rebaixamento da Fitch para BB-/AA(bra), o mesmo que aparece no painel. Foi do grupo Simpar em jun/2025 (último ajuste registrado pela Fitch em 16/06/2025) e está fora da janela de 12 meses. Antes disso, em ago/2024, a nota nacional tinha caído de AAA(bra) para AA+(bra), com perspectiva negativa.",
+     "data": "2025-06",
+     "fonte": "LatinFinance / Fitch via XP",
+     "url": "https://latinfinance.com/daily-brief/2025/06/19/fitch-downgrades-simpar/"
+    },
+    {
+     "tipo": "rating",
+     "texto": "Moody's Local afirma a Simpar em AA+.br (estável) e cita a Movida também em AA+.br (estável). Pontos de atenção: cobertura de juros de 1,3x e vencimentos do grupo concentrados em 2027-2028. O grupo tem caixa de R$ 13,9 bi para R$ 9,2 bi de dívida ajustada de curto prazo.",
+     "data": "2026-09",
+     "fonte": "Moody's Local Brasil, relatório de 15/10/2026",
+     "url": "https://moodyslocal.com.br/wp-content/uploads/2026/10/RelatoriodeCredito_Simpar_out26.pdf"
+    },
+    {
+     "tipo": "agd",
+     "texto": "AGD de crédito em 31/03/2026 com o tema 'Alterações em itens da escritura'. Não consegui ver a pauta, a emissão afetada nem o resultado, porque o RAD/CVM não abre.",
+     "data": "2026-03-31",
+     "fonte": "Painel (agd_credito do item)",
+     "url": null
+    },
+    {
+     "tipo": "resultado",
+     "texto": "No 2T26, o lucro dobrou para R$ 135,6 mi, o EBITDA somou R$ 1,69 bi (+22%) e a alavancagem ficou em 2,7x, abaixo dos 2,9x do 2T25. A ação cai 28% no ano.",
+     "data": "2026-07-16",
+     "fonte": "Acionista / Nord Investimentos",
+     "url": "https://www.nordinvestimentos.com.br/blog/movi3-resultado-2t26/"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "Aumento de capital da Movida entre R$ 500 e 750 mi, a R$ 11,72 por ação, com a BNDESPar entre R$ 250 e 375 mi, dentro de uma capitalização do grupo Simpar.",
+     "data": "2026-03-05",
+     "fonte": "Money Times",
+     "url": "https://www.moneytimes.com.br/simpar-levanta-ate-r-2-bilhoes-em-aumento-de-capital-com-apoio-do-bndes-vamos-e-movida-tambem-reforcam-caixa-vtra/"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "A Movida captou R$ 3,5 bi no 1º bimestre de 2026, inclusive US$ 235 mi com a IFC. Com isso, os vencimentos de 2026 caíram de R$ 2,72 bi para R$ 228 mi e o restante foi alongado para 2029-2031.",
+     "data": "2026-02-06",
+     "fonte": "Seu Dinheiro",
+     "url": "https://www.seudinheiro.com/2026/empresas/movida-movi3-levanta-r-35-bilhoes-com-ajuda-do-banco-mundial-e-ganha-alivio-para-as-dividas-de-2026-lvgb/"
+    }
+   ],
+   "originacao": "Sem tese no momento: a liquidez foi reforçada por aporte e alongamento, e os ratings estão estáveis. A MOVI37 a cerca de 85% do par, sem garantia, pode interessar só como compra no secundário. Vale acompanhar os vencimentos do grupo em 2027-2028 e qualquer ação de rating na Simpar, à qual a Movida está vinculada.",
+   "pendencias": [
+    "Pauta e deliberação da AGD de 31/03/2026 ('Alterações em itens da escritura'), porque o RAD/CVM não abre",
+    "Volume da 3ª série da 7ª emissão (MOVI37), coordenador e agente fiduciário",
+    "Covenants da Movida e o cumprimento deles (só encontrei os da Simpar)",
+    "Lastro, devedor, garantias e volume dos CRIs 23J1127308 e 23F1519397 (Opea)",
+    "Rating da S&P para a Movida e eventual ação recente",
+    "Comunicado original da Fitch de jun/2025 com a data exata do rebaixamento (o link da XP não abriu)",
+    "Ressalva ou ênfase do auditor nas demonstrações de 2025"
+   ],
+   "fontes": [
+    {
+     "titulo": "Fitch Afirma Ratings 'BB-'/'AA(bra)' da Movida; Perspectiva Estável (01/06/2026)",
+     "url": "https://api.mziq.com/mzfilemanager/v2/d/437bf607-6e35-4ac9-973f-608b2497e42d/15c774cf-58fd-d691-39e1-a2effb066b19?origin=2"
+    },
+    {
+     "titulo": "XP - Fitch rebaixa ratings nacionais da Simpar e das subsidiárias para AA+(bra) (ago/2024)",
+     "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/fitch-rebaixa-ratings-nacionais-da-simpar-e-das-subsidiarias-para-aabra/"
+    },
+    {
+     "titulo": "LatinFinance - Fitch downgrades Simpar (19/06/2025)",
+     "url": "https://latinfinance.com/daily-brief/2025/06/19/fitch-downgrades-simpar/"
+    },
+    {
+     "titulo": "Moody's Local - Relatório de Crédito Simpar (out/2026)",
+     "url": "https://moodyslocal.com.br/wp-content/uploads/2026/10/RelatoriodeCredito_Simpar_out26.pdf"
+    },
+    {
+     "titulo": "Acionista - Movida lucro líquido dobra e supera guidance no 2T26",
+     "url": "https://acionista.com.br/movida-movi3-lucro-liquido-dobra-e-supera-guidance-no-2t26/"
+    },
+    {
+     "titulo": "Nord Investimentos - Movida (MOVI3) resultado 2T26",
+     "url": "https://www.nordinvestimentos.com.br/blog/movi3-resultado-2t26/"
+    },
+    {
+     "titulo": "Money Times - Simpar levanta até R$ 2 bilhões em aumento de capital com apoio do BNDES",
+     "url": "https://www.moneytimes.com.br/simpar-levanta-ate-r-2-bilhoes-em-aumento-de-capital-com-apoio-do-bndes-vamos-e-movida-tambem-reforcam-caixa-vtra/"
+    },
+    {
+     "titulo": "Seu Dinheiro - Movida levanta R$ 3,5 bilhões com ajuda do Banco Mundial",
+     "url": "https://www.seudinheiro.com/2026/empresas/movida-movi3-levanta-r-35-bilhoes-com-ajuda-do-banco-mundial-e-ganha-alivio-para-as-dividas-de-2026-lvgb/"
+    },
+    {
+     "titulo": "Mais Retorno - MOVI37",
+     "url": "https://maisretorno.com/debentures/movi37"
+    }
+   ],
+   "pesquisado_em": "2026-10-21"
+  },
+  "VICUNHA TEXTIL": {
+   "nome": "Vicunha Têxtil S.A.",
+   "tipo": "cri_cra",
+   "codigos": [
+    "CRA022008C2"
+   ],
+   "nivel": "sem_sinal",
+   "gatilho": "CRA com abertura de +264 bps na janela (CRA022008C2, DI + 2%, spread 589 bps, PU 97,1% do par)",
+   "abertura_no_dossie": 264.4,
+   "resumo": "Maior fabricante de denim do Brasil, controlada pela família Steinbruch, voltou ao lucro no 1S26 (R$ 18,8 mi), com EBITDA de R$ 113 mi e alavancagem caindo para 2,7x; em agosto/2026 quitou R$ 220 mi de amortização programada do CRA. Não foram encontrados rating, waiver, AGD ou evento de crédito.",
+   "papel": "CRA022008C2 · 2ª série da 123ª emissão da Virgo (hoje Riza Securitizadora), oferta de R$ 300 mi base + lote adicional de até 20% · DI + spread de bookbuilding (teto 2,45%; item indica DI + 2%) · emissão 15/08/2022, vencimento 16/08/2027, amortização no 4º e 5º anos · lastro em debêntures da 7ª emissão da Vicunha, quirografárias, sem garantia (clean) · sem rating · isento (CRA) · coordenador líder BTG Pactual, AF Oliveira Trust",
+   "controle": "Família Steinbruch: Textília S.A. detém 92,73% da Vicunha Têxtil; acima dela estão Taquari Participações (100% da Textília) e Rio Purus Participações (99,91% da Taquari). O material da oferta de 2022 cita disputa judicial entre controladores indiretos desde 2018.",
+   "numeros": "1S26 (R$ mi, imprensa): receita líquida 1.043 (-18% a/a); EBITDA 113 (margem 11%); lucro líquido 18,8; dívida líquida 720 (era 770); alavancagem 2,7x (2,9x em 2025). 2025 (Textília consolidado, R$ mi): receita 2.409; prejuízo 122; empréstimos 1.220 (CP 452), dos quais CRA 800; covenants atendidos em 31/12/2025",
+   "sinais": [
+    {
+     "tipo": "resultado",
+     "texto": "Lucro líquido de R$ 18,8 mi no 1S26, contra prejuízo de R$ 33,9 mi no 1S25. Receita líquida de R$ 1,04 bi (-18%), EBITDA de R$ 113 mi (+33%, margem 11%), acima do EBITDA de todo 2025.",
+     "data": "2026-08-24",
+     "fonte": "Bloomberg Línea",
+     "url": "https://www.bloomberglinea.com.br/negocios/vicunha-reage-a-shein-e-shopee-enxuga-estoque-amplia-portfolio-e-mira-voltar-a-lucrar/"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "Quitou integralmente R$ 220 mi previstos no cronograma de amortizações do CRA. Dívida líquida caiu de R$ 770 mi para R$ 720 mi e a alavancagem passou de 3,2x (2024) e 2,9x (2025) para 2,7x no 1S26.",
+     "data": "2026-08-27",
+     "fonte": "FashionNetwork Brasil",
+     "url": "https://br.fashionnetwork.com/news/Vicunha-textil-reverte-prejuizo-e-registra-lucro-de-r-18-8-milhoes-no-primeiro-semestre-de-2026,1861464.html"
+    },
+    {
+     "tipo": "covenant",
+     "texto": "Nas DFs de 2025 da controladora Textília, a nota de empréstimos informa que os índices exigidos pelas instituições financeiras foram plenamente atendidos pela Vicunha. O covenant do CRA divulgado na oferta é dívida líquida/EBITDA ≤ 3,5x, com medição semestral.",
+     "data": "2025-12",
+     "fonte": "Textília S.A. – demonstrações financeiras 2025; material de roadshow do CRA (2022)",
+     "url": "https://pefran.com.br/empresas2012/vicunha/legal/[39718]-vicunha_legal_bal_anual_31-12-2025_dcoml_integra_textilia/internet/arte/[39718]-2_2.pdf"
+    },
+    {
+     "tipo": "resultado",
+     "texto": "Em 2025 a Textília (controladora) teve prejuízo consolidado de R$ 122 mi, e a Vicunha registrou EBITDA ajustado de R$ 96 mi (margem de 4%).",
+     "data": "2025-12",
+     "fonte": "Textília S.A. – demonstrações financeiras 2025",
+     "url": "https://pefran.com.br/empresas2012/vicunha/legal/[39718]-vicunha_legal_bal_anual_31-12-2025_dcoml_integra_textilia/internet/arte/[39718]-2_2.pdf"
+    }
+   ],
+   "originacao": "O crédito está em desalavancagem e o CRA vence em agosto/2027, com saldo concentrado no último ano. O refinanciamento ou alongamento desse saldo e do restante dos CRAs (R$ 800 mi no fim de 2025) é a janela natural para uma nova estrutura, por exemplo um CRA ou debênture com prazo mais longo. Não há tese de stress no momento.",
+   "pendencias": [
+    "Saldo devedor atual da 2ª série e cronograma exato de amortização (Anexo II do Termo de Securitização). Não foi possível confirmar se os R$ 220 mi de agosto/2026 se referem a esta emissão ou série",
+    "Remuneração final de bookbuilding da 2ª série (o item indica DI + 2%) e volume final emitido",
+    "Ausência de rating de agência para a Vicunha e para o CRA (a oferta de 2022 não teve rating). Não foi encontrada ação recente de Fitch, S&P ou Moody's",
+    "AGD ou assembleias de titulares no Fundos.NET: documentos da Riza não foram abertos",
+    "Divergência: a dívida líquida da imprensa (R$ 720–770 mi) não bate com caixa (R$ 972 mi) menos empréstimos (R$ 1.220 mi) extraídos das DFs 2025 da Textília. É preciso conferir as DFs, o parecer do auditor (opinião e ênfases não verificadas) e o caixa",
+    "Status atual da disputa societária entre controladores indiretos citada no prospecto de 2022",
+    "Notícia de interesse na aquisição da Cedro Têxtil (página não abriu): possível impacto em alavancagem"
+   ],
+   "fontes": [
+    {
+     "titulo": "Bloomberg Línea – Vicunha reage a Shein e Shopee, enxuga estoque... (24/08/2026)",
+     "url": "https://www.bloomberglinea.com.br/negocios/vicunha-reage-a-shein-e-shopee-enxuga-estoque-amplia-portfolio-e-mira-voltar-a-lucrar/"
+    },
+    {
+     "titulo": "FashionNetwork Brasil – Vicunha Têxtil reverte prejuízo e registra lucro de R$ 18,8 milhões no 1S26 (27/08/2026)",
+     "url": "https://br.fashionnetwork.com/news/Vicunha-textil-reverte-prejuizo-e-registra-lucro-de-r-18-8-milhoes-no-primeiro-semestre-de-2026,1861464.html"
+    },
+    {
+     "titulo": "Texbrasil – Vicunha Têxtil swings from loss to profit (1S26)",
+     "url": "https://texbrasil.com.br/?p=35362"
+    },
+    {
+     "titulo": "Textília S.A. – Demonstrações financeiras 31/12/2025",
+     "url": "https://pefran.com.br/empresas2012/vicunha/legal/[39718]-vicunha_legal_bal_anual_31-12-2025_dcoml_integra_textilia/internet/arte/[39718]-2_2.pdf"
+    },
+    {
+     "titulo": "Aviso ao Mercado – CRA 123ª emissão Virgo / Vicunha (2022)",
+     "url": "https://www.andbank.com/brasil/wp-content/uploads/sites/11/2022/08/cra-vicunha-aviso-ao-mercado.pdf"
+    },
+    {
+     "titulo": "Material de roadshow – CRA Vicunha (2022)",
+     "url": "https://www.andbank.com/brasil/wp-content/uploads/sites/11/2022/08/CRA-Vicunha-Material-Roadshow.pdf"
+    },
+    {
+     "titulo": "Material publicitário – CRA Vicunha (2022)",
+     "url": "https://www.andbank.com/brasil/wp-content/uploads/sites/11/2022/08/CRA-Vicunha-Material-Publicitario.pdf"
+    },
+    {
+     "titulo": "Clube FII – CRA022008C2",
+     "url": "https://www.clubefii.com.br/cra/CRA022008C2"
+    },
+    {
+     "titulo": "Fundos.NET – Riza Securitizadora (atual denominação da Virgo)",
+     "url": "https://fnet.bmfbovespa.com.br/fnet/publico/exibirDocumento?id=1195104"
+    }
+   ],
+   "pesquisado_em": "2026-10-21"
+  },
+  "CICLUS AMBIENTAL BRASIL": {
+   "nome": "Regenera Rio S.A. (antiga Ciclus Ambiental Rio S.A. / Ciclus Ambiental do Brasil S.A.)",
+   "tipo": "debenture",
+   "codigos": [
+    "CCLS11",
+    "CCLS21"
+   ],
+   "nivel": "evento",
+   "gatilho": "Δ21d +255 bps em CCLS11 (IPCA+13,97%, 78,6% do par)",
+   "abertura_no_dossie": 255.2,
+   "resumo": "Emissora do aterro de Seropédica (concessão Comlurb), vendida pela Simpar à Aegea (via Padova Participações) em 08/12/2025 e renomeada Regenera Rio; em AGD de out/2025 a administração propôs trocar o fiador Simpar pela Aegea e dispensar os covenants financeiros até 2030 (resultado não confirmado). A nova controladora Aegea foi rebaixada em 2026 (S&P brAA+ para brAA-, em observação negativa; Fitch AA(bra) para A+(bra) e depois A(bra), IDR BB- para B+), após atraso das DFs de 2025 e reapresentação do balanço de 2024.",
+   "papel": "CCLS11 (1ª série) · R$ 450 mi · IPCA+6,6739% · venc. 15/01/2031 · quirografária com fiança (originalmente Simpar; proposta de troca para Aegea) · incentivada (Lei 12.431); CCLS21 (2ª série) · R$ 100 mi · IPCA+6,8405% · venc. 15/07/2031",
+   "controle": "Padova Participações S.A. (Aegea Saneamento e Participações) desde 08/12/2025, via Regenera Rio Holding S.A.; antes Ciclus Ambiental S.A. / CS Infra (Grupo Simpar)",
+   "numeros": "2024 (R$ mi): receita líquida 456,3; EBITDA 157,9; dívida líquida 779,9 (DL/EBITDA 4,94x); caixa 18,4 + TVM 33,0; Comlurb ~82% do faturamento. 2025: prejuízo (valor não verificado).",
+   "sinais": [
+    {
+     "tipo": "rating",
+     "texto": "Controladora Aegea (proposta como nova fiadora): S&P rebaixou rating nacional de brAA+ para brAA- (2 degraus) em observação com perspectiva negativa; Fitch rebaixou de AA(bra) para A+(bra), perspectiva negativa; Moody's Ba3 em revisão para rebaixamento. Contexto: atraso do balanço auditado de 2025 e revisão de receitas exigida pela KPMG.",
+     "data": "2026-04",
+     "fonte": "Money Times",
+     "url": "https://www.moneytimes.com.br/aegea-alto-endividamento-e-revisao-no-balanco-muda-status-da-renda-fixa-da-empresa-aguas-do-rio-se-afoga-junto-e-ipo-fica-para-2027/"
+    },
+    {
+     "tipo": "rating",
+     "texto": "Fitch rebaixou novamente a Aegea (controladora): nacional de A+(bra) para A(bra) e IDR de BB- para B+, perspectiva estável, citando desalavancagem lenta, custo de funding alto, alavancagem projetada ~5x e deficiências na qualidade da informação contábil.",
+     "data": "2026-06-09",
+     "fonte": "InfoMoney / XP Investimentos",
+     "url": "https://www.infomoney.com.br/mercados/fitch-corta-rating-da-aegea-e-define-perspectiva-estavel/"
+    },
+    {
+     "tipo": "agd",
+     "texto": "Proposta da administração para AGD da 1ª emissão (agente fiduciário Pentágono): anuência à mudança de controle para a Aegea, substituição da fiadora Simpar pela Aegea, dispensa dos covenants financeiros da escritura até 30/09/2030 (substituídos por DL/EBITDA ≤ 4,0x da Aegea) e waiver fee de 0,50%. Houve ata de AGD de 23/10/2025 (não lida); resultado não confirmado.",
+     "data": "2025-09-19",
+     "fonte": "Ciclus Ambiental Rio – Proposta da Administração",
+     "url": "https://api.mziq.com/mzfilemanager/v2/d/0f7b667d-72c4-4013-ad2f-58abeff9b857/ff02a521-abb9-589d-ebf2-147e56defbcd?origin=1"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "Simpar concluiu a venda de 100% da Ciclus Ambiental à subsidiária da Aegea; equity value R$ 1,085 bi (R$ 769,4 mi pagos no fechamento). Anúncio de 19/08/2025 indicava EV de R$ 1,9 bi incluindo R$ 804 mi de dívida.",
+     "data": "2025-12-08",
+     "fonte": "InfoMoney",
+     "url": "https://www.infomoney.com.br/mercados/simpar-simh3-conclui-venda-da-ciclus-ambiental-para-aegea-por-r-109-bi/"
+    },
+    {
+     "tipo": "resultado",
+     "texto": "AGO da Regenera Rio aprovou as DFs de 2025 sem destinação de lucro porque a companhia registrou prejuízo no exercício.",
+     "data": "2026-04-30",
+     "fonte": "Ata AGOE Regenera Rio",
+     "url": "https://api.mziq.com/mzfilemanager/v2/d/0717e90d-b319-4e5f-bfaf-ee4a1db1250e/fcec6eef-7f97-13b0-4d62-5e817c03f620?origin=2"
+    },
+    {
+     "tipo": "poder_concedente",
+     "texto": "Contrato de concessão Comlurb nº 318/2003 prorrogado até 18/04/2036 (aditivo 74/2023), contraprestação mensal R$ 36,3 mi e saldo a receber de R$ 290,3 mi parcelado em 51 vezes; Comlurb ~82% do faturamento.",
+     "data": "2023-12-21",
+     "fonte": "Formulário de Referência 2025 Regenera Rio",
+     "url": "https://filemanager-cdn.mziq.com/published/9aa4d8c5-604a-4097-acc9-2d8be8f71593/ccd60040-627a-41cc-9c1a-5362d6dc966d_153892_026921_18122025101221.pdf"
+    }
+   ],
+   "originacao": "Crédito de concessão de resíduos com contrato longo (Comlurb até 2036), mas com risco agora atrelado à Aegea, rebaixada e com alavancagem alta; vale avaliar se a fiança da Aegea foi formalizada e se há espaço para recompra/refinanciamento do papel pela nova controladora, ou para uma nova estrutura com garantias do projeto (recebíveis Comlurb).",
+   "pendencias": [
+    "Resultado da AGD de 10/23 out/2025 (ata em ciclusrio.com.br bloqueada por robots) e confirmação de que a Aegea substituiu a Simpar como fiadora",
+    "Rating atual da emissão CCLS11/CCLS21 (último visto: brAA+ S&P vinculado à Simpar, fev/2025)",
+    "Números de 2025 e 1S26 da Regenera Rio (só confirmado prejuízo em 2025)",
+    "Página Mais Retorno de CCLS11 não abriu (permissão não respondida); cronograma de amortização não verificado",
+    "Ação de S&P posterior ao CreditWatch de abr/2026 sobre a Aegea"
+   ],
+   "fontes": [
+    {
+     "titulo": "Proposta da Administração AGD 1ª emissão Ciclus Ambiental Rio (set/2025)",
+     "url": "https://api.mziq.com/mzfilemanager/v2/d/0f7b667d-72c4-4013-ad2f-58abeff9b857/ff02a521-abb9-589d-ebf2-147e56defbcd?origin=1"
+    },
+    {
+     "titulo": "Formulário de Referência 2025 – Regenera Rio S.A.",
+     "url": "https://filemanager-cdn.mziq.com/published/9aa4d8c5-604a-4097-acc9-2d8be8f71593/ccd60040-627a-41cc-9c1a-5362d6dc966d_153892_026921_18122025101221.pdf"
+    },
+    {
+     "titulo": "Ata AGOE Regenera Rio 30/04/2026",
+     "url": "https://api.mziq.com/mzfilemanager/v2/d/0717e90d-b319-4e5f-bfaf-ee4a1db1250e/fcec6eef-7f97-13b0-4d62-5e817c03f620?origin=2"
+    },
+    {
+     "titulo": "InfoMoney – Simpar conclui venda da Ciclus Ambiental para Aegea",
+     "url": "https://www.infomoney.com.br/mercados/simpar-simh3-conclui-venda-da-ciclus-ambiental-para-aegea-por-r-109-bi/"
+    },
+    {
+     "titulo": "XP – Aegea adquire Ciclus Ambiental do Grupo Simpar",
+     "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/aegea-adquire-ciclus-ambiental-do-grupo-simpar/"
+    },
+    {
+     "titulo": "Money Times – Aegea testa confiança do mercado com revisão no balanço",
+     "url": "https://www.moneytimes.com.br/aegea-alto-endividamento-e-revisao-no-balanco-muda-status-da-renda-fixa-da-empresa-aguas-do-rio-se-afoga-junto-e-ipo-fica-para-2027/"
+    },
+    {
+     "titulo": "InfoMoney – Fitch corta rating da Aegea e define perspectiva estável",
+     "url": "https://www.infomoney.com.br/mercados/fitch-corta-rating-da-aegea-e-define-perspectiva-estavel/"
+    },
+    {
+     "titulo": "XP – Aegea é rebaixada para A(bra) pela Fitch",
+     "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/aegea-e-rebaixada-para-abra-pela-fitch-perspectiva-estavel/"
+    },
+    {
+     "titulo": "S&P – relatório Simpar (fev/2025) com rating da emissão Ciclus",
+     "url": "https://api.mziq.com/mzfilemanager/v2/d/0f7b667d-72c4-4013-ad2f-58abeff9b857/3f319eb5-4b83-2d24-b07c-d91f8a4e218f?origin=2"
+    },
+    {
+     "titulo": "Mayer Brown – emissão de debêntures da Ciclus Ambiental (2022)",
+     "url": "https://www.mayerbrown.com/pt/news/2022/07/tauil-chequer-advogados-advises-on-the-issuance-of-ciclus-ambiental-debentures"
+    }
+   ],
+   "pesquisado_em": "2026-10-21"
+  },
+  "RAIZ:UTEG": {
+   "nome": "UTE GNA II Geração de Energia S.A.",
+   "tipo": "iliquida",
+   "codigos": [
+    "UTEG12",
+    "UTEG22"
+   ],
+   "nivel": "atencao",
+   "gatilho": "ilíquida na Kinea ~R$ 377 mi",
+   "abertura_no_dossie": null,
+   "resumo": "A UTE GNA II, maior térmica a gás do país (1.673 MW, Porto do Açu), está parada desde 10/08/2026 por falha no disjuntor da turbina a vapor, que afetou o transformador elevador. O seguro foi acionado e não há prazo de retorno divulgado. Não achei notícia de retomada até 21/10/2026, nem ação de rating depois da atribuição de AA-(bra) pela Fitch em 19/01/2026.",
+   "papel": "UTEG12 / UTEG22 (2ª emissão, séries 1 e 2) · volume não localizado · IPCA + 9,5811% a.a. · venc. 15/12/2045 (UTEG12) e 15/12/2042 (UTEG22), amortização semestral a partir de 15/12/2026 · garantia real · incentivadas",
+   "controle": "Joint venture de bp, Siemens Energy e SPIC Brasil (participações não localizadas); complexo GNA no Porto do Açu (RJ), ao lado da UTE GNA I",
+   "numeros": "",
+   "sinais": [
+    {
+     "tipo": "operacional",
+     "texto": "Usina parada desde 10/08/2026 após falha no disjuntor da turbina a vapor, que comprometeu o transformador elevador. A indisponibilidade foi comunicada ao ONS. A empresa não deu previsão de retorno e diz que avalia o plano com o fabricante. As instalações compartilhadas com a GNA I seguem operando.",
+     "data": "2026-08-19",
+     "fonte": "Terra/Reuters",
+     "url": "https://www.terra.com.br/economia/maior-termica-do-brasil-e-paralisada-apos-falha-em-equipamento,36181ec3e3fa8da8b87cffb90c006e97ab6z4n6x.html"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "Pelo fato relevante, a companhia comunicou o evento à seguradora, com vistoria e regulação do sinistro em andamento, e informará a data prevista de retorno e os fatos relevantes aos debenturistas.",
+     "data": "2026-08-20",
+     "fonte": "Clube FII News",
+     "url": "https://www.clubefiinews.com.br/acoes/ute-gna-ii-interrompe-operacoes-devido-a-falha-tecnica"
+    },
+    {
+     "tipo": "operacional",
+     "texto": "Em 24/08/2026 a geração seguia sem previsão de retomada. Nas buscas até 21/10/2026, não achei comunicado de volta à operação.",
+     "data": "2026-08-24",
+     "fonte": "Tribuna NF",
+     "url": "https://www.tribunanf.com.br/a-maior-termeletrica-do-brasil-parou-no-porto-do-acu-e-poucos-parecem-ter-notado/"
+    },
+    {
+     "tipo": "rating",
+     "texto": "A Fitch atribuiu rating AA-(bra), perspectiva estável, a uma emissão da UTE GNA II em 19/01/2026. Não achei ação posterior à parada, como rebaixamento ou observação.",
+     "data": "2026-01-19",
+     "fonte": "BTG Pactual Credit Research – Atualização de Ratings 26/01/2026",
+     "url": "https://content.btgpactual.com/research/files/file/pt-BR/2026-01-26T093804.315_Atualiza__o_de_Ratings___26_01_2026.pdf"
+    }
+   ],
+   "originacao": "Uma parada longa da planta antes da 1ª amortização das debêntures (15/12/2026) pode levar a pedido de waiver de cobertura ou a uso de reservas. Vale acompanhar a regulação do sinistro e uma eventual revisão da Fitch, mas não há tese de renegociação no momento.",
+   "pendencias": [
+    "Confirmar se a usina voltou a operar: não achei comunicado de retorno até 21/10/2026",
+    "Ver se a Fitch fez alguma ação depois de 10/08/2026; o comunicado original da atribuição de 19/01/2026 também não foi lido",
+    "Volume, agente fiduciário e coordenador da 2ª emissão (UTEG12/UTEG22) e os papéis da 1ª emissão (UTEG31 está excluída, venceu em 2022)",
+    "Covenants (ICSD), contas reserva e eventuais AGDs de debenturistas depois da parada",
+    "Demonstrações financeiras de 2025 e do 1S26: receita, EBITDA, dívida líquida e caixa",
+    "maisretorno.com/debentures/uteg11 bloqueado (permissão não respondida); renovainvest.com.br/?p=104595 deu erro ao abrir"
+   ],
+   "fontes": [
+    {
+     "titulo": "Terra/Reuters – Maior térmica do Brasil é paralisada após falha em equipamento",
+     "url": "https://www.terra.com.br/economia/maior-termica-do-brasil-e-paralisada-apos-falha-em-equipamento,36181ec3e3fa8da8b87cffb90c006e97ab6z4n6x.html"
+    },
+    {
+     "titulo": "Portal em Destaque – Maior termelétrica do Brasil interrompe operação após falha em disjuntor",
+     "url": "https://portalemdestaque.com.br/maior-termeletrica-do-brasil-interrompe-operacao-apos-falha-em-disjuntor/"
+    },
+    {
+     "titulo": "Clube FII News – UTE GNA II interrompe operações devido a falha técnica",
+     "url": "https://www.clubefiinews.com.br/acoes/ute-gna-ii-interrompe-operacoes-devido-a-falha-tecnica"
+    },
+    {
+     "titulo": "Tribuna NF – A maior termelétrica do Brasil parou no Porto do Açu",
+     "url": "https://www.tribunanf.com.br/a-maior-termeletrica-do-brasil-parou-no-porto-do-acu-e-poucos-parecem-ter-notado/"
+    },
+    {
+     "titulo": "bp – UTE GNA II recebe aval da ANEEL para iniciar operação comercial",
+     "url": "https://www.bp.com/pt_br/brazil/home/noticias/press-releases/cod-gna2.html"
+    },
+    {
+     "titulo": "BTG Pactual – Atualização Quinzenal de Ratings 26/01/2026",
+     "url": "https://content.btgpactual.com/research/files/file/pt-BR/2026-01-26T093804.315_Atualiza__o_de_Ratings___26_01_2026.pdf"
+    },
+    {
+     "titulo": "Mais Retorno – UTEG12",
+     "url": "https://maisretorno.com/debentures/uteg12"
+    },
+    {
+     "titulo": "Mais Retorno – UTEG22",
+     "url": "https://maisretorno.com/debentures/uteg22"
+    },
+    {
+     "titulo": "Mais Retorno – UTEG31",
+     "url": "https://maisretorno.com/debentures/uteg31"
+    }
+   ],
+   "pesquisado_em": "2026-10-21"
+  },
+  "RAIZ:CBRD": {
+   "nome": "Companhia Brasileira de Distribuição (GPA)",
+   "tipo": "iliquida",
+   "codigos": [
+    "CBRDA8",
+    "CBRDB8"
+   ],
+   "nivel": "evento",
+   "gatilho": "ilíquida na AZ Quest ~R$ 142 mi; emissor em recuperação extrajudicial",
+   "abertura_no_dossie": null,
+   "resumo": "O plano de recuperação extrajudicial do GPA (~R$ 4,57 bi em créditos quirografários) foi homologado pela 3ª Vara de Falências de SP em 07/10/2026, com publicação no DJEN em 20/10/2026. A partir daí correm 60 dias para emitir as novas debêntures A e B, e a B3 bloqueou as debêntures da 18ª e da 20ª emissões e os CRIs Virgo 80ª até a troca. A Fitch rebaixou o GPA de A(bra) para CCC(bra) em 02/03/2026 e para C(bra) em mar/2026.",
+   "papel": "Papéis antigos da raiz CBRD (18ª e 20ª emissões; XP cita CBRDA8/CBRDB8) bloqueados na B3 para troca · Novas Debêntures A: 1ª série até R$ 1,5 bi a CDI+2,50%, vencimento mar/2031, amortização de 2028 a 2031, sem garantia; 2ª série até R$ 1,13 bi a CDI+2,50%, conversível em ações · Novas Debêntures B: R$ 0,30 por R$ 1, DI sem spread, juros capitalizados até 2031, bullet em 10/09/2036 · não incentivadas",
+   "controle": "Companhia aberta (PCAR3) de varejo alimentar (Pão de Açúcar, Extra Mercado, Minuto Pão de Açúcar); o Grupo Coelho Diniz chegou a 24,5% do capital em set/2025 e passou a dividir o controle (segundo a XP).",
+   "numeros": "2T26 (R$ mi): receita líquida 4.200; EBITDA ajustado 450 (margem 10,6%); prejuízo líquido 252; dívida líquida 3.647 em 30/06/2026 (3,9x EBITDA ajustado pré-IFRS 16, últimos 12 meses); pro forma após o plano: dívida líquida 1.182 e 1,3x",
+   "sinais": [
+    {
+     "tipo": "rj",
+     "texto": "Plano de recuperação extrajudicial homologado em 07/10/2026 pela juíza Larissa Gaspar Tunala (3ª Vara de Falências e RJ de SP). As seis impugnações, que somavam 7,98% dos créditos, foram rejeitadas. Cabe apelação ao TJSP, sem efeito suspensivo.",
+     "data": "2026-10-07",
+     "fonte": "Capital Aberto",
+     "url": "https://capitalaberto.com.br/empresas/2026/10/justica-homologa-recuperacao-extrajudicial-do-gpa"
+    },
+    {
+     "tipo": "rj",
+     "texto": "Sentença publicada no DJEN em 20/10/2026, data que inicia os prazos do plano: 30 dias para o aporte da Opção A (meta de R$ 200 mi) e 60 dias para emitir as Novas Debêntures A e B. A B3 bloqueou as debêntures da 18ª e da 20ª emissões e os CRIs Virgo 80ª (1ª e 2ª séries) até a troca.",
+     "data": "2026-10-20",
+     "fonte": "BPMoney",
+     "url": "https://bpmoney.com.br/negocios/empresas/gpa-recuperacao-extrajudicial-b3-bloqueia-titulos-60-dias/"
+    },
+    {
+     "tipo": "agd",
+     "texto": "Credores com mais da metade dos créditos sujeitos ao plano (e mais de dois terços dos que escolheram a Opção A) aprovaram o Term Sheet das novas debêntures. A emissão dependia da homologação.",
+     "data": "2026-08-12",
+     "fonte": "Forbes Brasil",
+     "url": "https://forbes.com.br/forbes-money/2026/08/gpa-recuperacao-extrajudicial-debentures/"
+    },
+    {
+     "tipo": "rj",
+     "texto": "Eleição de opções encerrada em 13/07/2026: Opção A com 88,4% (sem deságio nominal, condicionada a dinheiro novo), Opção B com 8,34% e Opção C com 3,26% (deságio de 70%, quitação em 2036). A adesão ao plano foi de 57,49%.",
+     "data": "2026-07-13",
+     "fonte": "Capital Aberto",
+     "url": "https://capitalaberto.com.br/empresas/2026/10/justica-homologa-recuperacao-extrajudicial-do-gpa"
+    },
+    {
+     "tipo": "rating",
+     "texto": "Fitch rebaixou o rating nacional de longo prazo do GPA de CCC(bra) para C(bra) após o anúncio do plano de recuperação extrajudicial. A agência indicou que o rating pode ir a RD se o plano for formalizado.",
+     "data": "2026-03-11",
+     "fonte": "Eu Quero Investir",
+     "url": "https://euqueroinvestir.com/acoes/recuperacao-extrajudicial-derruba-rating-do-gpa"
+    },
+    {
+     "tipo": "rating",
+     "texto": "Fitch rebaixou o GPA em quatro degraus, de A(bra) para CCC(bra), por risco de refinanciamento. Citou alavancagem de cerca de 4,8x e fluxo de caixa livre negativo previsto para 2026 e 2027.",
+     "data": "2026-03-02",
+     "fonte": "InvestNews",
+     "url": "https://investnews.com.br/negocios/fitch-gpa-rebaixa-pcar3-2026/"
+    },
+    {
+     "tipo": "auditor",
+     "texto": "Segundo a XP, as demonstrações apontaram incerteza relevante sobre a continuidade operacional, com capital de giro negativo e R$ 1,7 bi em debêntures vencendo em 2026.",
+     "data": "2026-01",
+     "fonte": "XP Investimentos",
+     "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/gpa-cbd-acompanhe-aqui-a-recuperacao-extrajudicial/"
+    },
+    {
+     "tipo": "resultado",
+     "texto": "2T26: receita líquida de R$ 4,2 bi (-9,6%), EBITDA ajustado de R$ 450 mi (+7,3%), prejuízo de R$ 252 mi e dívida líquida de R$ 3,647 bi (3,9x). A companhia projeta 1,3x pro forma após o plano.",
+     "data": "2026-08-04",
+     "fonte": "Diário do Grande ABC",
+     "url": "https://www.dgabc.com.br/Noticia/4339346/gpa-prejuizo-liquido-consolidado-soma-r-252-mi-no-2-trimestre-alta-de-16-2"
+    }
+   ],
+   "originacao": "A dívida está sendo trocada por novas debêntures (CDI+2,50% até 2031, uma série conversível) dentro do plano homologado, e não há espaço de reestruturação bilateral. A tese fica no secundário dos novos papéis após a emissão (prevista em até 60 dias de 20/10) e em eventual financiamento lastreado em recebíveis de cartão. Fora isso, sem tese no momento.",
+   "pendencias": [
+    "Confirmar quais códigos CBRD a AZ Quest carrega (Mais Retorno não abriu) e se todos estão sujeitos à recuperação extrajudicial",
+    "Ação de rating da Fitch após a homologação (possível RD) não localizada",
+    "Códigos, escrituras e agente fiduciário das Novas Debêntures A e B ainda não emitidos/encontrados",
+    "Eventual apelação ao TJSP contra a homologação",
+    "Caixa e dívida de curto prazo do 2T26 não localizados"
+   ],
+   "fontes": [
+    {
+     "titulo": "Capital Aberto: Justiça homologa recuperação extrajudicial do GPA",
+     "url": "https://capitalaberto.com.br/empresas/2026/10/justica-homologa-recuperacao-extrajudicial-do-gpa"
+    },
+    {
+     "titulo": "Times Brasil: GPA obtém aval da Justiça para reorganizar R$ 4,57 bi em dívidas",
+     "url": "https://timesbrasil.com.br/empresas-e-negocios/gpa-obtem-aval-da-justica-para-reorganizar-r-457-bi-em-dividas/"
+    },
+    {
+     "titulo": "BPMoney: Homologado o plano do GPA, B3 bloqueia títulos por até 60 dias",
+     "url": "https://bpmoney.com.br/negocios/empresas/gpa-recuperacao-extrajudicial-b3-bloqueia-titulos-60-dias/"
+    },
+    {
+     "titulo": "O Tempo: Plano de recuperação extrajudicial do GPA entra em vigor",
+     "url": "https://www.otempo.com.br/economia/2026/10/21/plano-de-recuperacao-extrajudicial-do-grupo-pao-de-acucar-entra-em-vigor-com-prazos-para-credores"
+    },
+    {
+     "titulo": "XP: GPA/CBD, acompanhe a Recuperação Extrajudicial",
+     "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/gpa-cbd-acompanhe-aqui-a-recuperacao-extrajudicial/"
+    },
+    {
+     "titulo": "Forbes Brasil: GPA dá novo passo na recuperação extrajudicial",
+     "url": "https://forbes.com.br/forbes-money/2026/08/gpa-recuperacao-extrajudicial-debentures/"
+    },
+    {
+     "titulo": "InvestNews: Fitch rebaixa GPA",
+     "url": "https://investnews.com.br/negocios/fitch-gpa-rebaixa-pcar3-2026/"
+    },
+    {
+     "titulo": "Eu Quero Investir: Recuperação extrajudicial derruba rating do GPA",
+     "url": "https://euqueroinvestir.com/acoes/recuperacao-extrajudicial-derruba-rating-do-gpa"
+    },
+    {
+     "titulo": "Diário do Grande ABC: GPA tem prejuízo de R$ 252 mi no 2T26",
+     "url": "https://www.dgabc.com.br/Noticia/4339346/gpa-prejuizo-liquido-consolidado-soma-r-252-mi-no-2-trimestre-alta-de-16-2"
+    }
+   ],
+   "pesquisado_em": "2026-10-21"
+  },
+  "RAIZ:TAEB": {
+   "nome": "Tereos Açúcar e Energia Brasil S.A.",
+   "tipo": "iliquida",
+   "codigos": [
+    "TAEB15"
+   ],
+   "nivel": "evento",
+   "gatilho": "ilíquida na Sparta ~R$ 97 mi",
+   "abertura_no_dossie": null,
+   "resumo": "A S&P rebaixou a Tereos Brasil em dois degraus, de brAA+ para brAA- (perspectiva estável), em 10/06/2026, junto com uma ação parecida sobre a controladora francesa, que teve prejuízo recorde de €590 mi em 2025/26 e alavancagem perto de 6x. Já a operação brasileira segue com alavancagem moderada (dívida líquida/EBITDA ajustado de 2,1x) e caixa de R$ 2,0 bi contra cerca de R$ 0,8-1,0 bi de dívida de curto prazo.",
+   "papel": "TAEB15 · 5ª emissão, série única · R$ 480 mi na emissão · IPCA + 6,0661% a.a. · vencimento 15/06/2027 · amortização anual desde 15/06/2025 · quirografária · incentivada (Lei 12.431, debênture verde)",
+   "controle": "Controlada pelo grupo francês Tereos (cooperativa agrícola, açúcar/etanol/amido); no Brasil, produz açúcar, etanol e energia com seis usinas no noroeste de SP, depois da venda da Usina Andrade à Viralcool",
+   "numeros": "Exercício encerrado em 31/03/2026 (R$ mi): receita líquida 5.703 (-16%); EBITDA ajustado 1.059 (-34%; 1.317 com IFRS 16); lucro líquido 137 (-62%); caixa 1.996; dívida bruta 4.193; dívida líquida 2.197; dívida líquida/EBITDA ajustado 2,1x (1,7x antes); empréstimos de curto prazo 990",
+   "sinais": [
+    {
+     "tipo": "rating",
+     "texto": "S&P rebaixou a Tereos Brasil e sua 1ª emissão de debêntures de brAA+ para brAA- (2 degraus), perspectiva estável, junto com ação parecida sobre a controladora. Motivos citados: preço menor do açúcar, queda de EBITDA e margens e alavancagem maior. A S&P projeta EBITDA de ~R$ 1,2 bi no próximo exercício, alavancagem líquida ajustada de 2,7x e FOCF negativo.",
+     "data": "2026-06-10",
+     "fonte": "XP Investimentos (relato da ação da S&P)",
+     "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/tereos-e-rebaixada-para-braa-pela-sp-perspectiva-estavel/"
+    },
+    {
+     "tipo": "resultado",
+     "texto": "Controladora Tereos (França): prejuízo recorde de €590 mi em 2025/26, com baixa contábil não caixa de €499 mi, e EBITDA de €416 mi. Para 2026/27 projeta EBITDA de €275-350 mi, corte drástico de capex e venda de ativos não essenciais. Segundo a S&P, a alavancagem do grupo vai a 7,5-8,5x até mar/2027.",
+     "data": "2026-05-28",
+     "fonte": "NovaCana / Reuters",
+     "url": "https://www.novacana.com/noticias/tereos-francesa-registra-prejuizo-recorde-preve-2026-27-dificil-280526"
+    },
+    {
+     "tipo": "resultado",
+     "texto": "Tereos Brasil no exercício 25/26: receita -16%, EBITDA ajustado -34%, lucro líquido -62% (R$ 137 mi, com ganho de R$ 285 mi na venda da Usina Andrade). A dívida líquida caiu para R$ 2.197 mi, mas a alavancagem subiu para 2,1x (1,7x antes).",
+     "data": "2026-06-18",
+     "fonte": "Demonstrações financeiras Tereos Açúcar e Energia Brasil (publicação Valor RI)",
+     "url": "https://s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/valorri-uploads/bs/2026/x/I/1DOxn2SWAdYcdfInXwpg/tereos1589925726062026.pdf"
+    },
+    {
+     "tipo": "operacional",
+     "texto": "Venda da Usina Andrade (Pitangueiras-SP, ~2 mi t de cana) à Viralcool por R$ 700 mi, concluída em 26/03/2026, o que reduz a escala operacional.",
+     "data": "2026-03-26",
+     "fonte": "Demonstrações financeiras Tereos Açúcar e Energia Brasil (publicação Valor RI)",
+     "url": "https://s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/valorri-uploads/bs/2026/x/I/1DOxn2SWAdYcdfInXwpg/tereos1589925726062026.pdf"
+    },
+    {
+     "tipo": "noticia",
+     "texto": "Análise de crédito da XP aponta compressão relevante de margens, base operacional menor depois da venda da Andrade e menor capacidade de suporte da controladora francesa, que está sob pressão financeira.",
+     "data": "2026-07-14",
+     "fonte": "XP Investimentos",
+     "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/analise-credito-tereos-acucar-energia-brasil/"
+    }
+   ],
+   "originacao": "A TAEB15 vence em jun/2027 e o grupo, pressionado, corta capex e vende ativos. Isso pode abrir janela de refinanciamento ou alongamento da dívida local, inclusive emissão nova incentivada ou CRA para trocar a dívida de curto prazo. Vale acompanhar se a controladora puxa caixa do Brasil (dividendos ou intercompany de R$ 1,2 bi).",
+   "pendencias": [
+    "Página maisretorno.com/debentures/taeb11 não abriu (permissão não respondida); outros códigos da raiz TAEB não foram confirmados, apenas a TAEB15",
+    "Forbes Agro (URL do item) não abriu; os números da controladora vieram da NovaCana/Reuters",
+    "Saldo atual da TAEB15, agente fiduciário e covenants da escritura (limites e cumprimento) não verificados",
+    "Parecer do auditor (EY) sobre o exercício 25/26 não visto (ressalva/ênfase)",
+    "Divergência de nomenclatura: a S&P fala em '1ª emissão de debêntures' e a Mais Retorno classifica a TAEB15 como 5ª emissão",
+    "Ratings da Fitch/Moody's sobre a controladora não verificados",
+    "Nenhuma AGD de debenturistas encontrada; não houve consulta a fontes da CVM"
+   ],
+   "fontes": [
+    {
+     "titulo": "Tereos é rebaixada para 'brAA-' pela S&P; perspectiva 'Estável' - XP Investimentos",
+     "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/tereos-e-rebaixada-para-braa-pela-sp-perspectiva-estavel/"
+    },
+    {
+     "titulo": "Análise (Crédito): Tereos Açúcar e Energia Brasil S.A. - XP Investimentos",
+     "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/analise-credito-tereos-acucar-energia-brasil/"
+    },
+    {
+     "titulo": "Demonstrações financeiras Tereos Açúcar e Energia Brasil S.A. 31/03/2026 (Valor RI)",
+     "url": "https://s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/valorri-uploads/bs/2026/x/I/1DOxn2SWAdYcdfInXwpg/tereos1589925726062026.pdf"
+    },
+    {
+     "titulo": "Tereos francesa registra prejuízo recorde e prevê 2026/27 'difícil' - NovaCana",
+     "url": "https://www.novacana.com/noticias/tereos-francesa-registra-prejuizo-recorde-preve-2026-27-dificil-280526"
+    },
+    {
+     "titulo": "Tereos tem prejuízo com queda nos preços e redução de volumes no Brasil - CNN Brasil",
+     "url": "https://www.cnnbrasil.com.br/agro/tereos-tem-prejuizo-com-queda-nos-precos-e-reducao-de-volumes-no-brasil/"
+    },
+    {
+     "titulo": "TAEB15 - Mais Retorno",
+     "url": "https://maisretorno.com/debentures/taeb15"
+    },
+    {
+     "titulo": "Tereos emissão R$ 480 milhões debêntures incentivadas - NovaCana",
+     "url": "https://www.novacana.com/noticias/tereos-emissao-r-480-milhoes-debentures-incentivadas-250621"
+    },
+    {
+     "titulo": "Tereos emite debênture de infraestrutura verde no valor de R$ 480 milhões - Poder360",
+     "url": "https://www.poder360.com.br/economia/tereos-emite-debenture-de-infraestrutura-verde-no-valor-de-r-480-milhoes/"
+    }
+   ],
+   "pesquisado_em": "2026-10-21"
+  }
+ }
+}

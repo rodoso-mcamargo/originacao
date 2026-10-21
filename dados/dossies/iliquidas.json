@@ -1,0 +1,192 @@
+{
+  "atualizado_em": "2026-10-21",
+  "nota": "Nome do emissor das debêntures ilíquidas da seção de gestoras (a CDA só traz a raiz do código). Nome resolvido pela série 11/12/13 do código no Mais Retorno ou pela ANBIMA; 'est' = sinal de estresse achado em busca na web em 19/10/2026 (triagem, não análise de crédito).",
+  "raizes": {
+    "TOTS": {
+      "nome": "TOTVS S.A."
+    },
+    "ROTY": {
+      "nome": "Concessionária Rota Sorocabana S.A."
+    },
+    "RDCD": {
+      "nome": "Redecard Instituição de Pagamento S.A."
+    },
+    "SBSP": {
+      "nome": "Sabesp"
+    },
+    "CTEE": {
+      "nome": "ISA Energia Brasil S.A."
+    },
+    "CLMO": {
+      "nome": "Calamo Distribuidora de Produtos de Beleza S.A."
+    },
+    "ELTN": {
+      "nome": "Eletronorte"
+    },
+    "PTCE": {
+      "nome": "Portocem Geração de Energia S.A."
+    },
+    "INPS": {
+      "nome": "Inpasa Agroindustrial S.A."
+    },
+    "EDPS": {
+      "nome": "EDP Transmissão Nordeste S.A."
+    },
+    "LNUV": {
+      "nome": "Concessionária Linha Universidade S.A."
+    },
+    "ONZE": {
+      "nome": "Bloco de Onze Aeroportos do Brasil S.A."
+    },
+    "TRPI": {
+      "nome": "Tropicália Transmissora de Energia S.A."
+    },
+    "EGIE": {
+      "nome": "Engie Brasil Energia S.A."
+    },
+    "MOTV": {
+      "nome": "Motiva Infraestrutura de Mobilidade S.A."
+    },
+    "CEED": {
+      "nome": "CEEE-D (distribuição RS)"
+    },
+    "RPAS": {
+      "nome": "Rota do Pará S.A.",
+      "est": {
+        "nivel": "evento",
+        "resumo": "Covenant de dívida líquida/EBITDA rompido em dez/2025 (EBITDA ajustado negativo), waiver ainda não formalizado; dívida toda no curto prazo e ênfase de continuidade operacional no ITR 1T26 (Deloitte). Governo do Pará suspendeu 5 das 8 praças de pedágio de 18/03 a 28/06/2026; AGD de 19/05 suspendeu a votação de vencimento antecipado. Juros de dez/2026 capitalizados.",
+        "data": "2026-07-31",
+        "fonte": "ITR 1T26 Rota do Pará / Correio de Carajás",
+        "url": "https://rotadopara.com.br/wp-content/uploads/260731_Demonstracoes-Financeiras-1T-2026.pdf"
+      }
+    },
+    "UTEG": {
+      "nome": "UTE GNA II Geração de Energia S.A.",
+      "est": {
+        "nivel": "atencao",
+        "resumo": "Usina parada desde 10/08/2026 por falha no disjuntor da turbina a vapor, sem prazo de retorno divulgado e com seguro acionado; não achei notícia de retomada nem ação de rating depois da parada.",
+        "data": "2026-08-19",
+        "fonte": "Terra/Reuters",
+        "url": "https://www.terra.com.br/economia/maior-termica-do-brasil-e-paralisada-apos-falha-em-equipamento,36181ec3e3fa8da8b87cffb90c006e97ab6z4n6x.html"
+      }
+    },
+    "GDSN": {
+      "nome": "GDPAR SN Participações em Projetos Solares S.A."
+    },
+    "TJMM": {
+      "nome": "Transmissora José Maria de Macedo de Eletricidade S.A."
+    },
+    "EXSE": {
+      "nome": "Exes Securitizadora S.A."
+    },
+    "ASHS": {
+      "nome": "Autogeração Solar SPE S.A."
+    },
+    "CLGE": {
+      "nome": "Caldeirão Grande Energias Renováveis S.A."
+    },
+    "VNYD": {
+      "nome": "SE Vineyards Transmissão de Energia S.A."
+    },
+    "VERT": {
+      "nome": "Vert Companhia Securitizadora"
+    },
+    "OMGE": {
+      "nome": "Omega Geração S.A."
+    },
+    "CEEB": {
+      "nome": "Coelba"
+    },
+    "COMR": {
+      "nome": "Comerc Participações S.A."
+    },
+    "BZGY": {
+      "nome": "Brazil Green Opportunities Participações S.A."
+    },
+    "AXS3": {
+      "nome": "AXS Energia UFV Goiás SPE S.A."
+    },
+    "ELET": {
+      "nome": "Eletrobras"
+    },
+    "RBRA": {
+      "nome": "Opea Securitizadora S.A."
+    },
+    "CBRD": {
+      "nome": "GPA (Companhia Brasileira de Distribuição)",
+      "est": {
+        "nivel": "evento",
+        "resumo": "Recuperação extrajudicial homologada em 07/10/2026, com publicação em 20/10. A B3 bloqueou as debêntures da 18ª e da 20ª emissões para troca por novas debêntures (A: CDI+2,50% até 2031; B: 30% do crédito, DI, até 2036) em até 60 dias.",
+        "data": "2026-10-20",
+        "fonte": "BPMoney",
+        "url": "https://bpmoney.com.br/negocios/empresas/gpa-recuperacao-extrajudicial-b3-bloqueia-titulos-60-dias/"
+      }
+    },
+    "BZGE": {
+      "nome": "Brazil Green Opportunities II SPE Ltda."
+    },
+    "TBSP": {
+      "nome": "TIM Brasil Serviços e Participações S.A."
+    },
+    "PLAC": {
+      "nome": "Platão Capital S.A."
+    },
+    "PCHS": {
+      "nome": "Travessia Securitizadora de Créditos Financeiros S.A."
+    },
+    "VTEG": {
+      "nome": "Vital Engenharia Ambiental S.A."
+    },
+    "APPT": {
+      "nome": "Apiúna Participações S.A."
+    },
+    "TAEB": {
+      "nome": "Tereos Açúcar e Energia Brasil S.A.",
+      "est": {
+        "nivel": "evento",
+        "resumo": "A S&P rebaixou a Tereos Brasil e sua debênture em dois degraus, de brAA+ para brAA- (perspectiva estável), por EBITDA menor e alavancagem maior, junto com ação parecida sobre o grupo francês, que teve prejuízo recorde em 2025/26.",
+        "data": "2026-06-10",
+        "fonte": "XP Investimentos (relato da ação da S&P)",
+        "url": "https://conteudos.xpi.com.br/renda-fixa/relatorios/tereos-e-rebaixada-para-braa-pela-sp-perspectiva-estavel/"
+      }
+    },
+    "ECOA": {
+      "nome": "Ecourbis Ambiental S.A."
+    },
+    "DASA": {
+      "nome": "Diagnósticos da América S.A. (Dasa)"
+    },
+    "ELPL": {
+      "nome": "Eletropaulo (Enel SP)"
+    },
+    "PEAG": {
+      "nome": "Pedra Agroindustrial S.A."
+    },
+    "CCIA": {
+      "nome": "Cocal Comércio Indústria Canaã Açúcar e Álcool S.A.",
+      "est": {
+        "nivel": "atencao",
+        "resumo": "Lucro caiu 80% no trimestre com menor moagem e queda nas vendas de açúcar. Pressão de resultado, sem evento de crédito.",
+        "data": null,
+        "fonte": "AgFeed",
+        "url": "https://agfeed.com.br/negocios/cocal-reduz-lucro-em-80-no-trimestre-com-menor-moagem-e-queda-nas-vendas-de-acucar"
+      }
+    },
+    "MESA": {
+      "nome": "Mirante Energética S.A."
+    },
+    "THOP": {
+      "nome": "Thopen Solar 10 S.A.",
+      "est": {
+        "nivel": "evento",
+        "resumo": "A controladora e fiadora Thopen Energy pediu recuperação judicial (dívida de ~R$ 4,5 bi; notícia de 18/08/2026), depois de ser rebaixada pela Moody's Local de A.br para CCC-.br em 28/07. A Thopen Solar 10 teve perspectiva revisada para negativa em 24/07 por atraso nas usinas.",
+        "data": "2026-08-18",
+        "fonte": "Economic News Brasil / Moody's Local",
+        "url": "https://economicnewsbrasil.com.br/2026/08/18/rating-da-thopen-recuperacao-judicial/"
+      }
+    },
+    "SALT": {
+      "nome": null
+    }
+  }
+}
