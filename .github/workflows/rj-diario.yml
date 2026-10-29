@@ -14,6 +14,7 @@ permissions:
 jobs:
   coleta:
     runs-on: ubuntu-latest
+    concurrency: { group: push-main, cancel-in-progress: false }
     steps:
       - uses: actions/checkout@v4
 
@@ -31,4 +32,4 @@ jobs:
           git add dados/rj
           git diff --cached --quiet && echo "Nada novo para commitar." && exit 0
           git commit -m "Coleta diária: monitor RJ/cautelar pré-RJ"
-          git push
+          for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && break; [ $i = 5 ] && exit 1; sleep $((i*10)); done
