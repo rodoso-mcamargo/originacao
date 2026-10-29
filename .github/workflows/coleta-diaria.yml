@@ -247,7 +247,6 @@ jobs:
     needs: [taxas, cri_cra, reune]
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
-    concurrency: { group: push-main, cancel-in-progress: false }
     timeout-minutes: 10
 
     steps:

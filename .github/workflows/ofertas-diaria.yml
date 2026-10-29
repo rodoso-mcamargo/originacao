@@ -18,7 +18,6 @@ jobs:
   coletar:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    concurrency: { group: push-main, cancel-in-progress: false }
 
     steps:
       - uses: actions/checkout@v4

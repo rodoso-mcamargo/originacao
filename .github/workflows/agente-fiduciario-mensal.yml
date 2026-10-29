@@ -25,7 +25,6 @@ jobs:
     name: Coletar relatorios de agente fiduciario
     runs-on: ubuntu-latest
     timeout-minutes: 120
-    concurrency: { group: push-main, cancel-in-progress: false }
 
     steps:
       - uses: actions/checkout@v4

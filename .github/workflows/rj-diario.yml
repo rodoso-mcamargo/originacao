@@ -14,7 +14,6 @@ permissions:
 jobs:
   coleta:
     runs-on: ubuntu-latest
-    concurrency: { group: push-main, cancel-in-progress: false }
     steps:
       - uses: actions/checkout@v4
 
