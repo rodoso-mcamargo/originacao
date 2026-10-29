@@ -1,0 +1,108 @@
+{
+ "fonte": "SND - debentures.com.br (ANBIMA/B3)",
+ "urls": {
+  "caracteristicas": "https://www.debentures.com.br/exploreosnd/consultaadados/emissoesdedebentures/caracteristicas_e.asp?Ativo=",
+  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=29/10/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
+ },
+ "data_referencia": "2026-10-29",
+ "gerado_em": "2026-10-29T15:20:34+00:00",
+ "fonte_gerado_em": {
+  "caracteristicas": "2026-10-29T12:20:07",
+  "agenda": "2026-10-29T12:20:13"
+ },
+ "universo_codigos": 1277,
+ "universo_cnpjs": 385,
+ "emissores_com_vencimento_24m": 303,
+ "top10_vencimento_24m": [
+  {
+   "cnpj_emissor": "06047087000139",
+   "emissor": "REDE DOR SAO LUIZ S/A",
+   "venc_0_24m": 5347621370.99,
+   "pct_saldo_0_24m": 14.9,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "01027058000191",
+   "emissor": "CIELO S.A - INSTITUICAO DE PAGAMENTO",
+   "venc_0_24m": 4607404000.0,
+   "pct_saldo_0_24m": 45.6,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "40432544000147",
+   "emissor": "CLARO S/A",
+   "venc_0_24m": 4500000000.0,
+   "pct_saldo_0_24m": 43.2,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "00389481000179",
+   "emissor": "LM TRANSPORTES INTERESTADUAIS SERVICOS E COMERCIO S.A.",
+   "venc_0_24m": 3663085000.0,
+   "pct_saldo_0_24m": 51.4,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "06057223000171",
+   "emissor": "SENDAS DISTRIBUIDORA S/A",
+   "venc_0_24m": 3494618500.0,
+   "pct_saldo_0_24m": 40.7,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "21314559000166",
+   "emissor": "MOVIDA PARTICIPACOES S/A",
+   "venc_0_24m": 3245270444.46,
+   "pct_saldo_0_24m": 20.0,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "23373000000132",
+   "emissor": "VAMOS LOCACAO DE CAMINHOES MAQUINAS E EQUIPAMENTOS S.A.",
+   "venc_0_24m": 3029562410.22,
+   "pct_saldo_0_24m": 35.7,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "09346601000125",
+   "emissor": "B3 S.A. - BRASIL BOLSA BALCAO",
+   "venc_0_24m": 2999999250.0,
+   "pct_saldo_0_24m": 30.0,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "33050196000188",
+   "emissor": "COMPANHIA PAULISTA DE FORCA E LUZ",
+   "venc_0_24m": 2956176502.29,
+   "pct_saldo_0_24m": 35.8,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "04368898000106",
+   "emissor": "COPEL DISTRIBUICAO S/A",
+   "venc_0_24m": 2500570453.0,
+   "pct_saldo_0_24m": 23.1,
+   "saldo_estimado": false
+  }
+ ],
+ "diagnostico": {
+  "lidos": {
+   "caracteristicas": 10065,
+   "agenda": 93896
+  },
+  "gravados": {
+   "caracteristicas": 2024,
+   "agenda": 31145,
+   "vencimentos_emissor": 385
+  },
+  "descartados": {
+   "caracteristicas_fora_do_universo": 8041,
+   "agenda_fora_do_universo": 62751,
+   "motivo": "CNPJ do emissor sem papel em dados/ultimo.json, ou papel excluido do SND fora do painel",
+   "codigos_do_universo_sem_snd": [
+    "FEPS11"
+   ]
+  },
+  "erros": {}
+ }
+}
