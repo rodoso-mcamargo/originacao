@@ -1,0 +1,8 @@
+{"ativos": [
+ {"codigo": "25B0013406", "tipo": "CRI", "emissor": "DIRECIONAL ENGENHARIA S.A.", "securitizadora": "OPEA SECURITIZADORA S/A", "serie": "2ª", "referencia": "2026-10-27"},
+ {"codigo": "25G0013406", "tipo": "CRI", "emissor": "DIRECIONAL ENGENHARIA S.A.", "securitizadora": "OPEA SECURITIZADORA S/A", "serie": "2ª", "referencia": "2026-10-27"},
+ {"codigo": "23H0011111", "tipo": "CRI", "emissor": "MRV ENGENHARIA E PARTICIPAÇÕES S.A.", "securitizadora": "OPEA SECURITIZADORA S/A", "serie": "1ª", "referencia": "2026-10-27"},
+ {"codigo": "25K3493414", "tipo": "CRI", "emissor": "Diversificado", "securitizadora": "HABITASEC SECURITIZADORA S.A.", "serie": "1ª", "referencia": "2026-10-27"},
+ {"codigo": "CRA022008NB", "tipo": "CRA", "emissor": "RAÍZEN ENERGIA S.A.", "securitizadora": "OPEA SECURITIZADORA S/A", "serie": "1ª", "referencia": "2026-10-26"},
+ {"codigo": "CRA022008NB", "tipo": "CRA", "emissor": "RAÍZEN ENERGIA S.A.", "securitizadora": "OPEA SECURITIZADORA S/A", "serie": "1ª", "referencia": "2026-10-27"}
+]}

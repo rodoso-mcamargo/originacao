@@ -1,0 +1,66 @@
+name: Agente fiduciario relatorios anuais
+
+# Relatorios anuais de agente fiduciario (Oliveira Trust, Pentagono, Vortx) dos CRI/CRA
+# do painel (agente_fiduciario.py). So metadados, flag de alerta e trecho; nenhum PDF.
+# Grava em dados/agente_fiduciario/. Fora da main so lista o que gravaria.
+
+on:
+  schedule:
+    # dia 5 de cada mes, 10:20 UTC (10:00 e do rj-diario)
+    - cron: "20 10 5 * *"
+  workflow_dispatch:
+    inputs:
+      inspecionar:
+        description: "sim = so descreve as fontes, nao grava"
+        required: false
+      anos:
+        description: "anos de referencia separados por espaco (vazio = anterior e corrente)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  coleta:
+    name: Coletar relatorios de agente fiduciario
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    concurrency: { group: push-main, cancel-in-progress: false }
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests beautifulsoup4 rapidfuzz pypdf
+
+      - name: Rodar coletor
+        env:
+          IN_INSPECIONAR: ${{ inputs.inspecionar }}
+          IN_ANOS: ${{ inputs.anos }}
+        run: |
+          ARGS=""
+          [ -n "$IN_ANOS" ] && ARGS="--anos $IN_ANOS"
+          if [ "$IN_INSPECIONAR" = "sim" ]; then
+            python agente_fiduciario.py --inspecionar $ARGS
+          else
+            python agente_fiduciario.py $ARGS
+          fi
+
+      - name: Commit e push
+        if: ${{ inputs.inspecionar != 'sim' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/agente_fiduciario/
+          if git diff --staged --quiet; then
+            echo "Nada mudou."
+          elif [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "Teste fora da main: nao grava. Arquivos que entrariam no commit:"
+            git diff --staged --stat
+          else
+            git commit -m "dados: relatorios de agente fiduciario $(date -u +%Y-%m-%d)"
+            for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && break; [ $i = 5 ] && exit 1; echo "push rejeitado ($i), tentando de novo"; sleep $((i*10)); done
+          fi

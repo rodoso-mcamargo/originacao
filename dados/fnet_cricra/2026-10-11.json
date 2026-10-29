@@ -1,0 +1,3 @@
+{"data": "2026-10-11", "fonte": "https://fnet.bmfbovespa.com.br/fnet/publico/pesquisarGerenciadorDocumentosDados", "documentos": [
+{"id_documento": 1345980, "data_entrega": "2026-10-11T13:12", "data_referencia": "2026-10-30T15:00", "securitizadora": "ECO SEC AGRO", "tipo_titulo": "CRA", "emissao": "131", "serie": "1", "series_extra": 2, "devedor_fnet": "Diversificado", "mes_emissao": "2022-01", "isin": "BRECOACRA9F8", "codigo": null, "categoria": "Assembleia", "tipo": "AGO/E", "especie": "Edital de Convocação", "assunto": null, "status": "ativo", "versao": 1, "url": "https://fnet.bmfbovespa.com.br/fnet/publico/exibirDocumento?id=1345980", "match": "nenhum", "codigos_universo": null, "classe": null, "texto": null, "codigos_no_texto": null}
+]}

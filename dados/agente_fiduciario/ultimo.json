@@ -1,0 +1,33 @@
+{
+ "fonte": "Relatorios anuais de agente fiduciario (Oliveira Trust, Pentagono, Vortx)",
+ "anos": [
+  2025,
+  2026
+ ],
+ "gerado_em": "2026-10-29T18:14:55+00:00",
+ "codigos_universo": 333,
+ "codigos_com_emissao": 112,
+ "relatorios_execucao": 157,
+ "relatorios_base": 157,
+ "por_agente": {
+  "Oliveira Trust": 20,
+  "Pentágono": 40,
+  "Vórtx": 97
+ },
+ "com_flag_alerta": 157,
+ "com_flag_sem_negacao": 105,
+ "requisicoes": 717,
+ "diagnostico": {
+  "lidos": {
+   "oliveira_trust": 1278,
+   "pentagono": 325,
+   "vortx_buscas": 333,
+   "vortx_relatorios": 218
+  },
+  "gravados": 157,
+  "descartados": {
+   "debentures (dados/snd/caracteristicas.csv ausente)": 1
+  },
+  "erros": {}
+ }
+}
