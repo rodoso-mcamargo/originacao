@@ -57,6 +57,11 @@ PADRAO_API = re.compile(r"/reune/previas", re.I)
 PERIODOS = ("ACUMULADO", "11H00", "13H00", "16H00", "18H00")
 ROTULO_ABA = {"ACUMULADO": "Acumulado", "11H00": "11h00", "13H00": "13h00",
               "16H00": "16h00", "18H00": "18h00"}
+# Valor de periodo-previa na URL da API (o acumulado sai como 24H00).
+PERIODO_API = {"ACUMULADO": "24H00"}
+# Nomes como aparecem no aria-label dos dias do calendario (react-datepicker).
+MESES = ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
+         "agosto", "setembro", "outubro", "novembro", "dezembro")
 
 # A resposta nunca foi vista de dentro do Python; o parser aceita varios nomes.
 ALIASES = {
@@ -124,6 +129,8 @@ def capturar(data: dt.date, periodo: str, inspecionar: bool = False):
 
     capturas: list[dict] = []
     diag = {"respostas_reune": 0, "urls": [], "erro": None}
+    alvo_data = data.isoformat()
+    alvo_periodo = PERIODO_API.get(periodo, periodo)
 
     with sync_playwright() as p:
         navegador = p.chromium.launch(args=["--no-sandbox"])
@@ -142,6 +149,11 @@ def capturar(data: dt.date, periodo: str, inspecionar: bool = False):
                 if resp.url not in diag["urls"]:
                     diag["urls"].append(resp.url)
                 if resp.status != 200:
+                    return
+                # A pagina sempre carrega primeiro a data de hoje; so vale a
+                # resposta da data e do periodo pedidos.
+                if f"data-previa={alvo_data}" not in resp.url or \
+                        f"periodo-previa={alvo_periodo}" not in resp.url:
                     return
                 corpo = resp.json()
                 regs = achar_registros(corpo)
@@ -182,38 +194,40 @@ def capturar(data: dt.date, periodo: str, inspecionar: bool = False):
 
 
 def _selecionar_data(pagina, data: dt.date) -> None:
-    """Preenche o campo de data de referencia (dd/mm/aaaa)."""
-    alvo = data.strftime("%d/%m/%Y")
+    """
+    Escolhe a data de referencia no calendario da pagina (react-datepicker).
+    O campo nao aceita digitacao: clicar nele abre o calendario e redesenha o
+    input. Cada dia tem aria-label "Choose quarta-feira, 28 de outubro de 2026";
+    volta mes a mes ate o dia aparecer.
+    """
+    rotulo = f", {data.day} de {MESES[data.month - 1]} de {data.year}"
+    dia = pagina.locator(
+        f".react-datepicker__day[aria-label$='{rotulo}']"
+        ":not(.react-datepicker__day--outside-month)")
     try:
-        campo = pagina.query_selector("input[type='text']")
-        # o primeiro input de texto costuma ser a data; confirma pelo formato
-        if not (campo and re.match(r"\d{2}/\d{2}/\d{4}", campo.input_value() or "")):
-            for c in pagina.query_selector_all("input"):
-                v = c.input_value() or ""
-                if re.match(r"\d{2}/\d{2}/\d{4}", v):
-                    campo = c
-                    break
-        if campo:
-            campo.click()
-            campo.press("Control+A")
-            campo.type(alvo, delay=40)
-            campo.press("Enter")
-            log.info("data selecionada: %s", alvo)
+        pagina.locator("input[type='text']").first.click()
+        pagina.locator(".react-datepicker").first.wait_for(timeout=10_000)
+        for _ in range(13):
+            if dia.count():
+                break
+            pagina.locator(".react-datepicker__navigation--previous").first.click()
+            pagina.wait_for_timeout(300)
+        dia.first.click()
+        log.info("data selecionada: %s", data.strftime("%d/%m/%Y"))
     except Exception as e:
-        log.warning("nao consegui preencher a data (%s): sigo com a padrao", e)
+        log.warning("nao consegui escolher a data (%s): sigo com a padrao", e)
 
 
 def _selecionar_periodo(pagina, periodo: str) -> None:
     rot = ROTULO_ABA.get(periodo, "Acumulado")
     try:
-        botoes = pagina.query_selector_all("button, a, [role='tab']")
-        for b in botoes:
-            t = (b.inner_text() or "").strip()
-            if t.lower() == rot.lower():
-                b.click()
-                log.info("aba de periodo selecionada: %s", rot)
-                return
-        log.info("aba '%s' nao encontrada; usando o padrao da pagina", rot)
+        aba = pagina.locator("button, a, [role='tab']").filter(
+            has_text=re.compile(rf"^\s*{rot}\s*$", re.I))
+        if aba.count():
+            aba.first.click()
+            log.info("aba de periodo selecionada: %s", rot)
+        else:
+            log.info("aba '%s' nao encontrada; usando o padrao da pagina", rot)
     except Exception as e:
         log.warning("nao consegui clicar no periodo (%s)", e)
 

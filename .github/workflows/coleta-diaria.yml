@@ -1,5 +1,11 @@
 name: Coleta diaria ANBIMA
 
+# Junta as tres coletas diarias (antes coleta-diaria, cri-cra-diaria e
+# reune-diaria). Cada coleta roda num job proprio: se uma falhar, as outras
+# seguem. Cada job empacota so os arquivos de dados/ que mudou, e o job
+# "salvar" junta tudo num unico commit na main (antes eram tres commits
+# disputando o push no mesmo minuto).
+
 on:
   schedule:
     # 08:40 em Brasilia (11:40 UTC), de segunda a sexta.
@@ -8,10 +14,22 @@ on:
   workflow_dispatch:
     inputs:
       backfill:
-        description: "Quantos pregoes reconstruir de uma vez (use 60 na primeira vez)"
+        description: "Taxas: quantos pregoes reconstruir de uma vez (use 60 na primeira vez)"
         required: false
       data:
-        description: "Data especifica AAAA-MM-DD (deixe vazio para o ultimo dia util)"
+        description: "Taxas: data especifica AAAA-MM-DD (vazio = ultimo dia util)"
+        required: false
+      cri_inspecionar:
+        description: "CRI/CRA: sim = so descreve a tabela, nao grava"
+        required: false
+      reune_inspecionar:
+        description: "REUNE: sim = so descreve a captura, nao grava"
+        required: false
+      reune_data:
+        description: "REUNE: data especifica AAAA-MM-DD (vazio = ultimo dia util)"
+        required: false
+      reune_periodo:
+        description: "REUNE: ACUMULADO (padrao), 11H00, 13H00, 16H00 ou 18H00"
         required: false
 
 permissions:
@@ -22,7 +40,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  coletar:
+  taxas:
+    name: Taxas e acoes
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -36,11 +55,14 @@ jobs:
       - run: pip install requests
 
       - name: Rodar coleta
+        env:
+          IN_BACKFILL: ${{ inputs.backfill }}
+          IN_DATA: ${{ inputs.data }}
         run: |
-          if [ -n "${{ inputs.backfill }}" ]; then
-            python monitor.py --backfill "${{ inputs.backfill }}"
-          elif [ -n "${{ inputs.data }}" ]; then
-            python monitor.py --data "${{ inputs.data }}"
+          if [ -n "$IN_BACKFILL" ]; then
+            python monitor.py --backfill "$IN_BACKFILL"
+          elif [ -n "$IN_DATA" ]; then
+            python monitor.py --data "$IN_DATA"
           else
             python monitor.py
           fi
@@ -85,13 +107,174 @@ jobs:
           PY
           fi
 
-      - name: Salvar os dados no repositorio
+      - name: Empacotar o que mudou
+        run: |
+          git add -A dados/
+          git diff --cached --name-only --diff-filter=d > mudou.txt
+          if [ -s mudou.txt ]; then tar czf pacote.tgz -T mudou.txt; fi
+          echo "$(wc -l < mudou.txt) arquivo(s) mudaram"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pacote-taxas
+          path: pacote.tgz
+          if-no-files-found: ignore
+          retention-days: 3
+
+  cri_cra:
+    name: Taxas CRI e CRA
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests beautifulsoup4
+
+      - name: Coletar taxas CRI/CRA
+        env:
+          IN_INSPECIONAR: ${{ inputs.cri_inspecionar }}
+        run: |
+          if [ "$IN_INSPECIONAR" = "sim" ]; then
+            python cri_cra.py --inspecionar
+          else
+            python cri_cra.py
+          fi
+
+      - name: Empacotar o que mudou
+        if: ${{ inputs.cri_inspecionar != 'sim' }}
+        run: |
+          git add -A dados/cri_cra/
+          git diff --cached --name-only --diff-filter=d > mudou.txt
+          if [ -s mudou.txt ]; then tar czf pacote.tgz -T mudou.txt; fi
+          echo "$(wc -l < mudou.txt) arquivo(s) mudaram"
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ inputs.cri_inspecionar != 'sim' }}
+        with:
+          name: pacote-cri-cra
+          path: pacote.tgz
+          if-no-files-found: ignore
+          retention-days: 3
+
+  # Negocios registrados do REUNE: abre a pagina publica num Chromium headless
+  # (Playwright) e captura a resposta JSON que a propria pagina busca.
+  # A pagina se autentica sozinha; nao reproduzimos token.
+  reune:
+    name: Negocios REUNE
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install playwright
+
+      - name: Instalar Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Rodar coleta REUNE
+        env:
+          IN_INSPECIONAR: ${{ inputs.reune_inspecionar }}
+          IN_DATA: ${{ inputs.reune_data }}
+          IN_PERIODO: ${{ inputs.reune_periodo }}
+        run: |
+          P="${IN_PERIODO:-ACUMULADO}"
+          if [ "$IN_INSPECIONAR" = "sim" ]; then
+            if [ -n "$IN_DATA" ]; then
+              python reune.py --inspecionar --periodo "$P" --data "$IN_DATA" >> "$GITHUB_STEP_SUMMARY"
+            else
+              python reune.py --inspecionar --periodo "$P" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          elif [ -n "$IN_DATA" ]; then
+            python reune.py --data "$IN_DATA" --periodo "$P"
+          else
+            python reune.py --periodo "$P"
+          fi
+
+      - name: Resumo
+        if: always()
+        run: |
+          if [ -f dados/reune/ultimo.json ]; then
+            python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, pathlib, collections
+          s = json.loads(pathlib.Path("dados/reune/ultimo.json").read_text(encoding="utf-8"))
+          d = s["diagnostico"]
+          print(f"## REUNE {s['data_referencia']} - {s['periodo']}\n")
+          print(f"- Respostas /reune/previas vistas: {d['respostas_reune_vistas']}")
+          print(f"- Registros capturados: {d['registros_capturados']}")
+          print(f"- **Negocios gravados: {d['linhas_gravadas']}**")
+          print(f"- Campos originais: `{d['campos_originais']}`")
+          print(f"- Mapa resolvido: `{d['mapa_campos']}`\n")
+          faixas = collections.Counter(n.get("faixa_vol","") for n in s["negocios"])
+          if any(faixas):
+              print("### Faixa de volume negociado\n")
+              print("| Faixa | Papeis |")
+              print("|---|---:|")
+              for f, n in faixas.most_common():
+                  print(f"| {f or '(vazio)'} | {n} |")
+          PY
+          fi
+
+      - name: Empacotar o que mudou
+        if: ${{ inputs.reune_inspecionar != 'sim' }}
+        run: |
+          git add -A dados/reune/
+          git diff --cached --name-only --diff-filter=d > mudou.txt
+          if [ -s mudou.txt ]; then tar czf pacote.tgz -T mudou.txt; fi
+          echo "$(wc -l < mudou.txt) arquivo(s) mudaram"
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ inputs.reune_inspecionar != 'sim' }}
+        with:
+          name: pacote-reune
+          path: pacote.tgz
+          if-no-files-found: ignore
+          retention-days: 3
+
+  # Roda mesmo se alguma coleta falhar, e grava o que as outras trouxeram.
+  # Fora da main (teste num branch) so mostra o que gravaria, sem commit.
+  salvar:
+    name: Salvar no repositorio
+    needs: [taxas, cri_cra, reune]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pacote-*
+          path: pacotes
+
+      - name: Juntar os pacotes
+        run: |
+          for f in pacotes/*/pacote.tgz; do
+            [ -f "$f" ] || continue
+            echo "== $f"
+            tar xzvf "$f"
+          done
+
+      - name: Commit e push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add dados/
           if git diff --staged --quiet; then
             echo "Nada mudou."
+          elif [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "Teste fora da main: nao grava. Arquivos que entrariam no commit:"
+            git diff --staged --stat
           else
             git commit -m "dados: coleta $(date -u +%Y-%m-%d)"
             for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && break; [ $i = 5 ] && exit 1; echo "push rejeitado ($i), tentando de novo"; sleep $((i*10)); done
