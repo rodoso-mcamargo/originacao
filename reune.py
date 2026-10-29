@@ -57,22 +57,30 @@ PADRAO_API = re.compile(r"/reune/previas", re.I)
 PERIODOS = ("ACUMULADO", "11H00", "13H00", "16H00", "18H00")
 ROTULO_ABA = {"ACUMULADO": "Acumulado", "11H00": "11h00", "13H00": "13h00",
               "16H00": "16h00", "18H00": "18h00"}
+# Valor de periodo-previa na URL da API (o acumulado sai como 24H00).
+PERIODO_API = {"ACUMULADO": "24H00"}
+# Nomes como aparecem no aria-label dos dias do calendario (react-datepicker).
+MESES = ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
+         "agosto", "setembro", "outubro", "novembro", "dezembro")
 
-# A resposta nunca foi vista de dentro do Python; o parser aceita varios nomes.
+# O primeiro nome de cada lista e o da API (web-bff/v1/reune/previas, visto em
+# 29/10/2026, ja achatado por achatar()); os demais ficam como reserva.
 ALIASES = {
-    "codigo":      ["codigo", "codigoAtivo", "cetip", "codigoCetip", "ativo"],
-    "bvmf":        ["bvmf", "codigoBvmf"],
-    "isin":        ["isin", "codigoIsin"],
+    "codigo":      ["codigo_cetip", "codigo", "codigoAtivo", "cetip", "codigoCetip", "ativo"],
+    "bvmf":        ["codigo_bvmf", "bvmf", "codigoBvmf"],
+    "isin":        ["codigo_isin", "isin", "codigoIsin"],
     "agrupamento": ["agrupamento", "agrupamentoOperacoes", "tipoAgrupamento"],
-    "taxa_min":    ["taxaMinima", "taxa_minima", "txMinima", "minimaTaxa"],
-    "taxa_med":    ["taxaMedia", "taxa_media", "txMedia", "mediaTaxa"],
-    "taxa_max":    ["taxaMaxima", "taxa_maxima", "txMaxima", "maximaTaxa"],
-    "pu_min":      ["puMinimo", "pu_minimo", "precoUnitarioMinimo", "minimaPu"],
-    "pu_med":      ["puMedio", "pu_medio", "precoUnitarioMedio", "mediaPu"],
-    "pu_max":      ["puMaximo", "pu_maximo", "precoUnitarioMaximo", "maximaPu"],
-    "faixa_vol":   ["faixaVolume", "faixaVolumeNegociado", "volumeNegociado",
-                    "faixa_volume_negociado"],
+    "taxa_min":    ["taxa_minima", "taxaMinima", "txMinima", "minimaTaxa"],
+    "taxa_med":    ["taxa_media", "taxaMedia", "txMedia", "mediaTaxa"],
+    "taxa_max":    ["taxa_maxima", "taxaMaxima", "txMaxima", "maximaTaxa"],
+    "pu_min":      ["preco_unitario_minimo", "puMinimo", "pu_minimo", "precoUnitarioMinimo"],
+    "pu_med":      ["preco_unitario_medio", "puMedio", "pu_medio", "precoUnitarioMedio"],
+    "pu_max":      ["preco_unitario_maximo", "puMaximo", "pu_maximo", "precoUnitarioMaximo"],
+    "faixa_vol":   ["faixa_volume_negociacoes", "faixaVolume", "faixaVolumeNegociado",
+                    "volumeNegociado", "faixa_volume_negociado"],
 }
+NUMERICOS = ("taxa_minima", "taxa_media", "taxa_maxima", "preco_unitario_minimo",
+             "preco_unitario_medio", "preco_unitario_maximo")
 COLS = ["data", "periodo", "codigo", "bvmf", "isin", "agrupamento",
         "taxa_min", "taxa_med", "taxa_max", "pu_min", "pu_med", "pu_max",
         "faixa_vol"]
@@ -104,6 +112,37 @@ def achar_registros(payload):
     return melhor
 
 
+def achatar(regs: list) -> list:
+    """
+    A API devolve um item por papel: detalhes_ativo (codigos), totais_ativo e
+    subtotais_ativo (taxas, PUs e faixa). Vira uma linha "Total" e, se houver
+    valores, uma "Subtotal" (operacoes entre membros e de membros com clientes
+    extragrupo, pela legenda da pagina). "--" vira vazio e a virgula decimal
+    vira ponto. Registros em outro formato passam como estao.
+    """
+    if not regs or "detalhes_ativo" not in regs[0]:
+        return regs
+
+    def limpar(bloco: dict) -> dict:
+        out = {}
+        for k, v in (bloco or {}).items():
+            v = "" if v in (None, "--") else str(v).strip()
+            if k in NUMERICOS and v:
+                v = v.replace(".", "").replace(",", ".")
+            out[k] = v
+        return out
+
+    linhas = []
+    for r in regs:
+        det = limpar(r.get("detalhes_ativo"))
+        for rotulo, chave in (("Total", "totais_ativo"), ("Subtotal", "subtotais_ativo")):
+            valores = limpar(r.get(chave))
+            if rotulo == "Subtotal" and not any(valores.values()):
+                continue
+            linhas.append({**det, "agrupamento": rotulo, **valores})
+    return linhas
+
+
 def resolver(registro: dict) -> dict:
     presentes = {k.lower(): k for k in registro}
     mapa = {}
@@ -124,6 +163,8 @@ def capturar(data: dt.date, periodo: str, inspecionar: bool = False):
 
     capturas: list[dict] = []
     diag = {"respostas_reune": 0, "urls": [], "erro": None}
+    alvo_data = data.isoformat()
+    alvo_periodo = PERIODO_API.get(periodo, periodo)
 
     with sync_playwright() as p:
         navegador = p.chromium.launch(args=["--no-sandbox"])
@@ -142,6 +183,11 @@ def capturar(data: dt.date, periodo: str, inspecionar: bool = False):
                 if resp.url not in diag["urls"]:
                     diag["urls"].append(resp.url)
                 if resp.status != 200:
+                    return
+                # A pagina sempre carrega primeiro a data de hoje; so vale a
+                # resposta da data e do periodo pedidos.
+                if f"data-previa={alvo_data}" not in resp.url or \
+                        f"periodo-previa={alvo_periodo}" not in resp.url:
                     return
                 corpo = resp.json()
                 regs = achar_registros(corpo)
@@ -182,44 +228,46 @@ def capturar(data: dt.date, periodo: str, inspecionar: bool = False):
 
 
 def _selecionar_data(pagina, data: dt.date) -> None:
-    """Preenche o campo de data de referencia (dd/mm/aaaa)."""
-    alvo = data.strftime("%d/%m/%Y")
+    """
+    Escolhe a data de referencia no calendario da pagina (react-datepicker).
+    O campo nao aceita digitacao: clicar nele abre o calendario e redesenha o
+    input. Cada dia tem aria-label "Choose quarta-feira, 28 de outubro de 2026";
+    volta mes a mes ate o dia aparecer.
+    """
+    rotulo = f", {data.day} de {MESES[data.month - 1]} de {data.year}"
+    dia = pagina.locator(
+        f".react-datepicker__day[aria-label$='{rotulo}']"
+        ":not(.react-datepicker__day--outside-month)")
     try:
-        campo = pagina.query_selector("input[type='text']")
-        # o primeiro input de texto costuma ser a data; confirma pelo formato
-        if not (campo and re.match(r"\d{2}/\d{2}/\d{4}", campo.input_value() or "")):
-            for c in pagina.query_selector_all("input"):
-                v = c.input_value() or ""
-                if re.match(r"\d{2}/\d{2}/\d{4}", v):
-                    campo = c
-                    break
-        if campo:
-            campo.click()
-            campo.press("Control+A")
-            campo.type(alvo, delay=40)
-            campo.press("Enter")
-            log.info("data selecionada: %s", alvo)
+        pagina.locator("input[type='text']").first.click()
+        pagina.locator(".react-datepicker").first.wait_for(timeout=10_000)
+        for _ in range(13):
+            if dia.count():
+                break
+            pagina.locator(".react-datepicker__navigation--previous").first.click()
+            pagina.wait_for_timeout(300)
+        dia.first.click()
+        log.info("data selecionada: %s", data.strftime("%d/%m/%Y"))
     except Exception as e:
-        log.warning("nao consegui preencher a data (%s): sigo com a padrao", e)
+        log.warning("nao consegui escolher a data (%s): sigo com a padrao", e)
 
 
 def _selecionar_periodo(pagina, periodo: str) -> None:
     rot = ROTULO_ABA.get(periodo, "Acumulado")
     try:
-        botoes = pagina.query_selector_all("button, a, [role='tab']")
-        for b in botoes:
-            t = (b.inner_text() or "").strip()
-            if t.lower() == rot.lower():
-                b.click()
-                log.info("aba de periodo selecionada: %s", rot)
-                return
-        log.info("aba '%s' nao encontrada; usando o padrao da pagina", rot)
+        aba = pagina.locator("button, a, [role='tab']").filter(
+            has_text=re.compile(rf"^\s*{rot}\s*$", re.I))
+        if aba.count():
+            aba.first.click()
+            log.info("aba de periodo selecionada: %s", rot)
+        else:
+            log.info("aba '%s' nao encontrada; usando o padrao da pagina", rot)
     except Exception as e:
         log.warning("nao consegui clicar no periodo (%s)", e)
 
 
 def processar(payload, data: dt.date, periodo: str, diag: dict) -> dict:
-    regs = achar_registros(payload) if payload is not None else []
+    regs = achatar(achar_registros(payload)) if payload is not None else []
     linhas, mapa = [], {}
     for r in regs:
         if not isinstance(r, dict):
@@ -274,7 +322,7 @@ def inspecionar(payload, diag) -> None:
         if diag.get("erro"):
             print(f"\nErro: {diag['erro']}")
         return
-    regs = achar_registros(payload)
+    regs = achatar(achar_registros(payload))
     print(f"\nRegistros no payload: **{len(regs)}**\n")
     if regs:
         print("Campos do primeiro registro: `" + "`, `".join(regs[0].keys()) + "`\n")
