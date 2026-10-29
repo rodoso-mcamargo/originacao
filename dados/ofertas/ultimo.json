@@ -1,0 +1,36 @@
+{
+ "fonte": "CVM dados abertos - oferta-distrib (Res. 160)",
+ "url": "https://dados.cvm.gov.br/dados/OFERTA/DISTRIB/DADOS/oferta_distribuicao.zip",
+ "data_referencia": "2026-10-29",
+ "gerado_em": "2026-10-29T15:21:20+00:00",
+ "janela_meses": 24,
+ "ofertas_na_janela": 2489,
+ "por_tipo": {
+  "CRI": 1102,
+  "CRA": 276,
+  "DEBENTURE": 1111
+ },
+ "no_universo": 627,
+ "volume_debentures_janela": 777518773996.95,
+ "diagnostico": {
+  "lidos": 15026,
+  "gravados": {
+   "base": 2489,
+   "novas_ou_alteradas": 2489,
+   "primario_vs_secundario": 1301,
+   "pvs_com_diferenca": 118
+  },
+  "descartados": {
+   "outro_valor_mobiliario": 10506,
+   "fora_janela_24m": 2031
+  },
+  "erros": {},
+  "fonte": {
+   "url": "https://dados.cvm.gov.br/dados/OFERTA/DISTRIB/DADOS/oferta_distribuicao.zip",
+   "status_head": 200,
+   "origem": "cache",
+   "last_modified": "Thu, 29 Oct 2026 04:46:50 GMT"
+  },
+  "primeira_carga": "sem base anterior: arquivo do dia nao gravado (seria a base inteira)"
+ }
+}

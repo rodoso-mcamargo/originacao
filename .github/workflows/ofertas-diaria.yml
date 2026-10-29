@@ -1,0 +1,66 @@
+name: Ofertas CVM (Res. 160) e primario vs secundario
+
+on:
+  schedule:
+    # 19:00 em Brasilia (22:00 UTC), seg-sex. O zip da CVM e regerado de madrugada.
+    - cron: "0 22 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      inspecionar:
+        description: "sim = so descreve a fonte (status, colunas, 3 registros), nao grava"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency: { group: push-main, cancel-in-progress: false }
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests rapidfuzz pytest
+
+      # zip da CVM (~6 MB) fica fora do repositorio (regra 10)
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/originacao
+          key: ofertas-cvm-${{ github.run_id }}
+          restore-keys: ofertas-cvm-
+
+      - name: Testes
+        run: python -m pytest -q tests/test_ofertas.py
+
+      - name: Rodar coleta
+        env:
+          IN_INSPECIONAR: ${{ inputs.inspecionar }}
+        run: |
+          if [ "$IN_INSPECIONAR" = "sim" ]; then
+            python ofertas.py --inspecionar >> "$GITHUB_STEP_SUMMARY"
+          else
+            python ofertas.py
+          fi
+
+      - name: Commit e push
+        if: ${{ inputs.inspecionar != 'sim' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/ofertas/
+          if git diff --staged --quiet; then
+            echo "Nada mudou."
+          elif [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "Teste fora da main: nao grava. Arquivos que entrariam no commit:"
+            git diff --staged --stat
+          else
+            git commit -m "ofertas: coleta $(date -u +%Y-%m-%d)"
+            for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && break; [ $i = 5 ] && exit 1; sleep $((i*10)); done
+          fi
