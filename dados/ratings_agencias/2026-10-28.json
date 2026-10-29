@@ -1,0 +1,19 @@
+{
+ "data": "2026-10-28",
+ "n": 1,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-10-28",
+   "entidade": "SELLER 3 FIDC",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "fitch assigns aaasf bra rating to second series of senior quotas of seller 3 fidc",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-assigns-aaasf-bra-rating-to-second-series-of-senior-quotas-of-seller-3-fidc-28-10-2026"
+  }
+ ]
+}

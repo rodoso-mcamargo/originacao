@@ -1,0 +1,140 @@
+{
+ "data_referencia": "2026-10-29",
+ "gerado_em": "2026-10-29T12:22:07-03:00",
+ "desde": null,
+ "contagens": {
+  "por_agencia": {
+   "fitch": 4,
+   "sp": 2
+  },
+  "por_acao": {
+   "afirmacao": 2,
+   "atribuicao": 1,
+   "relatorio": 3
+  },
+  "base_total": 6,
+  "base_por_agencia": {
+   "fitch": 4,
+   "sp": 2
+  },
+  "base_por_acao": {
+   "afirmacao": 2,
+   "atribuicao": 1,
+   "relatorio": 3
+  },
+  "universo_linhas": 0
+ },
+ "diagnostico": {
+  "universo_nomes": 482,
+  "grupos": 0,
+  "agencias": {
+   "moodys_local": {
+    "status": "bloqueado",
+    "fonte_usada": null,
+    "tentativas": [
+     {
+      "url": "https://moodyslocal.com.br/reporte/rating-action/feed/",
+      "http": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bloqueio": "desafio anti-robo (Cloudflare); nao contornado"
+     },
+     {
+      "url": "https://moodyslocal.com.br/wp-json/wp/v2/",
+      "http": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bloqueio": "desafio anti-robo (Cloudflare); nao contornado"
+     },
+     {
+      "url": "https://moodyslocal.com.br/reporte/rating-action/",
+      "http": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bloqueio": "desafio anti-robo (Cloudflare); nao contornado"
+     }
+    ],
+    "lidos": 0,
+    "validos": 0,
+    "novos_na_base": 0,
+    "descartados": {},
+    "erros": [],
+    "fonte": "moodyslocal.com.br"
+   },
+   "sp": {
+    "status": "ok",
+    "fonte_usada": "html-ssr+html-ssr-home",
+    "tentativas": [
+     {
+      "url": "https://brazil.ratings.spglobal.com/ratings/pt/regulatory/ratings-actions",
+      "http": 200,
+      "chaves_pageProps": [
+       "RatingActionsAPIData",
+       "disclosureListData",
+       "disclosureSiteIsUpData",
+       "filterStateValues",
+       "globalLocale",
+       "initialLang",
+       "languageCode",
+       "locale",
+       "ratingAction",
+       "ratingActionRequest",
+       "token",
+       "totalNumberOfRecordsData",
+       "tz"
+      ],
+      "totalNumberOfRecords": 0,
+      "chaves_registro": []
+     },
+     {
+      "url": "https://brazil.ratings.spglobal.com/pt",
+      "http": 200,
+      "chaves_pageProps": [
+       "articles",
+       "cardsData",
+       "globalLocale",
+       "system_account_token",
+       "totalRecords"
+      ],
+      "totalNumberOfRecords": null,
+      "chaves_registro": [
+       "articleDate",
+       "articleDescription",
+       "articleSourceSystemId",
+       "articleSubType",
+       "articleTitle",
+       "articleType",
+       "languageCode",
+       "sourceObjectId",
+       "statusIndicator"
+      ]
+     }
+    ],
+    "lidos": 2,
+    "validos": 2,
+    "novos_na_base": 0,
+    "descartados": {},
+    "erros": [],
+    "fonte": "brazil.ratings.spglobal.com"
+   },
+   "fitch": {
+    "status": "ok",
+    "fonte_usada": "sitemap-research",
+    "tentativas": [
+     {
+      "url": "https://www.fitchratings.com/sitemap-research.xml",
+      "http": 200,
+      "urls_research": 500
+     }
+    ],
+    "lidos": 4,
+    "validos": 4,
+    "novos_na_base": 0,
+    "descartados": {
+     "fora_do_brasil_e_fora_do_universo": 495,
+     "slug_sem_data": 1
+    },
+    "erros": [],
+    "fonte": "fitchratings.com"
+   }
+  }
+ },
+ "acoes_casadas_no_run": []
+}

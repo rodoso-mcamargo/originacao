@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fixture SINTETICA no formato RSS 2.0 do WordPress (o feed real da Moody's Local
+     respondeu com desafio anti-robo na construcao do coletor). Titulos ficticios. -->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+<title>Rating Action - Moody's Local Brasil</title>
+<item>
+ <title>Moody&#8217;s Local Brasil rebaixa rating da Aura Almas Minera&#231;&#227;o S.A. de AA.br para A+.br; perspectiva negativa</title>
+ <link>https://moodyslocal.com.br/exemplo/rebaixa-aura</link>
+ <pubDate>Tue, 28 Oct 2026 21:30:00 +0000</pubDate>
+ <description><![CDATA[<p>A Moody&#8217;s Local Brasil rebaixou o rating de emissor da Aura Almas Minera&ccedil;&atilde;o S.A. de AA.br para A+.br.</p><p>Segundo par&aacute;grafo.</p>]]></description>
+</item>
+<item>
+ <title>Moody&#8217;s Local Brasil coloca em revis&#227;o para rebaixamento os ratings da Aegea Saneamento e Participa&#231;&#245;es S.A.</title>
+ <link>https://moodyslocal.com.br/exemplo/revisao-aegea</link>
+ <pubDate>Wed, 29 Oct 2026 02:10:00 +0000</pubDate>
+ <description><![CDATA[<p>Ratings AAA.br das deb&ecirc;ntures colocados em revis&atilde;o para rebaixamento.</p>]]></description>
+</item>
+<item>
+ <title>Moody&#8217;s Local Brasil afirma rating AA-.br da Energia Sul S.A.; perspectiva est&#225;vel</title>
+ <link>https://moodyslocal.com.br/exemplo/afirma-energia</link>
+ <pubDate>Mon, 27 Oct 2026 15:00:00 +0000</pubDate>
+ <description><![CDATA[<p>Afirma&ccedil;&atilde;o.</p>]]></description>
+</item>
+</channel>
+</rss>
