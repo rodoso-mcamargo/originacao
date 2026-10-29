@@ -1,0 +1,75 @@
+name: Fundos.NET CRI/CRA assembleias
+
+# Documentos de CRI/CRA no Fundos.NET (assembleias, fatos relevantes, comunicados),
+# casados com o universo de dados/cri_cra e classificados por pauta (fnet_cricra.py).
+# Grava em dados/fnet_cricra/. Fora da main so lista o que gravaria.
+
+on:
+  schedule:
+    # 19:30 em Brasilia (22:30 UTC), de segunda a sexta: pega as entregas do dia.
+    - cron: "30 22 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      inspecionar:
+        description: "sim = so descreve a fonte (status, colunas, 3 registros), nao grava"
+        required: false
+      backfill:
+        description: "dias corridos a reconstruir (use 270 na primeira vez)"
+        required: false
+      data:
+        description: "data final AAAA-MM-DD (vazio = hoje)"
+        required: false
+  # TEMPORARIO: teste na branch (regra 13b). Remover antes do PR.
+  push:
+    branches: [coleta/cricra-assembleias]
+
+permissions:
+  contents: write
+
+jobs:
+  coleta:
+    name: Coletar Fundos.NET CRI/CRA
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    concurrency: { group: push-main, cancel-in-progress: false }
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests beautifulsoup4 rapidfuzz pypdf
+
+      - name: Rodar coletor
+        env:
+          IN_INSPECIONAR: ${{ inputs.inspecionar }}
+          IN_BACKFILL: ${{ inputs.backfill }}
+          IN_DATA: ${{ inputs.data }}
+        run: |
+          ARGS=""
+          [ -n "$IN_DATA" ] && ARGS="$ARGS --data $IN_DATA"
+          if [ "$IN_INSPECIONAR" = "sim" ]; then
+            python fnet_cricra.py --inspecionar $ARGS
+          elif [ -n "$IN_BACKFILL" ]; then
+            python fnet_cricra.py --backfill "$IN_BACKFILL" $ARGS
+          else
+            python fnet_cricra.py $ARGS
+          fi
+
+      - name: Commit e push
+        if: ${{ inputs.inspecionar != 'sim' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/fnet_cricra/
+          if git diff --staged --quiet; then
+            echo "Nada mudou."
+          elif [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "Teste fora da main: nao grava. Arquivos que entrariam no commit:"
+            git diff --staged --stat
+          else
+            git commit -m "dados: Fundos.NET CRI/CRA $(date -u +%Y-%m-%d)"
+            for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && break; [ $i = 5 ] && exit 1; echo "push rejeitado ($i), tentando de novo"; sleep $((i*10)); done
+          fi
