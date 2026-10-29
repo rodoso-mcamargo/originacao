@@ -16,9 +16,6 @@ on:
       anos:
         description: "anos de referencia separados por espaco (vazio = anterior e corrente)"
         required: false
-  # TEMPORARIO: teste na branch (regra 13b). Remover antes do PR.
-  push:
-    branches: [coleta/cricra-assembleias]
 
 permissions:
   contents: write

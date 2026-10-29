@@ -19,9 +19,6 @@ on:
       data:
         description: "data final AAAA-MM-DD (vazio = hoje)"
         required: false
-  # TEMPORARIO: teste na branch (regra 13b). Remover antes do PR.
-  push:
-    branches: [coleta/cricra-assembleias]
 
 permissions:
   contents: write
