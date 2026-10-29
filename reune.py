@@ -63,21 +63,24 @@ PERIODO_API = {"ACUMULADO": "24H00"}
 MESES = ("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
          "agosto", "setembro", "outubro", "novembro", "dezembro")
 
-# A resposta nunca foi vista de dentro do Python; o parser aceita varios nomes.
+# O primeiro nome de cada lista e o da API (web-bff/v1/reune/previas, visto em
+# 29/10/2026, ja achatado por achatar()); os demais ficam como reserva.
 ALIASES = {
-    "codigo":      ["codigo", "codigoAtivo", "cetip", "codigoCetip", "ativo"],
-    "bvmf":        ["bvmf", "codigoBvmf"],
-    "isin":        ["isin", "codigoIsin"],
+    "codigo":      ["codigo_cetip", "codigo", "codigoAtivo", "cetip", "codigoCetip", "ativo"],
+    "bvmf":        ["codigo_bvmf", "bvmf", "codigoBvmf"],
+    "isin":        ["codigo_isin", "isin", "codigoIsin"],
     "agrupamento": ["agrupamento", "agrupamentoOperacoes", "tipoAgrupamento"],
-    "taxa_min":    ["taxaMinima", "taxa_minima", "txMinima", "minimaTaxa"],
-    "taxa_med":    ["taxaMedia", "taxa_media", "txMedia", "mediaTaxa"],
-    "taxa_max":    ["taxaMaxima", "taxa_maxima", "txMaxima", "maximaTaxa"],
-    "pu_min":      ["puMinimo", "pu_minimo", "precoUnitarioMinimo", "minimaPu"],
-    "pu_med":      ["puMedio", "pu_medio", "precoUnitarioMedio", "mediaPu"],
-    "pu_max":      ["puMaximo", "pu_maximo", "precoUnitarioMaximo", "maximaPu"],
-    "faixa_vol":   ["faixaVolume", "faixaVolumeNegociado", "volumeNegociado",
-                    "faixa_volume_negociado"],
+    "taxa_min":    ["taxa_minima", "taxaMinima", "txMinima", "minimaTaxa"],
+    "taxa_med":    ["taxa_media", "taxaMedia", "txMedia", "mediaTaxa"],
+    "taxa_max":    ["taxa_maxima", "taxaMaxima", "txMaxima", "maximaTaxa"],
+    "pu_min":      ["preco_unitario_minimo", "puMinimo", "pu_minimo", "precoUnitarioMinimo"],
+    "pu_med":      ["preco_unitario_medio", "puMedio", "pu_medio", "precoUnitarioMedio"],
+    "pu_max":      ["preco_unitario_maximo", "puMaximo", "pu_maximo", "precoUnitarioMaximo"],
+    "faixa_vol":   ["faixa_volume_negociacoes", "faixaVolume", "faixaVolumeNegociado",
+                    "volumeNegociado", "faixa_volume_negociado"],
 }
+NUMERICOS = ("taxa_minima", "taxa_media", "taxa_maxima", "preco_unitario_minimo",
+             "preco_unitario_medio", "preco_unitario_maximo")
 COLS = ["data", "periodo", "codigo", "bvmf", "isin", "agrupamento",
         "taxa_min", "taxa_med", "taxa_max", "pu_min", "pu_med", "pu_max",
         "faixa_vol"]
@@ -107,6 +110,37 @@ def achar_registros(payload):
                 melhor = n
             pilha.extend(x for x in n if isinstance(x, (dict, list)))
     return melhor
+
+
+def achatar(regs: list) -> list:
+    """
+    A API devolve um item por papel: detalhes_ativo (codigos), totais_ativo e
+    subtotais_ativo (taxas, PUs e faixa). Vira uma linha "Total" e, se houver
+    valores, uma "Subtotal" (operacoes entre membros e de membros com clientes
+    extragrupo, pela legenda da pagina). "--" vira vazio e a virgula decimal
+    vira ponto. Registros em outro formato passam como estao.
+    """
+    if not regs or "detalhes_ativo" not in regs[0]:
+        return regs
+
+    def limpar(bloco: dict) -> dict:
+        out = {}
+        for k, v in (bloco or {}).items():
+            v = "" if v in (None, "--") else str(v).strip()
+            if k in NUMERICOS and v:
+                v = v.replace(".", "").replace(",", ".")
+            out[k] = v
+        return out
+
+    linhas = []
+    for r in regs:
+        det = limpar(r.get("detalhes_ativo"))
+        for rotulo, chave in (("Total", "totais_ativo"), ("Subtotal", "subtotais_ativo")):
+            valores = limpar(r.get(chave))
+            if rotulo == "Subtotal" and not any(valores.values()):
+                continue
+            linhas.append({**det, "agrupamento": rotulo, **valores})
+    return linhas
 
 
 def resolver(registro: dict) -> dict:
@@ -233,7 +267,7 @@ def _selecionar_periodo(pagina, periodo: str) -> None:
 
 
 def processar(payload, data: dt.date, periodo: str, diag: dict) -> dict:
-    regs = achar_registros(payload) if payload is not None else []
+    regs = achatar(achar_registros(payload)) if payload is not None else []
     linhas, mapa = [], {}
     for r in regs:
         if not isinstance(r, dict):
@@ -288,7 +322,7 @@ def inspecionar(payload, diag) -> None:
         if diag.get("erro"):
             print(f"\nErro: {diag['erro']}")
         return
-    regs = achar_registros(payload)
+    regs = achatar(achar_registros(payload))
     print(f"\nRegistros no payload: **{len(regs)}**\n")
     if regs:
         print("Campos do primeiro registro: `" + "`, `".join(regs[0].keys()) + "`\n")
