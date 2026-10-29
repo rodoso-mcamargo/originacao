@@ -31,7 +31,6 @@ jobs:
     name: Fluxo dos fundos
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    concurrency: { group: push-main, cancel-in-progress: false }
     env:
       FLUXO_CACHE: /home/runner/.cache/fluxo-fundos   # fora do checkout: nunca entra no git
 

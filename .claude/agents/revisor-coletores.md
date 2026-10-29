@@ -5,7 +5,8 @@ tools: Bash, Read, Glob, Grep
 ---
 Você recebe o nome de uma branch de coletor. Não edite arquivos: só leia, rode e reporte.
 1. git diff --stat main...<branch>: falhe se houver arquivo fora do escopo da regra 3.
-2. No workflow: laço de push da regra 4, gravação só na main, concurrency push-main,
+2. No workflow: laço de push da regra 4, gravação só na main, nenhum grupo de concurrency
+   compartilhado com outros workflows,
    workflow_dispatch com inspecionar, gatilho push temporário já removido, cron que não
    colide com os demais (liste todos os crons do repo).
 3. No script: IPv4 forçado, rate limit, User-Agent, nada que contorne login/captcha, null em

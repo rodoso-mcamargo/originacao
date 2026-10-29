@@ -13,7 +13,6 @@ on:
 jobs:
   coletar:
     runs-on: ubuntu-latest
-    concurrency: { group: push-main, cancel-in-progress: false }
     permissions:
       contents: write
     steps:

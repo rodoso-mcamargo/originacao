@@ -9,7 +9,9 @@
    dados/ de outras fontes.
 4. Push no workflow, sempre com:
    for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && break; [ $i = 5 ] && exit 1; sleep $((i*10)); done
-   e `concurrency: { group: push-main, cancel-in-progress: false }` no job que dá push.
+   Não use um grupo de `concurrency` compartilhado entre workflows: o GitHub guarda só um
+   run pendente por grupo e cancela o anterior quando chega outro. O laço acima já resolve
+   a disputa de push.
    O passo de commit/push só grava quando `GITHUB_REF` é `refs/heads/main`; fora da main
    ele só lista o que gravaria (`git diff --staged --stat`), como o job `salvar` do
    coleta-diaria.yml.
