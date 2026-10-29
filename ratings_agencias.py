@@ -782,7 +782,7 @@ def ler_base(caminho: pathlib.Path) -> dict[tuple[str, str], dict]:
 
 def gravar_csv(caminho: pathlib.Path, campos: list[str], linhas: list[dict]):
     with caminho.open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=campos, extrasaction="ignore")
+        w = csv.DictWriter(f, fieldnames=campos, extrasaction="ignore", lineterminator="\n")
         w.writeheader()
         for l in linhas:
             w.writerow({k: ("" if l.get(k) is None else l.get(k)) for k in campos})

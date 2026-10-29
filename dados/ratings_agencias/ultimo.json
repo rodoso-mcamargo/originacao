@@ -1,6 +1,6 @@
 {
  "data_referencia": "2026-10-29",
- "gerado_em": "2026-10-29T12:18:38-03:00",
+ "gerado_em": "2026-10-29T12:22:07-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
@@ -109,7 +109,7 @@
     ],
     "lidos": 2,
     "validos": 2,
-    "novos_na_base": 2,
+    "novos_na_base": 0,
     "descartados": {},
     "erros": [],
     "fonte": "brazil.ratings.spglobal.com"
