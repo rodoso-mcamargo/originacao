@@ -1,0 +1,19 @@
+{
+ "data": "2026-10-26",
+ "n": 1,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-10-26",
+   "entidade": "MERCADO PAGO MERCADO CREDITO",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms mercado pago mercado credito at aaa bra outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/non-bank-financial-institutions/fitch-affirms-mercado-pago-mercado-credito-at-aaa-bra-outlook-stable-26-10-2026"
+  }
+ ]
+}

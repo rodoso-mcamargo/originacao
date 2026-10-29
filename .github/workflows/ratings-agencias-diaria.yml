@@ -1,0 +1,76 @@
+name: Ratings das agencias
+
+# Acoes de rating publicadas por Moody's Local, S&P Brasil e Fitch, casadas com
+# os emissores/devedores do painel. Ver dados/ratings_agencias/README.md.
+
+on:
+  schedule:
+    # 10:15 e 20:00 em Brasilia, de segunda a sexta.
+    - cron: "15 13 * * 1-5"
+    - cron: "0 23 * * 1-5"
+  push:
+    branches: [coleta/ratings-agencias]   # TEMPORARIO: so para testar na branch (regra 13b)
+  workflow_dispatch:
+    inputs:
+      inspecionar:
+        description: "sim = so descreve as fontes no resumo, nao grava"
+        required: false
+        default: ""
+      desde:
+        description: "Backfill a partir de AAAA-MM-DD (ate 12 meses; vazio = coleta do dia)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ratings-agencias
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency: { group: push-main, cancel-in-progress: false }
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests rapidfuzz pytest
+
+      - name: Testes
+        run: python -m pytest tests/test_ratings_agencias.py -q
+
+      - name: Coletar
+        env:
+          IN_INSPECIONAR: ${{ inputs.inspecionar }}
+          IN_DESDE: ${{ inputs.desde }}
+        run: |
+          if [ "$IN_INSPECIONAR" = "sim" ]; then
+            python ratings_agencias.py --inspecionar >> "$GITHUB_STEP_SUMMARY"
+          elif [ -n "$IN_DESDE" ]; then
+            python ratings_agencias.py --desde "$IN_DESDE"
+          else
+            python ratings_agencias.py
+          fi
+
+      - name: Salvar no repositorio
+        if: ${{ inputs.inspecionar != 'sim' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/ratings_agencias/
+          if git diff --staged --quiet; then
+            echo "Nada mudou."
+          elif [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "Teste fora da main: nao grava. Arquivos que entrariam no commit:"
+            git diff --staged --stat
+          else
+            git commit -m "ratings agencias: coleta $(date -u +%Y-%m-%dT%H:%M)"
+            for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && break; [ $i = 5 ] && exit 1; sleep $((i*10)); done
+          fi
