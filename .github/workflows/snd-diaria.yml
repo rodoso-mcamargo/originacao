@@ -10,9 +10,6 @@ on:
         description: "sim = so descreve a fonte (status, colunas, 3 registros), nao grava"
         required: false
         default: ""
-  # TEMPORARIO (regra 13b): remover antes do PR
-  push:
-    branches: [coleta/vencimentos]
 
 permissions:
   contents: write
