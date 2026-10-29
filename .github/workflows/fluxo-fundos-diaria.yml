@@ -1,0 +1,98 @@
+name: Fluxo dos fundos (informe diario CVM)
+
+# Captacao e resgate diarios dos fundos de credito privado e incentivados/infra,
+# por fundo e por gestor, com alerta de resgate forte. Fonte: informe diario e
+# cadastro pos-175 da CVM. Os zips (10-12 MB por mes) ficam no actions/cache;
+# so o recorte do universo (dados/fluxo_fundos/) vai para o git.
+
+on:
+  schedule:
+    # 18:00 em Brasilia (21:00 UTC), de segunda a sexta. A CVM republica o
+    # informe do mes corrente de madrugada; as 21h o D-1 ja esta completo.
+    - cron: "0 21 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      inspecionar:
+        description: "sim = so descreve as fontes (status, colunas, 3 registros), nao grava"
+        required: false
+      meses:
+        description: "Backfill: quantos meses gravar (1 a 24; vazio = mes corrente e anterior)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fluxo-fundos
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    name: Fluxo dos fundos
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    concurrency: { group: push-main, cancel-in-progress: false }
+    env:
+      FLUXO_CACHE: /home/runner/.cache/fluxo-fundos   # fora do checkout: nunca entra no git
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests pandas pytest
+
+      - name: Testes
+        run: python -m pytest -q tests/test_fluxo_fundos.py
+
+      # Uma entrada nova por run (o script so baixa de novo o que mudou na CVM);
+      # restore-keys pega a mais recente. O GitHub descarta as antigas sozinho.
+      - name: Cache dos zips da CVM
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.FLUXO_CACHE }}
+          key: fluxo-fundos-${{ github.run_id }}
+          restore-keys: fluxo-fundos-
+
+      - name: Rodar coleta
+        env:
+          IN_INSPECIONAR: ${{ inputs.inspecionar }}
+          IN_MESES: ${{ inputs.meses }}
+        run: |
+          if [ "$IN_INSPECIONAR" = "sim" ]; then
+            python fluxo_fundos.py --inspecionar >> "$GITHUB_STEP_SUMMARY"
+          elif [ -n "$IN_MESES" ]; then
+            python fluxo_fundos.py --meses "$IN_MESES"
+          else
+            python fluxo_fundos.py
+          fi
+
+      - name: Resumo
+        if: ${{ always() && inputs.inspecionar != 'sim' }}
+        run: |
+          if [ -f dados/fluxo_fundos/ultimo.json ]; then
+            python fluxo_fundos.py --resumo >> "$GITHUB_STEP_SUMMARY"
+            echo '### Amostra (10 linhas do ultimo arquivo diario)' >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            f=$(ls dados/fluxo_fundos/[0-9]*.csv | tail -1)
+            head -11 "$f" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Salvar os dados no repositorio
+        if: ${{ inputs.inspecionar != 'sim' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dados/fluxo_fundos/
+          if git diff --staged --quiet; then
+            echo "Nada mudou."
+          elif [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "Teste fora da main: nao grava. Arquivos que entrariam no commit:"
+            git diff --staged --stat | tail -15
+          else
+            git commit -m "dados: fluxo dos fundos $(date -u +%Y-%m-%d)"
+            for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && break; [ $i = 5 ] && exit 1; sleep $((i*10)); done
+          fi
