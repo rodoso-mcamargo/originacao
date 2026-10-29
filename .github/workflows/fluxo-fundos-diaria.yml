@@ -10,8 +10,6 @@ on:
     # 18:00 em Brasilia (21:00 UTC), de segunda a sexta. A CVM republica o
     # informe do mes corrente de madrugada; as 21h o D-1 ja esta completo.
     - cron: "0 21 * * 1-5"
-  push:
-    branches: [coleta/fluxo-fundos]   # TEMPORARIO: so para testar na branch; sai antes do PR
   workflow_dispatch:
     inputs:
       inspecionar:
@@ -57,14 +55,6 @@ jobs:
           path: ${{ env.FLUXO_CACHE }}
           key: fluxo-fundos-${{ github.run_id }}
           restore-keys: fluxo-fundos-
-
-      - name: TEMPORARIO - inspecao e backfill de 3 meses (so no push da branch)
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          python fluxo_fundos.py --inspecionar >> "$GITHUB_STEP_SUMMARY"
-          python fluxo_fundos.py --meses 3
-          echo "## Backfill de 3 meses" >> "$GITHUB_STEP_SUMMARY"
-          python fluxo_fundos.py --resumo >> "$GITHUB_STEP_SUMMARY"
 
       - name: Rodar coleta
         env:
