@@ -41,7 +41,7 @@ Colunas: `cnpj, nome, gestor, classe, gestora_painel, pl, origem`.
 | Arquivo | Chave | Conteudo |
 |---|---|---|
 | `AAAA-MM-DD.csv` | cnpj (data = competencia) | um por dia util; uma linha por fundo do universo que informou |
-| `por_gestor.csv` | data, gestor, classe | serie agregada; `todas` = soma das classes do gestor; `TOTAL` = universo |
+| `por_gestor/AAAA-MM.csv` | data, gestor, classe | serie agregada, um arquivo por mes (a rodada diaria so regrava os meses recalculados); `todas` = soma das classes do gestor; `TOTAL` = universo |
 | `alertas.csv` | cnpj, regra, data_inicio | episodios de resgate forte |
 | `universo.csv` | cnpj | recorte da rodada |
 | `ultimo.json` | - | data de referencia, totais, 10 maiores resgates em 21 du, `diagnostico` |
@@ -60,6 +60,11 @@ liq_5d, pct_5d, liq_21d, pct_21d, liq_63d, pct_63d, cotistas, quota, alerta`
 - Classe com subclasses: o informe traz uma linha por subclasse; PL, captacao, resgate e
   cotistas sao somados e a `quota` fica vazia.
 - Dia sem informe de um fundo conta fluxo zero nas janelas e o PL segue o ultimo informado.
+- Campo vazio na fonte nunca vira zero (regra 8): captacao **ou** resgate vazio deixa `liquido`
+  e `pct_pl_d1` null, e toda janela (5/21/63 du) que contem esse dia fica null. Numa classe com
+  subclasses, se alguma subclasse veio sem o campo, o total da classe fica null (soma parcial
+  seria inventada). Nos agregados, fundo com valor null fica fora da soma daquele campo
+  (`n_fundos` conta todos os que informaram).
 - Agregados: % = soma dos fluxos / soma das bases dos fundos com base valida.
 - Data de referencia (`ultimo.json`): ultimo dia util em que >= 80% dos fundos com dado
   informaram.

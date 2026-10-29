@@ -142,3 +142,54 @@ def test_em_alerta_corte():
     assert not ff.em_alerta(-1, -5.0, 5.0)
     assert not ff.em_alerta(1, 6.0, 5.0)
     assert not ff.em_alerta(None, -9.0, 5.0)
+
+
+# --- regra 8: campo vazio na fonte fica null --------------------------------
+@pytest.fixture
+def informe_vazios():
+    return ff.ler_informe(FIX / "inf_diario_vazios.csv")
+
+
+def test_vazio_nao_vira_zero_na_leitura(informe_vazios):
+    i = informe_vazios.set_index(["cnpj", "data"])
+    c = i.loc[("66666666000166", "2026-10-05")]
+    assert pd.isna(c["captacao"]) and c["resgate"] == 1_000_000
+    c = i.loc[("66666666000166", "2026-10-06")]
+    assert pd.isna(c["captacao"]) and pd.isna(c["resgate"])
+    d = i.loc[("77777777000177", "2026-10-02")]           # SUB2 sem resgate: total da classe null
+    assert pd.isna(d["resgate"]) and d["captacao"] == 100_000 and d["pl"] == 80_000_000
+    assert i.loc[("77777777000177", "2026-10-05"), "resgate"] == 50_000
+
+
+def test_liquido_e_janelas_null_com_fluxo_vazio(informe_vazios):
+    datas = ff.calendario(informe_vazios)
+    c = ff.calcular(informe_vazios, datas).set_index(["cnpj", "data"])
+    so_um = c.loc[("66666666000166", "2026-10-05")]          # so captacao vazia
+    assert pd.isna(so_um["liquido"]) and pd.isna(so_um["pct_pl_d1"])
+    ambos = c.loc[("66666666000166", "2026-10-06")]          # captacao e resgate vazios
+    assert pd.isna(ambos["liquido"]) and pd.isna(ambos["pct_pl_d1"])
+    assert c.loc[("66666666000166", "2026-10-02"), "liquido"] == -1_000_000
+    # janelas de 5 du que contem 05/10 ou 06/10 ficam null (nao somam zero no lugar)
+    assert pd.isna(c.loc[("66666666000166", "2026-10-09"), "liq_5d"])
+    assert pd.isna(c.loc[("66666666000166", "2026-10-09"), "pct_5d"])
+    assert c.loc[("66666666000166", "2026-10-09"), "alerta"] == ""
+    d = c.loc["77777777000177"]
+    assert pd.isna(d.loc["2026-10-02", "liquido"])
+    assert pd.isna(d.loc["2026-10-08", "liq_5d"])            # janela 02..08 contem 02/10
+    assert d.loc["2026-10-09", "liq_5d"] == pytest.approx(250_000)   # janela 05..09 completa
+    # o arquivo diario grava vazio, nao 0
+    g = ff.arred(c.reset_index())
+    assert pd.isna(g.loc[(g["cnpj"] == "66666666000166") & (g["data"] == "2026-10-06"), "liquido"]).all()
+
+
+def test_por_gestor_particionado_por_mes(tmp_path):
+    def linhas(datas, v):
+        return pd.DataFrame([{"data": d, "gestor": "G", "classe": "todas", "liquido": v} for d in datas])
+    ff.gravar_por_gestor(linhas(["2026-09-29", "2026-09-30", "2026-10-01"], 1), ["2026-09-29", "2026-09-30", "2026-10-01"], tmp_path)
+    assert sorted(p.name for p in tmp_path.iterdir()) == ["2026-09.csv", "2026-10.csv"]
+    # rodada seguinte so recalcula outubro: setembro fica intacto, outubro e substituido
+    antes = (tmp_path / "2026-09.csv").read_bytes()
+    ff.gravar_por_gestor(linhas(["2026-10-01", "2026-10-02"], 2), ["2026-10-01", "2026-10-02"], tmp_path)
+    assert (tmp_path / "2026-09.csv").read_bytes() == antes
+    out = pd.read_csv(tmp_path / "2026-10.csv")
+    assert list(out["data"]) == ["2026-10-01", "2026-10-02"] and set(out["liquido"]) == {2}

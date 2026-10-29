@@ -20,7 +20,8 @@ Fontes (CVM, dados abertos):
 Saidas em dados/fluxo_fundos/ (so o recorte do universo; os zips ficam no cache):
     universo.csv     cnpj, nome, gestor, classe, origem (+ gestora_painel, pl)
     AAAA-MM-DD.csv   uma linha por fundo do universo que informou naquela competencia
-    por_gestor.csv   serie agregada por gestor x classe (chave: data, gestor, classe)
+    por_gestor/AAAA-MM.csv  serie agregada por gestor x classe, um arquivo por mes
+                     (chave: data, gestor, classe)
     alertas.csv      episodios de resgate forte (chave: cnpj, regra, data_inicio)
     ultimo.json      data de referencia, maiores resgates e bloco diagnostico
 """
@@ -255,9 +256,16 @@ def ler_informe(arq) -> pd.DataFrame:
         "cotistas": pd.to_numeric(df.get("NR_COTST"), errors="coerce"),
         "quota": pd.to_numeric(df["VL_QUOTA"], errors="coerce"),
     })
+    # regra 8: campo vazio na fonte nao vira zero. Na soma das subclasses, se alguma
+    # subclasse veio sem o campo, o total da classe fica null (soma parcial seria inventada).
+    somar = ["pl", "captacao", "resgate", "cotistas"]
     g = out.groupby(["cnpj", "data"], sort=False)
-    agg = g.agg(pl=("pl", "sum"), captacao=("captacao", "sum"), resgate=("resgate", "sum"),
-                cotistas=("cotistas", "sum"), quota=("quota", "first"), linhas=("pl", "size")).reset_index()
+    agg = g[somar].sum(min_count=1)
+    faltas = out[somar].isna().groupby([out["cnpj"], out["data"]], sort=False).sum()
+    agg = agg.mask(faltas > 0)
+    agg["quota"] = g["quota"].first()
+    agg["linhas"] = g.size()
+    agg = agg.reset_index()
     agg.loc[agg["linhas"] > 1, "quota"] = None
     return agg
 
@@ -389,6 +397,8 @@ def calcular(inf: pd.DataFrame, datas: list[str]) -> pd.DataFrame:
     """inf: linhas (cnpj, data, pl, captacao, resgate, cotistas, quota) so do universo.
     Devolve as mesmas linhas com pl_d1, liquido, % e acumulados por janela.
     Dia sem informe conta fluxo zero nas janelas; PL segue o ultimo informado.
+    Dia com informe mas captacao ou resgate vazio: liquido null, e toda janela que
+    contem esse dia fica null (regra 8: nao inventar zero).
     Base do % de cada janela = PL do dia util anterior ao inicio da janela."""
     inf = inf[inf["data"].isin(datas)]
     if inf.empty:
@@ -396,25 +406,25 @@ def calcular(inf: pd.DataFrame, datas: list[str]) -> pd.DataFrame:
     idx = pd.Index(datas, name="data")
     piv = lambda col: inf.pivot(index="data", columns="cnpj", values=col).reindex(idx)  # noqa: E731
     cap, res, pl = piv("captacao"), piv("resgate"), piv("pl")
-    informou = pl.notna() | cap.notna()
-    liq = cap.fillna(0) - res.fillna(0)
-    liq = liq.where(informou)
+    informou = inf.assign(_u=True).pivot(index="data", columns="cnpj", values="_u").reindex(idx)
+    informou = informou.notna()          # o fundo tem linha no informe naquele dia
+    liq = cap - res                     # captacao ou resgate vazio na fonte -> liquido null
+    sem_fluxo = informou & liq.isna()   # informou, mas sem o fluxo do dia
     pl_ff = pl.ffill()
     pl_d1 = pl_ff.shift(1)
     base_ok = lambda b: b.where(b > 0)  # noqa: E731
     res_df = {"pl_d1": pl_d1, "liquido": liq, "pct_pl_d1": liq / base_ok(pl_d1) * 100}
     liq0 = liq.fillna(0)
-    pos = pd.Series(range(len(idx)), index=idx)
     for n in JANELAS:
         roll = liq0.rolling(n, min_periods=1).sum()
         roll.iloc[: n - 1] = float("nan")   # historico insuficiente -> null
+        roll = roll.mask(sem_fluxo.astype(int).rolling(n, min_periods=1).sum() > 0)   # janela com fluxo vazio -> null
         base = base_ok(pl_ff.shift(n))
         res_df[f"liq_{n}d"] = roll
         res_df[f"pct_{n}d"] = roll / base * 100
     longo = pd.concat({k: v.where(informou).stack(future_stack=True) for k, v in res_df.items()}, axis=1)
     longo = longo.reset_index()
     out = inf.merge(longo, on=["data", "cnpj"], how="left")
-    out["liquido"] = out["captacao"].fillna(0) - out["resgate"].fillna(0)
     out["alerta"] = out.apply(rotulo_alerta, axis=1)
     return out.sort_values(["data", "cnpj"]).reset_index(drop=True)
 
@@ -523,6 +533,19 @@ def mesclar_csv(caminho: pathlib.Path, novo: pd.DataFrame, chave: list[str], sub
     novo = novo.drop_duplicates(chave, keep="last").sort_values(chave).reset_index(drop=True)
     novo.to_csv(caminho, index=False, encoding="utf-8", lineterminator="\n")
     return novo
+
+
+def gravar_por_gestor(pg_novo: pd.DataFrame, datas_gravar: list[str], pasta: pathlib.Path) -> list[str]:
+    """Serie por gestor particionada por mes (por_gestor/AAAA-MM.csv): a rodada diaria so
+    regrava os meses que recalculou. Chave em cada arquivo: data, gestor, classe."""
+    pasta.mkdir(parents=True, exist_ok=True)
+    gravados = []
+    for mes in sorted({d[:7] for d in datas_gravar}):
+        datas_mes = [d for d in datas_gravar if d[:7] == mes]
+        mesclar_csv(pasta / f"{mes}.csv", pg_novo[pg_novo["data"].str[:7] == mes], ["data", "gestor", "classe"],
+                    lambda v, dm=datas_mes: v["data"].isin(dm))
+        gravados.append(mes)
+    return gravados
 
 
 def mesclar_alertas(eps: pd.DataFrame, uni: pd.DataFrame, data_ini: str, data_ant: str, data_ref: str,
@@ -662,8 +685,7 @@ def rodar(meses: int, cache: pathlib.Path) -> dict:
 
     pg = arred(agregar(calc, uni))
     pg_novo = pg[pg["data"].isin(datas_gravar)]
-    mesclar_csv(DIR_OUT / "por_gestor.csv", pg_novo, ["data", "gestor", "classe"],
-                lambda v: v["data"].isin(datas_gravar))
+    gravar_por_gestor(pg_novo, datas_gravar, DIR_OUT / "por_gestor")
 
     ult_por_fundo = calc.groupby("cnpj")["data"].max().to_dict()
     # alertas so a partir do dia em que a janela de 21 du ja tem base (posicao 21 do calendario)
