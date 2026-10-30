@@ -1,0 +1,110 @@
+{
+ "data": "2026-10-29",
+ "n": 8,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-10-29",
+   "entidade": "ELDORADO",
+   "escala": "nacional",
+   "acao": "elevacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch upgrades eldorado to bb outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-upgrades-eldorado-to-bb-outlook-stable-29-10-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-29",
+   "entidade": "ITAUSA AAA BRA",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms itausa aaa bra national long term rating outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/non-bank-financial-institutions/fitch-affirms-itausa-aaa-bra-national-long-term-rating-outlook-stable-29-10-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-29",
+   "entidade": "INITIAL NATIONAL",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch assigns initial national ratings of a bra f2 bra to rp financeira outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/non-bank-financial-institutions/fitch-assigns-initial-national-ratings-of-a-bra-f2-bra-to-rp-financeira-outlook-stable-29-10-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-29",
+   "entidade": "CRIS RELATED TO PETROBRAS",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fitch affirms aaasf bra ratings of cris related to petrobras",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-affirms-aaasf-bra-ratings-of-cris-related-to-petrobras-29-10-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-29",
+   "entidade": "RATING REPORT OF FIDC CREDITAS AUTO X",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "fitch publishes rating report of fidc creditas auto x",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-publishes-rating-report-of-fidc-creditas-auto-x-29-10-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-29",
+   "entidade": "RATING REPORT OF FIDC CREDITAS AUTO XI",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "fitch publishes rating report of fidc creditas auto xi",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-publishes-rating-report-of-fidc-creditas-auto-xi-29-10-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-29",
+   "entidade": "RATING REPORT FIDC CREDITAS AUTO X",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "rating report fidc creditas auto x",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/rating-report-fidc-creditas-auto-x-29-10-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-29",
+   "entidade": "RATING REPORT FIDC CREDITAS AUTO XI",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "rating report fidc creditas auto xi",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/rating-report-fidc-creditas-auto-xi-29-10-2026"
+  }
+ ]
+}

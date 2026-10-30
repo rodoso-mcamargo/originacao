@@ -1,28 +1,30 @@
 {
  "data_referencia": "2026-10-29",
- "gerado_em": "2026-10-29T12:22:07-03:00",
+ "gerado_em": "2026-10-29T23:13:05-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 4,
+   "fitch": 12,
    "sp": 2
   },
   "por_acao": {
-   "afirmacao": 2,
-   "atribuicao": 1,
-   "relatorio": 3
+   "afirmacao": 4,
+   "atribuicao": 2,
+   "elevacao": 1,
+   "relatorio": 7
   },
-  "base_total": 6,
+  "base_total": 14,
   "base_por_agencia": {
-   "fitch": 4,
+   "fitch": 12,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 2,
-   "atribuicao": 1,
-   "relatorio": 3
+   "afirmacao": 4,
+   "atribuicao": 2,
+   "elevacao": 1,
+   "relatorio": 7
   },
-  "universo_linhas": 0
+  "universo_linhas": 1
  },
  "diagnostico": {
   "universo_nomes": 482,
@@ -80,8 +82,27 @@
        "totalNumberOfRecordsData",
        "tz"
       ],
-      "totalNumberOfRecords": 0,
-      "chaves_registro": []
+      "totalNumberOfRecords": 1,
+      "chaves_registro": [
+       "actionLevelIndicator",
+       "actionName",
+       "actionTypeCode",
+       "class",
+       "contractType",
+       "country",
+       "entityId",
+       "id",
+       "maturityDate",
+       "ratingActionDate",
+       "ratingFrom",
+       "ratingTo",
+       "ratingType",
+       "sectorCode",
+       "sourceProvidedName",
+       "subSectorCode",
+       "subSectorDesc",
+       "totalCount"
+      ]
      },
      {
       "url": "https://brazil.ratings.spglobal.com/pt",
@@ -124,17 +145,35 @@
       "urls_research": 500
      }
     ],
-    "lidos": 4,
-    "validos": 4,
-    "novos_na_base": 0,
+    "lidos": 12,
+    "validos": 12,
+    "novos_na_base": 8,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 495,
-     "slug_sem_data": 1
+     "fora_do_brasil_e_fora_do_universo": 486,
+     "slug_sem_data": 2
     },
     "erros": [],
     "fonte": "fitchratings.com"
    }
   }
  },
- "acoes_casadas_no_run": []
+ "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-10-29",
+   "entidade": "ITAUSA AAA BRA",
+   "acao": "afirmacao",
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "url": "https://www.fitchratings.com/research/pt/non-bank-financial-institutions/fitch-affirms-itausa-aaa-bra-national-long-term-rating-outlook-stable-29-10-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "ITAUSA S/A",
+     "codigos": "ITSA17;ITSA18",
+     "tipo_match": "fuzzy",
+     "score": 100.0
+    }
+   ]
+  }
+ ]
 }
