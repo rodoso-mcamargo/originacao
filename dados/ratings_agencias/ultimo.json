@@ -1,33 +1,33 @@
 {
- "data_referencia": "2026-10-29",
- "gerado_em": "2026-10-29T23:13:05-03:00",
+ "data_referencia": "2026-10-30",
+ "gerado_em": "2026-10-30T15:38:37-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 12,
+   "fitch": 14,
    "sp": 2
   },
   "por_acao": {
-   "afirmacao": 4,
-   "atribuicao": 2,
+   "afirmacao": 5,
+   "atribuicao": 3,
    "elevacao": 1,
    "relatorio": 7
   },
-  "base_total": 14,
+  "base_total": 17,
   "base_por_agencia": {
-   "fitch": 12,
+   "fitch": 15,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 4,
-   "atribuicao": 2,
+   "afirmacao": 6,
+   "atribuicao": 3,
    "elevacao": 1,
    "relatorio": 7
   },
-  "universo_linhas": 1
+  "universo_linhas": 3
  },
  "diagnostico": {
-  "universo_nomes": 482,
+  "universo_nomes": 484,
   "grupos": 0,
   "agencias": {
    "moodys_local": {
@@ -82,27 +82,8 @@
        "totalNumberOfRecordsData",
        "tz"
       ],
-      "totalNumberOfRecords": 1,
-      "chaves_registro": [
-       "actionLevelIndicator",
-       "actionName",
-       "actionTypeCode",
-       "class",
-       "contractType",
-       "country",
-       "entityId",
-       "id",
-       "maturityDate",
-       "ratingActionDate",
-       "ratingFrom",
-       "ratingTo",
-       "ratingType",
-       "sectorCode",
-       "sourceProvidedName",
-       "subSectorCode",
-       "subSectorDesc",
-       "totalCount"
-      ]
+      "totalNumberOfRecords": 0,
+      "chaves_registro": []
      },
      {
       "url": "https://brazil.ratings.spglobal.com/pt",
@@ -145,11 +126,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 12,
-    "validos": 12,
-    "novos_na_base": 8,
+    "lidos": 14,
+    "validos": 14,
+    "novos_na_base": 3,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 486,
+     "fora_do_brasil_e_fora_do_universo": 484,
      "slug_sem_data": 2
     },
     "erros": [],
@@ -158,6 +139,40 @@
   }
  },
  "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-10-30",
+   "entidade": "TUPY",
+   "acao": "afirmacao",
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-tupy-ratings-at-bb-outlook-stable-30-10-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "TUPY S/A",
+     "codigos": "TUPY15;TUPY25;TUPY35",
+     "tipo_match": "exato",
+     "score": 100
+    }
+   ]
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-30",
+   "entidade": "TUPY",
+   "acao": "afirmacao",
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "url": "https://www.fitchratings.com/research/corporate-finance/fitch-affirms-tupy-ratings-at-bb-outlook-stable-30-10-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "TUPY S/A",
+     "codigos": "TUPY15;TUPY25;TUPY35",
+     "tipo_match": "exato",
+     "score": 100
+    }
+   ]
+  },
   {
    "agencia": "fitch",
    "data": "2026-10-29",
