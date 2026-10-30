@@ -2,16 +2,16 @@
  "fonte": "SND - debentures.com.br (ANBIMA/B3)",
  "urls": {
   "caracteristicas": "https://www.debentures.com.br/exploreosnd/consultaadados/emissoesdedebentures/caracteristicas_e.asp?Ativo=",
-  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=29/10/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
+  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=30/10/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
  },
- "data_referencia": "2026-10-29",
- "gerado_em": "2026-10-29T15:20:34+00:00",
+ "data_referencia": "2026-10-30",
+ "gerado_em": "2026-10-30T16:09:35+00:00",
  "fonte_gerado_em": {
-  "caracteristicas": "2026-10-29T12:20:07",
-  "agenda": "2026-10-29T12:20:13"
+  "caracteristicas": "2026-10-30T13:09:09",
+  "agenda": "2026-10-30T13:09:14"
  },
  "universo_codigos": 1277,
- "universo_cnpjs": 385,
+ "universo_cnpjs": 386,
  "emissores_com_vencimento_24m": 303,
  "top10_vencimento_24m": [
   {
@@ -52,15 +52,15 @@
   {
    "cnpj_emissor": "21314559000166",
    "emissor": "MOVIDA PARTICIPACOES S/A",
-   "venc_0_24m": 3245270444.46,
+   "venc_0_24m": 3245365364.46,
    "pct_saldo_0_24m": 20.0,
    "saldo_estimado": false
   },
   {
    "cnpj_emissor": "23373000000132",
    "emissor": "VAMOS LOCACAO DE CAMINHOES MAQUINAS E EQUIPAMENTOS S.A.",
-   "venc_0_24m": 3029562410.22,
-   "pct_saldo_0_24m": 35.7,
+   "venc_0_24m": 3038472412.01,
+   "pct_saldo_0_24m": 35.8,
    "saldo_estimado": false
   },
   {
@@ -73,14 +73,14 @@
   {
    "cnpj_emissor": "33050196000188",
    "emissor": "COMPANHIA PAULISTA DE FORCA E LUZ",
-   "venc_0_24m": 2956176502.29,
+   "venc_0_24m": 2956180887.4,
    "pct_saldo_0_24m": 35.8,
    "saldo_estimado": false
   },
   {
    "cnpj_emissor": "04368898000106",
    "emissor": "COPEL DISTRIBUICAO S/A",
-   "venc_0_24m": 2500570453.0,
+   "venc_0_24m": 2500619392.0,
    "pct_saldo_0_24m": 23.1,
    "saldo_estimado": false
   }
@@ -88,16 +88,16 @@
  "diagnostico": {
   "lidos": {
    "caracteristicas": 10065,
-   "agenda": 93896
+   "agenda": 93833
   },
   "gravados": {
-   "caracteristicas": 2024,
-   "agenda": 31145,
-   "vencimentos_emissor": 385
+   "caracteristicas": 2025,
+   "agenda": 31125,
+   "vencimentos_emissor": 386
   },
   "descartados": {
-   "caracteristicas_fora_do_universo": 8041,
-   "agenda_fora_do_universo": 62751,
+   "caracteristicas_fora_do_universo": 8040,
+   "agenda_fora_do_universo": 62708,
    "motivo": "CNPJ do emissor sem papel em dados/ultimo.json, ou papel excluido do SND fora do painel",
    "codigos_do_universo_sem_snd": [
     "FEPS11"
