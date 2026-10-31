@@ -1,6 +1,6 @@
 {
  "data": "2026-10-30",
- "n": 3,
+ "n": 5,
  "acoes": [
   {
    "agencia": "fitch",
@@ -40,6 +40,32 @@
    "instrumento": null,
    "titulo": "fitch assigns first time a bra rating to paranagua saneamento outlook stable",
    "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-assigns-first-time-a-bra-rating-to-paranagua-saneamento-outlook-stable-30-10-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-30",
+   "entidade": "RATING REPORT OF FIDC SANTANDER AUTO LOANS II",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "fitch publishes rating report of fidc santander auto loans ii",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-publishes-rating-report-of-fidc-santander-auto-loans-ii-30-10-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-10-30",
+   "entidade": "RATING REPORT FIDC SANTANDER AUTO LOANS II",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "rating report fidc santander auto loans ii",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/rating-report-fidc-santander-auto-loans-ii-30-10-2026"
   }
  ]
 }
