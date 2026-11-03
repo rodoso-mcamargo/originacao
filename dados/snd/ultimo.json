@@ -2,15 +2,15 @@
  "fonte": "SND - debentures.com.br (ANBIMA/B3)",
  "urls": {
   "caracteristicas": "https://www.debentures.com.br/exploreosnd/consultaadados/emissoesdedebentures/caracteristicas_e.asp?Ativo=",
-  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=02/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
+  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=03/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
  },
- "data_referencia": "2026-11-02",
- "gerado_em": "2026-11-02T19:41:12+00:00",
+ "data_referencia": "2026-11-03",
+ "gerado_em": "2026-11-03T17:15:01+00:00",
  "fonte_gerado_em": {
-  "caracteristicas": "2026-11-02T16:40:46",
-  "agenda": "2026-11-02T16:40:50"
+  "caracteristicas": "2026-11-03T14:14:35",
+  "agenda": "2026-11-03T14:14:40"
  },
- "universo_codigos": 1275,
+ "universo_codigos": 1272,
  "universo_cnpjs": 385,
  "emissores_com_vencimento_24m": 303,
  "top10_vencimento_24m": [
@@ -87,17 +87,17 @@
  ],
  "diagnostico": {
   "lidos": {
-   "caracteristicas": 10065,
-   "agenda": 93787
+   "caracteristicas": 10066,
+   "agenda": 93800
   },
   "gravados": {
    "caracteristicas": 2024,
-   "agenda": 31120,
+   "agenda": 31121,
    "vencimentos_emissor": 385
   },
   "descartados": {
-   "caracteristicas_fora_do_universo": 8041,
-   "agenda_fora_do_universo": 62667,
+   "caracteristicas_fora_do_universo": 8042,
+   "agenda_fora_do_universo": 62679,
    "motivo": "CNPJ do emissor sem papel em dados/ultimo.json, ou papel excluido do SND fora do painel",
    "codigos_do_universo_sem_snd": [
     "FEPS11"
