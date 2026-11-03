@@ -1,28 +1,28 @@
 {
  "data_referencia": "2026-11-03",
- "gerado_em": "2026-11-03T00:46:12-03:00",
+ "gerado_em": "2026-11-03T17:07:50-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 14,
+   "fitch": 15,
    "sp": 1
   },
   "por_acao": {
    "afirmacao": 4,
-   "atribuicao": 3,
+   "atribuicao": 2,
    "elevacao": 1,
-   "relatorio": 7
+   "relatorio": 9
   },
-  "base_total": 19,
+  "base_total": 21,
   "base_por_agencia": {
-   "fitch": 17,
+   "fitch": 19,
    "sp": 2
   },
   "base_por_acao": {
    "afirmacao": 6,
    "atribuicao": 3,
    "elevacao": 1,
-   "relatorio": 9
+   "relatorio": 11
   },
   "universo_linhas": 3
  },
@@ -82,8 +82,26 @@
        "totalNumberOfRecordsData",
        "tz"
       ],
-      "totalNumberOfRecords": 0,
-      "chaves_registro": []
+      "totalNumberOfRecords": 1,
+      "chaves_registro": [
+       "actionLevelIndicator",
+       "actionName",
+       "actionTypeCode",
+       "contractType",
+       "country",
+       "entityId",
+       "id",
+       "maturityDate",
+       "ratingActionDate",
+       "ratingFrom",
+       "ratingTo",
+       "ratingType",
+       "sectorCode",
+       "sourceProvidedName",
+       "subSectorCode",
+       "subSectorDesc",
+       "totalCount"
+      ]
      },
      {
       "url": "https://brazil.ratings.spglobal.com/pt",
@@ -126,12 +144,12 @@
       "urls_research": 500
      }
     ],
-    "lidos": 14,
-    "validos": 14,
-    "novos_na_base": 0,
+    "lidos": 15,
+    "validos": 15,
+    "novos_na_base": 2,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 483,
-     "slug_sem_data": 3
+     "fora_do_brasil_e_fora_do_universo": 481,
+     "slug_sem_data": 4
     },
     "erros": [],
     "fonte": "fitchratings.com"
