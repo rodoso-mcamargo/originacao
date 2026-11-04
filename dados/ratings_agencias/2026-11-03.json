@@ -1,7 +1,33 @@
 {
  "data": "2026-11-03",
- "n": 2,
+ "n": 4,
  "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-03",
+   "entidade": "PETROBRAS",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms petrobras idrs at bb outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-petrobras-idrs-at-bb-outlook-stable-03-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-03",
+   "entidade": "POTENTIAL ACQUISITION OF VERO BY TELEFONICA BRASIL UNLIKELY TO AFFECT",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "potential acquisition of vero by telefonica brasil unlikely to affect ratings",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/potential-acquisition-of-vero-by-telefonica-brasil-unlikely-to-affect-ratings-03-11-2026"
+  },
   {
    "agencia": "fitch",
    "data": "2026-11-03",

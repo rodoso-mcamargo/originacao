@@ -1,30 +1,30 @@
 {
  "data_referencia": "2026-11-03",
- "gerado_em": "2026-11-03T17:07:50-03:00",
+ "gerado_em": "2026-11-03T23:48:05-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 15,
+   "fitch": 17,
    "sp": 1
   },
   "por_acao": {
-   "afirmacao": 4,
+   "afirmacao": 5,
    "atribuicao": 2,
    "elevacao": 1,
-   "relatorio": 9
+   "relatorio": 10
   },
-  "base_total": 21,
+  "base_total": 23,
   "base_por_agencia": {
-   "fitch": 19,
+   "fitch": 21,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 6,
+   "afirmacao": 7,
    "atribuicao": 3,
    "elevacao": 1,
-   "relatorio": 11
+   "relatorio": 12
   },
-  "universo_linhas": 3
+  "universo_linhas": 5
  },
  "diagnostico": {
   "universo_nomes": 482,
@@ -82,7 +82,7 @@
        "totalNumberOfRecordsData",
        "tz"
       ],
-      "totalNumberOfRecords": 1,
+      "totalNumberOfRecords": 13,
       "chaves_registro": [
        "actionLevelIndicator",
        "actionName",
@@ -144,11 +144,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 15,
-    "validos": 15,
+    "lidos": 17,
+    "validos": 17,
     "novos_na_base": 2,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 481,
+     "fora_do_brasil_e_fora_do_universo": 479,
      "slug_sem_data": 4
     },
     "erros": [],
@@ -157,6 +157,40 @@
   }
  },
  "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-03",
+   "entidade": "PETROBRAS",
+   "acao": "afirmacao",
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-petrobras-idrs-at-bb-outlook-stable-03-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "PETROBRAS DISTRIBUIDORA S.A.",
+     "codigos": "CRA021002NF",
+     "tipo_match": "fuzzy",
+     "score": 100.0
+    }
+   ]
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-03",
+   "entidade": "POTENTIAL ACQUISITION OF VERO BY TELEFONICA BRASIL UNLIKELY TO AFFECT",
+   "acao": "relatorio",
+   "nota_nova": null,
+   "perspectiva": null,
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/potential-acquisition-of-vero-by-telefonica-brasil-unlikely-to-affect-ratings-03-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "TELEFÔNICA BRASIL S/A",
+     "codigos": "TLPP27",
+     "tipo_match": "fuzzy",
+     "score": 100.0
+    }
+   ]
+  },
   {
    "agencia": "fitch",
    "data": "2026-10-30",
