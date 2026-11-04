@@ -2536,12 +2536,96 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMipgFBVV95cUxPdlFOb3ljZnJFS0RRNkFEaVZyaTFlZl9zOWpMaFNrSDlTekFuamZKNVBBVkc4cE4yRndRemVPVjJuTE5YSWpYelNtX3dLSUtaeTdWRzA4RldiVG1iNWhQWlpENHhCQUhNQmNKblpBeFJHelg2OEt5dGdCQTRGSWxiWWpTWGM4X0lOdzJKcnZXV19wNXNnY0dOamNSbXBsSmYxT21IRnFR0gGuAUFVX3lxTE5RemdkSk1KdlNGNGNoTTdEM3I2QzI5MTNSazBlQnNMOWhXM3pVelhCeU1lWlo4UURlNUF4YVBrOUdVSlYydVdkb183QnVGVld1SUNVSEZBMEZ2R2VyWUQ0RUlQNDRjZmRPWHlDM3VJMGJPbUtmYXEtUUhVUU9MQ3FQa0FRNWNqa1lIQ085WUthQkotejFDX2tnVXkwZjBjNk5ZVE1pS21qcDVoRFBiQQ?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Wed, 04 Nov 2026 16:08:38 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Varejista entra em recuperação judicial com dívida de R$ 140 milhões - aRede",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdlFOb3ljZnJFS0RRNkFEaVZyaTFlZl9zOWpMaFNrSDlTekFuamZKNVBBVkc4cE4yRndRemVPVjJuTE5YSWpYelNtX3dLSUtaeTdWRzA4RldiVG1iNWhQWlpENHhCQUhNQmNKblpBeFJHelg2OEt5dGdCQTRGSWxiWWpTWGM4X0lOdzJKcnZXV19wNXNnY0dOamNSbXBsSmYxT21IRnFR0gGuAUFVX3lxTE5RemdkSk1KdlNGNGNoTTdEM3I2QzI5MTNSazBlQnNMOWhXM3pVelhCeU1lWlo4UURlNUF4YVBrOUdVSlYydVdkb183QnVGVld1SUNVSEZBMEZ2R2VyWUQ0RUlQNDRjZmRPWHlDM3VJMGJPbUtmYXEtUUhVUU9MQ3FQa0FRNWNqa1lIQ085WUthQkotejFDX2tnVXkwZjBjNk5ZVE1pS21qcDVoRFBiQQ?oc=5",
+      "veiculo": "aRede"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMilgFBVV95cUxOLWFnUk91MUVndzg0OWhnQ2Q3a2hCM1F2UGNOd1BLOHRGdWpXUmZWS0lSMFBmZWhNbEpIcTh5a3ZxMmJOaXRQbkFBUFAwaldRRkJBeFBQVjFucHBlUDdyTUFBUkZfajBGdUZrSTQ3aDNIT1ozSGNIVGhpcnNQQTVrTnc3M0JmMnhRalZVVXlOTE9BQzRmT2c?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Wed, 04 Nov 2026 13:17:04 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Loja dos Supercarros de BC pede socorro à justiça com dívida de R$ 156 milhões",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOLWFnUk91MUVndzg0OWhnQ2Q3a2hCM1F2UGNOd1BLOHRGdWpXUmZWS0lSMFBmZWhNbEpIcTh5a3ZxMmJOaXRQbkFBUFAwaldRRkJBeFBQVjFucHBlUDdyTUFBUkZfajBGdUZrSTQ3aDNIT1ozSGNIVGhpcnNQQTVrTnc3M0JmMnhRalZVVXlOTE9BQzRmT2c?oc=5",
+      "veiculo": "Jornal Razão"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMisAFBVV95cUxQaTBoaUM2bnZJdUM3VlREVGo0MXpqVDVxcjA1Y0FPX3VtNHNMTzBBWmFiNl9jTkxyZ1FHYkVMNHo2R0tUSmZsM2ljWUF2RnNrX19EOU9qaFN4UEpmV0tDQ2VWa2tpemxoS3ZSLVRieG5GTEwwemk5U2hzN29jZV9JVzdGX1BaYjNPckgxMVpZTngzXzk2WHNNVGp5N19wNjd2aU1OeXFxZEpXZjhKNXhlaw?oc=5",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Wed, 04 Nov 2026 12:29:14 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Kitchens tem recuperação aceita; dívida com clientes chega a R$ 190 mi",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQaTBoaUM2bnZJdUM3VlREVGo0MXpqVDVxcjA1Y0FPX3VtNHNMTzBBWmFiNl9jTkxyZ1FHYkVMNHo2R0tUSmZsM2ljWUF2RnNrX19EOU9qaFN4UEpmV0tDQ2VWa2tpemxoS3ZSLVRieG5GTEwwemk5U2hzN29jZV9JVzdGX1BaYjNPckgxMVpZTngzXzk2WHNNVGp5N19wNjd2aU1OeXFxZEpXZjhKNXhlaw?oc=5",
+      "veiculo": "Migalhas"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMie0FVX3lxTFBlSXI0OUZudndQcTdBdzNNcDlQMWZtekZKN0VKWlAtWVVlWGVxZmYtaTdFakF1Ry1MUlZpdGRzM19hZVRrUkFpMXJfLTNIN1UyMmdFWHJORloxTHZJYjhHUmdpWjRUZ0JQR0RRVFJOZUh1V2V0VkY0SS04Yw?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Wed, 04 Nov 2026 02:41:36 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Marabraz obtém recuperação judicial com dívida de R$ 140 mi",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBlSXI0OUZudndQcTdBdzNNcDlQMWZtekZKN0VKWlAtWVVlWGVxZmYtaTdFakF1Ry1MUlZpdGRzM19hZVRrUkFpMXJfLTNIN1UyMmdFWHJORloxTHZJYjhHUmdpWjRUZ0JQR0RRVFJOZUh1V2V0VkY0SS04Yw?oc=5",
+      "veiculo": "SpaceMoney"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMiUkFVX3lxTE5MYzJ3a19qY3pQdzhVZVJ1U0pMeGdNOVZZaDQ0d0djZFh5TmZtZHUxMDZ1NGtOOWpVdjM1WDRBZ0d0ZVdQTUNDd21DQ3pDaXhqSHc?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Tue, 03 Nov 2026 23:44:07 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Com a crise da sócia @apex.partners , a gestora Carbyne Investimentos tem buscado aumentar a liquidez de curto prazo dos fundos enquanto negocia um movimento societário para evitar um esvaziamento maior de patrimônio por meio de resgates ou migr",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5MYzJ3a19qY3pQdzhVZVJ1U0pMeGdNOVZZaDQ0d0djZFh5TmZtZHUxMDZ1NGtOOWpVdjM1WDRBZ0d0ZVdQTUNDd21DQ3pDaXhqSHc?oc=5",
+      "veiculo": "Instagram"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMirgFBVV95cUxObk55bFdSUUtnaHVOSkRKb3JMaGJNckVFWUtGdHR4Y3V2TDctdHI1TnprWXZ2dzNTT3dUY0tIVThKU3IzVUdvOUlEaEFoZFJ0eFJSMlFxZnAzajh3R29Scm1pZy1jMWllMTA2cjJzaUhqTng1Q1hRQmlJNkxrcUN5SmFvckd5SXhIUG5BalNKNjJFN1l0UnRBZVRBdHhFR3Nnd1ZFckkzMmduVU9ueEHSAbYBQVVfeXFMT21jbDZPQW1LUUIwblpkcWpxRjVqRDRQaFBfcm8wSUhEUW51cFNpXzYxSTdxT3hTMDF6WkN4TVk2bzdiTTFqeHh3SUV6emJ2cUJhVDg3Wkx2N1pUMmxkWGRYZUxEbUF3V0FBaEZVV1VvOGpKRXZkQm1KSUxVbDNpY1dMVDFpV0Z2SF9zWHRUUnBoRHhScC1TcDZpUDd2aDczRTI0VGYtNUJ1Z3hIdmNqVWpFOTNYTnc?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Tue, 03 Nov 2026 22:59:29 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Rede varejista entra em recuperação judicial com dívida de R$ 140 milhões",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObk55bFdSUUtnaHVOSkRKb3JMaGJNckVFWUtGdHR4Y3V2TDctdHI1TnprWXZ2dzNTT3dUY0tIVThKU3IzVUdvOUlEaEFoZFJ0eFJSMlFxZnAzajh3R29Scm1pZy1jMWllMTA2cjJzaUhqTng1Q1hRQmlJNkxrcUN5SmFvckd5SXhIUG5BalNKNjJFN1l0UnRBZVRBdHhFR3Nnd1ZFckkzMmduVU9ueEHSAbYBQVVfeXFMT21jbDZPQW1LUUIwblpkcWpxRjVqRDRQaFBfcm8wSUhEUW51cFNpXzYxSTdxT3hTMDF6WkN4TVk2bzdiTTFqeHh3SUV6emJ2cUJhVDg3Wkx2N1pUMmxkWGRYZUxEbUF3V0FBaEZVV1VvOGpKRXZkQm1KSUxVbDNpY1dMVDFpV0Z2SF9zWHRUUnBoRHhScC1TcDZpUDd2aDczRTI0VGYtNUJ1Z3hIdmNqVWpFOTNYTnc?oc=5",
+      "veiculo": "A TARDE"
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWWMtQkF0ektUQUpNQ1dLbzdpVWNWcXAyOEV6aEpXU3Y1bGk1ZGZsSW93SGQxX2pnSTduMzlkcVR4MmJMUVFlSUZENGp4OHBBOEE0NDJHZldMeFJlR1J1bXVxWExaTklkTHNmZHJiTGwydlVQczQ4OTJpTUZXNTMzMkxQbWlEUWZGOHUyNTdFX1NSNmQ1bGZ5cmRkQkhQcHNORmZNLUxRbGN4UQ?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Tue, 03 Nov 2026 13:53:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-11-03",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Recuperação extrajudicial: Chilli Beans amplia lista de empresas",
@@ -2555,7 +2639,7 @@
       "data_publicacao": "Tue, 03 Nov 2026 11:40:21 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-11-03",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Justiça manda Tradener refazer plano, prorroga proteção e apura distribuição de lucros",
@@ -2564,17 +2648,17 @@
     },
     {
       "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMijwFBVV95cUxQcVJ0c3A2WEFNNllEbXpJTk81U2JDTGpqUnFBMU9IalRpelg0X3JPOGxzOWc4YzZzdXJieXMtV08wN1IyRWtCSnJXZlhQY09ZODBHdXJuS2J5eWdrMm1EbERXRzd4Y3JZRVBSUWtCNnhkTS02dmp0TURkbEVjXzNmSGtRaWY3WGRBR29YUnZMOA?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Mon, 02 Nov 2026 20:22:49 GMT",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRklwaExNd0xmT2RPbl9wWENEYzRFcVY1dVNyd01LZG8xdlhsTE9YYTlLbUlXbzRMeE81YzFKc0l0dEJ3eEtSNWV3YmJTbDZYS3pFbjZTUWtpS0ZFbkxUeHB4X2NPVWRmOXRkdk42dU1HLVJRS3Z4Y25BeWxUMUl3alRiSjFseFBUZ2hOVnVTMkxHZC1SLWdaTkNiUG9GblpnMTdZSnVCNXVDblJVazZTbWtjT2dGZFNxeTJj?oc=5",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Tue, 03 Nov 2026 09:00:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-11-01",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
       "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Cerpa esconde da Justiça dívida de R$ 5 bilhões",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcVJ0c3A2WEFNNllEbXpJTk81U2JDTGpqUnFBMU9IalRpelg0X3JPOGxzOWc4YzZzdXJieXMtV08wN1IyRWtCSnJXZlhQY09ZODBHdXJuS2J5eWdrMm1EbERXRzd4Y3JZRVBSUWtCNnhkTS02dmp0TURkbEVjXzNmSGtRaWY3WGRBR29YUnZMOA?oc=5",
-      "veiculo": "O Liberal"
+      "titulo": "Recuperação judicial não é o fim da empresa",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRklwaExNd0xmT2RPbl9wWENEYzRFcVY1dVNyd01LZG8xdlhsTE9YYTlLbUlXbzRMeE81YzFKc0l0dEJ3eEtSNWV3YmJTbDZYS3pFbjZTUWtpS0ZFbkxUeHB4X2NPVWRmOXRkdk42dU1HLVJRS3Z4Y25BeWxUMUl3alRiSjFseFBUZ2hOVnVTMkxHZC1SLWdaTkNiUG9GblpnMTdZSnVCNXVDblJVazZTbWtjT2dGZFNxeTJj?oc=5",
+      "veiculo": "Diário do Nordeste"
     },
     {
       "buscador": "google_news",
@@ -2645,6 +2729,20 @@
       "titulo": "Chilli Beans pede recuperação extrajudicial para renegociar R$ 340 milhões em dívidas",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNZjQwdmR1WU4tOThWbUt2ZkI5ZlZ1ZDNmTTJQZlpQd0VlWllYUGpsNXFLU196R1lWdHlLSjB3VnBzUjJQaG9pcGpRNGhCTzRZZlNIZVpRVHFaSWwweFVySlJMYXJoakxwdzJ5X3NFUExyaUlma0ZQWlgxalVmS2hvcW9fbmdweEMzdU1iV3lzbjBtLWh0bmtWanQ5WGhod3haNTdSQXZZUEppZnpEbkE?oc=5",
       "veiculo": "GO In Foco"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMijwFBVV95cUxQcVJ0c3A2WEFNNllEbXpJTk81U2JDTGpqUnFBMU9IalRpelg0X3JPOGxzOWc4YzZzdXJieXMtV08wN1IyRWtCSnJXZlhQY09ZODBHdXJuS2J5eWdrMm1EbERXRzd4Y3JZRVBSUWtCNnhkTS02dmp0TURkbEVjXzNmSGtRaWY3WGRBR29YUnZMOA?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Sat, 31 Oct 2026 20:48:12 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": false,
+      "primeiro_visto": "2026-11-01",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Cerpa esconde da Justiça dívida de R$ 5 bilhões",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcVJ0c3A2WEFNNllEbXpJTk81U2JDTGpqUnFBMU9IalRpelg0X3JPOGxzOWc4YzZzdXJieXMtV08wN1IyRWtCSnJXZlhQY09ZODBHdXJuS2J5eWdrMm1EbERXRzd4Y3JZRVBSUWtCNnhkTS02dmp0TURkbEVjXzNmSGtRaWY3WGRBR29YUnZMOA?oc=5",
+      "veiculo": "O Liberal"
     },
     {
       "buscador": "google_news",
@@ -2815,6 +2913,20 @@
       "veiculo": "Valor Econômico"
     },
     {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aeb812173894b629bb54ac48baeeac9&url=https%3a%2f%2fwww.agazeta.com.br%2fes%2feconomia%2fapex-pede-exclusao-de-mais-de-50-empresas-em-processo-de-recuperacao-judicial-1026&c=1040424520650084129&mkt=pt-br",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Fri, 30 Oct 2026 15:38:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Apex pede exclusão de mais de 50 empresas em processo de recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aeb812173894b629bb54ac48baeeac9&url=https%3a%2f%2fwww.agazeta.com.br%2fes%2feconomia%2fapex-pede-exclusao-de-mais-de-50-empresas-em-processo-de-recuperacao-judicial-1026&c=1040424520650084129&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiowFBVV95cUxOcFRTYkl6T2FlQ2ViYzBBVGdkMUVEX2JhdHc5RjAzR01kbnBxNnNwOEhWbW9wRjR0OUd0ZDdrRkFpb19aMWsyOFpVOVJzT3l6MEdmU0hPQWxzWHBhY2lMYzZhZFpDc0RXOGJpenVXb3pSSW1KWnB6U0hxemJaODJHTzg5X0Z5RDRsTnpkNFhvTXhuSmZGYkhaMHZxM0JkNnI4RmNV?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
@@ -2928,6 +3040,20 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMimgFBVV95cUxNenlKRV9kNW0wNFdUY0ZMYVhRM2dqMzZhOFo1Q011a1FwcFlYU1B3SGFIZzlfVkl4WHFUSU02enhva014bjMzbVRqZERRVEpxbUlRZUNUOUFSbmcycTdpTzItZ3pFUE1iYk04TEZhRE5MS2ZMdm1HOTlWSzFQMExfdHUtcVJXMVlFSVhtN3Q3dlFpZG0taWhmMENR?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Thu, 29 Oct 2026 21:08:25 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Dona da Morita Motors pede autofalência e demite mais de 80 trabalhadores em Santa Catarina",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNenlKRV9kNW0wNFdUY0ZMYVhRM2dqMzZhOFo1Q011a1FwcFlYU1B3SGFIZzlfVkl4WHFUSU02enhva014bjMzbVRqZERRVEpxbUlRZUNUOUFSbmcycTdpTzItZ3pFUE1iYk04TEZhRE5MS2ZMdm1HOTlWSzFQMExfdHUtcVJXMVlFSVhtN3Q3dlFpZG0taWhmMENR?oc=5",
+      "veiculo": "A Crítica de Campo Grande"
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMitgFBVV95cUxQYUM5N0kyX1BKYmNtUVA2cHBDci0xWHE0dXRlSFpUZVhkeUlibU4yRThFeGFYcU1MRXpGMEJVV0dCMjJxd3VKUUpETHAtMDgxVTlFOGR1X0RGTERlVWZMR3M0N3RreURBYzhWZk1wZ0JKdGFkNTBsUDN6MzZ3OEs3cmF4cmFQUWRxSW9McDZSQ2VOVVFmcmV3Xzc4dFVqeF95OUNXcWJYZDhpeGxaQWh4YzR4c0F1d9IBuwFBVV95cUxQVzB1a2huNDdLOWtNalpfb19SVkpPcUxWUGZBV3B2QUo2N2FkamZVYXZYeHBjNVRkQU5KRjZmZnRUZWRXY3h3amFjWTAta2ZDdjVUUmtJdG4zZDc2SkpWeVVpQ3J4RkRyWEVwUEtkdE9zMmk0cjJqN25CUF9tekhTRFhjQWxOVmFNZGNhd0J4LVNIWEFZeGQ1cnkyTVVaN1N0eFY0dXJPUlV2a3RPYlFoNnBTajlMbjVqYm5Z?oc=5",
       "consulta": "\"protocola pedido de recuperação judicial\"",
       "data_publicacao": "Thu, 29 Oct 2026 19:57:00 GMT",
@@ -2995,6 +3121,20 @@
       "titulo": "Funcionários recebem aviso de demissão e fábrica de motores com 18 anos pede autofalência em SC",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNM2tDRHZIVlNNaGJaZVFYQ3NmUUY5d0tnNWJGNnFJdl94Z2lQVkwzZEZOODQ1dE04dkwtTkt1XzZ2V3VZOWZZejNJeHlxMEUyMzVJUjlwNU42S1ZWTm1PQkRTdUpCbU1PUzFyMU1mSFVncDBLcHBPS1VlbmZmcU1IQkdDdUMyc1ppWUNRWA?oc=5",
       "veiculo": "Jornal Razão"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aeb811e87d2411ba52a548ef8adce69&url=https%3a%2f%2fwww.infomoney.com.br%2fmercados%2fkitchens-de-moveis-planejados-pede-recuperacao-judicial-diz-site%2f&c=17661185377523476613&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Thu, 29 Oct 2026 16:14:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-04",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Kitchens, de móveis planejados, pede recuperação judicial, diz site",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aeb811e87d2411ba52a548ef8adce69&url=https%3a%2f%2fwww.infomoney.com.br%2fmercados%2fkitchens-de-moveis-planejados-pede-recuperacao-judicial-diz-site%2f&c=17661185377523476613&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -3106,7 +3246,7 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Elfa pede tutela cautelar para negociar com credores dois meses após saída do Patria",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSmFfXzZzX1JUN3V2RFFuQzVTOE90Q1JwQjRoRkNYN0FRZTg0SkIxbkZSUFdPTENzdkdJU3pUaUcteG9mVU9yNWllR1o4bkFtT2lzZ2ZxdlJUSVBZRW1VLTZzWmJEckF6RlJiTDVuTWpTdGdJTTBidktERXBwVzRTU1I3Qzlla0ktd3dSWTc5VUhrTE1GUXRQSE5BcWd5bFowLUJnQXMyRmhEZXVCeE9SRVhuNFVPWUlISWxkQlRFSjM2NndEX0J30gHbAUFVX3lxTE9fUjBqUTRGS2pJaTU3dVZLSktVTGpBNDRuazBHaUR2NUE5ZXh6cWtYQTBGRmdoR2J3ZTNSMnhXeTE3WXh4UXd5NndXd0lHZlM0eGp2bk5DTVJKcXo0UldvSGRtcTU3WmZIYXNCUjc1aHhWTlViX19yci1YSWItVFpnWWI3eG8xN291Znh5S0d1UVRkcWJRMFc4NG52NVg4c2FJWnUzaU5CaGVPYlJqS2Y4b05VSnZkYjdrOGdTMjFfWEpxekxyd09aS2dvd0g0WnZpUEhHd25Sc3pfMA?oc=5",
-      "veiculo": "Bloomberg Línea Brasil"
+      "veiculo": "Bloomberg Linea Brasil"
     },
     {
       "buscador": "google_news",
@@ -10109,13 +10249,13 @@
       "veiculo": "Viajando para Orlando -"
     }
   ],
-  "gerado_em": "2026-11-03T17:28:26.212650+00:00",
+  "gerado_em": "2026-11-04T17:41:42.988941+00:00",
   "janela_dias": 30,
-  "novos_hoje": 5,
+  "novos_hoje": 10,
   "por_tipo": {
     "cautelar_pre_rj": 1,
     "falencia": 86,
-    "noticia_rj_ou_cautelar": 541,
+    "noticia_rj_ou_cautelar": 551,
     "recuperacao_judicial": 94
   },
   "por_tribunal": {
@@ -10141,5 +10281,5 @@
     "TJSP": 14,
     "TJTO": 2
   },
-  "total": 722
+  "total": 732
 }
