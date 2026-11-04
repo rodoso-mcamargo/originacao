@@ -1,4 +1,6 @@
 agencia,data,entidade,acao,nota_anterior,nota_nova,perspectiva,codigos,emissor_painel,tipo_match,score,url
+fitch,2026-11-04,UNIDAS,elevacao,,,estavel,UNDAC3,UNIDAS S/A,exato,100,https://www.fitchratings.com/research/pt/corporate-finance/fitch-upgrades-unidas-to-bb-outlook-stable-04-11-2026
+fitch,2026-11-04,UNIDAS,elevacao,,,estavel,UNDAC3,UNIDAS S/A,exato,100,https://www.fitchratings.com/research/corporate-finance/fitch-upgrades-unidas-to-bb-outlook-stable-04-11-2026
 fitch,2026-11-03,POTENTIAL ACQUISITION OF VERO BY TELEFONICA BRASIL UNLIKELY TO AFFECT,relatorio,,,,TLPP27,TELEFÔNICA BRASIL S/A,fuzzy,100.0,https://www.fitchratings.com/research/pt/corporate-finance/potential-acquisition-of-vero-by-telefonica-brasil-unlikely-to-affect-ratings-03-11-2026
 fitch,2026-11-03,PETROBRAS,afirmacao,,,estavel,CRA021002NF,PETROBRAS DISTRIBUIDORA S.A.,fuzzy,100.0,https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-petrobras-idrs-at-bb-outlook-stable-03-11-2026
 fitch,2026-10-30,TUPY,afirmacao,,,estavel,TUPY15;TUPY25;TUPY35,TUPY S/A,exato,100,https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-tupy-ratings-at-bb-outlook-stable-30-10-2026

@@ -1,0 +1,32 @@
+{
+ "data": "2026-11-04",
+ "n": 2,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-04",
+   "entidade": "UNIDAS",
+   "escala": "internacional",
+   "acao": "elevacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch upgrades unidas to bb outlook stable",
+   "url": "https://www.fitchratings.com/research/corporate-finance/fitch-upgrades-unidas-to-bb-outlook-stable-04-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-04",
+   "entidade": "UNIDAS",
+   "escala": "nacional",
+   "acao": "elevacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch upgrades unidas to bb outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-upgrades-unidas-to-bb-outlook-stable-04-11-2026"
+  }
+ ]
+}

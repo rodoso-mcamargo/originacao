@@ -1,30 +1,30 @@
 {
- "data_referencia": "2026-11-03",
- "gerado_em": "2026-11-03T23:48:05-03:00",
+ "data_referencia": "2026-11-04",
+ "gerado_em": "2026-11-04T17:27:06-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 17,
+   "fitch": 11,
    "sp": 1
   },
   "por_acao": {
-   "afirmacao": 5,
-   "atribuicao": 2,
-   "elevacao": 1,
-   "relatorio": 10
+   "afirmacao": 3,
+   "atribuicao": 1,
+   "elevacao": 2,
+   "relatorio": 6
   },
-  "base_total": 23,
+  "base_total": 25,
   "base_por_agencia": {
-   "fitch": 21,
+   "fitch": 23,
    "sp": 2
   },
   "base_por_acao": {
    "afirmacao": 7,
    "atribuicao": 3,
-   "elevacao": 1,
+   "elevacao": 3,
    "relatorio": 12
   },
-  "universo_linhas": 5
+  "universo_linhas": 7
  },
  "diagnostico": {
   "universo_nomes": 482,
@@ -89,6 +89,8 @@
        "actionTypeCode",
        "contractType",
        "country",
+       "cwolFrom",
+       "cwolTo",
        "entityId",
        "id",
        "maturityDate",
@@ -144,12 +146,12 @@
       "urls_research": 500
      }
     ],
-    "lidos": 17,
-    "validos": 17,
+    "lidos": 11,
+    "validos": 11,
     "novos_na_base": 2,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 479,
-     "slug_sem_data": 4
+     "fora_do_brasil_e_fora_do_universo": 486,
+     "slug_sem_data": 3
     },
     "erros": [],
     "fonte": "fitchratings.com"
@@ -157,6 +159,40 @@
   }
  },
  "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-04",
+   "entidade": "UNIDAS",
+   "acao": "elevacao",
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-upgrades-unidas-to-bb-outlook-stable-04-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "UNIDAS S/A",
+     "codigos": "UNDAC3",
+     "tipo_match": "exato",
+     "score": 100
+    }
+   ]
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-04",
+   "entidade": "UNIDAS",
+   "acao": "elevacao",
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "url": "https://www.fitchratings.com/research/corporate-finance/fitch-upgrades-unidas-to-bb-outlook-stable-04-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "UNIDAS S/A",
+     "codigos": "UNDAC3",
+     "tipo_match": "exato",
+     "score": 100
+    }
+   ]
+  },
   {
    "agencia": "fitch",
    "data": "2026-11-03",
@@ -222,23 +258,6 @@
      "codigos": "TUPY15;TUPY25;TUPY35",
      "tipo_match": "exato",
      "score": 100
-    }
-   ]
-  },
-  {
-   "agencia": "fitch",
-   "data": "2026-10-29",
-   "entidade": "ITAUSA AAA BRA",
-   "acao": "afirmacao",
-   "nota_nova": null,
-   "perspectiva": "estavel",
-   "url": "https://www.fitchratings.com/research/pt/non-bank-financial-institutions/fitch-affirms-itausa-aaa-bra-national-long-term-rating-outlook-stable-29-10-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "ITAUSA S/A",
-     "codigos": "ITSA17;ITSA18",
-     "tipo_match": "fuzzy",
-     "score": 100.0
     }
    ]
   }
