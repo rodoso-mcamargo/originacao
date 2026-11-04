@@ -1,8 +1,8 @@
 {
  "fonte": "CVM dados abertos - oferta-distrib (Res. 160)",
  "url": "https://dados.cvm.gov.br/dados/OFERTA/DISTRIB/DADOS/oferta_distribuicao.zip",
- "data_referencia": "2026-11-03",
- "gerado_em": "2026-11-03T03:15:22+00:00",
+ "data_referencia": "2026-11-04",
+ "gerado_em": "2026-11-04T01:48:33+00:00",
  "janela_meses": 24,
  "ofertas_na_janela": 2470,
  "por_tipo": {
@@ -16,7 +16,7 @@
   "lidos": 15060,
   "gravados": {
    "base": 2494,
-   "novas_ou_alteradas": 10,
+   "novas_ou_alteradas": 1,
    "primario_vs_secundario": 1296,
    "pvs_com_diferenca": 116
   },
@@ -30,8 +30,8 @@
    "status_head": 200,
    "origem": "download",
    "status": 200,
-   "bytes": 5727477,
-   "last_modified": "Mon, 02 Nov 2026 04:53:57 GMT"
+   "bytes": 5727484,
+   "last_modified": "Tue, 03 Nov 2026 04:39:52 GMT"
   }
  }
 }
