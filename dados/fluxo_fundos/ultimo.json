@@ -1,12 +1,12 @@
 {
  "data_referencia": "2026-10-29",
- "gerado_em": "2026-11-03T02:52:56+00:00",
+ "gerado_em": "2026-11-04T01:13:12+00:00",
  "fonte": "CVM - informe diario de fundos (inf_diario_fi) e cadastro pos-175 (registro_fundo_classe)",
  "universo": 3251,
  "totais": {
   "credito_privado": {
    "n_fundos": 1346.0,
-   "pl": 2726035494406.0,
+   "pl": 2726035393626.0,
    "liquido": 1318328648.0,
    "liq_5d": -468306554.0,
    "pct_5d": -0.018,
@@ -17,18 +17,18 @@
   },
   "incentivado_infra": {
    "n_fundos": 1655.0,
-   "pl": 517711693823.0,
+   "pl": 517712297410.0,
    "liquido": -849826611.0,
-   "liq_5d": -4495006972.0,
-   "pct_5d": -1.321,
-   "liq_21d": -13264024628.0,
+   "liq_5d": -4494841972.0,
+   "pct_5d": -1.32,
+   "liq_21d": -13263859628.0,
    "pct_21d": -3.407,
-   "liq_63d": -9261818576.0,
+   "liq_63d": -9261653576.0,
    "pct_63d": -2.298
   },
   "outros": {
    "n_fundos": 155.0,
-   "pl": 563435638074.0,
+   "pl": 563435641178.0,
    "liquido": -876759010.0,
    "liq_5d": -2892842454.0,
    "pct_5d": -0.548,
@@ -39,13 +39,13 @@
   },
   "todas": {
    "n_fundos": 3156.0,
-   "pl": 3807182826302.0,
+   "pl": 3807183332213.0,
    "liquido": -408256974.0,
-   "liq_5d": -7856155980.0,
+   "liq_5d": -7855990980.0,
    "pct_5d": -0.23,
-   "liq_21d": -9032081096.0,
+   "liq_21d": -9031916096.0,
    "pct_21d": -0.254,
-   "liq_63d": 17317342128.0,
+   "liq_63d": 17317507128.0,
    "pct_63d": 0.492
   }
  },
@@ -192,9 +192,9 @@
    },
    {
     "mes": "202610",
-    "linhas_cnpj_data": 502857,
-    "linhas_brutas": 510823,
-    "fundos": 25462,
+    "linhas_cnpj_data": 505087,
+    "linhas_brutas": 513075,
+    "fundos": 25464,
     "datas": [
      "2026-10-01",
      "2026-10-30"
@@ -205,10 +205,10 @@
    "202609",
    "202610"
   ],
-  "linhas_lidas": 2176717,
+  "linhas_lidas": 2178969,
   "linhas_universo": 271163,
   "linhas_gravadas": 132202,
-  "descartadas_fora_universo": 1874737,
+  "descartadas_fora_universo": 1876328,
   "dias_uteis_no_calendario": 85,
   "arquivos_diarios_gravados": 41,
   "cda_usada": "2026-09.csv",
