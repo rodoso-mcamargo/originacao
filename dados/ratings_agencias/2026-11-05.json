@@ -1,0 +1,32 @@
+{
+ "data": "2026-11-05",
+ "n": 2,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-05",
+   "entidade": "WITHDRAWS PBGAS A BRA",
+   "escala": "nacional",
+   "acao": "retirada",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fitch affirms withdraws pbgas a bra rating",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-withdraws-pbgas-a-bra-rating-05-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-05",
+   "entidade": "OPEAS 192ND",
+   "escala": "nacional",
+   "acao": "elevacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fitch upgrades opeas 192nd issuance ratings eldorado risk",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-upgrades-opeas-192nd-issuance-ratings-eldorado-risk-05-11-2026"
+  }
+ ]
+}
