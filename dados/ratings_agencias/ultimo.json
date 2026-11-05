@@ -1,6 +1,6 @@
 {
  "data_referencia": "2026-11-04",
- "gerado_em": "2026-11-04T17:27:06-03:00",
+ "gerado_em": "2026-11-04T23:56:37-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
@@ -9,20 +9,21 @@
   },
   "por_acao": {
    "afirmacao": 3,
-   "atribuicao": 1,
    "elevacao": 2,
-   "relatorio": 6
+   "relatorio": 6,
+   "retirada": 1
   },
-  "base_total": 25,
+  "base_total": 26,
   "base_por_agencia": {
-   "fitch": 23,
+   "fitch": 24,
    "sp": 2
   },
   "base_por_acao": {
    "afirmacao": 7,
    "atribuicao": 3,
    "elevacao": 3,
-   "relatorio": 12
+   "relatorio": 12,
+   "retirada": 1
   },
   "universo_linhas": 7
  },
@@ -82,10 +83,9 @@
        "totalNumberOfRecordsData",
        "tz"
       ],
-      "totalNumberOfRecords": 13,
+      "totalNumberOfRecords": 1,
       "chaves_registro": [
        "actionLevelIndicator",
-       "actionName",
        "actionTypeCode",
        "contractType",
        "country",
@@ -93,7 +93,6 @@
        "cwolTo",
        "entityId",
        "id",
-       "maturityDate",
        "ratingActionDate",
        "ratingFrom",
        "ratingTo",
@@ -148,10 +147,10 @@
     ],
     "lidos": 11,
     "validos": 11,
-    "novos_na_base": 2,
+    "novos_na_base": 1,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 486,
-     "slug_sem_data": 3
+     "fora_do_brasil_e_fora_do_universo": 485,
+     "slug_sem_data": 4
     },
     "erros": [],
     "fonte": "fitchratings.com"

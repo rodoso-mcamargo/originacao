@@ -1,6 +1,6 @@
 {
  "data": "2026-11-04",
- "n": 2,
+ "n": 3,
  "acoes": [
   {
    "agencia": "fitch",
@@ -27,6 +27,19 @@
    "instrumento": null,
    "titulo": "fitch upgrades unidas to bb outlook stable",
    "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-upgrades-unidas-to-bb-outlook-stable-04-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-04",
+   "entidade": "RATING ACTIONS WITHDRAWS",
+   "escala": "nacional",
+   "acao": "retirada",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "fitch takes rating actions withdraws ratings of notes of credito universitario fidc",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-takes-rating-actions-withdraws-ratings-of-notes-of-credito-universitario-fidc-04-11-2026"
   }
  ]
 }
