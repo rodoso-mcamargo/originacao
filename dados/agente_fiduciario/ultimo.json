@@ -4,30 +4,28 @@
   2025,
   2026
  ],
- "gerado_em": "2026-10-29T18:14:55+00:00",
- "codigos_universo": 333,
- "codigos_com_emissao": 112,
- "relatorios_execucao": 157,
- "relatorios_base": 157,
+ "gerado_em": "2026-11-05T18:27:09+00:00",
+ "codigos_universo": 334,
+ "codigos_com_emissao": 111,
+ "relatorios_execucao": 161,
+ "relatorios_base": 162,
  "por_agente": {
   "Oliveira Trust": 20,
   "Pentágono": 40,
-  "Vórtx": 97
+  "Vórtx": 101
  },
- "com_flag_alerta": 157,
- "com_flag_sem_negacao": 105,
- "requisicoes": 717,
+ "com_flag_alerta": 161,
+ "com_flag_sem_negacao": 107,
+ "requisicoes": 587,
  "diagnostico": {
   "lidos": {
    "oliveira_trust": 1278,
    "pentagono": 325,
-   "vortx_buscas": 333,
-   "vortx_relatorios": 218
+   "vortx_buscas": 334,
+   "vortx_relatorios": 224
   },
-  "gravados": 157,
-  "descartados": {
-   "debentures (dados/snd/caracteristicas.csv ausente)": 1
-  },
+  "gravados": 161,
+  "descartados": {},
   "erros": {}
  }
 }
