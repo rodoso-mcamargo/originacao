@@ -1,6 +1,6 @@
 {
  "data": "2026-11-05",
- "n": 2,
+ "n": 3,
  "acoes": [
   {
    "agencia": "fitch",
@@ -14,6 +14,19 @@
    "instrumento": null,
    "titulo": "fitch affirms withdraws pbgas a bra rating",
    "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-withdraws-pbgas-a-bra-rating-05-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-05",
+   "entidade": "GNA IIS",
+   "escala": "nacional",
+   "acao": "em_revisao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "em_revisao_negativa",
+   "instrumento": null,
+   "titulo": "fitch downgrades gna iis rating to bbb bra rating watch negative",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-downgrades-gna-iis-rating-to-bbb-bra-rating-watch-negative-05-11-2026"
   },
   {
    "agencia": "fitch",
