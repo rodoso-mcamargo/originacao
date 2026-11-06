@@ -1,36 +1,35 @@
 {
- "data_referencia": "2026-11-05",
- "gerado_em": "2026-11-05T23:56:20-03:00",
+ "data_referencia": "2026-11-06",
+ "gerado_em": "2026-11-06T16:58:23-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 10,
-   "sp": 1
+   "fitch": 14
   },
   "por_acao": {
-   "afirmacao": 1,
+   "afirmacao": 2,
    "elevacao": 3,
    "em_revisao": 1,
-   "relatorio": 4,
+   "relatorio": 6,
    "retirada": 2
   },
-  "base_total": 29,
+  "base_total": 34,
   "base_por_agencia": {
-   "fitch": 27,
+   "fitch": 32,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 7,
+   "afirmacao": 8,
    "atribuicao": 3,
    "elevacao": 4,
    "em_revisao": 1,
-   "relatorio": 12,
+   "relatorio": 16,
    "retirada": 2
   },
   "universo_linhas": 7
  },
  "diagnostico": {
-  "universo_nomes": 482,
+  "universo_nomes": 481,
   "grupos": 0,
   "agencias": {
    "moodys_local": {
@@ -64,74 +63,32 @@
     "fonte": "moodyslocal.com.br"
    },
    "sp": {
-    "status": "ok",
+    "status": "vazio",
     "fonte_usada": "html-ssr+html-ssr-home",
     "tentativas": [
      {
       "url": "https://brazil.ratings.spglobal.com/ratings/pt/regulatory/ratings-actions",
       "http": 200,
       "chaves_pageProps": [
-       "RatingActionsAPIData",
-       "disclosureListData",
-       "disclosureSiteIsUpData",
-       "filterStateValues",
-       "globalLocale",
-       "initialLang",
-       "languageCode",
-       "locale",
-       "ratingAction",
-       "ratingActionRequest",
-       "token",
-       "totalNumberOfRecordsData",
-       "tz"
+       "componentProps",
+       "layoutProps"
       ],
-      "totalNumberOfRecords": 1,
-      "chaves_registro": [
-       "actionLevelIndicator",
-       "actionTypeCode",
-       "contractType",
-       "country",
-       "cwolFrom",
-       "cwolTo",
-       "entityId",
-       "id",
-       "ratingActionDate",
-       "ratingFrom",
-       "ratingTo",
-       "ratingType",
-       "sectorCode",
-       "sourceProvidedName",
-       "subSectorCode",
-       "subSectorDesc",
-       "totalCount"
-      ]
+      "totalNumberOfRecords": null,
+      "chaves_registro": []
      },
      {
       "url": "https://brazil.ratings.spglobal.com/pt",
       "http": 200,
       "chaves_pageProps": [
-       "articles",
-       "cardsData",
-       "globalLocale",
-       "system_account_token",
-       "totalRecords"
+       "componentProps",
+       "layoutProps"
       ],
       "totalNumberOfRecords": null,
-      "chaves_registro": [
-       "articleDate",
-       "articleDescription",
-       "articleSourceSystemId",
-       "articleSubType",
-       "articleTitle",
-       "articleType",
-       "languageCode",
-       "sourceObjectId",
-       "statusIndicator"
-      ]
+      "chaves_registro": []
      }
     ],
-    "lidos": 1,
-    "validos": 1,
+    "lidos": 0,
+    "validos": 0,
     "novos_na_base": 0,
     "descartados": {},
     "erros": [],
@@ -147,12 +104,12 @@
       "urls_research": 500
      }
     ],
-    "lidos": 10,
-    "validos": 10,
-    "novos_na_base": 1,
+    "lidos": 14,
+    "validos": 14,
+    "novos_na_base": 5,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 488,
-     "slug_sem_data": 2
+     "fora_do_brasil_e_fora_do_universo": 483,
+     "slug_sem_data": 3
     },
     "erros": [],
     "fonte": "fitchratings.com"

@@ -1,0 +1,71 @@
+{
+ "data": "2026-11-06",
+ "n": 5,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-06",
+   "entidade": "NRAC BAAS LATIN AMERICA 2026",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "nrac baas latin america 2026",
+   "url": "https://www.fitchratings.com/research/pt/banks/nrac-baas-latin-america-2026-06-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-06",
+   "entidade": "TRADUCAO WHAT INVESTORS WANT TO KNOW LATAM BAAS",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "traducao what investors want to know latam baas",
+   "url": "https://www.fitchratings.com/research/pt/banks/traducao-what-investors-want-to-know-latam-baas-06-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-06",
+   "entidade": "PRIOS",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms prios idrs at bb outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-prios-idrs-at-bb-outlook-stable-06-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-06",
+   "entidade": "PEER REVIEW REPORT SURETY JUN2026",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "peer review report surety jun2026",
+   "url": "https://www.fitchratings.com/research/pt/insurance/peer-review-report-surety-jun2026-06-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-06",
+   "entidade": "STATE OF PARANA",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "state of parana",
+   "url": "https://www.fitchratings.com/research/pt/international-public-finance/state-of-parana-06-11-2026"
+  }
+ ]
+}
