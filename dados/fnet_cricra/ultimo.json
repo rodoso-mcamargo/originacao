@@ -1,39 +1,39 @@
 {
  "fonte": "Fundos.NET (B3) - documentos de CRI/CRA",
  "url": "https://fnet.bmfbovespa.com.br/fnet/publico/abrirGerenciadorDocumentosCVM?paginaCertificados=true",
- "data_referencia": "2026-11-06",
+ "data_referencia": "2026-11-07",
  "janela": [
-  "2026-11-02",
-  "2026-11-06"
+  "2026-11-03",
+  "2026-11-07"
  ],
- "gerado_em": "2026-11-06T02:39:01.840938+00:00",
- "documentos_janela": 299,
- "documentos_base": 14787,
- "linhas_universo": 821,
+ "gerado_em": "2026-11-07T02:06:30.461239+00:00",
+ "documentos_janela": 463,
+ "documentos_base": 14951,
+ "linhas_universo": 847,
  "por_classe_universo": {
-  "sem_pauta": 677,
+  "sem_pauta": 703,
   "estrutural": 6,
   "credito": 138
  },
  "por_match_base": {
-  "nenhum": 14339,
-  "serie_devedor": 209,
+  "nenhum": 14489,
+  "serie_devedor": 223,
   "codigo": 239
  },
  "por_categoria_janela": {
-  "Assembleia": 279,
-  "Fato Relevante": 16,
-  "Comunicado ao Mercado": 4
+  "Assembleia": 437,
+  "Fato Relevante": 19,
+  "Comunicado ao Mercado": 7
  },
  "diagnostico": {
-  "lidos": 314,
-  "gravados": 299,
+  "lidos": 481,
+  "gravados": 463,
   "descartados": {
-   "nao_cri_cra (OTS)": 13,
-   "nao_cri_cra (DEB)": 2
+   "nao_cri_cra (OTS)": 15,
+   "nao_cri_cra (DEB)": 3
   },
   "erros": {},
-  "requisicoes": 17,
-  "textos_baixados": 8
+  "requisicoes": 24,
+  "textos_baixados": 14
  }
 }
