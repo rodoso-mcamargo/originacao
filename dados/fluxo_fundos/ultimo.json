@@ -1,52 +1,52 @@
 {
- "data_referencia": "2026-11-03",
- "gerado_em": "2026-11-06T01:29:24+00:00",
+ "data_referencia": "2026-11-04",
+ "gerado_em": "2026-11-07T00:50:51+00:00",
  "fonte": "CVM - informe diario de fundos (inf_diario_fi) e cadastro pos-175 (registro_fundo_classe)",
- "universo": 3249,
+ "universo": 3245,
  "totais": {
   "credito_privado": {
-   "n_fundos": 1322.0,
-   "pl": 2717788984196.0,
-   "liquido": 1536179555.0,
-   "liq_5d": -3459721207.0,
-   "pct_5d": -0.136,
-   "liq_21d": -3356505399.0,
-   "pct_21d": -0.128,
-   "liq_63d": 20686117664.0,
-   "pct_63d": 0.805
+   "n_fundos": 1312.0,
+   "pl": 2556718704368.0,
+   "liquido": 1001819002.0,
+   "liq_5d": -4770713439.0,
+   "pct_5d": -0.199,
+   "liq_21d": -4252962937.0,
+   "pct_21d": -0.173,
+   "liq_63d": 14428570520.0,
+   "pct_63d": 0.596
   },
   "incentivado_infra": {
-   "n_fundos": 1637.0,
-   "pl": 490836678720.0,
-   "liquido": -2428605612.0,
-   "liq_5d": -6179713561.0,
-   "pct_5d": -1.992,
-   "liq_21d": -17755042460.0,
-   "pct_21d": -5.034,
-   "liq_63d": -20147213951.0,
-   "pct_63d": -5.384
+   "n_fundos": 1600.0,
+   "pl": 474124398193.0,
+   "liquido": -1320596773.0,
+   "liq_5d": -6796428542.0,
+   "pct_5d": -2.196,
+   "liq_21d": -17507421022.0,
+   "pct_21d": -5.049,
+   "liq_63d": -20640988767.0,
+   "pct_63d": -5.611
   },
   "outros": {
-   "n_fundos": 155.0,
-   "pl": 585834351957.0,
-   "liquido": 23103846600.0,
-   "liq_5d": 20542050104.0,
-   "pct_5d": 3.898,
-   "liq_21d": 20002786425.0,
-   "pct_21d": 3.571,
-   "liq_63d": 24058016572.0,
-   "pct_63d": 4.433
+   "n_fundos": 153.0,
+   "pl": 586788399534.0,
+   "liquido": 433023303.0,
+   "liq_5d": 20755424442.0,
+   "pct_5d": 3.94,
+   "liq_21d": 20461191931.0,
+   "pct_21d": 3.647,
+   "liq_63d": 24648199303.0,
+   "pct_63d": 4.541
   },
   "todas": {
-   "n_fundos": 3114.0,
-   "pl": 3794460014873.0,
-   "liquido": 22211420542.0,
-   "liq_5d": 10902615337.0,
-   "pct_5d": 0.322,
-   "liq_21d": -1108761433.0,
-   "pct_21d": -0.031,
-   "liq_63d": 24596920284.0,
-   "pct_63d": 0.705
+   "n_fundos": 3065.0,
+   "pl": 3617631502095.0,
+   "liquido": 114245532.0,
+   "liq_5d": 9188282460.0,
+   "pct_5d": 0.284,
+   "liq_21d": -1299192029.0,
+   "pct_21d": -0.039,
+   "liq_63d": 18435781057.0,
+   "pct_63d": 0.553
   }
  },
  "maiores_resgates_21d": [
@@ -55,105 +55,105 @@
    "nome": "BRADESCO GALÁXIA FI FINANCEIRO - CI RF CRED PRIV REFERENCIADA DI - RESP LIMITADA",
    "gestor": "BANCO BRADESCO S.A.",
    "classe": "credito_privado",
-   "pl": 7946497472.31,
-   "liq_21d": -1905830942.78,
-   "pct_21d": -19.547
-  },
-  {
-   "cnpj": "01.597.187/0001-15",
-   "nome": "SPECIAL RENDA FIXA REFERENCIADO DI FUNDO DE INVESTIMENTO FINANCEIRO RESPONSABILIDADE LIMITADA",
-   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
-   "classe": "outros",
-   "pl": 144147504817.06,
-   "liq_21d": -1772172861.84,
-   "pct_21d": -1.227
+   "pl": 7952682263.12,
+   "liq_21d": -1906096845.41,
+   "pct_21d": -19.536
   },
   {
    "cnpj": "18.083.593/0001-62",
    "nome": "BRADESCO FIF - CIC RF CRED PRIVADO CARNAÚBA - RESP LIMITADA",
    "gestor": "BANCO BRADESCO S.A.",
    "classe": "credito_privado",
-   "pl": 2047908682.66,
-   "liq_21d": -1706945621.53,
-   "pct_21d": -45.824
-  },
-  {
-   "cnpj": "04.857.792/0001-76",
-   "nome": "BB AX BANCOS FUNDO DE INVESTIMENTO FINANCEIRO RENDA FIXA CRÉDITO PRIVADO LONGO PRAZO RESP LIMITADA",
-   "gestor": "BB GESTAO DE RECURSOS DTVM S.A",
-   "classe": "credito_privado",
-   "pl": 14784087771.65,
-   "liq_21d": -1585114183.75,
-   "pct_21d": -9.783
+   "pl": 2097011279.74,
+   "liq_21d": -1604204108.08,
+   "pct_21d": -43.686
   },
   {
    "cnpj": "55.087.532/0001-08",
    "nome": "KINEA CRÉDITO PRIVADO IX RENDA FIXA FUNDO DE INVESTIMENTO FINANCEIRO RENDA FIXA - RESP LIMITADA",
    "gestor": "KINEA INVESTIMENTOS LTDA.",
    "classe": "credito_privado",
-   "pl": 5984693071.87,
+   "pl": 5989199797.73,
    "liq_21d": -1421360101.0,
-   "pct_21d": -19.373
+   "pct_21d": -19.366
+  },
+  {
+   "cnpj": "01.597.187/0001-15",
+   "nome": "SPECIAL RENDA FIXA REFERENCIADO DI FUNDO DE INVESTIMENTO FINANCEIRO RESPONSABILIDADE LIMITADA",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "classe": "outros",
+   "pl": 144717470123.87,
+   "liq_21d": -1366477311.11,
+   "pct_21d": -0.945
   },
   {
    "cnpj": "25.341.064/0001-87",
    "nome": "ITAÚ WEALTH MASTER RENDA FIXA REFERENCIADO DI FUNDO DE INVESTIMENTO FINANCEIRO RESP LIMITADA",
    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
    "classe": "outros",
-   "pl": 58534433641.38,
-   "liq_21d": -1271333292.18,
-   "pct_21d": -2.148
+   "pl": 58595958260.11,
+   "liq_21d": -1191696605.6,
+   "pct_21d": -2.015
   },
   {
    "cnpj": "66.961.741/0001-47",
    "nome": "SULAMÉRICA AX FIF RENDA FIXA CRÉDITO PRIVADO LONGO PRAZO DE RESP LIMITADA",
    "gestor": "SUL AMÉRICA INVESTIMENTOS GESTORA DE RECURSOS S.A.",
    "classe": "credito_privado",
-   "pl": 3038396927.68,
+   "pl": 3039967256.39,
    "liq_21d": -1161698766.4,
-   "pct_21d": -27.883
+   "pct_21d": -27.869
   },
   {
    "cnpj": "55.176.509/0001-81",
    "nome": "SAFRA INFRA CDI MASTER IV FIF INVESTIMENTO EM INFRA CLASSE DE INVEST EM INFRA RF LP RESP LIMITADA",
    "gestor": "SAFRA DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA.",
    "classe": "incentivado_infra",
-   "pl": 372856023.76,
-   "liq_21d": -1097105371.28,
-   "pct_21d": -74.867
+   "pl": 298520595.93,
+   "liq_21d": -1148157169.99,
+   "pct_21d": -79.556
   },
   {
-   "cnpj": "07.160.694/0001-73",
-   "nome": "FUNDO DE INVESTIMENTO FINANCEIRO RENDA FIXA CFIN CRÉDITO PRIVADO - RESPONSABILIDADE LIMITADA",
-   "gestor": "Sicredi Asset Management Ltda.",
+   "cnpj": "60.677.740/0001-99",
+   "nome": "ITAÚ GOLD SUGAR SFA FUNDO DE INVESTIMENTO FINANCEIRO RENDA FIXA CRÉDITO PRIVADO RESP LIMITADA",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
    "classe": "credito_privado",
-   "pl": 7497162499.1,
-   "liq_21d": -937275164.77,
-   "pct_21d": -11.229
+   "pl": 1538142283.98,
+   "liq_21d": -1118704450.08,
+   "pct_21d": -42.498
   },
   {
    "cnpj": "21.888.703/0001-78",
    "nome": "ITAÚ MAXIMIZA FIF CIC RENDA FIXA CRÉDITO PRIVADO RESP LIMITADA",
    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
    "classe": "credito_privado",
-   "pl": 1076155954.26,
-   "liq_21d": -928770361.51,
-   "pct_21d": -46.574
+   "pl": 1077172405.61,
+   "liq_21d": -953582540.82,
+   "pct_21d": -47.201
+  },
+  {
+   "cnpj": "46.975.474/0001-50",
+   "nome": "KINEA V FUNDO DE INVESTIMENTO FINANCEIRO RENDA FIXA CRÉDITO PRIVADO RESPONSABILIDADE LIMITADA",
+   "gestor": "KINEA INVESTIMENTOS LTDA.",
+   "classe": "credito_privado",
+   "pl": 3685074485.77,
+   "liq_21d": -925109840.0,
+   "pct_21d": -20.231
   }
  ],
- "alertas_ativos": 291,
- "fundos_em_alerta": 211,
+ "alertas_ativos": 310,
+ "fundos_em_alerta": 225,
  "diagnostico": {
   "erros": [],
   "universo": {
-   "fundos": 3249,
+   "fundos": 3245,
    "por_origem": {
-    "filtro_nome": 2304,
+    "filtro_nome": 2301,
     "cda": 1392
    },
    "por_classe": {
-    "incentivado_infra": 1708,
-    "credito_privado": 1379,
+    "incentivado_infra": 1707,
+    "credito_privado": 1376,
     "outros": 162
    },
    "descartados_fidc_fii_fip": 2
@@ -192,9 +192,9 @@
    },
    {
     "mes": "202610",
-    "linhas_cnpj_data": 528470,
-    "linhas_brutas": 536904,
-    "fundos": 25488,
+    "linhas_cnpj_data": 528957,
+    "linhas_brutas": 537408,
+    "fundos": 25505,
     "datas": [
      "2026-10-01",
      "2026-10-30"
@@ -202,12 +202,12 @@
    },
    {
     "mes": "202611",
-    "linhas_cnpj_data": 23431,
-    "linhas_brutas": 23762,
-    "fundos": 23369,
+    "linhas_cnpj_data": 46578,
+    "linhas_brutas": 47306,
+    "fundos": 24613,
     "datas": [
      "2026-11-03",
-     "2026-11-04"
+     "2026-11-05"
     ]
    }
   ],
@@ -215,14 +215,14 @@
    "202610",
    "202611"
   ],
-  "linhas_lidas": 2226560,
-  "linhas_universo": 277228,
-  "linhas_gravadas": 70992,
-  "descartadas_fora_universo": 1917811,
-  "dias_uteis_no_calendario": 87,
-  "arquivos_diarios_gravados": 22,
+  "linhas_lidas": 2250608,
+  "linhas_universo": 280088,
+  "linhas_gravadas": 74075,
+  "descartadas_fora_universo": 1938594,
+  "dias_uteis_no_calendario": 88,
+  "arquivos_diarios_gravados": 23,
   "cda_usada": "2026-09.csv",
-  "fundos_com_informe": 3245,
+  "fundos_com_informe": 3241,
   "fundos_sem_informe": 4,
   "amostra_sem_informe": [
    "45.064.129/0001-00",
@@ -231,8 +231,8 @@
    "68.009.155/0001-22"
   ],
   "n_fundos_sem_cadastro": 0,
-  "data_mais_recente": "2026-11-03",
-  "fundos_na_data_mais_recente": 3114,
+  "data_mais_recente": "2026-11-04",
+  "fundos_na_data_mais_recente": 3065,
   "cortes": {
    "resgate_5d_pct": 5.0,
    "resgate_21d_pct": 10.0,
