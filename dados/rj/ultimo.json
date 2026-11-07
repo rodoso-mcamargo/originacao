@@ -1,6 +1,20 @@
 {
   "achados": [
     {
+      "chave": "datajud:08039622220268180030",
+      "classe": "Recuperação Judicial",
+      "data_ajuizamento": "20261028160140",
+      "empresa": null,
+      "fonte": "datajud",
+      "novo": true,
+      "numero_processo": "08039622220268180030",
+      "primeiro_visto": "2026-11-07",
+      "tipo": "recuperacao_judicial",
+      "tribunal": "TJPI",
+      "url": null,
+      "vara": "2ª VARA DE OEIRAS"
+    },
+    {
       "chave": "datajud:03343228420268041000",
       "classe": "Recuperação Judicial",
       "data_ajuizamento": "20261028094034",
@@ -20,7 +34,7 @@
       "data_ajuizamento": "20261026153223",
       "empresa": null,
       "fonte": "datajud",
-      "novo": true,
+      "novo": false,
       "numero_processo": "00049775420268160179",
       "primeiro_visto": "2026-11-06",
       "tipo": "falencia",
@@ -309,6 +323,20 @@
       "vara": "2ª VARA CÍVEL E DE ACIDENTES DE TRABALHO"
     },
     {
+      "chave": "datajud:00044604920268160179",
+      "classe": "Recuperação Judicial",
+      "data_ajuizamento": "20261013175428",
+      "empresa": null,
+      "fonte": "datajud",
+      "novo": true,
+      "numero_processo": "00044604920268160179",
+      "primeiro_visto": "2026-11-07",
+      "tipo": "recuperacao_judicial",
+      "tribunal": "TJPR",
+      "url": null,
+      "vara": "CURITIBA - 1ª VARA DE FALÊNCIAS E RECUPERAÇÕES JUDICIAIS"
+    },
+    {
       "chave": "datajud:09010936520268205001",
       "classe": "Falência de Empresários, Sociedades Empresáriais, Microempresas e Empresas de Pequeno Porte",
       "data_ajuizamento": "20261013175208",
@@ -342,7 +370,7 @@
       "data_ajuizamento": "20261009154028",
       "empresa": null,
       "fonte": "datajud",
-      "novo": true,
+      "novo": false,
       "numero_processo": "00301143920268160017",
       "primeiro_visto": "2026-11-06",
       "tipo": "falencia",
@@ -356,13 +384,27 @@
       "data_ajuizamento": "20261008130002",
       "empresa": null,
       "fonte": "datajud",
-      "novo": true,
+      "novo": false,
       "numero_processo": "10042471820268130241",
       "primeiro_visto": "2026-11-06",
       "tipo": "recuperacao_judicial",
       "tribunal": "TJMG",
       "url": null,
       "vara": "1ª Vara Cível, Criminal e de Execuções Penais da Comarca de Esmeraldas"
+    },
+    {
+      "chave": "datajud:00043825520268160179",
+      "classe": "Recuperação Judicial",
+      "data_ajuizamento": "20261007200256",
+      "empresa": null,
+      "fonte": "datajud",
+      "novo": true,
+      "numero_processo": "00043825520268160179",
+      "primeiro_visto": "2026-11-07",
+      "tipo": "recuperacao_judicial",
+      "tribunal": "TJPR",
+      "url": null,
+      "vara": "CURITIBA - 24ª VARA CÍVEL"
     },
     {
       "chave": "datajud:10017997120268130694",
@@ -412,7 +454,7 @@
       "data_ajuizamento": "20261006144711",
       "empresa": null,
       "fonte": "datajud",
-      "novo": true,
+      "novo": false,
       "numero_processo": "00043253720268160179",
       "primeiro_visto": "2026-11-06",
       "tipo": "falencia",
@@ -449,6 +491,20 @@
       "vara": "1ª VARA CÍVEL - COLATINA"
     },
     {
+      "chave": "datajud:11869412420268130024",
+      "classe": "Falência de Empresários, Sociedades Empresáriais, Microempresas e Empresas de Pequeno Porte",
+      "data_ajuizamento": "20261001165546",
+      "empresa": null,
+      "fonte": "datajud",
+      "novo": true,
+      "numero_processo": "11869412420268130024",
+      "primeiro_visto": "2026-11-07",
+      "tipo": "falencia",
+      "tribunal": "TJMG",
+      "url": null,
+      "vara": "2ª Vara Empresarial da Comarca de Belo Horizonte"
+    },
+    {
       "chave": "datajud:10275375420268110003",
       "classe": "Falência de Empresários, Sociedades Empresáriais, Microempresas e Empresas de Pequeno Porte",
       "data_ajuizamento": "20261001093037",
@@ -463,12 +519,26 @@
       "vara": "Quarta Vara Cível - Comarca de Rondonópolis - SDCR"
     },
     {
+      "chave": "datajud:08671487720268180140",
+      "classe": "Recuperação Judicial",
+      "data_ajuizamento": "20261001074419",
+      "empresa": null,
+      "fonte": "datajud",
+      "novo": true,
+      "numero_processo": "08671487720268180140",
+      "primeiro_visto": "2026-11-07",
+      "tipo": "recuperacao_judicial",
+      "tribunal": "TJPI",
+      "url": null,
+      "vara": "Juízo Auxiliar da Comarca de Teresina 06"
+    },
+    {
       "chave": "datajud:00135500220268160173",
       "classe": "Falência de Empresários, Sociedades Empresáriais, Microempresas e Empresas de Pequeno Porte",
       "data_ajuizamento": "20260930194650",
       "empresa": null,
       "fonte": "datajud",
-      "novo": true,
+      "novo": false,
       "numero_processo": "00135500220268160173",
       "primeiro_visto": "2026-11-06",
       "tipo": "falencia",
@@ -503,6 +573,20 @@
       "tribunal": "TJGO",
       "url": null,
       "vara": "4ª Vara Cível"
+    },
+    {
+      "chave": "datajud:10029588720268130261",
+      "classe": "Tutela Cautelar Antecedente",
+      "data_ajuizamento": "20260930181040",
+      "empresa": null,
+      "fonte": "datajud",
+      "novo": true,
+      "numero_processo": "10029588720268130261",
+      "primeiro_visto": "2026-11-07",
+      "tipo": "cautelar_pre_rj",
+      "tribunal": "TJMG",
+      "url": null,
+      "vara": "1ª Vara Cível da Comarca de Formiga"
     },
     {
       "chave": "datajud:52875708220268210001",
@@ -659,20 +743,6 @@
       "vara": "Juizado Regional Empresarial da Comarca de Passo Fundo"
     },
     {
-      "chave": "datajud:00232380420268172810",
-      "classe": "Falência de Empresários, Sociedades Empresáriais, Microempresas e Empresas de Pequeno Porte",
-      "data_ajuizamento": "20260930000000",
-      "empresa": null,
-      "fonte": "datajud",
-      "novo": false,
-      "numero_processo": "00232380420268172810",
-      "primeiro_visto": "2026-10-24",
-      "tipo": "falencia",
-      "tribunal": "TJPE",
-      "url": null,
-      "vara": "8ª Vara Cível da Comarca de Jaboatão dos Guararapes"
-    },
-    {
       "chave": "datajud:01065057020268172001",
       "classe": "Recuperação Judicial",
       "data_ajuizamento": "20260930000000",
@@ -713,6 +783,20 @@
       "tribunal": "TJPE",
       "url": null,
       "vara": "16ª VARA CÍVEL DA CAPITAL - SEÇÃO B"
+    },
+    {
+      "chave": "datajud:00232380420268172810",
+      "classe": "Falência de Empresários, Sociedades Empresáriais, Microempresas e Empresas de Pequeno Porte",
+      "data_ajuizamento": "20260930000000",
+      "empresa": null,
+      "fonte": "datajud",
+      "novo": false,
+      "numero_processo": "00232380420268172810",
+      "primeiro_visto": "2026-10-24",
+      "tipo": "falencia",
+      "tribunal": "TJPE",
+      "url": null,
+      "vara": "8ª Vara Cível da Comarca de Jaboatão dos Guararapes"
     },
     {
       "chave": "datajud:00040846320268160179",
@@ -2592,15 +2676,71 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTTNDRGhQQURmNU03ZXR5U0poY3JYSU4xTUo0ZU9kQWxVM3I4UW9HS2VQYkxKMmlsekN5MzctUWpYR0pvOUUxM2lCNWZBc1g2T1lkNEJqNWdYTUJyYnNybVl6TndlQ2JKN29PeWZrOXlGRndEbWwtRm5PTkVONXVlcl9VTzY3ZjQ3UUsyM1JSeXd1X0VreDhpNjF4T2tHZ1phdDJ3VGNwajBFdUlzV2hreWV1bEhCNFRuRS1J0gHKAUFVX3lxTE9tSDZEeEs0czBjVUNNdEdiRW42NDdFOENMWERUaWxvd3JRdHczbHdzQkViaEZxUU54VUtybWxEeTl2ZGRXT0M5dGJXa1BkdURIeUtYWWJfZ3V3c0RFZG9TdFRJSnhWb2xzUmhRbWRwVGRfTUhtWUdJeThiMi00Y2JnOE91NHloUkFkYWJxaHRRNkVFSUxrNVM5bTUwTTlpSk1XQU1vaGg4bGg2WWZ3dTZKLTdIZFRjS2t6eHBYN1lrcDEzX0ZBbHByX1E?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Sat, 07 Nov 2026 13:19:09 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-07",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Braskem e credores divergem sobre aporte e dívida, dizem fontes",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTTNDRGhQQURmNU03ZXR5U0poY3JYSU4xTUo0ZU9kQWxVM3I4UW9HS2VQYkxKMmlsekN5MzctUWpYR0pvOUUxM2lCNWZBc1g2T1lkNEJqNWdYTUJyYnNybVl6TndlQ2JKN29PeWZrOXlGRndEbWwtRm5PTkVONXVlcl9VTzY3ZjQ3UUsyM1JSeXd1X0VreDhpNjF4T2tHZ1phdDJ3VGNwajBFdUlzV2hreWV1bEhCNFRuRS1J0gHKAUFVX3lxTE9tSDZEeEs0czBjVUNNdEdiRW42NDdFOENMWERUaWxvd3JRdHczbHdzQkViaEZxUU54VUtybWxEeTl2ZGRXT0M5dGJXa1BkdURIeUtYWWJfZ3V3c0RFZG9TdFRJSnhWb2xzUmhRbWRwVGRfTUhtWUdJeThiMi00Y2JnOE91NHloUkFkYWJxaHRRNkVFSUxrNVM5bTUwTTlpSk1XQU1vaGg4bGg2WWZ3dTZKLTdIZFRjS2t6eHBYN1lrcDEzX0ZBbHByX1E?oc=5",
+      "veiculo": "Valor Econômico"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMipgFBVV95cUxOR0haWE9ubGFTMDdHSkxQdlV1dDNWQmFKSFk2QTdzUzRnYUU4MkJ2N0liakFfdHotck9TU0NFOVBEZ29qNHktMUV3ZkhMNHdmaXBjRklIZU8yekpWR0hlYTZMdUpLVXk5X2VVRUtwaEgxZ3NMc3h4SjJqaHZjMGdvVVhRQkotMWx6QWlvbXZJVGlxbEhmTW9seG56eXhyRzZ2ZWRmZUh3?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Sat, 07 Nov 2026 12:19:39 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-07",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Casas Bahia posterga balanço do 3º trimestre em 29 dias",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOR0haWE9ubGFTMDdHSkxQdlV1dDNWQmFKSFk2QTdzUzRnYUU4MkJ2N0liakFfdHotck9TU0NFOVBEZ29qNHktMUV3ZkhMNHdmaXBjRklIZU8yekpWR0hlYTZMdUpLVXk5X2VVRUtwaEgxZ3NMc3h4SjJqaHZjMGdvVVhRQkotMWx6QWlvbXZJVGlxbEhmTW9seG56eXhyRzZ2ZWRmZUh3?oc=5",
+      "veiculo": "SpaceMoney"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMimAFBVV95cUxQUUV2WlhOOWR3ekwxRkx4SzVweHdRQ2E3ZHBkT0ZFVWJUNE13WEdiWFRTM2IybDVsN1JsNXNEOEM1TzhfZExMa3BsSGYyWU5rbkRaUDhGMXVpRUJRd2s4X25famJtX1pfckE4X19vMzAwWVlDa2x0eENIY1hjYVNEaHNGWlVrUjFDUFBpVXZRUk1PaXV0c1VYVdIBngFBVV95cUxPSWlVRE00V0JGS191UVJXQUVPZ3hqaGY3Sms2cnJkMFBlNXNLRGFURDhhUkc2TXRvZjZhNjZlMnZVQ0gyOGlMYjEyczFZS3Zod1NvVFpVN0poMkJUX1hXdGFWX1BkQlgwemFvcWJyWWYxd1hYRm1nR2FSM18xdFgtQjlUNkxNUEVWOUFIZVNKdk84V1lXUHl0OUVSMlN4Zw?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Sat, 07 Nov 2026 11:57:59 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-07",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Casas Bahia (BHIA3) adia balanço do 3º trimestre em quase um mês",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUUV2WlhOOWR3ekwxRkx4SzVweHdRQ2E3ZHBkT0ZFVWJUNE13WEdiWFRTM2IybDVsN1JsNXNEOEM1TzhfZExMa3BsSGYyWU5rbkRaUDhGMXVpRUJRd2s4X25famJtX1pfckE4X19vMzAwWVlDa2x0eENIY1hjYVNEaHNGWlVrUjFDUFBpVXZRUk1PaXV0c1VYVdIBngFBVV95cUxPSWlVRE00V0JGS191UVJXQUVPZ3hqaGY3Sms2cnJkMFBlNXNLRGFURDhhUkc2TXRvZjZhNjZlMnZVQ0gyOGlMYjEyczFZS3Zod1NvVFpVN0poMkJUX1hXdGFWX1BkQlgwemFvcWJyWWYxd1hYRm1nR2FSM18xdFgtQjlUNkxNUEVWOUFIZVNKdk84V1lXUHl0OUVSMlN4Zw?oc=5",
+      "veiculo": "InfoMoney"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMilAFBVV95cUxNbmU4b2lhendYdS1vdVJ5WlJDRjM0TG9Wb0dzOVpua2VRQ0Z0ODQxX1l6bUpUd2s5cEhDM3VucVM1aWhlcWlGSzZLRlVTVU5iWWQ4T3lPS194UDBObXhNQ09PSkRqZGFaMEpWQTJleTFJaEtOLXlJRVNKM2VRcmtucGZXNmh4LWYwSU9FdUM0eTZkMTZL?oc=5",
+      "consulta": "\"entra com pedido de recuperação judicial\"",
+      "data_publicacao": "Sat, 07 Nov 2026 00:46:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-07",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "“Master Capixaba”: Justiça devolve poder de voto a Cinelli e amplia acesso a documentos da Apex",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNbmU4b2lhendYdS1vdVJ5WlJDRjM0TG9Wb0dzOVpua2VRQ0Z0ODQxX1l6bUpUd2s5cEhDM3VucVM1aWhlcWlGSzZLRlVTVU5iWWQ4T3lPS194UDBObXhNQ09PSkRqZGFaMEpWQTJleTFJaEtOLXlJRVNKM2VRcmtucGZXNmh4LWYwSU9FdUM0eTZkMTZL?oc=5",
+      "veiculo": "Times Brasil | CNBC"
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMilgJBVV95cUxON2xYYnAzUnZyMncwWHFCZ21uQllGb3B6WDN0d2NHNnFXWlhoWHdvX3VmQzB2aVRBXzBaaUJGMkg3MGNyd1Z2c29pZk1wN0t4RjNqenFQSHgyUUlIMEVQb3lVYTJHTDA1NzJlbjEwMFJqVXBjRnlpTkt6NTZ2MDV4aEZzVDg4blBHUWlWMjFhNEhYTUtEOXhibndoSGhHREFfRzZqN2h4ODFTZ3hTZ0hZNjc3REhPR2dlMmJBOERDRmN4NU1oUVExQ1UybVdBSW4xeUt1OW1tMmVXSC04eDhlUUNuaEdqT2p1Ymk3cG90M09SaXNmZFBmSklCYVoxMFNXVi1tTXE5aE1YcF9DSGNxTE1GQlRvQQ?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Fri, 06 Nov 2026 17:22:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-11-06",
       "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Um galpão, dois problemas: Fundo imobiliário enfrenta recuperação judicial entre locatárias; contratos somam 11,2% da receita",
+      "titulo": "Um galpão, dois problemas: fundo imobiliário enfrenta recuperação judicial entre locatárias; contratos somam 11,2% da receita",
       "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxON2xYYnAzUnZyMncwWHFCZ21uQllGb3B6WDN0d2NHNnFXWlhoWHdvX3VmQzB2aVRBXzBaaUJGMkg3MGNyd1Z2c29pZk1wN0t4RjNqenFQSHgyUUlIMEVQb3lVYTJHTDA1NzJlbjEwMFJqVXBjRnlpTkt6NTZ2MDV4aEZzVDg4blBHUWlWMjFhNEhYTUtEOXhibndoSGhHREFfRzZqN2h4ODFTZ3hTZ0hZNjc3REhPR2dlMmJBOERDRmN4NU1oUVExQ1UybVdBSW4xeUt1OW1tMmVXSC04eDhlUUNuaEdqT2p1Ymk3cG90M09SaXNmZFBmSklCYVoxMFNXVi1tTXE5aE1YcF9DSGNxTE1GQlRvQQ?oc=5",
       "veiculo": "Seu Dinheiro"
     },
@@ -2611,10 +2751,10 @@
       "data_publicacao": "Fri, 06 Nov 2026 14:00:11 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-11-06",
       "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "FII se manifesta após recuperação judicial de inquilino",
+      "titulo": "Fundo imobiliário se manifesta após recuperação judicial de inquilino",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE43NnpZTVFiSmlCdHNiQ2tkZ2FIMmZPa3pqbG5sX3YwUmRCRjRCbmNDTGF4M2ZNakNMMFpIQ0F3elZJRlhTS2Z4d3hVUEtpWS00VHZvNno5NWw5ZU9ZQVF0SFREb0FtdDZkQ1NmSG1RRVJQS3piMVA2YmFWWQ?oc=5",
       "veiculo": "Fiis"
     },
@@ -2625,7 +2765,7 @@
       "data_publicacao": "Fri, 06 Nov 2026 11:31:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-11-06",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Fundo imobiliário enfrenta segunda recuperação judicial entre inquilinos; contratos representam 11,2% da receita do FII",
@@ -2653,7 +2793,7 @@
       "data_publicacao": "Fri, 06 Nov 2026 10:47:01 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-11-06",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Nova decisão judicial amplia disputa sobre autorização da Electra",
@@ -2709,7 +2849,7 @@
       "data_publicacao": "Wed, 04 Nov 2026 19:43:32 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-11-05",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Recuperação judicial: famosa rede varejista tenta evitar falência após dívida de R$ 140 milhões",
@@ -2768,7 +2908,7 @@
       "novo": false,
       "primeiro_visto": "2026-11-04",
       "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Kitchens tem recuperação aceita; dívida com clientes chega a R$ 190 mi",
+      "titulo": "Kitchens tem recuperação aceita; dívida com clientes chega a R$ 190 milhões",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQaTBoaUM2bnZJdUM3VlREVGo0MXpqVDVxcjA1Y0FPX3VtNHNMTzBBWmFiNl9jTkxyZ1FHYkVMNHo2R0tUSmZsM2ljWUF2RnNrX19EOU9qaFN4UEpmV0tDQ2VWa2tpemxoS3ZSLVRieG5GTEwwemk5U2hzN29jZV9JVzdGX1BaYjNPckgxMVpZTngzXzk2WHNNVGp5N19wNjd2aU1OeXFxZEpXZjhKNXhlaw?oc=5",
       "veiculo": "Migalhas"
     },
@@ -2813,6 +2953,20 @@
       "titulo": "Com a crise da sócia @apex.partners , a gestora Carbyne Investimentos tem buscado aumentar a liquidez de curto prazo dos fundos enquanto negocia um movimento societário para evitar um esvaziamento maior de patrimônio por meio de resgates ou migr",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5MYzJ3a19qY3pQdzhVZVJ1U0pMeGdNOVZZaDQ0d0djZFh5TmZtZHUxMDZ1NGtOOWpVdjM1WDRBZ0d0ZVdQTUNDd21DQ3pDaXhqSHc?oc=5",
       "veiculo": "Instagram"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMimwFBVV95cUxNOE9ZV0dfWGNKUkJXQi1RS29iQ29yT3dFNUVSeDdJb3luaXFmWlg1Y2VUMzR4djJZLWlCSlczOGYwTk9hb2JNbW5ZWkk4R3c1YzgzVWxRc0RrWW1WcUVwQk83N2laRU1zdG5UcjB4NTY4akpVaXoxZ3p1LVlybk5neTVOcEJXR0VxTVpNRzlMbE9RdHdFY1VHWUVWTQ?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Tue, 03 Nov 2026 23:29:47 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-07",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Portobello, de Tijucas, deixa de pagar R$ 59,8 milhões, deve mais do que tem e vira “mau pagador” para a Fitch",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNOE9ZV0dfWGNKUkJXQi1RS29iQ29yT3dFNUVSeDdJb3luaXFmWlg1Y2VUMzR4djJZLWlCSlczOGYwTk9hb2JNbW5ZWkk4R3c1YzgzVWxRc0RrWW1WcUVwQk83N2laRU1zdG5UcjB4NTY4akpVaXoxZ3p1LVlybk5neTVOcEJXR0VxTVpNRzlMbE9RdHdFY1VHWUVWTQ?oc=5",
+      "veiculo": "Jornal Razão"
     },
     {
       "buscador": "google_news",
@@ -3331,6 +3485,20 @@
       "titulo": "Funcionários recebem aviso de demissão e fábrica de motores com 18 anos pede autofalência em SC",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNM2tDRHZIVlNNaGJaZVFYQ3NmUUY5d0tnNWJGNnFJdl94Z2lQVkwzZEZOODQ1dE04dkwtTkt1XzZ2V3VZOWZZejNJeHlxMEUyMzVJUjlwNU42S1ZWTm1PQkRTdUpCbU1PUzFyMU1mSFVncDBLcHBPS1VlbmZmcU1IQkdDdUMyc1ppWUNRWA?oc=5",
       "veiculo": "Jornal Razão"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aef5d0792174bf989e4261f344005c0&url=https%3a%2f%2fwww.infomoney.com.br%2fmercados%2fkitchens-de-moveis-planejados-pede-recuperacao-judicial-diz-site%2f&c=17661185377523476613&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Thu, 29 Oct 2026 16:14:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-07",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Kitchens, de móveis planejados, pede recuperação judicial, diz site",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6aef5d0792174bf989e4261f344005c0&url=https%3a%2f%2fwww.infomoney.com.br%2fmercados%2fkitchens-de-moveis-planejados-pede-recuperacao-judicial-diz-site%2f&c=17661185377523476613&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -10277,14 +10445,14 @@
       "veiculo": "Poder360"
     }
   ],
-  "gerado_em": "2026-11-06T17:05:13.823832+00:00",
+  "gerado_em": "2026-11-07T16:01:52.215182+00:00",
   "janela_dias": 30,
-  "novos_hoje": 21,
+  "novos_hoje": 12,
   "por_tipo": {
-    "cautelar_pre_rj": 1,
-    "falencia": 86,
-    "noticia_rj_ou_cautelar": 549,
-    "recuperacao_judicial": 98
+    "cautelar_pre_rj": 2,
+    "falencia": 87,
+    "noticia_rj_ou_cautelar": 555,
+    "recuperacao_judicial": 102
   },
   "por_tribunal": {
     "TJAC": 2,
@@ -10294,13 +10462,13 @@
     "TJES": 11,
     "TJGO": 26,
     "TJMA": 2,
-    "TJMG": 8,
+    "TJMG": 10,
     "TJMS": 3,
     "TJMT": 7,
     "TJPA": 10,
     "TJPE": 25,
-    "TJPI": 2,
-    "TJPR": 11,
+    "TJPI": 4,
+    "TJPR": 13,
     "TJRJ": 8,
     "TJRN": 3,
     "TJRO": 3,
@@ -10309,5 +10477,5 @@
     "TJSP": 14,
     "TJTO": 2
   },
-  "total": 734
+  "total": 746
 }
