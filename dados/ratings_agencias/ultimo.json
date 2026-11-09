@@ -1,26 +1,27 @@
 {
- "data_referencia": "2026-11-06",
- "gerado_em": "2026-11-06T23:26:37-03:00",
+ "data_referencia": "2026-11-09",
+ "gerado_em": "2026-11-09T20:00:12-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 11
+   "fitch": 12
   },
   "por_acao": {
-   "afirmacao": 1,
-   "elevacao": 3,
+   "afirmacao": 2,
+   "atribuicao": 2,
+   "elevacao": 1,
    "em_revisao": 1,
    "relatorio": 4,
    "retirada": 2
   },
-  "base_total": 34,
+  "base_total": 37,
   "base_por_agencia": {
-   "fitch": 32,
+   "fitch": 35,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 8,
-   "atribuicao": 3,
+   "afirmacao": 9,
+   "atribuicao": 5,
    "elevacao": 4,
    "em_revisao": 1,
    "relatorio": 16,
@@ -29,7 +30,7 @@
   "universo_linhas": 7
  },
  "diagnostico": {
-  "universo_nomes": 481,
+  "universo_nomes": 479,
   "grupos": 0,
   "agencias": {
    "moodys_local": {
@@ -104,11 +105,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 11,
-    "validos": 11,
-    "novos_na_base": 0,
+    "lidos": 12,
+    "validos": 12,
+    "novos_na_base": 3,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 486,
+     "fora_do_brasil_e_fora_do_universo": 485,
      "slug_sem_data": 3
     },
     "erros": [],
@@ -116,40 +117,5 @@
    }
   }
  },
- "acoes_casadas_no_run": [
-  {
-   "agencia": "fitch",
-   "data": "2026-11-04",
-   "entidade": "UNIDAS",
-   "acao": "elevacao",
-   "nota_nova": null,
-   "perspectiva": "estavel",
-   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-upgrades-unidas-to-bb-outlook-stable-04-11-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "UNIDAS S/A",
-     "codigos": "UNDAC3",
-     "tipo_match": "exato",
-     "score": 100
-    }
-   ]
-  },
-  {
-   "agencia": "fitch",
-   "data": "2026-11-04",
-   "entidade": "UNIDAS",
-   "acao": "elevacao",
-   "nota_nova": null,
-   "perspectiva": "estavel",
-   "url": "https://www.fitchratings.com/research/corporate-finance/fitch-upgrades-unidas-to-bb-outlook-stable-04-11-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "UNIDAS S/A",
-     "codigos": "UNDAC3",
-     "tipo_match": "exato",
-     "score": 100
-    }
-   ]
-  }
- ]
+ "acoes_casadas_no_run": []
 }

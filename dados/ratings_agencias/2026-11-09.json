@@ -1,0 +1,45 @@
+{
+ "data": "2026-11-09",
+ "n": 3,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-09",
+   "entidade": "PARANAIBAS SECOND",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": "debentures",
+   "titulo": "fitch affirms paranaibas second debentures issuance at aaa bra outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-paranaibas-second-debentures-issuance-at-aaa-bra-outlook-stable-09-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-09",
+   "entidade": "BURITI TRANSMISSAO DE ENERGIA SAS 2ND",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "debentures",
+   "titulo": "fitch assigns aaa bra rating to buriti transmissao de energia sas 2nd debentures issuance",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-assigns-aaa-bra-rating-to-buriti-transmissao-de-energia-sas-2nd-debentures-issuance-09-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-09",
+   "entidade": "VERDE TRANSMISSAOS 2ND 3RD",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "debentures",
+   "titulo": "fitch assigns aaa bra to verde transmissaos 2nd 3rd debenture issuances",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-assigns-aaa-bra-to-verde-transmissaos-2nd-3rd-debenture-issuances-09-11-2026"
+  }
+ ]
+}
