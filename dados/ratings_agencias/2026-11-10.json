@@ -1,0 +1,45 @@
+{
+ "data": "2026-11-10",
+ "n": 3,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-10",
+   "entidade": "PARINTINS 1ST",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "debentures",
+   "titulo": "fitch affirms parintins 1st debentures issuance at aaa bra",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-parintins-1st-debentures-issuance-at-aaa-bra-10-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-10",
+   "entidade": "SERRA DE IBIAPABA 1ST",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": "debentures",
+   "titulo": "fitch affirms serra de ibiapaba 1st debenture issuance at aaa bra outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-serra-de-ibiapaba-1st-debenture-issuance-at-aaa-bra-outlook-stable-10-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-10",
+   "entidade": "AAASF BRA F1 SF BRA",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "fitch affirms aaasf bra f1 sf bra ratings of itu fic fidc quotas credit agricoles risk",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-affirms-aaasf-bra-f1-sf-bra-ratings-of-itu-fic-fidc-quotas-credit-agricoles-risk-10-11-2026"
+  }
+ ]
+}
