@@ -2,16 +2,16 @@
  "fonte": "SND - debentures.com.br (ANBIMA/B3)",
  "urls": {
   "caracteristicas": "https://www.debentures.com.br/exploreosnd/consultaadados/emissoesdedebentures/caracteristicas_e.asp?Ativo=",
-  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=09/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
+  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=10/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
  },
- "data_referencia": "2026-11-09",
- "gerado_em": "2026-11-09T19:58:30+00:00",
+ "data_referencia": "2026-11-10",
+ "gerado_em": "2026-11-10T17:13:52+00:00",
  "fonte_gerado_em": {
-  "caracteristicas": "2026-11-09T16:58:00",
-  "agenda": "2026-11-09T16:58:05"
+  "caracteristicas": "2026-11-10T14:13:24",
+  "agenda": "2026-11-10T14:13:29"
  },
  "universo_codigos": 1270,
- "universo_cnpjs": 384,
+ "universo_cnpjs": 385,
  "emissores_com_vencimento_24m": 303,
  "top10_vencimento_24m": [
   {
@@ -32,7 +32,7 @@
    "cnpj_emissor": "40432544000147",
    "emissor": "CLARO S/A",
    "venc_0_24m": 4500000000.0,
-   "pct_saldo_0_24m": 43.2,
+   "pct_saldo_0_24m": 43.1,
    "saldo_estimado": false
   },
   {
@@ -52,15 +52,22 @@
   {
    "cnpj_emissor": "21314559000166",
    "emissor": "MOVIDA PARTICIPACOES S/A",
-   "venc_0_24m": 3245840090.46,
+   "venc_0_24m": 3245935066.46,
    "pct_saldo_0_24m": 19.9,
    "saldo_estimado": false
   },
   {
    "cnpj_emissor": "23373000000132",
    "emissor": "VAMOS LOCACAO DE CAMINHOES MAQUINAS E EQUIPAMENTOS S.A.",
-   "venc_0_24m": 3073369916.5,
+   "venc_0_24m": 3077027422.87,
    "pct_saldo_0_24m": 36.0,
+   "saldo_estimado": false
+  },
+  {
+   "cnpj_emissor": "33042730000104",
+   "emissor": "COMPANHIA SIDERURGICA NACIONAL",
+   "venc_0_24m": 3000000000.0,
+   "pct_saldo_0_24m": 52.6,
    "saldo_estimado": false
   },
   {
@@ -73,31 +80,24 @@
   {
    "cnpj_emissor": "33050196000188",
    "emissor": "COMPANHIA PAULISTA DE FORCA E LUZ",
-   "venc_0_24m": 2956202819.71,
+   "venc_0_24m": 2956207207.42,
    "pct_saldo_0_24m": 35.8,
-   "saldo_estimado": false
-  },
-  {
-   "cnpj_emissor": "04368898000106",
-   "emissor": "COPEL DISTRIBUICAO S/A",
-   "venc_0_24m": 2500864140.0,
-   "pct_saldo_0_24m": 23.1,
    "saldo_estimado": false
   }
  ],
  "diagnostico": {
   "lidos": {
-   "caracteristicas": 10070,
-   "agenda": 93726
+   "caracteristicas": 10072,
+   "agenda": 93561
   },
   "gravados": {
-   "caracteristicas": 2022,
-   "agenda": 31054,
-   "vencimentos_emissor": 384
+   "caracteristicas": 2023,
+   "agenda": 31035,
+   "vencimentos_emissor": 385
   },
   "descartados": {
-   "caracteristicas_fora_do_universo": 8048,
-   "agenda_fora_do_universo": 62672,
+   "caracteristicas_fora_do_universo": 8049,
+   "agenda_fora_do_universo": 62526,
    "motivo": "CNPJ do emissor sem papel em dados/ultimo.json, ou papel excluido do SND fora do painel",
    "codigos_do_universo_sem_snd": [
     "FEPS11"
