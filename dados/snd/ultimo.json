@@ -2,13 +2,13 @@
  "fonte": "SND - debentures.com.br (ANBIMA/B3)",
  "urls": {
   "caracteristicas": "https://www.debentures.com.br/exploreosnd/consultaadados/emissoesdedebentures/caracteristicas_e.asp?Ativo=",
-  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=10/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
+  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=11/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
  },
- "data_referencia": "2026-11-10",
- "gerado_em": "2026-11-10T17:13:52+00:00",
+ "data_referencia": "2026-11-11",
+ "gerado_em": "2026-11-11T17:22:17+00:00",
  "fonte_gerado_em": {
-  "caracteristicas": "2026-11-10T14:13:24",
-  "agenda": "2026-11-10T14:13:29"
+  "caracteristicas": "2026-11-11T14:21:50",
+  "agenda": "2026-11-11T14:21:55"
  },
  "universo_codigos": 1270,
  "universo_cnpjs": 385,
@@ -52,15 +52,15 @@
   {
    "cnpj_emissor": "21314559000166",
    "emissor": "MOVIDA PARTICIPACOES S/A",
-   "venc_0_24m": 3245935066.46,
-   "pct_saldo_0_24m": 19.9,
+   "venc_0_24m": 3246030049.46,
+   "pct_saldo_0_24m": 19.8,
    "saldo_estimado": false
   },
   {
    "cnpj_emissor": "23373000000132",
    "emissor": "VAMOS LOCACAO DE CAMINHOES MAQUINAS E EQUIPAMENTOS S.A.",
-   "venc_0_24m": 3077027422.87,
-   "pct_saldo_0_24m": 36.0,
+   "venc_0_24m": 3096112434.27,
+   "pct_saldo_0_24m": 36.2,
    "saldo_estimado": false
   },
   {
@@ -80,24 +80,24 @@
   {
    "cnpj_emissor": "33050196000188",
    "emissor": "COMPANHIA PAULISTA DE FORCA E LUZ",
-   "venc_0_24m": 2956207207.42,
+   "venc_0_24m": 2956211595.66,
    "pct_saldo_0_24m": 35.8,
    "saldo_estimado": false
   }
  ],
  "diagnostico": {
   "lidos": {
-   "caracteristicas": 10072,
-   "agenda": 93561
+   "caracteristicas": 10076,
+   "agenda": 93835
   },
   "gravados": {
    "caracteristicas": 2023,
-   "agenda": 31035,
+   "agenda": 31030,
    "vencimentos_emissor": 385
   },
   "descartados": {
-   "caracteristicas_fora_do_universo": 8049,
-   "agenda_fora_do_universo": 62526,
+   "caracteristicas_fora_do_universo": 8053,
+   "agenda_fora_do_universo": 62805,
    "motivo": "CNPJ do emissor sem papel em dados/ultimo.json, ou papel excluido do SND fora do painel",
    "codigos_do_universo_sem_snd": [
     "FEPS11"
