@@ -1,6 +1,6 @@
 {
  "data": "2026-11-10",
- "n": 3,
+ "n": 4,
  "acoes": [
   {
    "agencia": "fitch",
@@ -27,6 +27,19 @@
    "instrumento": "debentures",
    "titulo": "fitch affirms serra de ibiapaba 1st debenture issuance at aaa bra outlook stable",
    "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-serra-de-ibiapaba-1st-debenture-issuance-at-aaa-bra-outlook-stable-10-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-10",
+   "entidade": "VIA BRASIL MT 320",
+   "escala": "nacional",
+   "acao": "rebaixamento",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "debentures",
+   "titulo": "fitch downgrades via brasil mt 320 debenture to ccc bra",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-downgrades-via-brasil-mt-320-debenture-to-ccc-bra-10-11-2026"
   },
   {
    "agencia": "fitch",
