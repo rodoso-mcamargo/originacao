@@ -1,25 +1,24 @@
 {
- "data_referencia": "2026-11-10",
- "gerado_em": "2026-11-10T23:20:49-03:00",
+ "data_referencia": "2026-11-11",
+ "gerado_em": "2026-11-11T17:13:20-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
    "fitch": 13
   },
   "por_acao": {
-   "afirmacao": 5,
+   "afirmacao": 6,
    "atribuicao": 2,
-   "em_revisao": 1,
    "rebaixamento": 1,
    "relatorio": 4
   },
-  "base_total": 41,
+  "base_total": 42,
   "base_por_agencia": {
-   "fitch": 39,
+   "fitch": 40,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 12,
+   "afirmacao": 13,
    "atribuicao": 5,
    "elevacao": 4,
    "em_revisao": 1,
@@ -30,7 +29,7 @@
   "universo_linhas": 7
  },
  "diagnostico": {
-  "universo_nomes": 479,
+  "universo_nomes": 477,
   "grupos": 0,
   "agencias": {
    "moodys_local": {
@@ -109,8 +108,8 @@
     "validos": 13,
     "novos_na_base": 1,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 485,
-     "slug_sem_data": 2
+     "fora_do_brasil_e_fora_do_universo": 484,
+     "slug_sem_data": 3
     },
     "erros": [],
     "fonte": "fitchratings.com"

@@ -1,0 +1,19 @@
+{
+ "data": "2026-11-11",
+ "n": 1,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-11",
+   "entidade": "CANTAREIRA FIRST",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": "debentures",
+   "titulo": "fitch affirms cantareira first debenture issuance at aaa bra outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-cantareira-first-debenture-issuance-at-aaa-bra-outlook-stable-11-11-2026"
+  }
+ ]
+}
