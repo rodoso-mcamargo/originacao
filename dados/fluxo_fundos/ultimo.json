@@ -1,52 +1,52 @@
 {
  "data_referencia": "2026-11-06",
- "gerado_em": "2026-11-11T01:12:08+00:00",
+ "gerado_em": "2026-11-12T02:13:17+00:00",
  "fonte": "CVM - informe diario de fundos (inf_diario_fi) e cadastro pos-175 (registro_fundo_classe)",
- "universo": 2526,
+ "universo": 2523,
  "totais": {
   "credito_privado": {
-   "n_fundos": 1138.0,
-   "pl": 2550176941226.0,
-   "liquido": -3451325954.0,
-   "liq_5d": -11162881665.0,
-   "pct_5d": -0.461,
-   "liq_21d": -10332200129.0,
-   "pct_21d": -0.42,
-   "liq_63d": 10027695309.0,
-   "pct_63d": 0.413
+   "n_fundos": 1152.0,
+   "pl": 2555372035510.0,
+   "liquido": -3246241760.0,
+   "liq_5d": -10887939855.0,
+   "pct_5d": -0.449,
+   "liq_21d": -10488499332.0,
+   "pct_21d": -0.426,
+   "liq_63d": 10492120563.0,
+   "pct_63d": 0.431
   },
   "incentivado_infra": {
-   "n_fundos": 1182.0,
-   "pl": 495769383424.0,
-   "liquido": -1186473419.0,
-   "liq_5d": -6637531658.0,
-   "pct_5d": -2.232,
-   "liq_21d": -16193586288.0,
-   "pct_21d": -4.536,
-   "liq_63d": -20024881115.0,
-   "pct_63d": -5.282
+   "n_fundos": 1200.0,
+   "pl": 499139436819.0,
+   "liquido": -1168416435.0,
+   "liq_5d": -6611201115.0,
+   "pct_5d": -2.21,
+   "liq_21d": -15525619579.0,
+   "pct_21d": -4.32,
+   "liq_63d": -19218171598.0,
+   "pct_63d": -5.038
   },
   "outros": {
-   "n_fundos": 53.0,
-   "pl": 393586220254.0,
+   "n_fundos": 60.0,
+   "pl": 393936343421.0,
    "liquido": -161896031.0,
-   "liq_5d": 22696112894.0,
-   "pct_5d": 6.267,
-   "liq_21d": 18970218826.0,
-   "pct_21d": 5.123,
-   "liq_63d": 15105203633.0,
-   "pct_63d": 4.134
+   "liq_5d": 22696082652.0,
+   "pct_5d": 6.266,
+   "liq_21d": 18976303349.0,
+   "pct_21d": 5.122,
+   "liq_63d": 15099354268.0,
+   "pct_63d": 4.13
   },
   "todas": {
-   "n_fundos": 2373.0,
-   "pl": 3439532544904.0,
-   "liquido": -4799695404.0,
-   "liq_5d": 4895699571.0,
-   "pct_5d": 0.159,
-   "liq_21d": -7555567591.0,
-   "pct_21d": -0.237,
-   "liq_63d": 5108017827.0,
-   "pct_63d": 0.161
+   "n_fundos": 2412.0,
+   "pl": 3448447815750.0,
+   "liquido": -4576554227.0,
+   "liq_5d": 5196941682.0,
+   "pct_5d": 0.168,
+   "liq_21d": -7037815562.0,
+   "pct_21d": -0.22,
+   "liq_63d": 6373303233.0,
+   "pct_63d": 0.2
   }
  },
  "maiores_resgates_21d": [
@@ -141,19 +141,19 @@
    "pct_21d": -20.191
   }
  ],
- "alertas_ativos": 300,
- "fundos_em_alerta": 215,
+ "alertas_ativos": 320,
+ "fundos_em_alerta": 226,
  "diagnostico": {
   "erros": [],
   "universo": {
-   "fundos": 2526,
+   "fundos": 2523,
    "por_origem": {
-    "filtro_nome": 2303,
+    "filtro_nome": 2300,
     "cda": 335
    },
    "por_classe": {
-    "incentivado_infra": 1277,
-    "credito_privado": 1187,
+    "incentivado_infra": 1276,
+    "credito_privado": 1185,
     "outros": 62
    },
    "descartados_fidc_fii_fip": 0
@@ -192,9 +192,9 @@
    },
    {
     "mes": "202610",
-    "linhas_cnpj_data": 529530,
-    "linhas_brutas": 538002,
-    "fundos": 25515,
+    "linhas_cnpj_data": 529629,
+    "linhas_brutas": 538105,
+    "fundos": 25519,
     "datas": [
      "2026-10-01",
      "2026-10-30"
@@ -202,12 +202,12 @@
    },
    {
     "mes": "202611",
-    "linhas_cnpj_data": 94702,
-    "linhas_brutas": 96257,
-    "fundos": 25043,
+    "linhas_cnpj_data": 109057,
+    "linhas_brutas": 110808,
+    "fundos": 25137,
     "datas": [
      "2026-11-02",
-     "2026-11-09"
+     "2026-11-10"
     ]
    }
   ],
@@ -215,21 +215,21 @@
    "202610",
    "202611"
   ],
-  "linhas_lidas": 2300153,
-  "linhas_universo": 221786,
-  "linhas_gravadas": 62592,
-  "descartadas_fora_universo": 2045584,
-  "dias_uteis_no_calendario": 90,
-  "arquivos_diarios_gravados": 25,
+  "linhas_lidas": 2314807,
+  "linhas_universo": 223205,
+  "linhas_gravadas": 64174,
+  "descartadas_fora_universo": 2058628,
+  "dias_uteis_no_calendario": 91,
+  "arquivos_diarios_gravados": 26,
   "cda_usada": "2026-10.csv",
-  "fundos_com_informe": 2525,
+  "fundos_com_informe": 2522,
   "fundos_sem_informe": 1,
   "amostra_sem_informe": [
    "64.113.998/0001-13"
   ],
   "n_fundos_sem_cadastro": 0,
-  "data_mais_recente": "2026-11-06",
-  "fundos_na_data_mais_recente": 2373,
+  "data_mais_recente": "2026-11-09",
+  "fundos_na_data_mais_recente": 1604,
   "cortes": {
    "resgate_5d_pct": 5.0,
    "resgate_21d_pct": 10.0,
