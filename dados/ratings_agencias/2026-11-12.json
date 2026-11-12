@@ -1,0 +1,32 @@
+{
+ "data": "2026-11-12",
+ "n": 2,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-12",
+   "entidade": "BENEFITS OF BRAZIL RECEIVABLES REGISTRY MODERNIZATION DEPENDS ON ROLLOUT",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "benefits of brazil receivables registry modernization depends on rollout",
+   "url": "https://www.fitchratings.com/research/pt/banks/benefits-of-brazil-receivables-registry-modernization-depends-on-rollout-12-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-12",
+   "entidade": "OPEAS 202ND ISSUANCE OF CRIS FARO ENERGYS RISK",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fitch affirms aaasf bra rating on opeas 202nd issuance of cris faro energys risk",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-aaasf-bra-rating-on-opeas-202nd-issuance-of-cris-faro-energys-risk-12-11-2026"
+  }
+ ]
+}
