@@ -1,7 +1,20 @@
 {
  "data": "2026-11-11",
- "n": 1,
+ "n": 3,
  "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-11",
+   "entidade": "AT AAA BRA SAO GABRIEL SANEAMENTOS 1ST",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "debentures",
+   "titulo": "fitch affirms at aaa bra sao gabriel saneamentos 1st debenture issuance",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-at-aaa-bra-sao-gabriel-saneamentos-1st-debenture-issuance-11-11-2026"
+  },
   {
    "agencia": "fitch",
    "data": "2026-11-11",
@@ -14,6 +27,19 @@
    "instrumento": "debentures",
    "titulo": "fitch affirms cantareira first debenture issuance at aaa bra outlook stable",
    "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-cantareira-first-debenture-issuance-at-aaa-bra-outlook-stable-11-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-11",
+   "entidade": "AAA EXP SF BRA",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "debentures",
+   "titulo": "fitch assigns aaa exp sf bra to verts proposed 51st debenture issuance j amp f risk",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-assigns-aaa-exp-sf-bra-to-verts-proposed-51st-debenture-issuance-j-amp-f-risk-11-11-2026"
   }
  ]
 }
