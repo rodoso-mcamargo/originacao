@@ -1,32 +1,32 @@
 {
- "data_referencia": "2026-11-12",
- "gerado_em": "2026-11-13T00:00:00-03:00",
+ "data_referencia": "2026-11-13",
+ "gerado_em": "2026-11-13T17:30:49-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 12
+   "fitch": 11
   },
   "por_acao": {
    "afirmacao": 7,
-   "atribuicao": 3,
+   "atribuicao": 1,
    "rebaixamento": 1,
-   "relatorio": 1
+   "relatorio": 2
   },
-  "base_total": 46,
+  "base_total": 48,
   "base_por_agencia": {
-   "fitch": 44,
+   "fitch": 46,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 15,
+   "afirmacao": 16,
    "atribuicao": 6,
    "elevacao": 4,
    "em_revisao": 1,
    "rebaixamento": 1,
-   "relatorio": 17,
+   "relatorio": 18,
    "retirada": 2
   },
-  "universo_linhas": 7
+  "universo_linhas": 8
  },
  "diagnostico": {
   "universo_nomes": 475,
@@ -104,11 +104,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 12,
-    "validos": 12,
-    "novos_na_base": 0,
+    "lidos": 11,
+    "validos": 11,
+    "novos_na_base": 2,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 487,
+     "fora_do_brasil_e_fora_do_universo": 488,
      "slug_sem_data": 1
     },
     "erros": [],
@@ -116,5 +116,23 @@
    }
   }
  },
- "acoes_casadas_no_run": []
+ "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-13",
+   "entidade": "MINERVA FIDC II",
+   "acao": "afirmacao",
+   "nota_nova": null,
+   "perspectiva": null,
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-affirms-minerva-fidc-ii-senior-notes-at-a-sf-bra-13-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "MINERVA S.A.",
+     "codigos": "CRA021000RX;CRA021000RY;CRA0220073P;CRA02300MJ9;CRA02300MOQ;CRA024002S1;CRA024002S3;CRA02400AYL;CRA02400AYM;CRA02400AYN;CRA02400AYP;CRA025002S1;CRA025002S2;CRA025002S3;CRA025002S4;CRA025002S5;CRA025005V5;CRA025005V6;CRA025005V7;CRA025005V8",
+     "tipo_match": "fuzzy",
+     "score": 100.0
+    }
+   ]
+  }
+ ]
 }

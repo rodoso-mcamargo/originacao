@@ -1,0 +1,32 @@
+{
+ "data": "2026-11-13",
+ "n": 2,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-13",
+   "entidade": "OMNI_S_A_ _CREDITO_FINANCIAMENTO_E_INVESTIMENTO",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "omni_s_a_ _credito_financiamento_e_investimento",
+   "url": "https://www.fitchratings.com/research/pt/banks/omni_s_a_-_credito_financiamento_e_investimento-13-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-13",
+   "entidade": "MINERVA FIDC II",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "fitch affirms minerva fidc ii senior notes at a sf bra",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-affirms-minerva-fidc-ii-senior-notes-at-a-sf-bra-13-11-2026"
+  }
+ ]
+}
