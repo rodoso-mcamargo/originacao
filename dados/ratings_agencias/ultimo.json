@@ -1,6 +1,6 @@
 {
  "data_referencia": "2026-11-12",
- "gerado_em": "2026-11-12T17:51:04-03:00",
+ "gerado_em": "2026-11-13T00:00:00-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
@@ -106,7 +106,7 @@
     ],
     "lidos": 12,
     "validos": 12,
-    "novos_na_base": 2,
+    "novos_na_base": 0,
     "descartados": {
      "fora_do_brasil_e_fora_do_universo": 487,
      "slug_sem_data": 1
