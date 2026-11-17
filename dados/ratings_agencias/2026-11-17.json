@@ -1,0 +1,45 @@
+{
+ "data": "2026-11-17",
+ "n": 3,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-17",
+   "entidade": "WAY 306 2ND",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "debentures",
+   "titulo": "fitch affirms way 306 2nd debentures issuance rating at aa bra stable outlook",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-way-306-2nd-debentures-issuance-rating-at-aa-bra-stable-outlook-17-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-17",
+   "entidade": "URBIA CATARATAS 3RD",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": "debentures",
+   "titulo": "fitch assigns aa bra rating to urbia cataratas 3rd debentures issuance outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-assigns-aa-bra-rating-to-urbia-cataratas-3rd-debentures-issuance-outlook-stable-17-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-17",
+   "entidade": "OPEA HOLDING SA",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "opea holding sa",
+   "url": "https://www.fitchratings.com/research/pt/non-bank-financial-institutions/opea-holding-sa-17-11-2026"
+  }
+ ]
+}
