@@ -1,7 +1,33 @@
 {
  "data": "2026-11-17",
- "n": 3,
+ "n": 5,
  "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-17",
+   "entidade": "ORIGEM",
+   "escala": "nacional",
+   "acao": "perspectiva_positiva",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "positiva",
+   "instrumento": null,
+   "titulo": "fitch affirms origem at a bra outlook revised to positive",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-origem-at-a-bra-outlook-revised-to-positive-17-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-17",
+   "entidade": "AXIA PROPOSED 15TH",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "debentures",
+   "titulo": "fitch assigns aaa bra rating to axia proposed 15th debentures issuance",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-assigns-aaa-bra-rating-to-axia-proposed-15th-debentures-issuance-17-11-2026"
+  },
   {
    "agencia": "fitch",
    "data": "2026-11-17",
