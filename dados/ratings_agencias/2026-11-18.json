@@ -1,0 +1,71 @@
+{
+ "data": "2026-11-18",
+ "n": 5,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-18",
+   "entidade": "DEXCO",
+   "escala": "internacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms dexco idrs at bb outlook stable",
+   "url": "https://www.fitchratings.com/research/corporate-finance/fitch-affirms-dexco-idrs-at-bb-outlook-stable-18-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-18",
+   "entidade": "DEXCO",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms dexco idrs at bb outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-dexco-idrs-at-bb-outlook-stable-18-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-18",
+   "entidade": "FIRST TIME BBB BRA",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch assigns first time bbb bra rating to usina coruripe outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-assigns-first-time-bbb-bra-rating-to-usina-coruripe-outlook-stable-18-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-18",
+   "entidade": "TRANSACTIONS WITH J AMP F RISK",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fitch affirms aaasf bra ratings of transactions with j amp f risk",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-affirms-aaasf-bra-ratings-of-transactions-with-j-amp-f-risk-18-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-18",
+   "entidade": "RATING OF BEFLY FIDC",
+   "escala": "nacional",
+   "acao": "retirada",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "fitch withdraws rating of befly fidc senior quotas",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-withdraws-rating-of-befly-fidc-senior-quotas-18-11-2026"
+  }
+ ]
+}

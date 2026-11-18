@@ -1,35 +1,36 @@
 {
  "data_referencia": "2026-11-18",
- "gerado_em": "2026-11-18T00:56:12-03:00",
+ "gerado_em": "2026-11-18T18:27:01-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 9
+   "fitch": 12
   },
   "por_acao": {
-   "afirmacao": 3,
-   "atribuicao": 2,
+   "afirmacao": 5,
+   "atribuicao": 3,
    "perspectiva_negativa": 1,
    "perspectiva_positiva": 1,
-   "relatorio": 2
+   "relatorio": 1,
+   "retirada": 1
   },
-  "base_total": 55,
+  "base_total": 60,
   "base_por_agencia": {
-   "fitch": 53,
+   "fitch": 58,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 18,
-   "atribuicao": 8,
+   "afirmacao": 21,
+   "atribuicao": 9,
    "elevacao": 4,
    "em_revisao": 1,
    "perspectiva_negativa": 1,
    "perspectiva_positiva": 1,
    "rebaixamento": 1,
    "relatorio": 19,
-   "retirada": 2
+   "retirada": 3
   },
-  "universo_linhas": 9
+  "universo_linhas": 11
  },
  "diagnostico": {
   "universo_nomes": 475,
@@ -107,11 +108,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 9,
-    "validos": 9,
-    "novos_na_base": 2,
+    "lidos": 12,
+    "validos": 12,
+    "novos_na_base": 5,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 490,
+     "fora_do_brasil_e_fora_do_universo": 487,
      "slug_sem_data": 1
     },
     "erros": [],
@@ -120,6 +121,40 @@
   }
  },
  "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-18",
+   "entidade": "DEXCO",
+   "acao": "afirmacao",
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-dexco-idrs-at-bb-outlook-stable-18-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "DEXCO S.A",
+     "codigos": "CRA022006MY;DXCO13",
+     "tipo_match": "exato",
+     "score": 100
+    }
+   ]
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-18",
+   "entidade": "DEXCO",
+   "acao": "afirmacao",
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "url": "https://www.fitchratings.com/research/corporate-finance/fitch-affirms-dexco-idrs-at-bb-outlook-stable-18-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "DEXCO S.A",
+     "codigos": "CRA022006MY;DXCO13",
+     "tipo_match": "exato",
+     "score": 100
+    }
+   ]
+  },
   {
    "agencia": "fitch",
    "data": "2026-11-17",
@@ -132,23 +167,6 @@
     {
      "emissor_painel": "ORIGEM ENERGIA S.A",
      "codigos": "ORIG11;ORIG12;ORIG21",
-     "tipo_match": "fuzzy",
-     "score": 100.0
-    }
-   ]
-  },
-  {
-   "agencia": "fitch",
-   "data": "2026-11-13",
-   "entidade": "MINERVA FIDC II",
-   "acao": "afirmacao",
-   "nota_nova": null,
-   "perspectiva": null,
-   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-affirms-minerva-fidc-ii-senior-notes-at-a-sf-bra-13-11-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "MINERVA S.A.",
-     "codigos": "CRA021000RX;CRA021000RY;CRA0220073P;CRA02300MJ9;CRA02300MOQ;CRA024002S1;CRA024002S3;CRA02400AYL;CRA02400AYM;CRA02400AYN;CRA02400AYP;CRA025002S1;CRA025002S2;CRA025002S3;CRA025002S4;CRA025002S5;CRA025005V5;CRA025005V6;CRA025005V7;CRA025005V8",
      "tipo_match": "fuzzy",
      "score": 100.0
     }
