@@ -1,22 +1,22 @@
 {
- "data_referencia": "2026-11-18",
- "gerado_em": "2026-11-18T18:27:01-03:00",
+ "data_referencia": "2026-11-19",
+ "gerado_em": "2026-11-19T00:54:23-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 12
+   "fitch": 13
   },
   "por_acao": {
    "afirmacao": 5,
    "atribuicao": 3,
    "perspectiva_negativa": 1,
    "perspectiva_positiva": 1,
-   "relatorio": 1,
+   "relatorio": 2,
    "retirada": 1
   },
-  "base_total": 60,
+  "base_total": 61,
   "base_por_agencia": {
-   "fitch": 58,
+   "fitch": 59,
    "sp": 2
   },
   "base_por_acao": {
@@ -27,10 +27,10 @@
    "perspectiva_negativa": 1,
    "perspectiva_positiva": 1,
    "rebaixamento": 1,
-   "relatorio": 19,
+   "relatorio": 20,
    "retirada": 3
   },
-  "universo_linhas": 11
+  "universo_linhas": 12
  },
  "diagnostico": {
   "universo_nomes": 475,
@@ -108,11 +108,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 12,
-    "validos": 12,
-    "novos_na_base": 5,
+    "lidos": 13,
+    "validos": 13,
+    "novos_na_base": 1,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 487,
+     "fora_do_brasil_e_fora_do_universo": 486,
      "slug_sem_data": 1
     },
     "erros": [],
@@ -121,6 +121,23 @@
   }
  },
  "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-18",
+   "entidade": "TUPY SA",
+   "acao": "relatorio",
+   "nota_nova": null,
+   "perspectiva": null,
+   "url": "https://www.fitchratings.com/research/corporate-finance/tupy-sa-18-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "TUPY S/A",
+     "codigos": "TUPY15;TUPY25;TUPY35",
+     "tipo_match": "exato",
+     "score": 100
+    }
+   ]
+  },
   {
    "agencia": "fitch",
    "data": "2026-11-18",

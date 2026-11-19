@@ -1,6 +1,6 @@
 {
  "data": "2026-11-18",
- "n": 5,
+ "n": 6,
  "acoes": [
   {
    "agencia": "fitch",
@@ -14,6 +14,19 @@
    "instrumento": null,
    "titulo": "fitch affirms dexco idrs at bb outlook stable",
    "url": "https://www.fitchratings.com/research/corporate-finance/fitch-affirms-dexco-idrs-at-bb-outlook-stable-18-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-18",
+   "entidade": "TUPY SA",
+   "escala": "internacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "tupy sa",
+   "url": "https://www.fitchratings.com/research/corporate-finance/tupy-sa-18-11-2026"
   },
   {
    "agencia": "fitch",
