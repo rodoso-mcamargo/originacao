@@ -1,52 +1,52 @@
 {
  "data_referencia": "2026-11-13",
- "gerado_em": "2026-11-18T02:51:15+00:00",
+ "gerado_em": "2026-11-19T02:29:08+00:00",
  "fonte": "CVM - informe diario de fundos (inf_diario_fi) e cadastro pos-175 (registro_fundo_classe)",
- "universo": 2522,
+ "universo": 2518,
  "totais": {
   "credito_privado": {
-   "n_fundos": 1157.0,
-   "pl": 2604689098733.0,
-   "liquido": -1036016089.0,
-   "liq_5d": 3800825061.0,
-   "pct_5d": 0.157,
-   "liq_21d": -7650241112.0,
-   "pct_21d": -0.306,
-   "liq_63d": 12979456513.0,
-   "pct_63d": 0.525
+   "n_fundos": 1175.0,
+   "pl": 2611535673027.0,
+   "liquido": -1086030271.0,
+   "liq_5d": 3786394460.0,
+   "pct_5d": 0.156,
+   "liq_21d": -7529161410.0,
+   "pct_21d": -0.301,
+   "liq_63d": 14943003656.0,
+   "pct_63d": 0.603
   },
   "incentivado_infra": {
-   "n_fundos": 1224.0,
-   "pl": 489548526096.0,
-   "liquido": -1305495580.0,
-   "liq_5d": -4765485579.0,
-   "pct_5d": -1.546,
-   "liq_21d": -19549847412.0,
-   "pct_21d": -5.084,
-   "liq_63d": -25772103545.0,
-   "pct_63d": -6.331
+   "n_fundos": 1253.0,
+   "pl": 496551747117.0,
+   "liquido": -1233541561.0,
+   "liq_5d": -4170780603.0,
+   "pct_5d": -1.337,
+   "liq_21d": -18331404776.0,
+   "pct_21d": -4.718,
+   "liq_63d": -24695407914.0,
+   "pct_63d": -6.002
   },
   "outros": {
-   "n_fundos": 54.0,
-   "pl": 402509134530.0,
-   "liquido": 355229504.0,
-   "liq_5d": 545177083.0,
+   "n_fundos": 61.0,
+   "pl": 402859558422.0,
+   "liquido": 353774261.0,
+   "liq_5d": 543671512.0,
    "pct_5d": 0.139,
-   "liq_21d": 18713755218.0,
-   "pct_21d": 4.935,
-   "liq_63d": 13873248102.0,
-   "pct_63d": 3.696
+   "liq_21d": 18718364381.0,
+   "pct_21d": 4.933,
+   "liq_63d": 13865953422.0,
+   "pct_63d": 3.692
   },
   "todas": {
-   "n_fundos": 2435.0,
-   "pl": 3496746759359.0,
-   "liquido": -1986282166.0,
-   "liq_5d": -419483435.0,
-   "pct_5d": -0.013,
-   "liq_21d": -8486333306.0,
-   "pct_21d": -0.26,
-   "liq_63d": 1080601069.0,
-   "pct_63d": 0.033
+   "n_fundos": 2489.0,
+   "pl": 3510946978566.0,
+   "liquido": -1965797571.0,
+   "liq_5d": 159285369.0,
+   "pct_5d": 0.005,
+   "liq_21d": -7142201806.0,
+   "pct_21d": -0.218,
+   "liq_63d": 4113549164.0,
+   "pct_63d": 0.126
   }
  },
  "maiores_resgates_21d": [
@@ -109,9 +109,9 @@
    "nome": "SAFRA BUILDING BLOCK INCENTIVADO CDI II FIF INVEST EM INFRA CIC DE INVEST EM INFRA RF RESP LIMITADA",
    "gestor": "SAFRA ASSET CORRETORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
    "classe": "incentivado_infra",
-   "pl": 4063142677.19,
-   "liq_21d": -935399135.75,
-   "pct_21d": -18.946
+   "pl": 4022162628.05,
+   "liq_21d": -932635653.93,
+   "pct_21d": -18.89
   },
   {
    "cnpj": "46.975.474/0001-50",
@@ -141,19 +141,19 @@
    "pct_21d": -36.241
   }
  ],
- "alertas_ativos": 255,
- "fundos_em_alerta": 208,
+ "alertas_ativos": 288,
+ "fundos_em_alerta": 228,
  "diagnostico": {
   "erros": [],
   "universo": {
-   "fundos": 2522,
+   "fundos": 2518,
    "por_origem": {
-    "filtro_nome": 2298,
+    "filtro_nome": 2294,
     "cda": 335
    },
    "por_classe": {
-    "incentivado_infra": 1273,
-    "credito_privado": 1187,
+    "incentivado_infra": 1270,
+    "credito_privado": 1186,
     "outros": 62
    },
    "descartados_fidc_fii_fip": 0
@@ -192,9 +192,9 @@
    },
    {
     "mes": "202610",
-    "linhas_cnpj_data": 529796,
-    "linhas_brutas": 538273,
-    "fundos": 25521,
+    "linhas_cnpj_data": 529857,
+    "linhas_brutas": 538344,
+    "fundos": 25524,
     "datas": [
      "2026-10-01",
      "2026-10-30"
@@ -202,12 +202,12 @@
    },
    {
     "mes": "202611",
-    "linhas_cnpj_data": 222723,
-    "linhas_brutas": 226439,
-    "fundos": 25276,
+    "linhas_cnpj_data": 242477,
+    "linhas_brutas": 246588,
+    "fundos": 25288,
     "datas": [
      "2026-11-02",
-     "2026-11-16"
+     "2026-11-17"
     ]
    }
   ],
@@ -215,21 +215,21 @@
    "202610",
    "202611"
   ],
-  "linhas_lidas": 2430606,
-  "linhas_universo": 233984,
-  "linhas_gravadas": 75172,
-  "descartadas_fora_universo": 2161677,
-  "dias_uteis_no_calendario": 95,
-  "arquivos_diarios_gravados": 30,
+  "linhas_lidas": 2450826,
+  "linhas_universo": 235646,
+  "linhas_gravadas": 77094,
+  "descartadas_fora_universo": 2179829,
+  "dias_uteis_no_calendario": 96,
+  "arquivos_diarios_gravados": 31,
   "cda_usada": "2026-10.csv",
-  "fundos_com_informe": 2521,
+  "fundos_com_informe": 2517,
   "fundos_sem_informe": 1,
   "amostra_sem_informe": [
    "64.113.998/0001-13"
   ],
   "n_fundos_sem_cadastro": 0,
-  "data_mais_recente": "2026-11-13",
-  "fundos_na_data_mais_recente": 2435,
+  "data_mais_recente": "2026-11-16",
+  "fundos_na_data_mais_recente": 1955,
   "cortes": {
    "resgate_5d_pct": 5.0,
    "resgate_21d_pct": 10.0,
