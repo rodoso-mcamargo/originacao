@@ -1,39 +1,41 @@
 {
  "data_referencia": "2026-11-19",
- "gerado_em": "2026-11-19T00:54:23-03:00",
+ "gerado_em": "2026-11-19T18:36:48-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 13
+   "fitch": 21
   },
   "por_acao": {
-   "afirmacao": 5,
-   "atribuicao": 3,
+   "afirmacao": 6,
+   "atribuicao": 4,
+   "elevacao": 1,
    "perspectiva_negativa": 1,
    "perspectiva_positiva": 1,
-   "relatorio": 2,
+   "rebaixamento": 3,
+   "relatorio": 4,
    "retirada": 1
   },
-  "base_total": 61,
+  "base_total": 69,
   "base_por_agencia": {
-   "fitch": 59,
+   "fitch": 67,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 21,
-   "atribuicao": 9,
-   "elevacao": 4,
+   "afirmacao": 22,
+   "atribuicao": 10,
+   "elevacao": 5,
    "em_revisao": 1,
    "perspectiva_negativa": 1,
    "perspectiva_positiva": 1,
-   "rebaixamento": 1,
-   "relatorio": 20,
+   "rebaixamento": 4,
+   "relatorio": 22,
    "retirada": 3
   },
-  "universo_linhas": 12
+  "universo_linhas": 13
  },
  "diagnostico": {
-  "universo_nomes": 475,
+  "universo_nomes": 468,
   "grupos": 0,
   "agencias": {
    "moodys_local": {
@@ -108,11 +110,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 13,
-    "validos": 13,
-    "novos_na_base": 1,
+    "lidos": 21,
+    "validos": 21,
+    "novos_na_base": 8,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 486,
+     "fora_do_brasil_e_fora_do_universo": 478,
      "slug_sem_data": 1
     },
     "erros": [],
@@ -121,6 +123,23 @@
   }
  },
  "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-19",
+   "entidade": "NTS",
+   "acao": "rebaixamento",
+   "nota_nova": null,
+   "perspectiva": "negativa",
+   "url": "https://www.fitchratings.com/research/corporate-finance/fitch-downgrades-nts-to-aa-bra-outlook-negative-19-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "NOVA TRANSPORTE DO SUDESTE S.A. - NTS",
+     "codigos": "NIGP12;NTSD16;NTSD17;NTSD18;NTSD19;NTSD26;NTSD35;NTSD36;NTSDA0;NTSDA1;NTSDA2;NTSDA3",
+     "tipo_match": "fuzzy",
+     "score": 100.0
+    }
+   ]
+  },
   {
    "agencia": "fitch",
    "data": "2026-11-18",
