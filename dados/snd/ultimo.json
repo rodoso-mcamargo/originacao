@@ -2,15 +2,15 @@
  "fonte": "SND - debentures.com.br (ANBIMA/B3)",
  "urls": {
   "caracteristicas": "https://www.debentures.com.br/exploreosnd/consultaadados/emissoesdedebentures/caracteristicas_e.asp?Ativo=",
-  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=18/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
+  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=19/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
  },
- "data_referencia": "2026-11-18",
- "gerado_em": "2026-11-18T18:19:06+00:00",
+ "data_referencia": "2026-11-19",
+ "gerado_em": "2026-11-19T18:30:03+00:00",
  "fonte_gerado_em": {
-  "caracteristicas": "2026-11-18T15:18:40",
-  "agenda": "2026-11-18T15:18:45"
+  "caracteristicas": "2026-11-19T15:29:37",
+  "agenda": "2026-11-19T15:29:42"
  },
- "universo_codigos": 1267,
+ "universo_codigos": 1266,
  "universo_cnpjs": 383,
  "emissores_com_vencimento_24m": 300,
  "top10_vencimento_24m": [
@@ -32,7 +32,7 @@
    "cnpj_emissor": "40432544000147",
    "emissor": "CLARO S/A",
    "venc_0_24m": 4500000000.0,
-   "pct_saldo_0_24m": 43.2,
+   "pct_saldo_0_24m": 43.1,
    "saldo_estimado": false
   },
   {
@@ -52,14 +52,14 @@
   {
    "cnpj_emissor": "21314559000166",
    "emissor": "MOVIDA PARTICIPACOES S/A",
-   "venc_0_24m": 3245849540.46,
+   "venc_0_24m": 3245949255.46,
    "pct_saldo_0_24m": 19.6,
    "saldo_estimado": false
   },
   {
    "cnpj_emissor": "23373000000132",
    "emissor": "VAMOS LOCACAO DE CAMINHOES MAQUINAS E EQUIPAMENTOS S.A.",
-   "venc_0_24m": 3151414949.87,
+   "venc_0_24m": 3158317456.15,
    "pct_saldo_0_24m": 36.6,
    "saldo_estimado": false
   },
@@ -78,26 +78,26 @@
    "saldo_estimado": false
   },
   {
-   "cnpj_emissor": "33050196000188",
-   "emissor": "COMPANHIA PAULISTA DE FORCA E LUZ",
-   "venc_0_24m": 2956203256.42,
-   "pct_saldo_0_24m": 35.8,
+   "cnpj_emissor": "17281106000103",
+   "emissor": "COMPANHIA DE SANEAMENTO DE MINAS GERAIS COPASA MG",
+   "venc_0_24m": 2517083020.3,
+   "pct_saldo_0_24m": 31.9,
    "saldo_estimado": false
   }
  ],
  "diagnostico": {
   "lidos": {
-   "caracteristicas": 10085,
-   "agenda": 93723
+   "caracteristicas": 10086,
+   "agenda": 93806
   },
   "gravados": {
    "caracteristicas": 2019,
-   "agenda": 30586,
+   "agenda": 30580,
    "vencimentos_emissor": 383
   },
   "descartados": {
-   "caracteristicas_fora_do_universo": 8066,
-   "agenda_fora_do_universo": 63137,
+   "caracteristicas_fora_do_universo": 8067,
+   "agenda_fora_do_universo": 63226,
    "motivo": "CNPJ do emissor sem papel em dados/ultimo.json, ou papel excluido do SND fora do painel",
    "codigos_do_universo_sem_snd": [
     "FEPS11"
