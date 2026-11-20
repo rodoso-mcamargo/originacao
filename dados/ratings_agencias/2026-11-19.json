@@ -1,6 +1,6 @@
 {
  "data": "2026-11-19",
- "n": 8,
+ "n": 9,
  "acoes": [
   {
    "agencia": "fitch",
@@ -53,6 +53,19 @@
    "instrumento": null,
    "titulo": "fitch downgrades ntss ratings to aa bra negative outlook",
    "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-downgrades-ntss-ratings-to-aa-bra-negative-outlook-19-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-19",
+   "entidade": "NEXA",
+   "escala": "nacional",
+   "acao": "em_revisao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "em_revisao_negativa",
+   "instrumento": null,
+   "titulo": "fitch removes nexa rating watch negative affirms idrs at bbb stable outlook",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-removes-nexa-rating-watch-negative-affirms-idrs-at-bbb-stable-outlook-19-11-2026"
   },
   {
    "agencia": "fitch",
