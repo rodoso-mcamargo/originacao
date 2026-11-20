@@ -2,17 +2,17 @@
  "fonte": "SND - debentures.com.br (ANBIMA/B3)",
  "urls": {
   "caracteristicas": "https://www.debentures.com.br/exploreosnd/consultaadados/emissoesdedebentures/caracteristicas_e.asp?Ativo=",
-  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=19/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
+  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=20/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
  },
- "data_referencia": "2026-11-19",
- "gerado_em": "2026-11-19T18:30:03+00:00",
+ "data_referencia": "2026-11-20",
+ "gerado_em": "2026-11-20T17:56:49+00:00",
  "fonte_gerado_em": {
-  "caracteristicas": "2026-11-19T15:29:37",
-  "agenda": "2026-11-19T15:29:42"
+  "caracteristicas": "2026-11-20T14:56:23",
+  "agenda": "2026-11-20T14:56:28"
  },
- "universo_codigos": 1266,
- "universo_cnpjs": 383,
- "emissores_com_vencimento_24m": 300,
+ "universo_codigos": 1259,
+ "universo_cnpjs": 378,
+ "emissores_com_vencimento_24m": 296,
  "top10_vencimento_24m": [
   {
    "cnpj_emissor": "06047087000139",
@@ -52,15 +52,15 @@
   {
    "cnpj_emissor": "21314559000166",
    "emissor": "MOVIDA PARTICIPACOES S/A",
-   "venc_0_24m": 3245949255.46,
-   "pct_saldo_0_24m": 19.6,
+   "venc_0_24m": 3246048991.46,
+   "pct_saldo_0_24m": 19.5,
    "saldo_estimado": false
   },
   {
    "cnpj_emissor": "23373000000132",
    "emissor": "VAMOS LOCACAO DE CAMINHOES MAQUINAS E EQUIPAMENTOS S.A.",
-   "venc_0_24m": 3158317456.15,
-   "pct_saldo_0_24m": 36.6,
+   "venc_0_24m": 3179959956.69,
+   "pct_saldo_0_24m": 36.8,
    "saldo_estimado": false
   },
   {
@@ -80,28 +80,26 @@
   {
    "cnpj_emissor": "17281106000103",
    "emissor": "COMPANHIA DE SANEAMENTO DE MINAS GERAIS COPASA MG",
-   "venc_0_24m": 2517083020.3,
+   "venc_0_24m": 2517138804.01,
    "pct_saldo_0_24m": 31.9,
    "saldo_estimado": false
   }
  ],
  "diagnostico": {
   "lidos": {
-   "caracteristicas": 10086,
-   "agenda": 93806
+   "caracteristicas": 10087,
+   "agenda": 93640
   },
   "gravados": {
-   "caracteristicas": 2019,
-   "agenda": 30580,
-   "vencimentos_emissor": 383
+   "caracteristicas": 2010,
+   "agenda": 30348,
+   "vencimentos_emissor": 378
   },
   "descartados": {
-   "caracteristicas_fora_do_universo": 8067,
-   "agenda_fora_do_universo": 63226,
+   "caracteristicas_fora_do_universo": 8077,
+   "agenda_fora_do_universo": 63292,
    "motivo": "CNPJ do emissor sem papel em dados/ultimo.json, ou papel excluido do SND fora do painel",
-   "codigos_do_universo_sem_snd": [
-    "FEPS11"
-   ]
+   "codigos_do_universo_sem_snd": []
   },
   "erros": {}
  }
