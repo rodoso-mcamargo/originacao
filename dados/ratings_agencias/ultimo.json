@@ -1,19 +1,19 @@
 {
  "data_referencia": "2026-11-20",
- "gerado_em": "2026-11-20T00:47:04-03:00",
+ "gerado_em": "2026-11-20T18:06:32-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 20
+   "fitch": 17
   },
   "por_acao": {
-   "afirmacao": 5,
-   "atribuicao": 4,
+   "afirmacao": 4,
+   "atribuicao": 3,
    "elevacao": 1,
    "em_revisao": 1,
    "perspectiva_positiva": 1,
    "rebaixamento": 3,
-   "relatorio": 4,
+   "relatorio": 3,
    "retirada": 1
   },
   "base_total": 70,
@@ -110,11 +110,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 20,
-    "validos": 20,
-    "novos_na_base": 1,
+    "lidos": 17,
+    "validos": 17,
+    "novos_na_base": 0,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 479,
+     "fora_do_brasil_e_fora_do_universo": 482,
      "slug_sem_data": 1
     },
     "erros": [],
