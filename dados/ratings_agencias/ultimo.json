@@ -1,6 +1,6 @@
 {
- "data_referencia": "2026-11-20",
- "gerado_em": "2026-11-20T18:06:32-03:00",
+ "data_referencia": "2026-11-21",
+ "gerado_em": "2026-11-21T00:36:15-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
@@ -11,14 +11,13 @@
    "atribuicao": 3,
    "elevacao": 1,
    "em_revisao": 1,
-   "perspectiva_positiva": 1,
    "rebaixamento": 3,
-   "relatorio": 3,
+   "relatorio": 4,
    "retirada": 1
   },
-  "base_total": 70,
+  "base_total": 71,
   "base_por_agencia": {
-   "fitch": 68,
+   "fitch": 69,
    "sp": 2
   },
   "base_por_acao": {
@@ -29,10 +28,10 @@
    "perspectiva_negativa": 1,
    "perspectiva_positiva": 1,
    "rebaixamento": 4,
-   "relatorio": 22,
+   "relatorio": 23,
    "retirada": 3
   },
-  "universo_linhas": 13
+  "universo_linhas": 14
  },
  "diagnostico": {
   "universo_nomes": 468,
@@ -112,7 +111,7 @@
     ],
     "lidos": 17,
     "validos": 17,
-    "novos_na_base": 0,
+    "novos_na_base": 1,
     "descartados": {
      "fora_do_brasil_e_fora_do_universo": 482,
      "slug_sem_data": 1
@@ -123,6 +122,23 @@
   }
  },
  "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-20",
+   "entidade": "ELDORADO BRASIL CELULOSE SA",
+   "acao": "relatorio",
+   "nota_nova": null,
+   "perspectiva": null,
+   "url": "https://www.fitchratings.com/research/corporate-finance/eldorado-brasil-celulose-sa-20-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "ELDORADO BRASIL CELULOSE S.A.",
+     "codigos": "CRA025007KK;CRA0250080X;CRA0250080Y;ELDC15",
+     "tipo_match": "exato",
+     "score": 100
+    }
+   ]
+  },
   {
    "agencia": "fitch",
    "data": "2026-11-19",
@@ -188,23 +204,6 @@
      "codigos": "CRA022006MY;DXCO13",
      "tipo_match": "exato",
      "score": 100
-    }
-   ]
-  },
-  {
-   "agencia": "fitch",
-   "data": "2026-11-17",
-   "entidade": "ORIGEM",
-   "acao": "perspectiva_positiva",
-   "nota_nova": null,
-   "perspectiva": "positiva",
-   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-origem-at-a-bra-outlook-revised-to-positive-17-11-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "ORIGEM ENERGIA S.A",
-     "codigos": "ORIG11;ORIG12;ORIG21",
-     "tipo_match": "fuzzy",
-     "score": 100.0
     }
    ]
   }

@@ -1,4 +1,5 @@
 agencia,data,entidade,acao,nota_anterior,nota_nova,perspectiva,codigos,emissor_painel,tipo_match,score,url
+fitch,2026-11-20,ELDORADO BRASIL CELULOSE SA,relatorio,,,,CRA025007KK;CRA0250080X;CRA0250080Y;ELDC15,ELDORADO BRASIL CELULOSE S.A.,exato,100,https://www.fitchratings.com/research/corporate-finance/eldorado-brasil-celulose-sa-20-11-2026
 fitch,2026-11-19,NTS,rebaixamento,,,negativa,NIGP12;NTSD16;NTSD17;NTSD18;NTSD19;NTSD26;NTSD35;NTSD36;NTSDA0;NTSDA1;NTSDA2;NTSDA3,NOVA TRANSPORTE DO SUDESTE S.A. - NTS,fuzzy,100.0,https://www.fitchratings.com/research/corporate-finance/fitch-downgrades-nts-to-aa-bra-outlook-negative-19-11-2026
 fitch,2026-11-18,DEXCO,afirmacao,,,estavel,CRA022006MY;DXCO13,DEXCO S.A,exato,100,https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-dexco-idrs-at-bb-outlook-stable-18-11-2026
 fitch,2026-11-18,TUPY SA,relatorio,,,,TUPY15;TUPY25;TUPY35,TUPY S/A,exato,100,https://www.fitchratings.com/research/corporate-finance/tupy-sa-18-11-2026
