@@ -1,52 +1,52 @@
 {
- "data_referencia": "2026-11-17",
- "gerado_em": "2026-11-20T02:13:22+00:00",
+ "data_referencia": "2026-11-18",
+ "gerado_em": "2026-11-21T02:05:47+00:00",
  "fonte": "CVM - informe diario de fundos (inf_diario_fi) e cadastro pos-175 (registro_fundo_classe)",
- "universo": 2522,
+ "universo": 2523,
  "totais": {
   "credito_privado": {
-   "n_fundos": 1157.0,
-   "pl": 2596726550239.0,
-   "liquido": 3050162216.0,
-   "liq_5d": 4201210463.0,
-   "pct_5d": 0.174,
-   "liq_21d": -3843453562.0,
-   "pct_21d": -0.154,
-   "liq_63d": 17551070371.0,
-   "pct_63d": 0.713
+   "n_fundos": 1131.0,
+   "pl": 2582435746210.0,
+   "liquido": 1522293852.0,
+   "liq_5d": 8126917991.0,
+   "pct_5d": 0.339,
+   "liq_21d": 1356994268.0,
+   "pct_21d": 0.055,
+   "liq_63d": 18575431988.0,
+   "pct_63d": 0.757
   },
   "incentivado_infra": {
-   "n_fundos": 1224.0,
-   "pl": 523085299443.0,
-   "liquido": -692998531.0,
-   "liq_5d": -6043067627.0,
-   "pct_5d": -2.051,
-   "liq_21d": -22923152239.0,
-   "pct_21d": -6.239,
-   "liq_63d": -30834246702.0,
-   "pct_63d": -7.785
+   "n_fundos": 1202.0,
+   "pl": 520123871880.0,
+   "liquido": -1086703452.0,
+   "liq_5d": -6119485419.0,
+   "pct_5d": -2.092,
+   "liq_21d": -22250909541.0,
+   "pct_21d": -6.062,
+   "liq_63d": -32137547491.0,
+   "pct_63d": -8.114
   },
   "outros": {
    "n_fundos": 53.0,
-   "pl": 402397581723.0,
-   "liquido": -221132697.0,
-   "liq_5d": -345403021.0,
-   "pct_5d": -0.087,
-   "liq_21d": 18583205465.0,
-   "pct_21d": 4.902,
-   "liq_63d": 13147595549.0,
-   "pct_63d": 3.496
+   "pl": 402246225868.0,
+   "liquido": -360699624.0,
+   "liq_5d": -578758047.0,
+   "pct_5d": -0.146,
+   "liq_21d": 18297205372.0,
+   "pct_21d": 4.841,
+   "liq_63d": 12587275051.0,
+   "pct_63d": 3.343
   },
   "todas": {
-   "n_fundos": 2434.0,
-   "pl": 3522209431406.0,
-   "liquido": 2136030988.0,
-   "liq_5d": -2187260185.0,
-   "pct_5d": -0.071,
-   "liq_21d": -8183400336.0,
-   "pct_21d": -0.253,
-   "liq_63d": -135580782.0,
-   "pct_63d": -0.004
+   "n_fundos": 2386.0,
+   "pl": 3504805843958.0,
+   "liquido": 74890776.0,
+   "liq_5d": 1428674525.0,
+   "pct_5d": 0.046,
+   "liq_21d": -2596709901.0,
+   "pct_21d": -0.081,
+   "liq_63d": -974840452.0,
+   "pct_63d": -0.03
   }
  },
  "maiores_resgates_21d": [
@@ -55,104 +55,104 @@
    "nome": "BB AX BANCOS FUNDO DE INVESTIMENTO FINANCEIRO RENDA FIXA CRÉDITO PRIVADO LONGO PRAZO RESP LIMITADA",
    "gestor": "BB GESTAO DE RECURSOS DTVM S.A",
    "classe": "credito_privado",
-   "pl": 12101453316.08,
-   "liq_21d": -4017876605.86,
-   "pct_21d": -25.168
+   "pl": 12106030330.97,
+   "liq_21d": -4539748416.68,
+   "pct_21d": -27.525
   },
   {
    "cnpj": "03.389.374/0001-39",
    "nome": "BB TOP RF ARROJADO FUNDO DE INVESTIMENTO FINANCEIRO RENDA FIXA LONGO PRAZO RESPONSABILIDADE LIMITADA",
    "gestor": "BB GESTAO DE RECURSOS DTVM S.A",
    "classe": "outros",
-   "pl": 132506058697.09,
-   "liq_21d": -3817444141.62,
-   "pct_21d": -2.828
+   "pl": 132407609787.17,
+   "liq_21d": -3865750503.57,
+   "pct_21d": -2.865
   },
   {
    "cnpj": "05.222.448/0001-73",
    "nome": "BRADESCO GALÁXIA FI FINANCEIRO - CI RF CRED PRIV REFERENCIADA DI - RESP LIMITADA",
    "gestor": "BANCO BRADESCO S.A.",
    "classe": "credito_privado",
-   "pl": 8226610830.17,
-   "liq_21d": -1884944520.27,
-   "pct_21d": -18.819
-  },
-  {
-   "cnpj": "40.750.123/0001-64",
-   "nome": "FUNDO DE INVESTIMENTO FINANCEIRO RF CFIN CRÉDITO PRIVADO ZERAMENTO - RESPONSABILIDADE LIMITADA",
-   "gestor": "Sicredi Asset Management Ltda.",
-   "classe": "credito_privado",
-   "pl": 6137789900.52,
-   "liq_21d": -1457540988.58,
-   "pct_21d": -19.399
+   "pl": 8248723941.33,
+   "liq_21d": -1879694046.44,
+   "pct_21d": -18.734
   },
   {
    "cnpj": "18.083.593/0001-62",
    "nome": "BRADESCO FIF - CIC RF CRED PRIVADO CARNAÚBA - RESP LIMITADA",
    "gestor": "BANCO BRADESCO S.A.",
    "classe": "credito_privado",
-   "pl": 1630527155.44,
-   "liq_21d": -957392793.84,
-   "pct_21d": -37.333
+   "pl": 1631581115.29,
+   "liq_21d": -941343049.51,
+   "pct_21d": -36.916
   },
   {
    "cnpj": "53.464.565/0001-96",
    "nome": "SAFRA BUILDING BLOCK INCENTIVADO CDI II FIF INVEST EM INFRA CIC DE INVEST EM INFRA RF RESP LIMITADA",
    "gestor": "SAFRA ASSET CORRETORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.",
    "classe": "incentivado_infra",
-   "pl": 3940602925.52,
-   "liq_21d": -951589990.99,
-   "pct_21d": -19.521
+   "pl": 3910255652.33,
+   "liq_21d": -927360485.7,
+   "pct_21d": -19.239
   },
   {
    "cnpj": "42.847.784/0001-38",
    "nome": "BRASILPREV PLUS FIC FIF RENDA FIXA CRÉDITO PRIVADO RESPONSABILIDADE LIMITADA",
    "gestor": "BRASILPREV SEGUROS E PREVIDÊNCIA S.A",
    "classe": "credito_privado",
-   "pl": 37438468279.38,
-   "liq_21d": -890673336.48,
-   "pct_21d": -2.338
+   "pl": 37402186965.55,
+   "liq_21d": -887766334.17,
+   "pct_21d": -2.333
   },
   {
    "cnpj": "60.677.740/0001-99",
    "nome": "ITAÚ GOLD SUGAR SFA FUNDO DE INVESTIMENTO FINANCEIRO RENDA FIXA CRÉDITO PRIVADO RESP LIMITADA",
    "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
    "classe": "credito_privado",
-   "pl": 1545262346.06,
+   "pl": 1546051721.01,
    "liq_21d": -865614438.14,
-   "pct_21d": -36.207
+   "pct_21d": -36.189
   },
   {
    "cnpj": "54.829.603/0001-20",
    "nome": "BRADESCO DEBÊNTURES INCENTIVADAS CDI II FIF CIC RF INCENTIVADO DE INV EM INFRA LP RESP LIMITADA",
    "gestor": "BANCO BRADESCO S.A.",
    "classe": "incentivado_infra",
-   "pl": 10244392238.24,
-   "liq_21d": -848557002.14,
-   "pct_21d": -7.718
+   "pl": 10209381139.45,
+   "liq_21d": -864366396.66,
+   "pct_21d": -7.875
   },
   {
-   "cnpj": "55.176.509/0001-81",
-   "nome": "SAFRA INFRA CDI MASTER IV FIF INVESTIMENTO EM INFRA CLASSE DE INVEST EM INFRA RF LP RESP LIMITADA",
-   "gestor": "SAFRA DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA.",
-   "classe": "incentivado_infra",
-   "pl": 184757202.78,
-   "liq_21d": -817101978.32,
-   "pct_21d": -82.902
+   "cnpj": "10.264.255/0001-15",
+   "nome": "ITAÚ RENDA FIXA CRÉDITO PRIVADO DIFERENCIADO FIF RESP LIMITADA",
+   "gestor": "ITAU UNIBANCO ASSET MANAGEMENT LTDA",
+   "classe": "credito_privado",
+   "pl": 40487205465.71,
+   "liq_21d": -807902864.85,
+   "pct_21d": -1.976
+  },
+  {
+   "cnpj": "07.160.694/0001-73",
+   "nome": "FUNDO DE INVESTIMENTO FINANCEIRO RENDA FIXA CFIN CRÉDITO PRIVADO - RESPONSABILIDADE LIMITADA",
+   "gestor": "Sicredi Asset Management Ltda.",
+   "classe": "credito_privado",
+   "pl": 7383190725.64,
+   "liq_21d": -782124938.77,
+   "pct_21d": -9.676
   }
  ],
- "alertas_ativos": 293,
+ "alertas_ativos": 299,
  "fundos_em_alerta": 227,
  "diagnostico": {
   "erros": [],
   "universo": {
-   "fundos": 2522,
+   "fundos": 2523,
    "por_origem": {
-    "filtro_nome": 2298,
+    "filtro_nome": 2299,
     "cda": 335
    },
    "por_classe": {
-    "incentivado_infra": 1273,
+    "incentivado_infra": 1274,
     "credito_privado": 1187,
     "outros": 62
    },
@@ -202,12 +202,12 @@
    },
    {
     "mes": "202611",
-    "linhas_cnpj_data": 273702,
-    "linhas_brutas": 278332,
-    "fundos": 25315,
+    "linhas_cnpj_data": 297874,
+    "linhas_brutas": 302933,
+    "fundos": 25318,
     "datas": [
      "2026-11-02",
-     "2026-11-18"
+     "2026-11-19"
     ]
    }
   ],
@@ -215,21 +215,21 @@
    "202610",
    "202611"
   ],
-  "linhas_lidas": 2482796,
-  "linhas_universo": 238865,
-  "linhas_gravadas": 80183,
-  "descartadas_fora_universo": 2208062,
-  "dias_uteis_no_calendario": 97,
-  "arquivos_diarios_gravados": 32,
+  "linhas_lidas": 2507397,
+  "linhas_universo": 241321,
+  "linhas_gravadas": 82639,
+  "descartadas_fora_universo": 2229778,
+  "dias_uteis_no_calendario": 98,
+  "arquivos_diarios_gravados": 33,
   "cda_usada": "2026-10.csv",
-  "fundos_com_informe": 2521,
+  "fundos_com_informe": 2522,
   "fundos_sem_informe": 1,
   "amostra_sem_informe": [
    "64.113.998/0001-13"
   ],
   "n_fundos_sem_cadastro": 0,
-  "data_mais_recente": "2026-11-17",
-  "fundos_na_data_mais_recente": 2434,
+  "data_mais_recente": "2026-11-18",
+  "fundos_na_data_mais_recente": 2386,
   "cortes": {
    "resgate_5d_pct": 5.0,
    "resgate_21d_pct": 10.0,
