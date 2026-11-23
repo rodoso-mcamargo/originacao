@@ -2157,18 +2157,116 @@
       "vara": "1ª VARA CÍVEL, FAMÍLIA E ÓRFÃOS SUCESSÕES - ARACRUZ"
     },
     {
-      "chave": "datajud:10605546420268110041",
-      "classe": "Recuperação Judicial",
-      "data_ajuizamento": "20260909165902",
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMirgFBVV95cUxPUDNGcUtqNGJvWUFQc3ItZHVFNWUyWVRQQlAwbTI2cUt6MkdvVWk5NHNNUExQUWp0ZFItQkNKWkl4aVdxMmpPMXhWOHBnUTQwMEsyM2RQUTE3dHlTT0ZjQWJZeDR3OE5HWFJjZlVUS2UtWWZ5bjZJcUN3Y2QweGUtMm94cVZGSmd6VlN4VVZhNmlYU3VyNlh4Ty12WmtrcjNyLXNsQUxUZ01ST0dqUHc?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 23 Nov 2026 22:10:19 GMT",
       "empresa": null,
-      "fonte": "datajud",
+      "fonte": "noticia",
       "novo": true,
-      "numero_processo": "10605546420268110041",
-      "primeiro_visto": "2026-10-24",
-      "tipo": "recuperacao_judicial",
-      "tribunal": "TJMT",
-      "url": null,
-      "vara": "Núcleo de Falência e Recuperação Judicial - 1ª Vara Cível - Comarca de  Cuiabá - SDCR - SDCR"
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Braskem fecha acordo de US$ 4,9 bi para evitar recuperação judicial",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPUDNGcUtqNGJvWUFQc3ItZHVFNWUyWVRQQlAwbTI2cUt6MkdvVWk5NHNNUExQUWp0ZFItQkNKWkl4aVdxMmpPMXhWOHBnUTQwMEsyM2RQUTE3dHlTT0ZjQWJZeDR3OE5HWFJjZlVUS2UtWWZ5bjZJcUN3Y2QweGUtMm94cVZGSmd6VlN4VVZhNmlYU3VyNlh4Ty12WmtrcjNyLXNsQUxUZ01ST0dqUHc?oc=5",
+      "veiculo": "Poder360"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMivgFBVV95cUxOM2ZfOFZnVzN2Z3F1bzdIWUVUNzVlU2RlLUgxVkRXaF9zVnJ0MlRNanlvUUtzbWhzekdHMEl3aEtFdHRhNTlMbXZsQnVIeGx1LWxkd1ZoZm1qbURCVm5aMmdUQjFHMHdOV2xPVUhDU0d0ekQtakNZWGRHR0hubWhuV0JITlBRclIzVFhnVnA1QXdPWXg4ZUIzNld6U1hrY0tWSmUydkpOakhGLXNuWWQzM1VDbkNJLTk5eGlFN1VB?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 23 Nov 2026 19:24:42 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Ceará registra alta de 38,5% no número de empresas em recuperação judicial no terceiro trimestre",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOM2ZfOFZnVzN2Z3F1bzdIWUVUNzVlU2RlLUgxVkRXaF9zVnJ0MlRNanlvUUtzbWhzekdHMEl3aEtFdHRhNTlMbXZsQnVIeGx1LWxkd1ZoZm1qbURCVm5aMmdUQjFHMHdOV2xPVUhDU0d0ekQtakNZWGRHR0hubWhuV0JITlBRclIzVFhnVnA1QXdPWXg4ZUIzNld6U1hrY0tWSmUydkpOakhGLXNuWWQzM1VDbkNJLTk5eGlFN1VB?oc=5",
+      "veiculo": "Focus Poder"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi2gFBVV95cUxPREEtbmU0NTNMaVhFY2ptVzdUZVR5RGFlQkhhYS00eVJ2UTYzTkxBb25HbVU3OGFIazJoTWpPdDkwMTk1bXc2VWZpSDhLamJ6dzNfYm5MYnJNLWZOUjBBLVBMbzhyYlExNnBXVEk4Q0FoZ0ZKZWZqUzhuUFBmeWwydE83dWdVMDZmNmRFZTVZSXBwNG9Zdy1CRThCNUwyM2hvb2hJUXFPeHBYVlgzcXpGV1VTVW5waGtKT21Qem5Rb0VqRDZJZFRNRjhCcGt6MFRIQ3huRzZZcGlyUdIB6AFBVV95cUxNUG5aUnpCSlYtaVczRlVZME9XcHJUZ2o2ZlYxeGhGU0tSb1hNMF9nRVhpX3ptb2lLbHZPa2E1UnFqX2JPYnhTTGctZGxsb1pmS041bkY5ZkdJU1Zub2VRSmJnOTlqdnVQak1mZDdQYTFQRmE2QnFYVVdGeEEzRmZMdmdTQy1pM3l5eE5wYUNGZkVRa2RHS1hWVGQ3WUVfUUFqNU4yWkpoVndnZUZ0U015bURzaGJPdklrdU4wSzFPZWtwQVVpMUhIa3Rib3BidW5nUC16NVpJWVVvRUx6Y3NwdllIdG1YSnk3?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 23 Nov 2026 19:13:26 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Braskem fecha acordo de US$ 4,9 bilhões com credores para evitar recuperação judicial",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPREEtbmU0NTNMaVhFY2ptVzdUZVR5RGFlQkhhYS00eVJ2UTYzTkxBb25HbVU3OGFIazJoTWpPdDkwMTk1bXc2VWZpSDhLamJ6dzNfYm5MYnJNLWZOUjBBLVBMbzhyYlExNnBXVEk4Q0FoZ0ZKZWZqUzhuUFBmeWwydE83dWdVMDZmNmRFZTVZSXBwNG9Zdy1CRThCNUwyM2hvb2hJUXFPeHBYVlgzcXpGV1VTVW5waGtKT21Qem5Rb0VqRDZJZFRNRjhCcGt6MFRIQ3huRzZZcGlyUdIB6AFBVV95cUxNUG5aUnpCSlYtaVczRlVZME9XcHJUZ2o2ZlYxeGhGU0tSb1hNMF9nRVhpX3ptb2lLbHZPa2E1UnFqX2JPYnhTTGctZGxsb1pmS041bkY5ZkdJU1Zub2VRSmJnOTlqdnVQak1mZDdQYTFQRmE2QnFYVVdGeEEzRmZMdmdTQy1pM3l5eE5wYUNGZkVRa2RHS1hWVGQ3WUVfUUFqNU4yWkpoVndnZUZ0U015bURzaGJPdklrdU4wSzFPZWtwQVVpMUhIa3Rib3BidW5nUC16NVpJWVVvRUx6Y3NwdllIdG1YSnk3?oc=5",
+      "veiculo": "O GLOBO"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMiswFBVV95cUxPNk4wN0VkYTlFOVpWLURWSFcxZlZSYUFqNGsxTk5QdzczR0NxNnpJdFRST0JHSTd1d2Fpc3F5UG5aZXNYV1FFUnVZOUZONzJKRDJSZHZSNXgyUDVQVnE0Ri1mQlAybkprM3VMaVBiVTVaaVVFZEhIaXJWZC1MR21uYzREYk9lbE9mWEZsU2J2UDFOdTVlaWwzOEVlNmZ2MGNBbWhwOFI3MTlkMUN2UW9WR25OOA?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 23 Nov 2026 19:10:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Recuperação judicial não salva empresas que ignoram os primeiros sinais da crise",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNk4wN0VkYTlFOVpWLURWSFcxZlZSYUFqNGsxTk5QdzczR0NxNnpJdFRST0JHSTd1d2Fpc3F5UG5aZXNYV1FFUnVZOUZONzJKRDJSZHZSNXgyUDVQVnE0Ri1mQlAybkprM3VMaVBiVTVaaVVFZEhIaXJWZC1MR21uYzREYk9lbE9mWEZsU2J2UDFOdTVlaWwzOEVlNmZ2MGNBbWhwOFI3MTlkMUN2UW9WR25OOA?oc=5",
+      "veiculo": "Monitor Mercantil"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVDc1TTVRc2tKM0haTXhzbk8ycXNub2U2T3hiOGpqVy1ILWdwWkJ6VTdPVFpMTEk0T21vVHI2aXR0N1NNWGtTMmtzaktwYWNpc2NJMXFEQjFldnE3enhlZDJnVFNMYTZLUFdBZDhpVlpZbExGT08tb1FYOUR5X0hRTkxDMWxXdTZzV0ZwTzVtS1FfSzRySEtrRjRvQUpFWEFtaXNNcVBkbVdzbzZrRDYzLUVSdmdmdHhPQTU1RTNhbHJTWFVQYkc1YTNGY25YWHNDZ0VIekM2T1h4bEUtenVaNGZGblo0Y200T0xHOG5WUzM2V0VYbE9NOEY4Rm8?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 23 Nov 2026 17:54:02 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Ceará acumula alta de 38,5% nas recuperações judiciais, lidera no Nordeste e chega a 144 empresas no 3º trimestre",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVDc1TTVRc2tKM0haTXhzbk8ycXNub2U2T3hiOGpqVy1ILWdwWkJ6VTdPVFpMTEk0T21vVHI2aXR0N1NNWGtTMmtzaktwYWNpc2NJMXFEQjFldnE3enhlZDJnVFNMYTZLUFdBZDhpVlpZbExGT08tb1FYOUR5X0hRTkxDMWxXdTZzV0ZwTzVtS1FfSzRySEtrRjRvQUpFWEFtaXNNcVBkbVdzbzZrRDYzLUVSdmdmdHhPQTU1RTNhbHJTWFVQYkc1YTNGY25YWHNDZ0VIekM2T1h4bEUtenVaNGZGblo0Y200T0xHOG5WUzM2V0VYbE9NOEY4Rm8?oc=5",
+      "veiculo": "O Otimista"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMizwFBVV95cUxOMzhnM1ZIMzFpekd2Rm9KYzJNT09uekpydGZvVmt6ZzIwRjJSa1J1cVpNaHhYUlVTMDhkeFVLdjZMdk1vZkItSmE3U3VwWWN3SHY3bWUtLUhYZmEteDVRQks0TWdCXzh6dmxhX3JyejJTTlFyOURYLTVfbGRGenpUZ0pzV0lyRjFpQ284WVdkN0c3N3d3Y3lnbkt1el90LXE1QjkteDFDaDltWTlrcDZHYm9DWTh4dGJOZzFuMHBjbDhsVThEQUdVYm5GcFloY0E?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 23 Nov 2026 16:07:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Em recuperação judicial, Casas Bahia ainda deve rescisões a milhares de ex-funcionários",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOMzhnM1ZIMzFpekd2Rm9KYzJNT09uekpydGZvVmt6ZzIwRjJSa1J1cVpNaHhYUlVTMDhkeFVLdjZMdk1vZkItSmE3U3VwWWN3SHY3bWUtLUhYZmEteDVRQks0TWdCXzh6dmxhX3JyejJTTlFyOURYLTVfbGRGenpUZ0pzV0lyRjFpQ284WVdkN0c3N3d3Y3lnbkt1el90LXE1QjkteDFDaDltWTlrcDZHYm9DWTh4dGJOZzFuMHBjbDhsVThEQUdVYm5GcFloY0E?oc=5",
+      "veiculo": "Times Brasil | CNBC"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi8wFBVV95cUxQLXpIYzQ5LUt1S1lCQ3pnSWw3amxUSHVUV3oxM3N5ejJfODhQZWtFQ1JJNjB1LWxrNkdIS1pqTHFlOWxMY0RTcjIzaGRwMDVxR3c2M1hlWm5mc1VUYVhtNGFfeGNnS01YRUFIRS0yMWlYWXFxWFB3QkRObWk0Y1d3UnVwMWt3SVJ3NXk0aENuRHVjbHotOVFZTVpMUEhvMDBNU2ctekpmTENMWlplZWE2UGItWllhdGlSZmQ4R1FSUWxjMDdQcUZKdTBLTDU2emJmR3l1RkNRdllzUzA4WG9SSkY3MVZvdHo4LWh3emF3STNjeFE?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 23 Nov 2026 15:11:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Justiça determina que indenização de R$ 1,16 milhão contra construtoras seja cobrada em recuperação judicial no RJ",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQLXpIYzQ5LUt1S1lCQ3pnSWw3amxUSHVUV3oxM3N5ejJfODhQZWtFQ1JJNjB1LWxrNkdIS1pqTHFlOWxMY0RTcjIzaGRwMDVxR3c2M1hlWm5mc1VUYVhtNGFfeGNnS01YRUFIRS0yMWlYWXFxWFB3QkRObWk0Y1d3UnVwMWt3SVJ3NXk0aENuRHVjbHotOVFZTVpMUEhvMDBNU2ctekpmTENMWlplZWE2UGItWllhdGlSZmQ4R1FSUWxjMDdQcUZKdTBLTDU2emJmR3l1RkNRdllzUzA4WG9SSkY3MVZvdHo4LWh3emF3STNjeFE?oc=5",
+      "veiculo": "Olhar Direto"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMitgFBVV95cUxNemlvbHc1WjJKQy1QT3BsM25JRldhMmpUYW5BTmJPUTFDS2VEckpQenZBMnFPdmIzT0lzanVhcm5SbmVYMnVHaUM4dXA0aU5HNlhUaDFZdndTbXhSMkdsNHNRbWRDRFpOYmh1S1BlNDJ5Z3hWUUZaYWNwNURiS3puM1pwUmRoVm1MMERSV3RPZUhXMGpSbGJ1cUtNRjRyOEZJTjFTaFFnMEMyenNKc1dwZUJsRzl5Zw?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Mon, 23 Nov 2026 12:45:12 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Ceará registra alta de 38,5% no número de empresas em recuperação judicial no 3º trimestre",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNemlvbHc1WjJKQy1QT3BsM25JRldhMmpUYW5BTmJPUTFDS2VEckpQenZBMnFPdmIzT0lzanVhcm5SbmVYMnVHaUM4dXA0aU5HNlhUaDFZdndTbXhSMkdsNHNRbWRDRFpOYmh1S1BlNDJ5Z3hWUUZaYWNwNURiS3puM1pwUmRoVm1MMERSV3RPZUhXMGpSbGJ1cUtNRjRyOEZJTjFTaFFnMEMyenNKc1dwZUJsRzl5Zw?oc=5",
+      "veiculo": "Focus Poder"
     },
     {
       "buscador": "google_news",
@@ -2183,6 +2281,20 @@
       "titulo": "Paysandu espera começar a pagar dívidas da recuperação judicial em 2027, diz presidente",
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOaFROS1U4TEdwY184YjREcnNBQzdEdDlaQzBtYnd2RnROYnZmVmotMmpYV1BWRFZEWUxmTnlkTGxJdXdYbkhsbTNJVHo2d0pnV0twQlV2UnYwSFR2eXYweC15VktySFgxeGJhUHRGdTlYR2xZTWh6a05EZ0RYbFJIT2t0NjZOa2NibmkxaDk4YUlHbU5qSjlfcHN2dEI0VVRYQXF5WDc0THdYdmhmaS1GMWZZcjNldXNoNVdaVEc0N28zSnZxWWxySktKdFRmUUdRLTlxNEFaWHI?oc=5",
       "veiculo": "Diário do Pará"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSzdkMF82RDZkQnhGUUpLel9rU2R4RTFtcFRaTWRqNjM2R2g3WnZ0cllPMEtjZlFNNVhaS2pMT05OQnhsMmkzWFlPS0VtZ0p3eWpUdDBIVUNyc3pTVmlXR2phdXhJWXoxd3pXWktHVEhQOWNBMFNBeHZ6X09ONVB4RU1raV9Cc2pHMXNaN2hDZnJ4ajFfYUtlSTlOd3lzS3l0Zmw5YjhkMEtReHFUd1lsWUV5TTN2R0VGM2FTczAzYzRXcVIwRm9SNTJKSGMtUktkN0E?oc=5",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Sun, 22 Nov 2026 05:38:41 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": false,
+      "primeiro_visto": "2026-11-17",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Corinthians entra com pedido de tutela cautelar e caminha para Recuperação Judicial",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSzdkMF82RDZkQnhGUUpLel9rU2R4RTFtcFRaTWRqNjM2R2g3WnZ0cllPMEtjZlFNNVhaS2pMT05OQnhsMmkzWFlPS0VtZ0p3eWpUdDBIVUNyc3pTVmlXR2phdXhJWXoxd3pXWktHVEhQOWNBMFNBeHZ6X09ONVB4RU1raV9Cc2pHMXNaN2hDZnJ4ajFfYUtlSTlOd3lzS3l0Zmw5YjhkMEtReHFUd1lsWUV5TTN2R0VGM2FTczAzYzRXcVIwRm9SNTJKSGMtUktkN0E?oc=5",
+      "veiculo": "Estadão"
     },
     {
       "buscador": "google_news",
@@ -2211,20 +2323,6 @@
       "titulo": "Corinthians: recuperação judicial pode resolver crise financeira do clube? Especialistas explicam",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPMmIxMkFpblFWS051TkhqZm52MVN0RjRyQ2NCY29vT0VUQ2tRaC1aQzJPcmJaeldlOUZHMDE0ajdBOFhqbXlhUE9ZbnNXdk8zRzc4T0lVcWxvUzlfMk9zVVM0T3Z5RU9QQkx3ZGFSTGMySnA3aFNPa2EyM3g4emI0R1RuX0xIOHpsQUZRSFo4U252WXJCS1N4WWRXWTAzaGR5VjFDaFFHY1UyQkV0dTFMUTFyVGV6RVVISER1c3FZUDl4Zk5EOWlF?oc=5",
       "veiculo": "BPMoney"
-    },
-    {
-      "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSzdkMF82RDZkQnhGUUpLel9rU2R4RTFtcFRaTWRqNjM2R2g3WnZ0cllPMEtjZlFNNVhaS2pMT05OQnhsMmkzWFlPS0VtZ0p3eWpUdDBIVUNyc3pTVmlXR2phdXhJWXoxd3pXWktHVEhQOWNBMFNBeHZ6X09ONVB4RU1raV9Cc2pHMXNaN2hDZnJ4ajFfYUtlSTlOd3lzS3l0Zmw5YjhkMEtReHFUd1lsWUV5TTN2R0VGM2FTczAzYzRXcVIwRm9SNTJKSGMtUktkN0E?oc=5",
-      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
-      "data_publicacao": "Sat, 21 Nov 2026 07:44:34 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-11-17",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Corinthians entra com pedido de tutela cautelar e caminha para Recuperação Judicial",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSzdkMF82RDZkQnhGUUpLel9rU2R4RTFtcFRaTWRqNjM2R2g3WnZ0cllPMEtjZlFNNVhaS2pMT05OQnhsMmkzWFlPS0VtZ0p3eWpUdDBIVUNyc3pTVmlXR2phdXhJWXoxd3pXWktHVEhQOWNBMFNBeHZ6X09ONVB4RU1raV9Cc2pHMXNaN2hDZnJ4ajFfYUtlSTlOd3lzS3l0Zmw5YjhkMEtReHFUd1lsWUV5TTN2R0VGM2FTczAzYzRXcVIwRm9SNTJKSGMtUktkN0E?oc=5",
-      "veiculo": "Estadão"
     },
     {
       "buscador": "bing_news",
@@ -2256,6 +2354,20 @@
     },
     {
       "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fwww.spacemoney.com.br%2feconomia%2fcorinthians-mediacao-dividas-tutela-cautelar%2f&c=8836952253801254311&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Sat, 21 Nov 2026 04:44:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Corinthians avalia mediação de dívidas com credores",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fwww.spacemoney.com.br%2feconomia%2fcorinthians-mediacao-dividas-tutela-cautelar%2f&c=8836952253801254311&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b01e480d5894db2a02db58966ace9d5&url=https%3a%2f%2fwww.spacemoney.com.br%2feconomia%2fcorinthians-mediacao-dividas-tutela-cautelar%2f&c=8836952253801254311&mkt=pt-br",
       "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
       "data_publicacao": "Sat, 21 Nov 2026 04:44:00 GMT",
@@ -2281,6 +2393,20 @@
       "titulo": "O franqueado da KFC que pediu recuperação judicial nos EUA",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQckIwWW5fS1hnOWUyZVhwazRKa3RGbEVFbnR2dVJlb0dvWGNGcGxZZjRPRlZ4b0RxU3c5UTZWY0hzNmsxWW1hekl6OHlYR3FEbmNJeWZrbEx5X3BVOUxCT3IxZERJRG4zR1ZzZkt2RDdlRjVOSlU4VEdzQVEzTjRPc2NTdktMN29pVlY3Rw?oc=5",
       "veiculo": "Live MKT News"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9cef1ce4157b66f118da471b0fa&url=https%3a%2f%2fwww.estadao.com.br%2fem-alta%2feconomia%2fnegocios%2fcasas-bahia-pedido-recuperacao-judicial-npr%2f&c=9581747771373152560&mkt=pt-br",
+      "consulta": "\"entra com pedido de recuperação judicial\"",
+      "data_publicacao": "Fri, 20 Nov 2026 16:00:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Casas Bahia entra com pedido de recuperação judicial, após prejuízo de R$ 10,1 bi no 2º trimestre",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9cef1ce4157b66f118da471b0fa&url=https%3a%2f%2fwww.estadao.com.br%2fem-alta%2feconomia%2fnegocios%2fcasas-bahia-pedido-recuperacao-judicial-npr%2f&c=9581747771373152560&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -2393,6 +2519,20 @@
       "titulo": "Justiça suspende cobranças contra Grupo Fazendão, que declara endividamento de R$ 2,5 bilhões",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPMFp0aUllOXVER2p2TFd6TGUtMHZCeWxNY0dSellvck9ydDhkUktHRFNHeWpkeUN0MFNlejU2MXhnTUxtR0tnckszb2NMZE1MZ0psYmhpTHB6QnZDejd1SFlOY1YxYjNIRFV2WVVWMFkzZjRIV3E1VDB1azZMX0owY01jbDFTTTJPYkFNZFpSMTM4Y3NsMGVQU25UYnN2UEhucEZ5cWRfOVNYTUdxdGE3QXI1Z0tjMlRMOXNNNFN3R3lnTkRma0Q3RFJsMkRVc1hOYVJabmZMVEQ3UdIB6AFBVV95cUxOTjZ5bHR0cE5iYmNpdmxHemRxWk0zMXNSZ0ZIWWZ3MXRDeXRPMVVyRkNBMUNZVk1HRGVYUlA5RVljd3pKclJpaXE0bEc2SlZPcTZHcHJkckRHMklPY1pxRUhJRVNKbjNTZzR0bWpWbkhIVHlpajNmOThmbVhoeGFaRlVmOG1vdGIzbEtQSDVSbkZfMHNnSnNxMzNFSHlndld4ZjdDUUdVOF9wTXZ6N0dYUnk0bkRrYVZCWWlSLVdyd0QtbVhFX2J3Nm16TWNJNkRfTV8xV2h5enFsMWt6d0tHN3QxNXcycUVQ?oc=5",
       "veiculo": "G1"
+    },
+    {
+      "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi1wFBVV95cUxOWnRFN0FYaVZfcFNqR1F6TFp5cWRMUHEySzN0VTctNmU2Z181SjhORC1GYUtSaU40REFwcXRvNjlVRklSZFVYQnZGTWxabVRLVXJYOFpURDVJazd0ZGFPRXJmcE1mSldiVzk5dkEtUGhVNW1IeUpRVzdhSFlpWHRrbVhreGozalgtdWNZdEpOUUFfd0xWYTZqNmRBOXVrQVpYelBELTlOblpkUGU1ZFpIYkdqbC1DZmlXVnJnMEtZQ2lNV3RybzlHMTFMYk5IT1RNZkgzeVdua9IB5gFBVV95cUxOT1FWbG15VWZnTjBfYW1JeFoxcmdLMFBZbDZLZmNTNFIwQ3BOcHdtX1J2N3U1bDJqTVp4NXVrckpsdFFnR3ZCbnZtTnNuakxiNzdhR3YzN2xZNWI0dDFhS0RLdTNOZGtnbEdoaXJpZDROZ1VOMmE1dGRGd0FZUzFGMmVlblZSMWctajU4VTU4VWR2Zjl4NjJLblktdHJVSWw1cGNiZkRTajF1Y051MDZFbDBjck9WLWh3M0JncVNpTHgxdEhQQUdTT2ZDUnBNLTVTT3VwVGliSUJJa2xzcEZJRDVGdWV3UQ?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Thu, 19 Nov 2026 14:58:19 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Novo plano de recuperação judicial da Fictor propõe pagar credores com cotas de fundo",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOWnRFN0FYaVZfcFNqR1F6TFp5cWRMUHEySzN0VTctNmU2Z181SjhORC1GYUtSaU40REFwcXRvNjlVRklSZFVYQnZGTWxabVRLVXJYOFpURDVJazd0ZGFPRXJmcE1mSldiVzk5dkEtUGhVNW1IeUpRVzdhSFlpWHRrbVhreGozalgtdWNZdEpOUUFfd0xWYTZqNmRBOXVrQVpYelBELTlOblpkUGU1ZFpIYkdqbC1DZmlXVnJnMEtZQ2lNV3RybzlHMTFMYk5IT1RNZkgzeVdua9IB5gFBVV95cUxOT1FWbG15VWZnTjBfYW1JeFoxcmdLMFBZbDZLZmNTNFIwQ3BOcHdtX1J2N3U1bDJqTVp4NXVrckpsdFFnR3ZCbnZtTnNuakxiNzdhR3YzN2xZNWI0dDFhS0RLdTNOZGtnbEdoaXJpZDROZ1VOMmE1dGRGd0FZUzFGMmVlblZSMWctajU4VTU4VWR2Zjl4NjJLblktdHJVSWw1cGNiZkRTajF1Y051MDZFbDBjck9WLWh3M0JncVNpTHgxdEhQQUdTT2ZDUnBNLTVTT3VwVGliSUJJa2xzcEZJRDVGdWV3UQ?oc=5",
+      "veiculo": "Valor Econômico"
     },
     {
       "buscador": "google_news",
@@ -2578,6 +2718,20 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMi1gFBVV95cUxOeVJpSmhwaXFVMWJnbklhNGNQZzBvcTZYckFLdERKU3JDLVM5dGFsSWNQblZwejc5YzFvSnRxbnQwRDRvRldnOU5qVGd0ZmZxLUg5dGxtTmdzckhsRkFUSTl0dF9Wd0REaTVfNnpXM3RZU2hoMnBRdXJZbk1kZVdSREJyMXNTMzhFd3VXamVpY3NLVGhieVFLaXk3ajVlM20wZWpQYUVuZGZEZHdLT0hRUlZkaVo2Nk1GcjY4UnU3eGdLLUFEMGFXaE9lSk9DNjVjM3RUVG53?oc=5",
+      "consulta": "\"entra com pedido de recuperação judicial\"",
+      "data_publicacao": "Wed, 18 Nov 2026 12:22:14 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Rede franqueada da KFC no Texas entra com pedido de recuperação após queda em vendas",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOeVJpSmhwaXFVMWJnbklhNGNQZzBvcTZYckFLdERKU3JDLVM5dGFsSWNQblZwejc5YzFvSnRxbnQwRDRvRldnOU5qVGd0ZmZxLUg5dGxtTmdzckhsRkFUSTl0dF9Wd0REaTVfNnpXM3RZU2hoMnBRdXJZbk1kZVdSREJyMXNTMzhFd3VXamVpY3NLVGhieVFLaXk3ajVlM20wZWpQYUVuZGZEZHdLT0hRUlZkaVo2Nk1GcjY4UnU3eGdLLUFEMGFXaE9lSk9DNjVjM3RUVG53?oc=5",
+      "veiculo": "Mercado&Consumo"
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMi1gFBVV95cUxNaG1vYjd4TmRPck5tX1VXMUM2RU9ULVJhbTB4OVhqNWN3NlhWZlhNMlNPWllzNzZyYzFfb2dFbVN5WmJIZ0ZIWTBCX0cxd3dhNk9SVktRTTJOSzRpQnAtdkQ1aWNLN1NkZGR4aEplSkltUDQwc3pKMER1a0NUZTRCajAtd3d6ZUJlTVBGSGdFNkFDcll0UGxmWHhlT3VvQVpxdlN1STdpbGI1RXNQRDFUWnN4UmlUV1draTZXaDJRRzYtVGNHdXRJYlJWSkdSYjFndGVxVkln0gHbAUFVX3lxTE0tTkVZT2FxaE9ha2lQdjV6blhweUJYU1RfSWR0RE1SUUhWbFB6R0hXQnAxVHRxWnR5VE1CVWQ3V2ZNdklTOXBueFBGZ2RXczFXRHhDamFiaTNPZVAtVUYyUF9JVDJsVUVEQTJSTU9SSHRSTFVCdnBXUHE1eHN5Y2JhTmtjSmdVVkp1OHZrNVJuaV96QWNhMkFjYUVSNE4zcEhZcHJzM1Q5THctQ01IMElRRmRRNkhUR3JyMWRHX2F2T1JlQk5neHBFaHdULU5IcnUyaE5vT2xwRlJPTQ?oc=5",
       "consulta": "\"entra com pedido de recuperação judicial\"",
       "data_publicacao": "Wed, 18 Nov 2026 12:22:14 GMT",
@@ -2645,6 +2799,20 @@
       "titulo": "Induzida ao erro por advogados, ministra pede desculpas ao TJ e mantém falência de frigorífico",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPcDVTSDdXaC00VGtIVFhMaVVaWWNXdXE5UEt4ZkZKM3BTU2N2NUt6ZWhieGJZTlNMVV82bHo2YkZ6VlFHbVZsYUM5dm83TnFmMGFPTjNuMVBWZFliTzJsU3NkZTA2dWpQUU5fYlFwNEptMGp5aE40LTZ1LXZqVTdRMF9pS1VYcW9MR2kzOFI2Mnp3eU5nbVU4MURCOXZUM0FrUzZnMUE0RTloVFVPcy1lZVF1SHlNaGdHMFFRUWN3OTRDNUl6RlRYTzc0Sko?oc=5",
       "veiculo": "O Jacaré"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fge.globo.com%2ffutebol%2ftimes%2fcorinthians%2fnoticia%2f2026%2f11%2f18%2fentenda-por-que-corinthians-pediu-protecao-a-justica-em-acao-antecedente-a-recuperacao-judicial.ghtml&c=11199857860471012255&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Wed, 18 Nov 2026 06:00:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Entenda por que Corinthians pediu proteção à Justiça em ação antecedente a recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fge.globo.com%2ffutebol%2ftimes%2fcorinthians%2fnoticia%2f2026%2f11%2f18%2fentenda-por-que-corinthians-pediu-protecao-a-justica-em-acao-antecedente-a-recuperacao-judicial.ghtml&c=11199857860471012255&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -2760,6 +2928,20 @@
     },
     {
       "buscador": "google_news",
+      "chave": "noticia:https://news.google.com/rss/articles/CBMisAFBVV95cUxNdWtZVHA3NVdWUzRBSnNvcUpqQVF6WWNOZ1FLSE1DYXViRmh6VDJiQ3VDblFobjZ0WWRIYXgyTTRGTmcxWVJELTVNZ3BhdXZoQ0JlRVo0N1FzdGROdWhMWTlRN3Jrb0pJY1dON0taTmF1OERLYjAxeXNJd011Rkx1TTh2cFhwcmhUM3A4aExLS2E4VVhYd3c0cHlCd3BCWmtzSUl2WVhyNE92SFc3M19xaw?oc=5",
+      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "data_publicacao": "Tue, 17 Nov 2026 22:32:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Rede franqueada da KFC no Texas entra com pedido de recuperação após queda em vendas",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdWtZVHA3NVdWUzRBSnNvcUpqQVF6WWNOZ1FLSE1DYXViRmh6VDJiQ3VDblFobjZ0WWRIYXgyTTRGTmcxWVJELTVNZ3BhdXZoQ0JlRVo0N1FzdGROdWhMWTlRN3Jrb0pJY1dON0taTmF1OERLYjAxeXNJd011Rkx1TTh2cFhwcmhUM3A4aExLS2E4VVhYd3c0cHlCd3BCWmtzSUl2WVhyNE92SFc3M19xaw?oc=5",
+      "veiculo": "Vitória News"
+    },
+    {
+      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMigAJBVV95cUxQYWoxMnhWdVZFdzBhZ0k5a0dndGhvUnVWcC1BemdzWDhNOGhPR0I4NjFjOGF0cWVxWHhDQktYMERDdFJFTWFJNnhfV00yTVRIdEJhZTBwVHd6aW5Fakt3OGNBYlJFWktMQnRjQy1oMEFPYzk2WklsY1liMjBHTzliUEtKMkEwcXp5clA4TmpYOTFNZVZ4Rnp6V1NwQWtxZF9aTHYzM2E3VnNQWlJqSHFwcFFaLXhnNE5JYlNaOUJzY01tTktGaFdDY0xZamlkcDNIOVU3aTJ6N3NIRHVLTWZIUEp5OFVUbWxBWnFPQktublUzNVZ2dE05WnN6Rm5ZdUtP?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Tue, 17 Nov 2026 22:13:00 GMT",
@@ -2779,7 +2961,7 @@
       "data_publicacao": "Tue, 17 Nov 2026 20:47:00 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-11-19",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "A Fazendão pagou por inteiro o credor que podia cobrar primeiro — e pediu 60 dias aos bancos",
@@ -2803,7 +2985,7 @@
     {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMi0AFBVV95cUxNRjFVUS15Z0hIRG9ER2NyQ0ktSHdTLTJncE1xMnUtQ0cxT2JSTXM2VV9DS0Jla04zcnl3Yk9GRjgtNjd5d0RHUWtPU2dKdmowSlNFbk41YWdQZEN4MGVMZlZXVndBSTFEdEk3NWtqN1JNVG9yODdGcVpLb29scDZCUUZQdy1mNXVJSFRVbldpcEpqMVU0emF5UndNcWJBNGhXYWJEM01xZ2RRWDEwblQ3Y2FmbUdWcXFHcFB3TFZqcHNkd0RxeWloOEJ4TDhXZ1hl?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
       "data_publicacao": "Tue, 17 Nov 2026 20:24:01 GMT",
       "empresa": null,
       "fonte": "noticia",
@@ -2961,7 +3143,7 @@
       "data_publicacao": "Tue, 17 Nov 2026 16:52:53 GMT",
       "empresa": null,
       "fonte": "noticia",
-      "novo": true,
+      "novo": false,
       "primeiro_visto": "2026-11-21",
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Corinthians entra com pedido de tutela cautelar e caminha para recuperação judicial",
@@ -3068,6 +3250,20 @@
     },
     {
       "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9cda7b4412181b194aa1416aafa&url=https%3a%2f%2ftimesbrasil.com.br%2fempresas-e-negocios%2ffranqueada-do-kfc-no-texas-pede-recuperacao-judicial-apos-queda-nas-vendas%2f&c=10505434486505753348&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Tue, 17 Nov 2026 12:20:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Franqueada do KFC no Texas pede recuperação judicial após queda nas vendas",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9cda7b4412181b194aa1416aafa&url=https%3a%2f%2ftimesbrasil.com.br%2fempresas-e-negocios%2ffranqueada-do-kfc-no-texas-pede-recuperacao-judicial-apos-queda-nas-vendas%2f&c=10505434486505753348&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b033a02954b4408b9410600fdb13536&url=https%3a%2f%2ftimesbrasil.com.br%2fempresas-e-negocios%2ffranqueada-do-kfc-no-texas-pede-recuperacao-judicial-apos-queda-nas-vendas%2f&c=10505434486505753348&mkt=pt-br",
       "consulta": "\"pede recuperação judicial\"",
       "data_publicacao": "Tue, 17 Nov 2026 12:20:00 GMT",
@@ -3163,6 +3359,20 @@
       "titulo": "Justiça derruba liminar e autoriza Prefeitura de Palmas a retomar licitação para gestão das UPAs",
       "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQNEwzY00wSjVUM2M1YWxPT2hpSUt1dHhzZllwN2FtQS1mZmlPSHJrWHhRd0p0OUk3czZCNHM1dkxvX09XT0U5cEZwNDlEU0djMDBxajJkeDFQZlIyOGc0Sm01UVhycjJ0MXZLZHZwS05wOThLNTNuejNsQW1FZFc3aVBKQ3ZBRjBVbVJVdHFDUEp5Vy1iSWpTRzBTNXVjWHAyRHVOMjBaVlZ4VDNraGo1SlBVMEcyMTJpYm1WdGs2SGpDRjlmZWJ2VHpKMUNXaG9SeFkzYnpnWDdvenNGbjlpOXI1eFA0OHM?oc=5",
       "veiculo": "Jornal do Tocantins"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fesbrasil.com.br%2frecuperacao-judicial-corinthians-tutela-cautelar%2f&c=16196869504498270533&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Tue, 17 Nov 2026 10:55:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Corinthians pede tutela cautelar e caminha para recuperação",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fesbrasil.com.br%2frecuperacao-judicial-corinthians-tutela-cautelar%2f&c=16196869504498270533&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -3320,6 +3530,20 @@
     },
     {
       "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fesportes.r7.com%2ffutebol%2fcorinthians-entra-com-pedido-de-tutela-cautelar-e-caminha-para-recuperacao-judicial-17112026%2f&c=4468966600998021726&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Tue, 17 Nov 2026 10:09:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Corinthians entra com pedido de tutela cautelar e caminha para recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fesportes.r7.com%2ffutebol%2fcorinthians-entra-com-pedido-de-tutela-cautelar-e-caminha-para-recuperacao-judicial-17112026%2f&c=4468966600998021726&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b033a06fdad4d5bbee863d74206c1ee&url=https%3a%2f%2fesportes.r7.com%2ffutebol%2fcorinthians-entra-com-pedido-de-tutela-cautelar-e-caminha-para-recuperacao-judicial-17112026%2f&c=4468966600998021726&mkt=pt-br",
       "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
       "data_publicacao": "Tue, 17 Nov 2026 10:09:00 GMT",
@@ -3414,6 +3638,20 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Corinthians pede socorro à Justiça: entenda a tutela cautelar",
       "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afdff4aaf734f39a93402bf5aa635e3&url=https%3a%2f%2fparanaibamais.com.br%2fesportes%2fcorinthians-pede-socorro-a-justica-entenda-a-tutela-cautelar%2f&c=3285574505835542324&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fwww.msn.com%2fpt-br%2fnoticias%2fother%2fcorinthians-pede-tutela-cautelar-na-justi%25C3%25A7a-de-sp-e-se-aproxima-de-recupera%25C3%25A7%25C3%25A3o-judicial%2far-AA2hDQMn&c=2580856320716311508&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Tue, 17 Nov 2026 09:00:32 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Corinthians pede tutela cautelar na Justiça de SP e se aproxima de recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fwww.msn.com%2fpt-br%2fnoticias%2fother%2fcorinthians-pede-tutela-cautelar-na-justi%25C3%25A7a-de-sp-e-se-aproxima-de-recupera%25C3%25A7%25C3%25A3o-judicial%2far-AA2hDQMn&c=2580856320716311508&mkt=pt-br",
       "veiculo": ""
     },
     {
@@ -3516,6 +3754,20 @@
     },
     {
       "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fwww.meutimao.com.br%2fnoticias-do-corinthians%2f544212%2fcorinthians-protocola-pedido-de-tutela-cautelar-de-olho-em-processo-de-recuperacao-judicial&c=14169219104773679858&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Tue, 17 Nov 2026 06:22:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Corinthians protocola pedido de tutela cautelar de olho em processo de Recuperação Judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fwww.meutimao.com.br%2fnoticias-do-corinthians%2f544212%2fcorinthians-protocola-pedido-de-tutela-cautelar-de-olho-em-processo-de-recuperacao-judicial&c=14169219104773679858&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b033a06fdad4d5bbee863d74206c1ee&url=https%3a%2f%2fwww.meutimao.com.br%2fnoticias-do-corinthians%2f544212%2fcorinthians-protocola-pedido-de-tutela-cautelar-de-olho-em-processo-de-recuperacao-judicial&c=14169219104773679858&mkt=pt-br",
       "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
       "data_publicacao": "Tue, 17 Nov 2026 06:22:00 GMT",
@@ -3582,6 +3834,20 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Corinthians protocola pedido de tutela cautelar de olho em processo de Recuperação Judicial",
       "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afcb15c2fcb433a9477bab5e40ad1cc&url=https%3a%2f%2fwww.meutimao.com.br%2fnoticias-do-corinthians%2f544212%2fcorinthians-protocola-pedido-de-tutela-cautelar-de-olho-em-processo-de-recuperacao-judicial&c=14169219104773679858&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2ftribunadejundiai.com.br%2fmais%2fesportes%2fcorinthians-solicita-tutela-cautelar-medida-anterior-a-uma-recuperacao-judicial%2f&c=3636726167366487396&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Tue, 17 Nov 2026 05:12:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Corinthians solicita tutela cautelar, medida anterior a uma recuperação judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2ftribunadejundiai.com.br%2fmais%2fesportes%2fcorinthians-solicita-tutela-cautelar-medida-anterior-a-uma-recuperacao-judicial%2f&c=3636726167366487396&mkt=pt-br",
       "veiculo": ""
     },
     {
@@ -3666,6 +3932,20 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Corinthians solicita tutela cautelar, medida anterior a uma recuperação judicial",
       "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6afcb15c2fcb433a9477bab5e40ad1cc&url=https%3a%2f%2ftribunadejundiai.com.br%2fmais%2fesportes%2fcorinthians-solicita-tutela-cautelar-medida-anterior-a-uma-recuperacao-judicial%2f&c=3636726167366487396&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fabcdoabc.com.br%2fcorinthians-entra-com-pedido-de-tutela-cautela%2f&c=17374123934746040953&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Tue, 17 Nov 2026 05:07:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Corinthians entra com pedido de tutela cautelar e pensa em Recuperação Judicial",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fabcdoabc.com.br%2fcorinthians-entra-com-pedido-de-tutela-cautela%2f&c=17374123934746040953&mkt=pt-br",
       "veiculo": ""
     },
     {
@@ -3880,6 +4160,20 @@
     },
     {
       "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fwww.vavel.com%2fbr%2ffutebol%2f2026%2f11%2f16%2fcorinthians%2f1279555-corinthians-prepara-pedido-de-recuperacao-judicial-em-meio-a-pedido-de-intervencao-e-crise-politica.html&c=9769722268245729684&mkt=pt-br",
+      "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
+      "data_publicacao": "Mon, 16 Nov 2026 15:37:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Corinthians prepara pedido de Recuperação Judicial em meio a pedido de Intervenção e crise política",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9d108094ebeaabbfcad4e005f56&url=https%3a%2f%2fwww.vavel.com%2fbr%2ffutebol%2f2026%2f11%2f16%2fcorinthians%2f1279555-corinthians-prepara-pedido-de-recuperacao-judicial-em-meio-a-pedido-de-intervencao-e-crise-politica.html&c=9769722268245729684&mkt=pt-br",
+      "veiculo": ""
+    },
+    {
+      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b033a06fdad4d5bbee863d74206c1ee&url=https%3a%2f%2fwww.vavel.com%2fbr%2ffutebol%2f2026%2f11%2f16%2fcorinthians%2f1279555-corinthians-prepara-pedido-de-recuperacao-judicial-em-meio-a-pedido-de-intervencao-e-crise-politica.html&c=9769722268245729684&mkt=pt-br",
       "consulta": "\"tutela cautelar\" \"recuperação judicial\"",
       "data_publicacao": "Mon, 16 Nov 2026 15:37:00 GMT",
@@ -4059,6 +4353,20 @@
       "titulo": "Gigante do vale tem plano de recuperação judicial aprovado",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNRGlNZzhxT1pPZTQ5QkMzNWJiLXhLZGFNaHFGWUFZdmliZ0JnVUk3MS1RTVFIa3Vad19hTk40U1ZKMWwzNDlReWNtMEhZN3U5ZVFPa284aWRNZTV2Vlp0RUZwY1h4M0haRHg0U2dodGpVVldVTlpnb1Nfdlh1V2Z5Z0JDQlpTSGwxcHhjRC1iVEtwOXhReWVjTWY2dUNnLURMNzBlbHdZcVZfQmNxbF9uRU9lWdIBuAFBVV95cUxOSDg2WUFibnllMWFSbzdGellaSmRGU19IUEJDRDIxcEJicFJuNDhsNXRfc3dMVVk3QXRCUHhBX2o4RE1DUUhWdmw4NXJNMGE0NmRXMnBjWVlRVGZFczVHblV4NGxaS000cHAtOXNOT0V6aWVNUHY0T2V5Rlp2a1JQVGhud05IMVhhdEVodlhCcFFEUWJJdXd5bHdfTkt5NHVjeUdtdXB0bHgwLVg1ZFVDaENlTWoyNV9I?oc=5",
       "veiculo": "Jornal da Cidade Online"
+    },
+    {
+      "buscador": "bing_news",
+      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9cda7b4412181b194aa1416aafa&url=https%3a%2f%2foantagonista.com.br%2fmundo%2frede-de-piscinas-com-mais-de-850-lojas-pede-recuperacao-judicial-e-fecha-76-unidades-enquanto-tenta-eliminar-cerca-de-90-de-suas-dividas%2f&c=4673068214504105234&mkt=pt-br",
+      "consulta": "\"pede recuperação judicial\"",
+      "data_publicacao": "Sun, 15 Nov 2026 08:23:00 GMT",
+      "empresa": null,
+      "fonte": "noticia",
+      "novo": true,
+      "primeiro_visto": "2026-11-23",
+      "tipo": "noticia_rj_ou_cautelar",
+      "titulo": "Rede de piscinas com mais de 850 lojas pede recuperação judicial e fecha 76 unidades enquanto tenta eliminar cerca de 90% de suas dívidas",
+      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6b04c9cda7b4412181b194aa1416aafa&url=https%3a%2f%2foantagonista.com.br%2fmundo%2frede-de-piscinas-com-mais-de-850-lojas-pede-recuperacao-judicial-e-fecha-76-unidades-enquanto-tenta-eliminar-cerca-de-90-de-suas-dividas%2f&c=4673068214504105234&mkt=pt-br",
+      "veiculo": ""
     },
     {
       "buscador": "bing_news",
@@ -6862,20 +7170,6 @@
     },
     {
       "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMitAFBVV95cUxQOXhNUU85OHU2N1VyazdOTmUzLS11S2hqOXJobkRiNndjZHJQM3hSdm9kVk1UWGVuUHJaUGxCczlyVzdpVnlVMjdQQmpsOXhfbV9vRkU3R0E1QTk4d0hGeF9MQWRKMUZmZDBPQkt2RXNtM3BFelZ3UGhwZ2ZjNUZHV2ZzWHkzT0VaMjhHLWk5VFZuelpCQ3pOQmxzbXZDMG1DQ3ZIOUR5Q0wtekJxdnBBVlAzZm4?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Sat, 24 Oct 2026 12:45:45 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Casas Bahia negocia empréstimo de R$ 300 milhões para não parar as operações",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQOXhNUU85OHU2N1VyazdOTmUzLS11S2hqOXJobkRiNndjZHJQM3hSdm9kVk1UWGVuUHJaUGxCczlyVzdpVnlVMjdQQmpsOXhfbV9vRkU3R0E1QTk4d0hGeF9MQWRKMUZmZDBPQkt2RXNtM3BFelZ3UGhwZ2ZjNUZHV2ZzWHkzT0VaMjhHLWk5VFZuelpCQ3pOQmxzbXZDMG1DQ3ZIOUR5Q0wtekJxdnBBVlAzZm4?oc=5",
-      "veiculo": "InfoMoney"
-    },
-    {
-      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMikwFBVV95cUxQcXBjU3JDWGZaSVh2XzRKenZCNWxoaE1QUTRSWkcyZEo4MDVEYlZFNlFEWW45SnlwOUVrbUJoakozTnZkSFNaMDR3LW5UYVhXb25zZXdDVG5yVVduSEhyamxFMnZhZEpERjFCRUFyWnQ3eWllNXhqaWtfUWZaSDFvWnQ2UTkxLWdha1YwcVRBQ0VuQVU?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Sat, 24 Oct 2026 12:45:00 GMT",
@@ -6946,20 +7240,6 @@
     },
     {
       "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMiuAFBVV95cUxObE1PYmYyaG5vUGZUd1pnU3RIR1IxT3FDOFhDZGZxdk1QeFBnTDI5NFFoMVVNanE4TWdDNjBUYk9neTR0T25nbDROTC1WOERiYzJYQ1d5MDJQY0xDNmo4N0VQYzdIcDU0ckhLaXh4MWtCeG5ZWWplaDQ2UEYzd0txVWJ1UUt6SjZPcDlZbVFKMWpyVnRaQ0FqZUVjOWRWRXpjSm5XNFJDWnd0eWlWMk1SY2s2cXNFMk1i?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Fri, 23 Oct 2026 20:45:19 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Manaus. O Hospital Beneficente Portuguesa. A Dívida de R$ 28,7 Milhões. A Recuperação Judicial",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxObE1PYmYyaG5vUGZUd1pnU3RIR1IxT3FDOFhDZGZxdk1QeFBnTDI5NFFoMVVNanE4TWdDNjBUYk9neTR0T25nbDROTC1WOERiYzJYQ1d5MDJQY0xDNmo4N0VQYzdIcDU0ckhLaXh4MWtCeG5ZWWplaDQ2UEYzd0txVWJ1UUt6SjZPcDlZbVFKMWpyVnRaQ0FqZUVjOWRWRXpjSm5XNFJDWnd0eWlWMk1SY2s2cXNFMk1i?oc=5",
-      "veiculo": "O Antagônico"
-    },
-    {
-      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMirwFBVV95cUxNZ2ltRGM1dUpCZWFWYzM4M0dDVmJlbllmQXlBbzNsdDVwb1pBQ3VUQ2FjVWNXRW1VQUJXOWwwVmRidzY2MTRrYTcyMU9YWU8xS1hvNW9KcTFqcnVQamE2VFlfUHZ4Uklvd1BaZ05MMTJtZVZnNThBbWNwVFpWdUNaYnViQk5Mc3NsVy12M0NjWEhYOFo4U1hsYXcxUXBZMkN4ZUQ1U2pac3RobDZpX1hB?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Fri, 23 Oct 2026 17:45:00 GMT",
@@ -7016,20 +7296,6 @@
     },
     {
       "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYnpuZnU3ZjBSVjZ5TnVuWE5zMnEtalBfUTk3YmpEZlkwcW84Z2ZienVPSlBnT01uc2c5OFI0UkN6U3UyeGdRcGVlMml4ZlBOaDdTTk9BclNvcEVxNlZ6Z1VDUHBlRl84VUZwZzk5eFMtRTB0eVBuUkJNTjVQbTVhajNRMW5OLUQwUXR5NmdiMGtVLVhTWUM0Tlp2bDVTSGtvSUJpazlXaS1VRXVFd2VDTVY3em1vd1lmeG5CcS05cjZ0b0FteVhUZdIByAFBVV95cUxPYnpuZnU3ZjBSVjZ5TnVuWE5zMnEtalBfUTk3YmpEZlkwcW84Z2ZienVPSlBnT01uc2c5OFI0UkN6U3UyeGdRcGVlMml4ZlBOaDdTTk9BclNvcEVxNlZ6Z1VDUHBlRl84VUZwZzk5eFMtRTB0eVBuUkJNTjVQbTVhajNRMW5OLUQwUXR5NmdiMGtVLVhTWUM0Tlp2bDVTSGtvSUJpazlXaS1VRXVFd2VDTVY3em1vd1lmeG5CcS05cjZ0b0FteVhUZQ?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Fri, 23 Oct 2026 15:40:27 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Casas Bahia é acusada de mover R$ 75 mi de garantia após pedir recuperação",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYnpuZnU3ZjBSVjZ5TnVuWE5zMnEtalBfUTk3YmpEZlkwcW84Z2ZienVPSlBnT01uc2c5OFI0UkN6U3UyeGdRcGVlMml4ZlBOaDdTTk9BclNvcEVxNlZ6Z1VDUHBlRl84VUZwZzk5eFMtRTB0eVBuUkJNTjVQbTVhajNRMW5OLUQwUXR5NmdiMGtVLVhTWUM0Tlp2bDVTSGtvSUJpazlXaS1VRXVFd2VDTVY3em1vd1lmeG5CcS05cjZ0b0FteVhUZdIByAFBVV95cUxPYnpuZnU3ZjBSVjZ5TnVuWE5zMnEtalBfUTk3YmpEZlkwcW84Z2ZienVPSlBnT01uc2c5OFI0UkN6U3UyeGdRcGVlMml4ZlBOaDdTTk9BclNvcEVxNlZ6Z1VDUHBlRl84VUZwZzk5eFMtRTB0eVBuUkJNTjVQbTVhajNRMW5OLUQwUXR5NmdiMGtVLVhTWUM0Tlp2bDVTSGtvSUJpazlXaS1VRXVFd2VDTVY3em1vd1lmeG5CcS05cjZ0b0FteVhUZQ?oc=5",
-      "veiculo": "BOL"
-    },
-    {
-      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRW1ldE9YYzRudTlXODJJZ2hMNDV5RlpKY2l0Z2FkXzNZRnBEZHkxcXdUOTl0S2FQQWNTX3RjT0Q0RVRlM043Y3p2WkV4YktBNmJENWE2M24xUklETzVtX0RUQUxYVXlod2xEb29zRnRLckhGTDVBN0dLbl8ybV85b1dWTG1mbDgzLUZqWG1PNVdITHNjN2lNQmdNWUxETGg4cC1rMlFlaURkUFBwTFR0RXZLa294V0R1?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Fri, 23 Oct 2026 14:45:50 GMT",
@@ -7041,20 +7307,6 @@
       "titulo": "Casas Bahia (BHIA3) traz Camille Faria, ex-CFO da Americanas, para negociar com credores",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRW1ldE9YYzRudTlXODJJZ2hMNDV5RlpKY2l0Z2FkXzNZRnBEZHkxcXdUOTl0S2FQQWNTX3RjT0Q0RVRlM043Y3p2WkV4YktBNmJENWE2M24xUklETzVtX0RUQUxYVXlod2xEb29zRnRLckhGTDVBN0dLbl8ybV85b1dWTG1mbDgzLUZqWG1PNVdITHNjN2lNQmdNWUxETGg4cC1rMlFlaURkUFBwTFR0RXZLa294V0R1?oc=5",
       "veiculo": "BPMoney"
-    },
-    {
-      "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMiywFBVV95cUxQVlo0QkVuTmlGZkY4QzdoQ3dNalY0MmtSRmJKdmJxU2oxbDM2RUVoaDdNS1hOczBxSVctaWZ3UTdUYkp2aTlLNXBBWnFuNDhFUG9WeGdoc05rUjAyUGp3S1d2VnFwRWxZZ2Z5VXRpQ1MxWHBzMktzS1RNT3hPeVB6c19TOVg2T1lOMXBrN0JFU0ZCZ1FyM19XTVR2Q1BTU2xESHVNNlUzTkROU2pZdkhuVzlmOGlLTXItRVc0UFNmaWM5NXNpU0ZWeGQ0QdIBywFBVV95cUxQVlo0QkVuTmlGZkY4QzdoQ3dNalY0MmtSRmJKdmJxU2oxbDM2RUVoaDdNS1hOczBxSVctaWZ3UTdUYkp2aTlLNXBBWnFuNDhFUG9WeGdoc05rUjAyUGp3S1d2VnFwRWxZZ2Z5VXRpQ1MxWHBzMktzS1RNT3hPeVB6c19TOVg2T1lOMXBrN0JFU0ZCZ1FyM19XTVR2Q1BTU2xESHVNNlUzTkROU2pZdkhuVzlmOGlLTXItRVc0UFNmaWM5NXNpU0ZWeGQ0QQ?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Fri, 23 Oct 2026 14:39:37 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Casas Bahia anuncia Camille Faria para negociar com credores na recuperação",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVlo0QkVuTmlGZkY4QzdoQ3dNalY0MmtSRmJKdmJxU2oxbDM2RUVoaDdNS1hOczBxSVctaWZ3UTdUYkp2aTlLNXBBWnFuNDhFUG9WeGdoc05rUjAyUGp3S1d2VnFwRWxZZ2Z5VXRpQ1MxWHBzMktzS1RNT3hPeVB6c19TOVg2T1lOMXBrN0JFU0ZCZ1FyM19XTVR2Q1BTU2xESHVNNlUzTkROU2pZdkhuVzlmOGlLTXItRVc0UFNmaWM5NXNpU0ZWeGQ0QdIBywFBVV95cUxQVlo0QkVuTmlGZkY4QzdoQ3dNalY0MmtSRmJKdmJxU2oxbDM2RUVoaDdNS1hOczBxSVctaWZ3UTdUYkp2aTlLNXBBWnFuNDhFUG9WeGdoc05rUjAyUGp3S1d2VnFwRWxZZ2Z5VXRpQ1MxWHBzMktzS1RNT3hPeVB6c19TOVg2T1lOMXBrN0JFU0ZCZ1FyM19XTVR2Q1BTU2xESHVNNlUzTkROU2pZdkhuVzlmOGlLTXItRVc0UFNmaWM5NXNpU0ZWeGQ0QQ?oc=5",
-      "veiculo": "BOL"
     },
     {
       "buscador": "google_news",
@@ -7632,20 +7884,6 @@
     },
     {
       "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMFpiN1NXQU1WeGxCbzFwT0hxdlc3RDdEc1J6cERhT01aSHdUN2VMdmVoSHkyTWsydVBlaUdrZFVYa0NzVWYxR3dHYS1HTzdPaVBRTTdhLTlESEtMbnVPdzRzM2I3SHAzMG1XTml2THF5YS1oLWQ1WDhLbjZTXzFsSEdPZlh0ZDd3Zk05dVpqOHJ5V1dxU3I1LVNwOHQ2eW52TzItaEhkRXBTanZmZGVZZDJ3Uk1USjh3eDFJMEI1VjJuM3pyUTYtcHlRQnRBUEx2TWVHeTBmVjNCWjRoYkE?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Wed, 21 Oct 2026 20:08:44 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Justiça libera recuperação judicial da Casas Bahia, que tem R$ 17,3 bilhões em dívidas",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNMFpiN1NXQU1WeGxCbzFwT0hxdlc3RDdEc1J6cERhT01aSHdUN2VMdmVoSHkyTWsydVBlaUdrZFVYa0NzVWYxR3dHYS1HTzdPaVBRTTdhLTlESEtMbnVPdzRzM2I3SHAzMG1XTml2THF5YS1oLWQ1WDhLbjZTXzFsSEdPZlh0ZDd3Zk05dVpqOHJ5V1dxU3I1LVNwOHQ2eW52TzItaEhkRXBTanZmZGVZZDJ3Uk1USjh3eDFJMEI1VjJuM3pyUTYtcHlRQnRBUEx2TWVHeTBmVjNCWjRoYkE?oc=5",
-      "veiculo": "Portal do Casé"
-    },
-    {
-      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMioAFBVV95cUxQUE52VmJ3OEFzNlpkNFJfX3dmMmhsOWdlaEZxcWJPRUZYUEw5Y1p3dXlKYzd1VVZnRXk4cTJENWYxRTNzMExGQUxZSGxJdjkwSllEaUVpdll3Qnk0X0xpSHFtaWY2TTFfVk91WmFkMHdLMnVqeFVGcF9sbHZlbEJlU2F3TDVzT1huR05VQkNnTUcxU0Nod0NVaGFiTmJqSUsz0gGmAUFVX3lxTE1uVGx6YWpMQU81dERyLWpYQ05QNWswaHhuVlBpWF9VSjZ4eG1NUTFEbWQ5V1d3aElGQjBaUVhRM0JjZUJGVUtJSnFVS2NybjlEVjRXUUpObTlpS1BZRGtXczJ2TGpSMTM5SklJMGR4aUU5eU5VdzZQM1ltQm5EV2ZjdFlUVXJpc0FXNTJ3YXg2anRwRV9TMXFUWmF5a0JzUDVLTE1RcGc?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Wed, 21 Oct 2026 20:07:00 GMT",
@@ -7797,20 +8035,6 @@
       "titulo": "Getty Images pede recuperação judicial nos EUA para reestruturar dívidas e fechar capital",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVFdRcjZvQnNnd1ZNU3lCdi15NThwOVh1TkZsZ2FGMGJ4VEtqZ2FFTTZhQUh2UGR4cFNuRGNCUUhVemo2NjRvQ3pBb1ZGTm1MU09UeTkyWThSeG9IbWV2N1kzR3NkM2RGQkhDWlNiSW96dV9IVnVsS3FYYlh3MWJRblpJVHlpbmwzSnZHbU5oOC1MM0tpRlZJLS1vb3pwVXJmajBFeDRCd3Fna3JZZ0tHVVBZZlZmWnRPeEg0?oc=5",
       "veiculo": "BPMoney"
-    },
-    {
-      "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMirAFBVV95cUxPLU5YSFdIX0x2dllhSEFNRVFwQ1hQNEVzSzJDbXVlQVBZU3ZaZ2FwQlY0bE5GVHBJWDNIclVrdFh3Mmo0b2pYbDNFbFBCVDdPVmsxaWhOSVF5LWJ2THI0MmdLWUMxcHQxOFpLVDBWZC1JdE5FNG1fbENfN1UtNkdKMlZTdW8xZTBfekV3dEVkcnBPRlpqVXpkdHJyRXJ2eUFRUl93Rl9TMS1RSUsy?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Wed, 21 Oct 2026 17:07:57 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-10-22",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Apex vai indicar mediador e avança na estruturação da recuperação judicial",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLU5YSFdIX0x2dllhSEFNRVFwQ1hQNEVzSzJDbXVlQVBZU3ZaZ2FwQlY0bE5GVHBJWDNIclVrdFh3Mmo0b2pYbDNFbFBCVDdPVmsxaWhOSVF5LWJ2THI0MmdLWUMxcHQxOFpLVDBWZC1JdE5FNG1fbENfN1UtNkdKMlZTdW8xZTBfekV3dEVkcnBPRlpqVXpkdHJyRXJ2eUFRUl93Rl9TMS1RSUsy?oc=5",
-      "veiculo": "Aqui Notícias"
     },
     {
       "buscador": "google_news",
@@ -8192,20 +8416,6 @@
     },
     {
       "buscador": "bing_news",
-      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59f84c845bea14c191610a6897b&url=https%3a%2f%2fwww.agazeta.com.br%2fes%2feconomia%2fjustica-da-novos-prazos-para-apex-entregar-documentos-em-pedido-de-recuperacao-judicial-1026&c=6997474268229142231&mkt=pt-br",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Wed, 21 Oct 2026 10:45:00 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Justiça dá novos prazos para Apex entregar documentos em pedido de recuperação judicial",
-      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59f84c845bea14c191610a6897b&url=https%3a%2f%2fwww.agazeta.com.br%2fes%2feconomia%2fjustica-da-novos-prazos-para-apex-entregar-documentos-em-pedido-de-recuperacao-judicial-1026&c=6997474268229142231&mkt=pt-br",
-      "veiculo": ""
-    },
-    {
-      "buscador": "bing_news",
       "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adf89d673a34f949e2625db83ebc305&url=https%3a%2f%2fwww.msn.com%2fpt-br%2fdinheiro%2fother%2fgetty-images-pede-recupera%25C3%25A7%25C3%25A3o-judicial-nos-eua-para-reestruturar-d%25C3%25ADvidas-e-fechar-capital%2far-AA2fLg0U&c=816394479219705123&mkt=pt-br",
       "consulta": "\"pede recuperação judicial\"",
       "data_publicacao": "Wed, 21 Oct 2026 10:15:23 GMT",
@@ -8272,20 +8482,6 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Getty Images entra com pedido de recuperação judicial nos EUA e vai sair da Bolsa",
       "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ade0ed5230b4d23895fa7ac480b363a&url=https%3a%2f%2fwww.portaltela.com%2finternacional%2f2026%2f10%2f21%2fgetty-images-entra-com-pedido-de-quebra-nos-eua-e-vai-sair-da-bolsa%2f&c=4654327187007878982&mkt=pt-br",
-      "veiculo": ""
-    },
-    {
-      "buscador": "bing_news",
-      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59da6274851b78bc9234edb3690&url=https%3a%2f%2fwww.portaltela.com%2finternacional%2f2026%2f10%2f21%2fgetty-images-entra-com-pedido-de-quebra-nos-eua-e-vai-sair-da-bolsa%2f&c=4654327187007878982&mkt=pt-br",
-      "consulta": "\"entra com pedido de recuperação judicial\"",
-      "data_publicacao": "Wed, 21 Oct 2026 07:29:00 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Getty Images entra com pedido de recuperação judicial nos EUA e vai sair da Bolsa",
-      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59da6274851b78bc9234edb3690&url=https%3a%2f%2fwww.portaltela.com%2finternacional%2f2026%2f10%2f21%2fgetty-images-entra-com-pedido-de-quebra-nos-eua-e-vai-sair-da-bolsa%2f&c=4654327187007878982&mkt=pt-br",
       "veiculo": ""
     },
     {
@@ -8472,20 +8668,6 @@
     },
     {
       "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZDluN2QyYTJWU0NfaXN0X09La2NBUkRSaWdUeUhieHBVVF9EMXlQRkVuaVVSZVFnbXVKc3dxWWVPcFM3ZVlXWjFoa0VNRzJVc2ttMVBSdTFPU0dnM1J2NmM3RU95V2ktZUd0dEY1bVBHWmR0V2pQNjY3VHFfdVBHX3FuYlZaVllWS2JsQ2haTzczYndpZzR3dWp3b3pyOGpRalY5dGVkakpDOFE?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Tue, 20 Oct 2026 18:45:47 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-10-20",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Acionistas do Grupo Casas Bahia aprovam pedido de recuperação judicial",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOZDluN2QyYTJWU0NfaXN0X09La2NBUkRSaWdUeUhieHBVVF9EMXlQRkVuaVVSZVFnbXVKc3dxWWVPcFM3ZVlXWjFoa0VNRzJVc2ttMVBSdTFPU0dnM1J2NmM3RU95V2ktZUd0dEY1bVBHWmR0V2pQNjY3VHFfdVBHX3FuYlZaVllWS2JsQ2haTzczYndpZzR3dWp3b3pyOGpRalY5dGVkakpDOFE?oc=5",
-      "veiculo": "Giro News"
-    },
-    {
-      "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMitAFBVV95cUxPdUVPTFpOdURPLUppV1J4djhNY19mZDczb1Nha3dwODJNVEV1R3oyd1I5QUVOajVXZTlTMDROQVBfRng3dFRpdDJlbGctX0pEc0tNb09jT3ZNeFRzRExDUUliOUJDOWRPRjhNN3NDV2U5dUoteDIwTm84dFozRkJ3dGN3eEJ2TW1rb0tzU01DR3JpMHFrYXJ4ZUFuZEtHQkRNdHNBX3BzR3J6SmtNdHJORU9ib1A?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
       "data_publicacao": "Tue, 20 Oct 2026 18:24:00 GMT",
@@ -8611,20 +8793,6 @@
       "veiculo": ""
     },
     {
-      "buscador": "bing_news",
-      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59f84c845bea14c191610a6897b&url=https%3a%2f%2fwww.metro1.com.br%2fnoticias%2fjustica%2f190143%2cjustica-aceita-pedido-de-recuperacao-judicial-da-casas-bahia-que-deve-rdollar-173-bilhoes&c=14703780750618502167&mkt=pt-br",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Tue, 20 Oct 2026 17:00:00 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Justiça aceita pedido de recuperação judicial da Casas Bahia, que deve R$ 17,3 bilhões",
-      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59f84c845bea14c191610a6897b&url=https%3a%2f%2fwww.metro1.com.br%2fnoticias%2fjustica%2f190143%2cjustica-aceita-pedido-de-recuperacao-judicial-da-casas-bahia-que-deve-rdollar-173-bilhoes&c=14703780750618502167&mkt=pt-br",
-      "veiculo": ""
-    },
-    {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMizwFBVV95cUxNU3Y5aEhtQ0dNRFRYanlNRDZKN2duWF9POHhiQ2lWTXByVVhCZlZaeFY3cUdRbWxUTTJHNHpSN2VQTzcwUmRMaVNBbTRLTkdjSW93TDBhZ0o4bkljeXRhUFUwUmQyajFJSFdOQVB5SW9pa09tMTZEaV9KTTctQjBHZkkwdHAzT005WkItNEo5TzgyQ3QxZzhBbFBDZ2ZuX21oUjJMREhPUjRyLUk0aDRZbGNnOGRKMHRLV0Q0bDBINUh0MTlNTVE1T2hjYm1heDg?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
@@ -8637,34 +8805,6 @@
       "titulo": "Acionistas da Casas Bahia aprovam pedido de recuperação judicial de R$ 17,3 bilhões",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNU3Y5aEhtQ0dNRFRYanlNRDZKN2duWF9POHhiQ2lWTXByVVhCZlZaeFY3cUdRbWxUTTJHNHpSN2VQTzcwUmRMaVNBbTRLTkdjSW93TDBhZ0o4bkljeXRhUFUwUmQyajFJSFdOQVB5SW9pa09tMTZEaV9KTTctQjBHZkkwdHAzT005WkItNEo5TzgyQ3QxZzhBbFBDZ2ZuX21oUjJMREhPUjRyLUk0aDRZbGNnOGRKMHRLV0Q0bDBINUh0MTlNTVE1T2hjYm1heDg?oc=5",
       "veiculo": "JD1 Notícias"
-    },
-    {
-      "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMiUkFVX3lxTE1XRF9fQTJNQlpPaGVuWnNPWl96bnpLX3ZzWi1YTmZVYk8zY3ZaS3l0cVdac1Q1NUdVQkgyZVFMZnY1Rkw3aUpFdHZrbFMwMDFUY0E?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Tue, 20 Oct 2026 16:00:37 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-10-21",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "O juiz Arthur Eduardo Magalhães Ferreira, da 4ª Vara Empresarial do Rio de Janeiro, considerou que a companhia cumpriu as obrigações previstas no plano de recuperação judicial, aprovado pelos credores em dezembro de 2023 e homologado em fevereir",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1XRF9fQTJNQlpPaGVuWnNPWl96bnpLX3ZzWi1YTmZVYk8zY3ZaS3l0cVdac1Q1NUdVQkgyZVFMZnY1Rkw3aUpFdHZrbFMwMDFUY0E?oc=5",
-      "veiculo": "Instagram"
-    },
-    {
-      "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMiwgFBVV95cUxQRDNlb2pheDAwTktyamZFZ3gtQUFUZnZvd3NCR0tWZ1YybS1Udk53eWdTOWVWaFJiVHd2dG8wYVdXZ01xRXIyejhLNmQwWmVoN21uLVpNUnVJcEZ4ZUpjMWRwQmpnRGVrejVOYnFjYndIVkhCZjNhQ2NnRVJ0bVdfT1pzT3lGRzVJQ0E3WldFakZkMklFdHJfd25mZHFVUUFZOV9LSjU2eXBTcmRQWkNIQzVITFQzS3lxU0luZWp6Q243dw?oc=5",
-      "consulta": "\"entra com pedido de recuperação judicial\"",
-      "data_publicacao": "Tue, 20 Oct 2026 15:24:56 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-10-21",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Azul prevê recuperação mais demorada devido à pressão dos custos com combustível",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQRDNlb2pheDAwTktyamZFZ3gtQUFUZnZvd3NCR0tWZ1YybS1Udk53eWdTOWVWaFJiVHd2dG8wYVdXZ01xRXIyejhLNmQwWmVoN21uLVpNUnVJcEZ4ZUpjMWRwQmpnRGVrejVOYnFjYndIVkhCZjNhQ2NnRVJ0bVdfT1pzT3lGRzVJQ0E3WldFakZkMklFdHJfd25mZHFVUUFZOV9LSjU2eXBTcmRQWkNIQzVITFQzS3lxU0luZWp6Q243dw?oc=5",
-      "veiculo": "Forbes Brasil"
     },
     {
       "buscador": "google_news",
@@ -8877,20 +9017,6 @@
       "veiculo": ""
     },
     {
-      "buscador": "bing_news",
-      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59d546d48dea3452001349f1274&url=https%3a%2f%2fgloborural.globo.com%2fnegocios%2fnoticia%2f2026%2f10%2fruiz-coffees-pede-recuperacao-judicial-para-divida-de-r-775-milhoes.ghtml&c=10200493362638257276&mkt=pt-br",
-      "consulta": "\"pede recuperação judicial\"",
-      "data_publicacao": "Tue, 20 Oct 2026 01:00:00 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Ruiz Coffees pede recuperação judicial para dívida de R$ 775 milhões",
-      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59d546d48dea3452001349f1274&url=https%3a%2f%2fgloborural.globo.com%2fnegocios%2fnoticia%2f2026%2f10%2fruiz-coffees-pede-recuperacao-judicial-para-divida-de-r-775-milhoes.ghtml&c=10200493362638257276&mkt=pt-br",
-      "veiculo": ""
-    },
-    {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSGpkMlNmX2txYXdOLTVvRlRKVm04bXZTWWx2WWQyLTV5b1pKNXJQYTJYc1lMV3hfbG84anU2b0F6MS1RX3VqMndwTjFVT0VhZmVZY3hSRGJCRm9WWG04SDROanM0X2otZDFIa0wzVHFiLUJwOXFNRzVKb1FpQk95cFp6SmRUeWZHNVRZQVFzMF9Vb2x1Z2N6Q3kwSzk4N1JBSVJodGpYZVp0Z0hDZnM3WE9VUk95QW42MHNz?oc=5",
       "consulta": "\"pedido de recuperação judicial\" empresa",
@@ -8903,20 +9029,6 @@
       "titulo": "Americanas: Justiça do Rio decreta fim da recuperação judicial",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSGpkMlNmX2txYXdOLTVvRlRKVm04bXZTWWx2WWQyLTV5b1pKNXJQYTJYc1lMV3hfbG84anU2b0F6MS1RX3VqMndwTjFVT0VhZmVZY3hSRGJCRm9WWG04SDROanM0X2otZDFIa0wzVHFiLUJwOXFNRzVKb1FpQk95cFp6SmRUeWZHNVRZQVFzMF9Vb2x1Z2N6Q3kwSzk4N1JBSVJodGpYZVp0Z0hDZnM3WE9VUk95QW42MHNz?oc=5",
       "veiculo": "CNN Brasil"
-    },
-    {
-      "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMipwFBVV95cUxQMTdMMW5SRWtTNGdKWDFhTHk1NnJ5eGtyQ0JhRUhhaVZkQWpScXRKbVktRHVWQzFZRk9EeGcyb0lCU2FfU3Jxem45M2daSmRoaWt4X3ltVTB0UzZtNDMwbHVOTXBZdVNMQ2JuMTVHd2RsbUhzWERWUFlaTUJaaC1Lc0doOGd5OG1uT2x4Q1JKWEg5dFVvYzVFSkpLbHlueGJLcG5Td3N3dw?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Tue, 20 Oct 2026 00:16:00 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-10-20",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Casas Bahia aprova recuperação e aguarda decisão judicial",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMTdMMW5SRWtTNGdKWDFhTHk1NnJ5eGtyQ0JhRUhhaVZkQWpScXRKbVktRHVWQzFZRk9EeGcyb0lCU2FfU3Jxem45M2daSmRoaWt4X3ltVTB0UzZtNDMwbHVOTXBZdVNMQ2JuMTVHd2RsbUhzWERWUFlaTUJaaC1Lc0doOGd5OG1uT2x4Q1JKWEg5dFVvYzVFSkpLbHlueGJLcG5Td3N3dw?oc=5",
-      "veiculo": "Brasil 247"
     },
     {
       "buscador": "google_news",
@@ -8944,20 +9056,6 @@
       "tipo": "noticia_rj_ou_cautelar",
       "titulo": "Casas Bahia: acionistas aprovam pedido de recuperação judicial; Justiça ainda vai decidir",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOcl9XY2dkVzRfcUdCSFlxRXdmWjBsRkdJWmczd0tzMFFVb2ZxWnFYNVBtU2t3N1Z2ZC1RY0IxcHFocmdHa3hNRndDeFJnaGNJTkJFTVdqQ0tBd3gydnNXNEtVRUJmdEszRHlnN3BYZTBpdkJKS0NwbUhUZjFmVmR5TkRmSzh5VzlPeG5rWmpRampybUY5QUFoUmdQRGp5U0pncG9PblVGRXpGSEVJY3ktS2g1OEM1M3pBYmlyOVVzNDRfLWlVMXlNNWxoTTZpamJGdFIzMTlSa185Q1g0QUZz0gHkAUFVX3lxTE1WMTZCa0pYSjFoVGhQal9EOThrRm5MTUdDandRWVdFRE91UGN6dzZfS3JOMFBER0xzUGFsYjM0aFpOYUtldUJXbEJnN3d6bkpxcm5iT1BmQm5QcWx0RkhEaGJRUzJwd3hIanlKU21EWDFLR1ZSNlRtNm94RmNTc05FOHdleFkyYVBJdG9KNHNhUHVFbXYzNDdYVHFUQS02SUVZbnRSc2ktMlpTeU5pVHVqazJ2Y3d0cmlsV05FWG5TMXdXZ1lwNll5VEFSbGdhRGsyelAtR0dKTG1QS1lnS09DLU5hQg?oc=5",
-      "veiculo": "Estadão"
-    },
-    {
-      "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMi3wFBVV95cUxOcl9XY2dkVzRfcUdCSFlxRXdmWjBsRkdJWmczd0tzMFFVb2ZxWnFYNVBtU2t3N1Z2ZC1RY0IxcHFocmdHa3hNRndDeFJnaGNJTkJFTVdqQ0tBd3gydnNXNEtVRUJmdEszRHlnN3BYZTBpdkJKS0NwbUhUZjFmVmR5TkRmSzh5VzlPeG5rWmpRampybUY5QUFoUmdQRGp5U0pncG9PblVGRXpGSEVJY3ktS2g1OEM1M3pBYmlyOVVzNDRfLWlVMXlNNWxoTTZpamJGdFIzMTlSa185Q1g0QUZz?oc=5",
-      "consulta": "\"pedido de recuperação judicial\" empresa",
-      "data_publicacao": "Tue, 20 Oct 2026 00:00:00 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Casas Bahia: acionistas aprovam pedido de recuperação judicial; Justiça ainda vai decidir",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOcl9XY2dkVzRfcUdCSFlxRXdmWjBsRkdJWmczd0tzMFFVb2ZxWnFYNVBtU2t3N1Z2ZC1RY0IxcHFocmdHa3hNRndDeFJnaGNJTkJFTVdqQ0tBd3gydnNXNEtVRUJmdEszRHlnN3BYZTBpdkJKS0NwbUhUZjFmVmR5TkRmSzh5VzlPeG5rWmpRampybUY5QUFoUmdQRGp5U0pncG9PblVGRXpGSEVJY3ktS2g1OEM1M3pBYmlyOVVzNDRfLWlVMXlNNWxoTTZpamJGdFIzMTlSa185Q1g0QUZz?oc=5",
       "veiculo": "Estadão"
     },
     {
@@ -9171,20 +9269,6 @@
       "veiculo": ""
     },
     {
-      "buscador": "bing_news",
-      "chave": "noticia:http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59d546d48dea3452001349f1274&url=https%3a%2f%2fwww.theagribiz.com%2fcafe%2fruiz-coffees-pede-recuperacao-judicial-e-credores-de-cra-vao-ficar-com-fazendas%2f&c=2742805324305398384&mkt=pt-br",
-      "consulta": "\"pede recuperação judicial\"",
-      "data_publicacao": "Mon, 19 Oct 2026 12:22:00 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": true,
-      "primeiro_visto": "2026-10-24",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Ruiz Coffees pede recuperação judicial, e credores de CRA vão ficar com fazendas",
-      "url": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6adcc59d546d48dea3452001349f1274&url=https%3a%2f%2fwww.theagribiz.com%2fcafe%2fruiz-coffees-pede-recuperacao-judicial-e-credores-de-cra-vao-ficar-com-fazendas%2f&c=2742805324305398384&mkt=pt-br",
-      "veiculo": ""
-    },
-    {
       "buscador": "google_news",
       "chave": "noticia:https://news.google.com/rss/articles/CBMirAFBVV95cUxPamJBNkVVS1NSd010R2x5clhFeHVQMXJPZWNFNzdYbnJJVTdnZzQxYzA0am9sM0VvWjVQVUxjTkxtTE9jUFp2ZWgwdlRDN1NZRE9RWTF1UUhWNDBfaGxZTjJpUTdKVHJYZEdhUzlEeXZyWGpmUFNXMDVhdVp1SjVJUkQ3TkQ3SjVMeXlFTW0wUFJYdUdWaU5XY3VueXpjWExiRVpvWkNXS1g5RUxY0gGsAUFVX3lxTFBQUENWX19WYWJGR05SbUN3T0w0bDhmQnJBNk0wWDZ0bzZWS2ZJREgyQnVoZnV0UlNZaG9tcm1IUHkyTUVRSl91eE9JTFZGa2lSbmpSWW04SnhHMUdhbW9XbzFBa04wLWNYSDVNVjRCVG5XRFFuZVo2WHB2ZEZCZzRBUlRvLVBjYkhlamFjVmJnREc2V2RvVTU3TzJZMm9ta3lnUWNhQVhabDFwakE?oc=5",
       "consulta": "\"pede recuperação judicial\"",
@@ -9309,30 +9393,16 @@
       "titulo": "Representante da JAC Motors no Brasil pede recuperação judicial pela segunda vez",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUHplRXUyQzA0LWdBQ3o1MTE0Z0VRWTNxb2s5WnhhMHFvVXNpOTd3MWJsaEZMbHdBbXVEZV8yc2szNFFfa04xdXFBdDI0empfMEtTYmxCYWhWWFpBdWZIRGhhQjBTU0RUcDk4MVItOC04SS01ZGxPSGZ1RVlUY3V6R2VWQ0lvaVZvNjZ4Q1hQREg4cFZ5OEZfSzh0X3k0RFhzNzdrMFhocTU4YlhNeGRpdUt3REk?oc=5",
       "veiculo": "Portal Juristas"
-    },
-    {
-      "buscador": "google_news",
-      "chave": "noticia:https://news.google.com/rss/articles/CBMingFBVV95cUxQQWlqaWlUQWJnei1DUmdtbmk5blJFdDVmMktLV0VCUUhoX2lMUld0WWdoZW80RWRLOUpsY3FGckRQRmFXNDZaYkFjY3ROX2Z0VlBLemstU2VIZ1M0Zko5Mm94dGpIMlJPcVp4d0E4Nl9GRkxLSloyVDh4MVVJaXVLSEE1dVh0c1gxNUVWdXA4akRZbzhabDdYeWpnQWM5UQ?oc=5",
-      "consulta": "\"pede recuperação judicial\"",
-      "data_publicacao": "Thu, 15 Oct 2026 07:00:00 GMT",
-      "empresa": null,
-      "fonte": "noticia",
-      "novo": false,
-      "primeiro_visto": "2026-10-16",
-      "tipo": "noticia_rj_ou_cautelar",
-      "titulo": "Sidlar pede recuperação judicial com dívida de R$ 55,7 milhões em SP",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQWlqaWlUQWJnei1DUmdtbmk5blJFdDVmMktLV0VCUUhoX2lMUld0WWdoZW80RWRLOUpsY3FGckRQRmFXNDZaYkFjY3ROX2Z0VlBLemstU2VIZ1M0Zko5Mm94dGpIMlJPcVp4d0E4Nl9GRkxLSloyVDh4MVVJaXVLSEE1dVh0c1gxNUVWdXA4akRZbzhabDdYeWpnQWM5UQ?oc=5",
-      "veiculo": "Móveis de Valor"
     }
   ],
-  "gerado_em": "2026-11-22T17:32:51.971750+00:00",
+  "gerado_em": "2026-11-23T21:51:31.111593+00:00",
   "janela_dias": 30,
-  "novos_hoje": 19,
+  "novos_hoje": 23,
   "por_tipo": {
     "cautelar_pre_rj": 2,
     "falencia": 79,
-    "noticia_rj_ou_cautelar": 511,
-    "recuperacao_judicial": 74
+    "noticia_rj_ou_cautelar": 517,
+    "recuperacao_judicial": 73
   },
   "por_tribunal": {
     "TJAC": 1,
@@ -9345,7 +9415,7 @@
     "TJMA": 1,
     "TJMG": 10,
     "TJMS": 2,
-    "TJMT": 8,
+    "TJMT": 7,
     "TJPA": 5,
     "TJPE": 14,
     "TJPI": 3,
@@ -9357,5 +9427,5 @@
     "TJSP": 10,
     "TJTO": 1
   },
-  "total": 666
+  "total": 671
 }
