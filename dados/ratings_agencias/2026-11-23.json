@@ -1,0 +1,58 @@
+{
+ "data": "2026-11-23",
+ "n": 4,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-23",
+   "entidade": "GASMIGS PROPOSED 11TH",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "debentures",
+   "titulo": "fitch assigns aa bra rating to gasmigs proposed 11th debentures issuance",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-assigns-aa-bra-rating-to-gasmigs-proposed-11th-debentures-issuance-23-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-23",
+   "entidade": "MIRANTE ENERGETICAS",
+   "escala": "nacional",
+   "acao": "rebaixamento",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fitch downgrades mirante energeticas issuance rating to a bra negative outlook",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-downgrades-mirante-energeticas-issuance-rating-to-a-bra-negative-outlook-23-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-23",
+   "entidade": "FIRST TIME",
+   "escala": "nacional",
+   "acao": "atribuicao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fitch assigns first time rating a bra to agrolend oultook positive",
+   "url": "https://www.fitchratings.com/research/pt/non-bank-financial-institutions/fitch-assigns-first-time-rating-a-bra-to-agrolend-oultook-positive-23-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-23",
+   "entidade": "RATING ACTIONS ON SENIOR MEZZANINE A QUOTAS OF ICRED INSS III FIDC",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": "fidc",
+   "titulo": "fitch takes rating actions on senior mezzanine a quotas of icred inss iii fidc",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-takes-rating-actions-on-senior-mezzanine-a-quotas-of-icred-inss-iii-fidc-23-11-2026"
+  }
+ ]
+}

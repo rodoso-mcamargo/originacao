@@ -1,34 +1,34 @@
 {
- "data_referencia": "2026-11-21",
- "gerado_em": "2026-11-21T00:36:15-03:00",
+ "data_referencia": "2026-11-23",
+ "gerado_em": "2026-11-23T21:52:04-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 17
+   "fitch": 18
   },
   "por_acao": {
-   "afirmacao": 4,
+   "afirmacao": 3,
    "atribuicao": 3,
    "elevacao": 1,
    "em_revisao": 1,
-   "rebaixamento": 3,
-   "relatorio": 4,
+   "rebaixamento": 4,
+   "relatorio": 5,
    "retirada": 1
   },
-  "base_total": 71,
+  "base_total": 75,
   "base_por_agencia": {
-   "fitch": 69,
+   "fitch": 73,
    "sp": 2
   },
   "base_por_acao": {
    "afirmacao": 22,
-   "atribuicao": 10,
+   "atribuicao": 12,
    "elevacao": 5,
    "em_revisao": 2,
    "perspectiva_negativa": 1,
    "perspectiva_positiva": 1,
-   "rebaixamento": 4,
-   "relatorio": 23,
+   "rebaixamento": 5,
+   "relatorio": 24,
    "retirada": 3
   },
   "universo_linhas": 14
@@ -109,11 +109,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 17,
-    "validos": 17,
-    "novos_na_base": 1,
+    "lidos": 18,
+    "validos": 18,
+    "novos_na_base": 4,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 482,
+     "fora_do_brasil_e_fora_do_universo": 481,
      "slug_sem_data": 1
     },
     "erros": [],
