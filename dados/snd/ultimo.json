@@ -2,16 +2,16 @@
  "fonte": "SND - debentures.com.br (ANBIMA/B3)",
  "urls": {
   "caracteristicas": "https://www.debentures.com.br/exploreosnd/consultaadados/emissoesdedebentures/caracteristicas_e.asp?Ativo=",
-  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=23/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
+  "agenda": "https://www.debentures.com.br/exploreosnd/consultaadados/eventosfinanceiros/agenda_e.asp?emissor=&ativo=&evento=&dt_ini=24/11/2026&dt_fim=31/12/2070&dt_pgto_ini=&dt_pgto_fim="
  },
- "data_referencia": "2026-11-23",
- "gerado_em": "2026-11-23T21:37:32+00:00",
+ "data_referencia": "2026-11-24",
+ "gerado_em": "2026-11-24T20:18:27+00:00",
  "fonte_gerado_em": {
-  "caracteristicas": "2026-11-23T18:37:05",
-  "agenda": "2026-11-23T18:37:10"
+  "caracteristicas": "2026-11-24T17:18:00",
+  "agenda": "2026-11-24T17:18:05"
  },
  "universo_codigos": 1258,
- "universo_cnpjs": 377,
+ "universo_cnpjs": 378,
  "emissores_com_vencimento_24m": 296,
  "top10_vencimento_24m": [
   {
@@ -52,15 +52,15 @@
   {
    "cnpj_emissor": "21314559000166",
    "emissor": "MOVIDA PARTICIPACOES S/A",
-   "venc_0_24m": 3246048991.46,
-   "pct_saldo_0_24m": 19.5,
+   "venc_0_24m": 3246148734.46,
+   "pct_saldo_0_24m": 19.4,
    "saldo_estimado": false
   },
   {
    "cnpj_emissor": "23373000000132",
    "emissor": "VAMOS LOCACAO DE CAMINHOES MAQUINAS E EQUIPAMENTOS S.A.",
-   "venc_0_24m": 3179959956.69,
-   "pct_saldo_0_24m": 36.8,
+   "venc_0_24m": 3202482462.03,
+   "pct_saldo_0_24m": 37.0,
    "saldo_estimado": false
   },
   {
@@ -80,24 +80,24 @@
   {
    "cnpj_emissor": "17281106000103",
    "emissor": "COMPANHIA DE SANEAMENTO DE MINAS GERAIS COPASA MG",
-   "venc_0_24m": 2517138804.01,
+   "venc_0_24m": 2517194593.04,
    "pct_saldo_0_24m": 31.9,
    "saldo_estimado": false
   }
  ],
  "diagnostico": {
   "lidos": {
-   "caracteristicas": 10088,
+   "caracteristicas": 10091,
    "agenda": 93668
   },
   "gravados": {
-   "caracteristicas": 2010,
-   "agenda": 30376,
-   "vencimentos_emissor": 377
+   "caracteristicas": 2011,
+   "agenda": 30378,
+   "vencimentos_emissor": 378
   },
   "descartados": {
-   "caracteristicas_fora_do_universo": 8078,
-   "agenda_fora_do_universo": 63292,
+   "caracteristicas_fora_do_universo": 8080,
+   "agenda_fora_do_universo": 63290,
    "motivo": "CNPJ do emissor sem papel em dados/ultimo.json, ou papel excluido do SND fora do painel",
    "codigos_do_universo_sem_snd": []
   },
