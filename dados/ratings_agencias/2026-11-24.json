@@ -1,0 +1,19 @@
+{
+ "data": "2026-11-24",
+ "n": 1,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-24",
+   "entidade": "NBCS",
+   "escala": "nacional",
+   "acao": "em_revisao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "em_revisao_negativa",
+   "instrumento": null,
+   "titulo": "fitch places nbcs ratings in rating watch negative",
+   "url": "https://www.fitchratings.com/research/pt/banks/fitch-places-nbcs-ratings-in-rating-watch-negative-24-11-2026"
+  }
+ ]
+}

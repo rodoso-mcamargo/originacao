@@ -1,29 +1,29 @@
 {
  "data_referencia": "2026-11-24",
- "gerado_em": "2026-11-24T03:33:43-03:00",
+ "gerado_em": "2026-11-24T20:02:26-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 15
+   "fitch": 14
   },
   "por_acao": {
    "afirmacao": 1,
-   "atribuicao": 3,
+   "atribuicao": 2,
    "elevacao": 1,
-   "em_revisao": 1,
+   "em_revisao": 2,
    "rebaixamento": 4,
-   "relatorio": 5
+   "relatorio": 4
   },
-  "base_total": 75,
+  "base_total": 76,
   "base_por_agencia": {
-   "fitch": 73,
+   "fitch": 74,
    "sp": 2
   },
   "base_por_acao": {
    "afirmacao": 22,
    "atribuicao": 12,
    "elevacao": 5,
-   "em_revisao": 2,
+   "em_revisao": 3,
    "perspectiva_negativa": 1,
    "perspectiva_positiva": 1,
    "rebaixamento": 5,
@@ -108,11 +108,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 15,
-    "validos": 15,
-    "novos_na_base": 0,
+    "lidos": 14,
+    "validos": 14,
+    "novos_na_base": 1,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 484,
+     "fora_do_brasil_e_fora_do_universo": 485,
      "slug_sem_data": 1
     },
     "erros": [],
@@ -152,23 +152,6 @@
      "codigos": "NIGP12;NTSD16;NTSD17;NTSD18;NTSD19;NTSD26;NTSD35;NTSD36;NTSDA0;NTSDA1;NTSDA2;NTSDA3",
      "tipo_match": "fuzzy",
      "score": 100.0
-    }
-   ]
-  },
-  {
-   "agencia": "fitch",
-   "data": "2026-11-18",
-   "entidade": "TUPY SA",
-   "acao": "relatorio",
-   "nota_nova": null,
-   "perspectiva": null,
-   "url": "https://www.fitchratings.com/research/corporate-finance/tupy-sa-18-11-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "TUPY S/A",
-     "codigos": "TUPY15;TUPY25;TUPY35",
-     "tipo_match": "exato",
-     "score": 100
     }
    ]
   }
