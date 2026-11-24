@@ -1,19 +1,18 @@
 {
- "data_referencia": "2026-11-23",
- "gerado_em": "2026-11-23T21:52:04-03:00",
+ "data_referencia": "2026-11-24",
+ "gerado_em": "2026-11-24T03:33:43-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 18
+   "fitch": 15
   },
   "por_acao": {
-   "afirmacao": 3,
+   "afirmacao": 1,
    "atribuicao": 3,
    "elevacao": 1,
    "em_revisao": 1,
    "rebaixamento": 4,
-   "relatorio": 5,
-   "retirada": 1
+   "relatorio": 5
   },
   "base_total": 75,
   "base_por_agencia": {
@@ -109,11 +108,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 18,
-    "validos": 18,
-    "novos_na_base": 4,
+    "lidos": 15,
+    "validos": 15,
+    "novos_na_base": 0,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 481,
+     "fora_do_brasil_e_fora_do_universo": 484,
      "slug_sem_data": 1
     },
     "erros": [],
@@ -168,40 +167,6 @@
     {
      "emissor_painel": "TUPY S/A",
      "codigos": "TUPY15;TUPY25;TUPY35",
-     "tipo_match": "exato",
-     "score": 100
-    }
-   ]
-  },
-  {
-   "agencia": "fitch",
-   "data": "2026-11-18",
-   "entidade": "DEXCO",
-   "acao": "afirmacao",
-   "nota_nova": null,
-   "perspectiva": "estavel",
-   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-dexco-idrs-at-bb-outlook-stable-18-11-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "DEXCO S.A",
-     "codigos": "CRA022006MY;DXCO13",
-     "tipo_match": "exato",
-     "score": 100
-    }
-   ]
-  },
-  {
-   "agencia": "fitch",
-   "data": "2026-11-18",
-   "entidade": "DEXCO",
-   "acao": "afirmacao",
-   "nota_nova": null,
-   "perspectiva": "estavel",
-   "url": "https://www.fitchratings.com/research/corporate-finance/fitch-affirms-dexco-idrs-at-bb-outlook-stable-18-11-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "DEXCO S.A",
-     "codigos": "CRA022006MY;DXCO13",
      "tipo_match": "exato",
      "score": 100
     }
