@@ -1,17 +1,16 @@
 {
- "data_referencia": "2026-11-24",
- "gerado_em": "2026-11-24T20:02:26-03:00",
+ "data_referencia": "2026-11-25",
+ "gerado_em": "2026-11-25T02:07:24-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 14
+   "fitch": 12
   },
   "por_acao": {
-   "afirmacao": 1,
    "atribuicao": 2,
    "elevacao": 1,
    "em_revisao": 2,
-   "rebaixamento": 4,
+   "rebaixamento": 3,
    "relatorio": 4
   },
   "base_total": 76,
@@ -108,11 +107,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 14,
-    "validos": 14,
-    "novos_na_base": 1,
+    "lidos": 12,
+    "validos": 12,
+    "novos_na_base": 0,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 485,
+     "fora_do_brasil_e_fora_do_universo": 487,
      "slug_sem_data": 1
     },
     "erros": [],
