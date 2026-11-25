@@ -1,0 +1,97 @@
+{
+ "data": "2026-11-25",
+ "n": 7,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-25",
+   "entidade": "UNIDAS LOCACOES E SERVICOS S A",
+   "escala": "internacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "unidas locacoes e servicos s a",
+   "url": "https://www.fitchratings.com/research/corporate-finance/unidas-locacoes-e-servicos-s-a-25-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-25",
+   "entidade": "FIM DA ESCALA 6X1 TERA IMPACTO MODERADO NOS SETORES DE SAUDE E FARMACEUTICO",
+   "escala": "nacional",
+   "acao": "relatorio",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fim da escala 6x1 tera impacto moderado nos setores de saude e farmaceutico",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fim-da-escala-6x1-tera-impacto-moderado-nos-setores-de-saude-e-farmaceutico-25-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-25",
+   "entidade": "BRADESPAR",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms bradespar at aaa bra outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-bradespar-at-aaa-bra-outlook-stable-25-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-25",
+   "entidade": "NATIONAL SCALE",
+   "escala": "nacional",
+   "acao": "perspectiva_positiva",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "positiva",
+   "instrumento": null,
+   "titulo": "fitch affirms national scale ratings of lar at a bra outlook revised to positive",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-national-scale-ratings-of-lar-at-a-bra-outlook-revised-to-positive-25-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-25",
+   "entidade": "SICOOB DTVMS INVESTMENT MANAGEMENT QUALITY",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fitch affirms sicoob dtvms investment management quality rating at strong",
+   "url": "https://www.fitchratings.com/research/pt/fund-asset-managers/fitch-affirms-sicoob-dtvms-investment-management-quality-rating-at-strong-25-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-25",
+   "entidade": "CLI CLI SULS",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": "debentures",
+   "titulo": "fitch affirms cli cli suls debentures ratings at aaa bra outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-cli-cli-suls-debentures-ratings-at-aaa-bra-outlook-stable-25-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-25",
+   "entidade": "APIUNAS 1ST",
+   "escala": "nacional",
+   "acao": "rebaixamento",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "negativa",
+   "instrumento": "debentures",
+   "titulo": "fitch downgrades apiunas 1st debentures issuance rating to a bra outlook negative",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-downgrades-apiunas-1st-debentures-issuance-rating-to-a-bra-outlook-negative-25-11-2026"
+  }
+ ]
+}

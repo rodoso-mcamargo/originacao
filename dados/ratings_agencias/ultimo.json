@@ -1,35 +1,36 @@
 {
  "data_referencia": "2026-11-25",
- "gerado_em": "2026-11-25T02:07:24-03:00",
+ "gerado_em": "2026-11-25T19:34:20-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 12
+   "fitch": 13
   },
   "por_acao": {
+   "afirmacao": 3,
    "atribuicao": 2,
-   "elevacao": 1,
-   "em_revisao": 2,
-   "rebaixamento": 3,
+   "em_revisao": 1,
+   "perspectiva_positiva": 1,
+   "rebaixamento": 2,
    "relatorio": 4
   },
-  "base_total": 76,
+  "base_total": 83,
   "base_por_agencia": {
-   "fitch": 74,
+   "fitch": 81,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 22,
+   "afirmacao": 25,
    "atribuicao": 12,
    "elevacao": 5,
    "em_revisao": 3,
    "perspectiva_negativa": 1,
-   "perspectiva_positiva": 1,
-   "rebaixamento": 5,
-   "relatorio": 24,
+   "perspectiva_positiva": 2,
+   "rebaixamento": 6,
+   "relatorio": 26,
    "retirada": 3
   },
-  "universo_linhas": 14
+  "universo_linhas": 16
  },
  "diagnostico": {
   "universo_nomes": 468,
@@ -107,12 +108,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 12,
-    "validos": 12,
-    "novos_na_base": 0,
+    "lidos": 13,
+    "validos": 13,
+    "novos_na_base": 7,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 487,
-     "slug_sem_data": 1
+     "fora_do_brasil_e_fora_do_universo": 487
     },
     "erros": [],
     "fonte": "fitchratings.com"
@@ -120,6 +120,40 @@
   }
  },
  "acoes_casadas_no_run": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-25",
+   "entidade": "CLI CLI SULS",
+   "acao": "afirmacao",
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-affirms-cli-cli-suls-debentures-ratings-at-aaa-bra-outlook-stable-25-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "CLI SUL S/A",
+     "codigos": "CLIS11;CLIS13",
+     "tipo_match": "fuzzy",
+     "score": 93.3
+    }
+   ]
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-25",
+   "entidade": "UNIDAS LOCACOES E SERVICOS S A",
+   "acao": "relatorio",
+   "nota_nova": null,
+   "perspectiva": null,
+   "url": "https://www.fitchratings.com/research/corporate-finance/unidas-locacoes-e-servicos-s-a-25-11-2026",
+   "casamentos": [
+    {
+     "emissor_painel": "UNIDAS LOCACOES E SERVICOS S.A.",
+     "codigos": "CRA02300VBT;OVSAA3;OVSAA8;OVSAA9;OVSAB0;OVSAB1",
+     "tipo_match": "exato",
+     "score": 100
+    }
+   ]
+  },
   {
    "agencia": "fitch",
    "data": "2026-11-20",
@@ -134,23 +168,6 @@
      "codigos": "CRA025007KK;CRA0250080X;CRA0250080Y;ELDC15",
      "tipo_match": "exato",
      "score": 100
-    }
-   ]
-  },
-  {
-   "agencia": "fitch",
-   "data": "2026-11-19",
-   "entidade": "NTS",
-   "acao": "rebaixamento",
-   "nota_nova": null,
-   "perspectiva": "negativa",
-   "url": "https://www.fitchratings.com/research/corporate-finance/fitch-downgrades-nts-to-aa-bra-outlook-negative-19-11-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "NOVA TRANSPORTE DO SUDESTE S.A. - NTS",
-     "codigos": "NIGP12;NTSD16;NTSD17;NTSD18;NTSD19;NTSD26;NTSD35;NTSD36;NTSDA0;NTSDA1;NTSDA2;NTSDA3",
-     "tipo_match": "fuzzy",
-     "score": 100.0
     }
    ]
   }
