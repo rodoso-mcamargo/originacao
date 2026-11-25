@@ -1,6 +1,6 @@
 {
  "data_referencia": "2026-11-19",
- "gerado_em": "2026-11-24T05:15:15+00:00",
+ "gerado_em": "2026-11-25T04:05:05+00:00",
  "fonte": "CVM - informe diario de fundos (inf_diario_fi) e cadastro pos-175 (registro_fundo_classe)",
  "universo": 2520,
  "totais": {
@@ -12,7 +12,7 @@
    "pct_5d": 0.067,
    "liq_21d": 4090838206.0,
    "pct_21d": 0.177,
-   "liq_63d": 2596143398.0,
+   "liq_63d": 2596115081.0,
    "pct_63d": 0.112
   },
   "incentivado_infra": {
@@ -23,7 +23,7 @@
    "pct_5d": -2.659,
    "liq_21d": -24168917667.0,
    "pct_21d": -6.408,
-   "liq_63d": -34548714520.0,
+   "liq_63d": -34548494098.0,
    "pct_63d": -8.514
   },
   "outros": {
@@ -45,7 +45,7 @@
    "pct_5d": -0.235,
    "liq_21d": 1428683338.0,
    "pct_21d": 0.049,
-   "liq_63d": -14758820542.0,
+   "liq_63d": -14758628438.0,
    "pct_63d": -0.498
   }
  },
