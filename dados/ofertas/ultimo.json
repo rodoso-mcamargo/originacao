@@ -1,28 +1,28 @@
 {
  "fonte": "CVM dados abertos - oferta-distrib (Res. 160)",
  "url": "https://dados.cvm.gov.br/dados/OFERTA/DISTRIB/DADOS/oferta_distribuicao.zip",
- "data_referencia": "2026-11-21",
- "gerado_em": "2026-11-21T02:57:30+00:00",
+ "data_referencia": "2026-11-25",
+ "gerado_em": "2026-11-25T04:44:37+00:00",
  "janela_meses": 24,
- "ofertas_na_janela": 2462,
+ "ofertas_na_janela": 2452,
  "por_tipo": {
-  "CRA": 274,
-  "CRI": 1085,
-  "DEBENTURE": 1103
+  "CRA": 271,
+  "CRI": 1082,
+  "DEBENTURE": 1099
  },
- "no_universo": 614,
- "volume_debentures_janela": 759007238793.95,
+ "no_universo": 610,
+ "volume_debentures_janela": 752826138793.95,
  "diagnostico": {
-  "lidos": 15247,
+  "lidos": 15264,
   "gravados": {
-   "base": 2536,
-   "novas_ou_alteradas": 12,
-   "primario_vs_secundario": 1287,
-   "pvs_com_diferenca": 117
+   "base": 2540,
+   "novas_ou_alteradas": 9,
+   "primario_vs_secundario": 1275,
+   "pvs_com_diferenca": 119
   },
   "descartados": {
-   "outro_valor_mobiliario": 10682,
-   "fora_janela_24m": 2103
+   "outro_valor_mobiliario": 10695,
+   "fora_janela_24m": 2117
   },
   "erros": {},
   "fonte": {
@@ -30,8 +30,8 @@
    "status_head": 200,
    "origem": "download",
    "status": 200,
-   "bytes": 5768960,
-   "last_modified": "Fri, 20 Nov 2026 05:25:56 GMT"
+   "bytes": 5772546,
+   "last_modified": "Tue, 24 Nov 2026 18:26:00 GMT"
   }
  }
 }
