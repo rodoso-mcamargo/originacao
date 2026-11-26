@@ -1,0 +1,58 @@
+{
+ "data": "2026-11-26",
+ "n": 4,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-26",
+   "entidade": "ISSUANCE",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": null,
+   "instrumento": null,
+   "titulo": "fitch affirms issuance rating of aguas de teresina removes watch corrects error",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-issuance-rating-of-aguas-de-teresina-removes-watch-corrects-error-26-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-26",
+   "entidade": "SANEAGO AA BRA",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms saneago aa bra rating outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-saneago-aa-bra-rating-outlook-stable-26-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-26",
+   "entidade": "UNIPARS",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms unipars ratings outlook revised to stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-unipars-ratings-outlook-revised-to-stable-26-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-26",
+   "entidade": "AT A SF BRA",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": "fidc",
+   "titulo": "fitch affirms at a sf bra rating of investcred fidcs senior quotas outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/structured-finance/fitch-affirms-at-a-sf-bra-rating-of-investcred-fidcs-senior-quotas-outlook-stable-26-11-2026"
+  }
+ ]
+}

@@ -1,26 +1,26 @@
 {
  "data_referencia": "2026-11-26",
- "gerado_em": "2026-11-26T01:34:11-03:00",
+ "gerado_em": "2026-11-26T19:22:29-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 13
+   "fitch": 16
   },
   "por_acao": {
-   "afirmacao": 3,
+   "afirmacao": 7,
    "atribuicao": 2,
    "em_revisao": 1,
    "perspectiva_positiva": 1,
    "rebaixamento": 2,
-   "relatorio": 4
+   "relatorio": 3
   },
-  "base_total": 83,
+  "base_total": 87,
   "base_por_agencia": {
-   "fitch": 81,
+   "fitch": 85,
    "sp": 2
   },
   "base_por_acao": {
-   "afirmacao": 25,
+   "afirmacao": 29,
    "atribuicao": 12,
    "elevacao": 5,
    "em_revisao": 3,
@@ -33,7 +33,7 @@
   "universo_linhas": 16
  },
  "diagnostico": {
-  "universo_nomes": 468,
+  "universo_nomes": 465,
   "grupos": 0,
   "agencias": {
    "moodys_local": {
@@ -108,11 +108,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 13,
-    "validos": 13,
-    "novos_na_base": 0,
+    "lidos": 16,
+    "validos": 16,
+    "novos_na_base": 4,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 487
+     "fora_do_brasil_e_fora_do_universo": 484
     },
     "erros": [],
     "fonte": "fitchratings.com"
@@ -149,23 +149,6 @@
     {
      "emissor_painel": "UNIDAS LOCACOES E SERVICOS S.A.",
      "codigos": "CRA02300VBT;OVSAA3;OVSAA8;OVSAA9;OVSAB0;OVSAB1",
-     "tipo_match": "exato",
-     "score": 100
-    }
-   ]
-  },
-  {
-   "agencia": "fitch",
-   "data": "2026-11-20",
-   "entidade": "ELDORADO BRASIL CELULOSE SA",
-   "acao": "relatorio",
-   "nota_nova": null,
-   "perspectiva": null,
-   "url": "https://www.fitchratings.com/research/corporate-finance/eldorado-brasil-celulose-sa-20-11-2026",
-   "casamentos": [
-    {
-     "emissor_painel": "ELDORADO BRASIL CELULOSE S.A.",
-     "codigos": "CRA025007KK;CRA0250080X;CRA0250080Y;ELDC15",
      "tipo_match": "exato",
      "score": 100
     }
