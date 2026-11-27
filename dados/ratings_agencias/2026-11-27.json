@@ -1,0 +1,32 @@
+{
+ "data": "2026-11-27",
+ "n": 2,
+ "acoes": [
+  {
+   "agencia": "fitch",
+   "data": "2026-11-27",
+   "entidade": "VERENE SUBHOLDINGS AAA BRA",
+   "escala": "nacional",
+   "acao": "afirmacao",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "estavel",
+   "instrumento": null,
+   "titulo": "fitch affirms verene subholdings aaa bra rating outlook stable",
+   "url": "https://www.fitchratings.com/research/pt/corporate-finance/fitch-affirms-verene-subholdings-aaa-bra-rating-outlook-stable-27-11-2026"
+  },
+  {
+   "agencia": "fitch",
+   "data": "2026-11-27",
+   "entidade": "TO BBB BRA VOLTALIA SMGS",
+   "escala": "nacional",
+   "acao": "rebaixamento",
+   "nota_anterior": null,
+   "nota_nova": null,
+   "perspectiva": "negativa",
+   "instrumento": "debentures",
+   "titulo": "fitch downgrades to bbb bra voltalia smgs debentures issuance outlook negative",
+   "url": "https://www.fitchratings.com/research/pt/infrastructure-project-finance/fitch-downgrades-to-bbb-bra-voltalia-smgs-debentures-issuance-outlook-negative-27-11-2026"
+  }
+ ]
+}
