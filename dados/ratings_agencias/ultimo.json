@@ -1,14 +1,13 @@
 {
- "data_referencia": "2026-11-27",
- "gerado_em": "2026-11-27T18:59:13-03:00",
+ "data_referencia": "2026-11-28",
+ "gerado_em": "2026-11-28T01:23:08-03:00",
  "desde": null,
  "contagens": {
   "por_agencia": {
-   "fitch": 16
+   "fitch": 15
   },
   "por_acao": {
    "afirmacao": 8,
-   "atribuicao": 1,
    "em_revisao": 1,
    "perspectiva_positiva": 1,
    "rebaixamento": 2,
@@ -108,11 +107,11 @@
       "urls_research": 500
      }
     ],
-    "lidos": 16,
-    "validos": 16,
-    "novos_na_base": 2,
+    "lidos": 15,
+    "validos": 15,
+    "novos_na_base": 0,
     "descartados": {
-     "fora_do_brasil_e_fora_do_universo": 484
+     "fora_do_brasil_e_fora_do_universo": 485
     },
     "erros": [],
     "fonte": "fitchratings.com"
